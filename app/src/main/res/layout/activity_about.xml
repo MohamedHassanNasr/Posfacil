@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.view.settings.activities.AboutActivity">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_56sdp"
+        android:backgroundTint="@color/white"
+        android:elevation="2dp"
+        android:minHeight="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="@dimen/_8sdp"
+            android:paddingEnd="@dimen/_8sdp">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="?attr/actionBarSize"
+                android:layout_height="?attr/actionBarSize"
+                android:padding="@dimen/_10sdp"
+                android:src="@drawable/ic_arrow_left_blue"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/about_support"
+                android:textColor="@color/black_1e2227"
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/iv_back" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/about_app"
+        android:fontFamily="@font/encodesans_semibold"
+        android:textColor="@color/color_1E2227"
+        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:textSize="@dimen/_15sdp"
+
+        >
+
+    </TextView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        app:cardCornerRadius="@dimen/_15sdp"
+
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/_15sdp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:layout_weight="40"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/about_version_app"
+                    android:fontFamily="@font/encodesans_medium"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/color_7D889B"
+                    >
+
+
+                </TextView>
+
+                <TextView
+                    android:layout_weight="60"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="5.74 (5740008)"
+                    android:fontFamily="@font/encodesans_medium"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/color_3D444F"
+                    android:gravity="right"
+                    android:textStyle="bold"
+                    >
+
+
+                </TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/_30sdp"
+                >
+
+                <TextView
+                    android:layout_weight="40"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/about_version_spoc"
+                    android:fontFamily="@font/encodesans_medium"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/color_7D889B"
+                    >
+
+
+                </TextView>
+
+                <TextView
+                    android:layout_weight="60"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="SPOC1.0"
+                    android:fontFamily="@font/encodesans_medium"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/color_3D444F"
+                    android:gravity="right"
+                    android:textStyle="bold"
+                    >
+
+
+                </TextView>
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+</LinearLayout>

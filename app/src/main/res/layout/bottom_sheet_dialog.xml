@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:paddingTop="@dimen/_20sdp"
+    android:paddingRight="@dimen/_20sdp"
+    android:paddingLeft="@dimen/_20sdp"
+    android:paddingBottom="@dimen/_20sdp"
+    >
+
+
+    <ImageView
+        android:id="@+id/iv_alert_dialog"
+        android:layout_width="87dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_card_succes_dialog" />
+
+    <TextView
+        android:id="@+id/tv_mensaje_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/encodesans_medium"
+        android:text="@string/card_reconocida"
+        android:textColor="@color/color_3D444F"
+        android:textStyle="bold"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_alert_dialog"
+
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_aceptar_dg"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/aceptar"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_mensaje_dialog" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

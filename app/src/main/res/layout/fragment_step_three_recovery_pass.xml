@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/_15sdp"
+            tools:context=".ui.view.account.fragments.StepThreeRecoveryPassFragment">
+
+
+
+            <LinearLayout
+                android:id="@+id/ln_arrow_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                >
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_arrow_rigth"
+                    >
+
+                </ImageView>
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/step_three_title_recovery_pass"
+                android:fontFamily="@font/encodesans_bold"
+                android:textSize="@dimen/_18sdp"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/_45sdp"
+                android:textColor="@color/color_3D444F"
+
+                >
+
+
+            </TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:text="@string/step_three_recovery_pass"
+                android:fontFamily="@font/encodesans_medium"
+                android:textSize="@dimen/_13sdp"
+                android:textColor="@color/color_7D889B"
+
+
+                >
+
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/tv_password_label"
+                style="@style/customTextViewLabelRegistrationStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:fontFamily="@font/encodesans_bold"
+                android:text="@string/new_pass" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                >
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_password"
+                    style="@style/customEditTextRegistrationStyle"
+                    android:hint="@string/string_email"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:lines="1"
+                    android:maxLength="30"
+                    android:paddingStart="@dimen/_24sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+
+                <ImageView
+                    android:id="@+id/iv_view_pass"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:src="@drawable/ic_visibility_on"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="@+id/et_password"
+                    app:layout_constraintEnd_toEndOf="@+id/et_password"
+                    app:layout_constraintTop_toTopOf="@+id/et_password" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <TextView
+                android:id="@+id/tv_new_password_label"
+                style="@style/customTextViewLabelRegistrationStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:fontFamily="@font/encodesans_bold"
+                android:text="@string/repeat_new_pass" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                >
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_new_password"
+                    style="@style/customEditTextRegistrationStyle"
+                    android:hint="@string/string_email"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:lines="1"
+                    android:maxLength="30"
+                    android:paddingStart="@dimen/_24sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+
+                <ImageView
+                    android:id="@+id/iv_view__repeat_pass"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:src="@drawable/ic_visibility_on"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="@+id/et_new_password"
+                    app:layout_constraintEnd_toEndOf="@+id/et_new_password"
+                    app:layout_constraintTop_toTopOf="@+id/et_new_password" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ln_detail_new_pass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/_20sdp"
+                >
+
+
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="@dimen/_50sdp"
+                android:gravity="bottom"
+                android:orientation="vertical">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_update_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:gravity="start"
+                    android:paddingStart="@dimen/_16sdp"
+                    android:paddingTop="@dimen/_12sdp"
+                    android:paddingEnd="@dimen/_24sdp"
+                    android:paddingBottom="@dimen/_12sdp"
+                    android:text="@string/btn_update_pass"
+                    android:textSize="@dimen/_14sdp"
+                    app:cornerRadius="@dimen/_10sdp"
+                    app:icon="@drawable/ic_arrow_forward_white"
+                    app:iconGravity="end"
+                    app:iconSize="@dimen/_16sdp" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+</layout>

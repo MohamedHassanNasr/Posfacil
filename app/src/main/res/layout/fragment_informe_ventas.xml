@@ -1,0 +1,928 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/color_background"
+    tools:context=".ui.view.reports.fragments.InformeVentasFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_20sdp"
+                app:cardCornerRadius="@dimen/_15sdp"
+                app:cardElevation="@dimen/_10sdp"
+
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_margin="@dimen/_10sdp"
+                    >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/resumen_ventas_hoy"
+                        android:gravity="center"
+                        android:fontFamily="@font/encodesans_regular"
+                        android:textColor="@color/color_1E2227"
+                        android:textStyle="bold"
+
+                        >
+
+                    </TextView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        >
+
+                        <LinearLayout
+                            android:layout_weight="50"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            >
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="00"
+                                android:fontFamily="@font/encodesans_semibold"
+                                android:textColor="@color/color_1E2227"
+                                android:textStyle="bold"
+                                android:textSize="@dimen/_25sdp"
+                                >
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/cant_transacciones"
+                                android:gravity="center"
+                                android:fontFamily="@font/encodesans_semibold"
+                                android:textColor="@color/color_1E2227"
+                                android:textSize="@dimen/_9sdp"
+
+                                >
+
+                            </TextView>
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_weight="50"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            >
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="0.00"
+                                android:fontFamily="@font/encodesans_semibold"
+                                android:textColor="@color/color_1E2227"
+                                android:textStyle="bold"
+                                android:textSize="@dimen/_25sdp"
+                                >
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/monto_transacciones"
+                                android:gravity="center"
+                                android:fontFamily="@font/encodesans_semibold"
+                                android:textColor="@color/color_1E2227"
+                                android:textSize="@dimen/_9sdp"
+
+                                >
+
+                            </TextView>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/_15sdp"
+
+                        >
+
+                        <LinearLayout
+                            android:layout_weight="50"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            >
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="00"
+                                android:fontFamily="@font/encodesans_semibold"
+                                android:textColor="@color/color_1E2227"
+                                android:textStyle="bold"
+                                android:textSize="@dimen/_25sdp"
+                                >
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/cant_reembolsos"
+                                android:gravity="center"
+                                android:fontFamily="@font/encodesans_semibold"
+                                android:textColor="@color/color_1E2227"
+                                android:textSize="@dimen/_9sdp"
+
+                                >
+
+                            </TextView>
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_weight="50"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            >
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="0.00"
+                                android:fontFamily="@font/encodesans_semibold"
+                                android:textColor="@color/color_1E2227"
+                                android:textStyle="bold"
+                                android:textSize="@dimen/_25sdp"
+                                >
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/monto_reembolsos"
+                                android:gravity="center"
+                                android:fontFamily="@font/encodesans_semibold"
+                                android:textColor="@color/color_1E2227"
+                                android:textSize="@dimen/_9sdp"
+
+                                >
+
+                            </TextView>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardElevation="0dp"
+                        app:cardCornerRadius="@dimen/_10sdp"
+                        android:backgroundTint="@color/color_F6F7F8"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        >
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+
+
+                            >
+
+                            <LinearLayout
+                                android:layout_weight="50"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:gravity="center"
+                                android:layout_gravity="center"
+                                >
+
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/total_recibir"
+                                    android:gravity="center"
+                                    android:layout_gravity="center"
+                                    android:textColor="@color/color_3D444F"
+                                    android:textSize="@dimen/_9sdp"
+                                    android:fontFamily="@font/encodesans_semibold"
+
+
+
+                                    >
+
+                                </TextView>
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_weight="50"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:gravity="center"
+
+                                >
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="0.00"
+                                    android:fontFamily="@font/encodesans_semibold"
+                                    android:textColor="@color/color_1E2227"
+                                    android:textStyle="bold"
+                                    android:textSize="@dimen/_25sdp"
+                                    >
+
+                                </TextView>
+
+
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_20sdp"
+                app:cardCornerRadius="@dimen/_15sdp"
+                app:cardElevation="@dimen/_10sdp"
+
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_margin="@dimen/_10sdp"
+                    >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/metodos_pago"
+                        android:gravity="center"
+                        android:fontFamily="@font/encodesans_regular"
+                        android:textColor="@color/color_1E2227"
+                        android:textStyle="bold"
+
+                        >
+
+                    </TextView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        >
+
+                        <LinearLayout
+                            android:layout_weight="50"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            >
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_visa_logo"
+                                >
+
+                            </ImageView>
+
+
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_weight="50"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            >
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="0.00"
+                                android:fontFamily="@font/encodesans_semibold"
+                                android:textColor="@color/color_1E2227"
+                                android:textStyle="bold"
+                                android:textSize="@dimen/_25sdp"
+                                >
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/monto_visa"
+                                android:gravity="center"
+                                android:fontFamily="@font/encodesans_semibold"
+                                android:textColor="@color/color_1E2227"
+                                android:textSize="@dimen/_9sdp"
+
+                                >
+
+                            </TextView>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/_15sdp"
+
+                        >
+
+                        <LinearLayout
+                            android:layout_weight="50"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            >
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_mastercard_logo"
+                                >
+
+                            </ImageView>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_weight="50"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            >
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="0.00"
+                                android:fontFamily="@font/encodesans_semibold"
+                                android:textColor="@color/color_1E2227"
+                                android:textStyle="bold"
+                                android:textSize="@dimen/_25sdp"
+                                >
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/monto_mastercard"
+                                android:gravity="center"
+                                android:textColor="@color/color_1E2227"
+                                android:textSize="@dimen/_9sdp"
+                                android:fontFamily="@font/encodesans_semibold"
+                                >
+
+                            </TextView>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/_15sdp"
+
+                        >
+
+                        <LinearLayout
+                            android:layout_weight="50"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            >
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_app_icon"
+                                >
+
+                            </ImageView>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_weight="50"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            >
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="0.00"
+                                android:fontFamily="@font/encodesans_semibold"
+                                android:textColor="@color/color_1E2227"
+                                android:textStyle="bold"
+                                android:textSize="@dimen/_25sdp"
+                                >
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/monto_paguelofacil"
+                                android:gravity="center"
+                                android:fontFamily="@font/encodesans_semibold"
+                                android:textColor="@color/color_1E2227"
+                                android:textSize="@dimen/_9sdp"
+
+                                >
+
+                            </TextView>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_20sdp"
+                app:cardCornerRadius="@dimen/_15sdp"
+                app:cardElevation="@dimen/_10sdp"
+
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_margin="@dimen/_10sdp"
+                    >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/transacciones_usuario"
+                        android:gravity="center"
+                        android:fontFamily="@font/encodesans_regular"
+                        android:textColor="@color/color_1E2227"
+                        android:textStyle="bold"
+
+                        >
+
+                    </TextView>
+
+
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/color_F6F7F8"
+                        app:cardCornerRadius="@dimen/_15sdp"
+                        app:cardElevation="0dp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_margin="@dimen/_15sdp"
+                            android:layout_marginTop="@dimen/_15sdp"
+
+
+                            >
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center"
+                                >
+
+                                <ImageView
+                                    android:layout_width="18dp"
+                                    android:layout_height="18dp"
+                                    android:background="@color/color_4CA80B"
+                                    >
+
+                                </ImageView>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Michelle"
+                                    android:fontFamily="@font/encodesans_semibold"
+                                    android:textColor="@color/color_1E2227"
+                                    android:textStyle="bold"
+                                    android:layout_marginLeft="@dimen/_5sdp"
+                                    android:textSize="@dimen/_15sdp"
+                                    >
+
+                                </TextView>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                >
+
+                                <TextView
+                                    android:layout_weight="50"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/user_transaccione"
+                                    android:fontFamily="@font/encodesans_semibold"
+                                    android:textColor="@color/color_1E2227"
+                                    >
+
+                                </TextView>
+
+                                <TextView
+                                    android:layout_weight="50"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="3"
+                                    android:gravity="right"
+                                    android:fontFamily="@font/encodesans_semibold"
+                                    android:textColor="@color/color_1E2227"
+                                    >
+
+                                </TextView>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                >
+
+                                <TextView
+                                    android:layout_weight="50"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/monto"
+                                    android:fontFamily="@font/encodesans_semibold"
+                                    android:textColor="@color/color_1E2227"
+                                    >
+
+                                </TextView>
+
+                                <TextView
+                                    android:layout_weight="50"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="$200.00"
+                                    android:gravity="right"
+                                    android:fontFamily="@font/encodesans_semibold"
+                                    android:textColor="@color/color_1E2227"
+                                    >
+
+                                </TextView>
+
+                            </LinearLayout>
+
+
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/color_F6F7F8"
+                        app:cardCornerRadius="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        app:cardElevation="0dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_margin="@dimen/_15sdp"
+                            android:layout_marginTop="@dimen/_15sdp"
+
+
+                            >
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center"
+                                >
+
+                                <ImageView
+                                    android:layout_width="18dp"
+                                    android:layout_height="18dp"
+                                    android:background="@color/color_FFC400"
+                                    >
+
+                                </ImageView>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Ferrer"
+                                    android:fontFamily="@font/encodesans_semibold"
+                                    android:textColor="@color/color_1E2227"
+                                    android:textStyle="bold"
+                                    android:layout_marginLeft="@dimen/_5sdp"
+                                    android:textSize="@dimen/_15sdp"
+                                    >
+
+                                </TextView>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                >
+
+                                <TextView
+                                    android:layout_weight="50"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/user_transaccione"
+                                    android:fontFamily="@font/encodesans_semibold"
+                                    android:textColor="@color/color_1E2227"
+                                    >
+
+                                </TextView>
+
+                                <TextView
+                                    android:layout_weight="50"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="4"
+                                    android:gravity="right"
+                                    android:fontFamily="@font/encodesans_semibold"
+                                    android:textColor="@color/color_1E2227"
+                                    >
+
+                                </TextView>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                >
+
+                                <TextView
+                                    android:layout_weight="50"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/monto"
+                                    android:fontFamily="@font/encodesans_semibold"
+                                    android:textColor="@color/color_1E2227"
+                                    >
+
+                                </TextView>
+
+                                <TextView
+                                    android:layout_weight="50"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="$600.00"
+                                    android:gravity="right"
+                                    android:fontFamily="@font/encodesans_semibold"
+                                    android:textColor="@color/color_1E2227"
+                                    >
+
+                                </TextView>
+
+                            </LinearLayout>
+
+
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/color_F6F7F8"
+                        app:cardCornerRadius="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        app:cardElevation="0dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_margin="@dimen/_15sdp"
+                            android:layout_marginTop="@dimen/_15sdp"
+
+
+                            >
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center"
+                                >
+
+                                <ImageView
+                                    android:layout_width="18dp"
+                                    android:layout_height="18dp"
+                                    android:background="@color/color_4BB7BE"
+                                    >
+
+                                </ImageView>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Jose"
+                                    android:fontFamily="@font/encodesans_semibold"
+                                    android:textColor="@color/color_1E2227"
+                                    android:textStyle="bold"
+                                    android:layout_marginLeft="@dimen/_5sdp"
+                                    android:textSize="@dimen/_15sdp"
+                                    >
+
+                                </TextView>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                >
+
+                                <TextView
+                                    android:layout_weight="50"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/user_transaccione"
+                                    android:fontFamily="@font/encodesans_semibold"
+                                    android:textColor="@color/color_1E2227"
+                                    >
+
+                                </TextView>
+
+                                <TextView
+                                    android:layout_weight="50"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="3"
+                                    android:gravity="right"
+                                    android:fontFamily="@font/encodesans_semibold"
+                                    android:textColor="@color/color_1E2227"
+                                    >
+
+                                </TextView>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                >
+
+                                <TextView
+                                    android:layout_weight="50"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/monto"
+                                    android:fontFamily="@font/encodesans_semibold"
+                                    android:textColor="@color/color_1E2227"
+                                    >
+
+                                </TextView>
+
+                                <TextView
+                                    android:layout_weight="50"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="$100.00"
+                                    android:gravity="right"
+                                    android:fontFamily="@font/encodesans_semibold"
+                                    android:textColor="@color/color_1E2227"
+                                    >
+
+                                </TextView>
+
+                            </LinearLayout>
+
+
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+
+
+
+    </ScrollView>
+
+
+
+
+
+
+</LinearLayout>

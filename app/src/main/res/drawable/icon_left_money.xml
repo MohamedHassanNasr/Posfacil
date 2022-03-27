@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:drawable="@drawable/ic_money_black"
+        android:width="@dimen/_13sdp"
+        android:height="@dimen/_13sdp" />
+
+</layer-list>

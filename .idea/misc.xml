@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/bg_bottom_sheet.xml" value="0.2655" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/bg_button_primary.xml" value="0.271" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/bg_send_receipt.xml" value="0.354" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/checkbox_selector.xml" value="0.196" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/custom_thumb.xml" value="0.172" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/custom_track.xml" value="0.172" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/dr_cursor.xml" value="0.193" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/dr_rect_white_e9ebee_filled_rounded_corner.xml" value="0.3345" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/ic_add_mail.xml" value="0.193" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/ic_add_password.xml" value="0.193" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/ic_app_icon.xml" value="0.354" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/ic_arrow_back_blue.xml" value="0.234" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/ic_arrow_forward_white.xml" value="0.234" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/ic_arrow_left_blue.xml" value="0.354" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/ic_arrow_rigth.xml" value="0.354" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/ic_arrow_up_blue.xml" value="0.234" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/ic_baseline_close_24.xml" value="0.328" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/ic_check.xml" value="0.234" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/ic_close_black.xml" value="0.3675" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/ic_close_circle_black.xml" value="0.234" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/ic_close_white.xml" value="0.234" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/ic_cobro_black.xml" value="0.3425" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/ic_cobro_white.xml" value="0.33" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/ic_exclamation_inside_white_cicle.xml" value="0.234" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/ic_filter.xml" value="0.304" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/ic_illustration1.xml" value="0.234" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/ic_illustration2.xml" value="0.234" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/ic_illustration_4.xml" value="0.234" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/ic_launcher_background.xml" value="0.234" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/ic_lock_blue.xml" value="0.234" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/ic_logo.xml" value="0.256" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/ic_logo_white.xml" value="0.237" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/ic_mastercard_logo.xml" value="0.354" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/ic_menu_camera.xml" value="0.234" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/ic_menu_gallery.xml" value="0.234" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.234" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/ic_money_black.xml" value="0.3125" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/ic_previous.xml" value="0.234" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/ic_radio_enabled.xml" value="0.304" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/ic_right_arrow_blue.xml" value="0.234" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/ic_send_black.xml" value="0.2925" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/ic_send_white.xml" value="0.354" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/ic_share.xml" value="0.237" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/ic_visa_.xml" value="0.354" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/icon_left_money.xml" value="0.307" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/icon_left_money_home.xml" value="0.267" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/menu_arrow_rigth.xml" value="0.1475" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/selector_edittext.xml" value="0.3345" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/side_nav_bar.xml" value="0.3675" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/thumb_selector.xml" value="0.172" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/toggle_background_off.xml" value="0.222" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/toggle_background_on.xml" value="0.222" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/toggle_button_off.xml" value="0.222" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/toggle_button_on.xml" value="0.222" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/track_selector.xml" value="0.172" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/drawable/white_toggle_icon.xml" value="0.222" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/font/poppins_medium.xml" value="0.396875" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/activity_about.xml" value="0.32592592592592595" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/activity_ajustes.xml" value="0.32592592592592595" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/activity_cobro.xml" value="0.1" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/activity_home.xml" value="0.33" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/activity_login.xml" value="0.5" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/activity_main.xml" value="0.27898550724637683" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/activity_movements_filter.xml" value="0.33" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/activity_transactions.xml" value="0.15898825654923215" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/app_bar_home.xml" value="0.36666666666666664" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/bottom_sheet_alert_z.xml" value="0.32592592592592595" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/bottom_sheet_cancel.xml" value="0.32592592592592595" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/bottom_sheet_dg_motivos.xml" value="0.32592592592592595" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/bottom_sheet_dialog.xml" value="0.32592592592592595" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/bottom_sheet_pago_success.xml" value="0.33" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/bottom_sheet_reporte_x.xml" value="0.33" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/content_home.xml" value="0.20707070707070707" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/fragment_about.xml" value="0.32592592592592595" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/fragment_ajustes.xml" value="0.25" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/fragment_cobro_qr_code.xml" value="0.33" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/fragment_comprobante_cobro.xml" value="0.32592592592592595" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/fragment_comprobante_reembolso.xml" value="0.5" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/fragment_detail_cobro.xml" value="0.25" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/fragment_detail_reembolso.xml" value="0.30085470085470084" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/fragment_detect_credit_card.xml" value="0.32592592592592595" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/fragment_envio_comprobante.xml" value="0.5" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/fragment_firma.xml" value="0.22969187675070027" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/fragment_gallery.xml" value="0.18802083333333333" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/fragment_home.xml" value="0.22" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/fragment_informe_ventas.xml" value="0.33" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/fragment_informes.xml" value="0.32592592592592595" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/fragment_login.xml" value="0.25" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/fragment_metodo_pago.xml" value="0.5" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/fragment_my_information.xml" value="0.22" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/fragment_reembolso.xml" value="0.33" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/fragment_reporte_ventas.xml" value="0.33" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/fragment_reporte_x.xml" value="0.33" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/fragment_reporte_z.xml" value="0.25" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/fragment_send_receipt.xml" value="0.32592592592592595" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/fragment_send_receipt_payment.xml" value="0.5" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/fragment_slider_one.xml" value="0.17831813576494426" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/fragment_slider_three.xml" value="0.32592592592592595" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/fragment_slider_two.xml" value="0.17831813576494426" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/fragment_slideshow.xml" value="0.32592592592592595" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/fragment_splash_one.xml" value="0.36666666666666664" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/fragment_splash_three.xml" value="0.36666666666666664" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/fragment_splash_two.xml" value="0.36666666666666664" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/fragment_step_one_recovery_pass.xml" value="0.33" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/fragment_step_three_recovery_pass.xml" value="0.25" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/fragment_step_two_recovery_pass.xml" value="0.30085470085470084" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/fragment_support.xml" value="0.25" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/fragment_transactions.xml" value="0.2984126984126984" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/fragment_verificar_cobro.xml" value="0.33" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/menu_image.xml" value="0.36666666666666664" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/nav_header_home.xml" value="0.18802083333333333" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/layout/row_transaction.xml" value="0.5" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/menu/activity_home_drawer.xml" value="0.33" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/menu/activity_main_drawer.xml" value="0.18095238095238095" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/menu/home.xml" value="0.25" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1605" />
+        <entry key="..\:/Proyectos/AtikSoluciones/Posfacil/app/src/main/res/xml/fragment_wallet_xml_constraintlayout_scene.xml" value="0.32592592592592595" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

@@ -1,0 +1,871 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_background"
+    tools:context=".ui.view.transactions.payment.fragments.VerificarCobroFragment">
+
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/_4sdp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            >
+
+            <LinearLayout
+                android:id="@+id/ln_arrow_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="20"
+                >
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_arrow_rigth"
+                    >
+
+                </ImageView>
+
+            </LinearLayout>
+
+
+
+            <TextView
+                android:layout_weight="60"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/verificar_cobro"
+                android:fontFamily="@font/encodesans_medium"
+                android:textColor="@color/color_1E2227"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:textSize="@dimen/_13sdp"
+                >
+
+
+            </TextView>
+
+            <LinearLayout
+                android:id="@+id/ln_close_back"
+                android:layout_weight="20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_gravity="center"
+
+                >
+
+                <ImageView
+                    android:id="@+id/iv_close"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_baseline_close_24"
+                    >
+
+                </ImageView>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/_4sdp"
+       >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            >
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:background="@color/green_80bc00"
+                android:padding="@dimen/_4sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:src="@drawable/ic_cobro_white"
+                android:scaleType="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.Corner50" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/importe_cobro"
+                android:fontFamily="@font/encodesans_medium"
+                android:textColor="@color/color_1E2227"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:textStyle="bold"
+                >
+
+
+            </TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="right"
+
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/some_id"
+                    android:textAppearance="@style/some_id"
+                    android:fontFamily="@font/encodesans_bold"
+                    android:textColor="@color/black_1e2227"
+                    android:textSize="@dimen/_16ssp"
+                    android:textStyle="bold"
+                    >
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/default_import"
+                    android:textAppearance="@style/some_id"
+                    android:fontFamily="@font/encodesans_bold"
+                    android:textColor="@color/black_1e2227"
+                    android:textSize="@dimen/_16ssp"
+                    android:textStyle="bold"
+                    >
+
+                </TextView>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusableInTouchMode="true"
+        android:focusable="true"
+
+        >
+
+        <LinearLayout
+            android:id="@+id/ln_cont_cobro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_40sdp"
+            android:paddingBottom="@dimen/_40sdp"
+            android:focusable="true"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/propinas"
+                android:fontFamily="@font/encodesans_semibold"
+                android:textColor="@color/color_3D444F"
+                android:textStyle="bold"
+                >
+
+            </TextView>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_tips"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/_10sdp"
+                >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    android:gravity="center"
+
+                    >
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_tip_1"
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        app:cardCornerRadius="@dimen/_14sdp"
+                        app:cardBackgroundColor="@color/color_E0E3E7"
+                        app:layout_constraintVertical_bias="0.0">
+
+                        <TextView
+                            android:id="@+id/tv_tip_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/_12sdp"
+                            android:text="10%"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:fontFamily="@font/encodesans_medium"
+                            android:textColor="@color/color_515A69"
+                            >
+
+
+                        </TextView>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/tv_monto_tip1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$1.00"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:textColor="@color/color_3D444F"
+                        android:textSize="@dimen/_10sdp"
+                        android:fontFamily="@font/encodesans_regular"
+                        android:visibility="gone"
+                        >
+
+                    </TextView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.35"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    android:gravity="center"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    >
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_tip_2"
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        app:cardCornerRadius="@dimen/_14sdp"
+                        app:cardBackgroundColor="@color/color_E0E3E7"
+                        >
+
+                        <TextView
+                            android:id="@+id/tv_tip_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/_12sdp"
+                            android:text="15%"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:fontFamily="@font/encodesans_medium"
+                            android:textColor="@color/color_515A69"
+                            >
+
+
+                        </TextView>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/tv_monto_tip2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$1.50"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:textColor="@color/color_3D444F"
+                        android:textSize="@dimen/_10sdp"
+                        android:fontFamily="@font/encodesans_regular"
+                        android:visibility="gone"
+                        >
+
+                    </TextView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.7"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    android:gravity="center"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    >
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_tip_3"
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        app:cardCornerRadius="@dimen/_14sdp"
+                        app:cardBackgroundColor="@color/color_E0E3E7"
+
+                        >
+
+                        <TextView
+                            android:id="@+id/tv_tip_3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/_12sdp"
+                            android:text="20%"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:fontFamily="@font/encodesans_medium"
+                            android:textColor="@color/color_515A69"
+                            >
+
+
+                        </TextView>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/tv_monto_tip3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$2.00"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:textColor="@color/color_3D444F"
+                        android:textSize="@dimen/_10sdp"
+                        android:fontFamily="@font/encodesans_regular"
+                        android:visibility="gone"
+                        >
+
+                    </TextView>
+
+                </LinearLayout>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_other_tip"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    app:cardCornerRadius="@dimen/_14sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:cardBackgroundColor="@color/color_E0E3E7"
+
+
+                    >
+
+                    <ImageView
+                        android:id="@+id/iv_points_tips"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_10sdp"
+                        android:src="@drawable/ic_points"
+                        android:layout_gravity="center"
+                        android:scaleType="centerInside"
+                        >
+
+                    </ImageView>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/et_custom_tip"
+                style="@style/customEditTexttaxeStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_money_black"
+                android:imeOptions="actionNext"
+                android:inputType="textEmailAddress"
+                android:paddingStart="@dimen/_24sdp"
+                android:layout_marginLeft="0dp"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_16sdp"
+                android:visibility="gone"
+                android:focusable="true"
+                />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/impuestos"
+                android:fontFamily="@font/encodesans_semibold"
+                android:textColor="@color/color_3D444F"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:textStyle="bold"
+                >
+
+            </TextView>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="50"
+                    android:focusableInTouchMode="true"
+
+
+                    >
+
+                    <EditText
+
+                        android:id="@+id/et_custom_taxe"
+                        style="@style/customEditTexttaxeStyle"
+                        android:layout_width="@dimen/_120sdp"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_money_black"
+                        android:inputType="numberDecimal"
+                        android:paddingStart="@dimen/_24sdp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="0.00"
+                        android:paddingEnd="@dimen/_16sdp"
+                        android:textSize="@dimen/_12sdp"
+                        android:enabled="true"
+
+
+
+                        />
+
+                    <TextView
+                        android:focusable="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/impuesto_sugerido"
+                        android:fontFamily="@font/encodesans_regular"
+                        android:textColor="@color/color_7D889B"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:textSize="@dimen/_10sdp"
+                        >
+
+                    </TextView>
+
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="50"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:gravity="left"
+
+
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/impuesto_default"
+                        android:fontFamily="@font/encodesans_regular"
+                        android:textColor="@color/color_3D444F"
+                        android:textSize="@dimen/_9sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        >
+
+                    </TextView>
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/sw_default_impuesto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:thumb="@drawable/thumb_selector"
+                        app:track="@drawable/track_selector"
+                        >
+
+                    </androidx.appcompat.widget.SwitchCompat>
+
+
+                </LinearLayout>
+
+
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/resume_cobro"
+                android:fontFamily="@font/encodesans_semibold"
+                android:textColor="@color/color_3D444F"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:textStyle="bold"
+                android:textSize="@dimen/_12sdp"
+                >
+
+            </TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    >
+
+                    <TextView
+                        android:layout_weight="50"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/total"
+                        android:fontFamily="@font/encodesans_medium"
+                        android:textColor="@color/color_1E2227"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/_13sdp"
+                        >
+
+                    </TextView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="right"
+                        android:layout_weight="50"
+                        android:layout_gravity="right"
+
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="12.00"
+                            android:gravity="end|center_vertical"
+                            android:drawableLeft="@drawable/icon_left_money"
+                            android:fontFamily="@font/encodesans_bold"
+                            android:textColor="@color/black_1e2227"
+                            android:textSize="@dimen/_13sdp"
+                            android:textStyle="bold"
+                            android:layout_marginRight="@dimen/_5sdp"
+                            >
+
+                        </TextView>
+
+                    </LinearLayout>
+
+
+
+
+                </LinearLayout>
+
+
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/color_E9EBEE"
+                        android:padding="@dimen/_10sdp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="@dimen/_15sdp"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            >
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_weight="50"
+                                >
+                                <TextView
+
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/importe_base"
+                                    android:fontFamily="@font/encodesans_medium"
+                                    android:textColor="@color/color_1E2227"
+                                    android:textStyle="bold"
+
+                                    >
+
+                                </TextView>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="5%"
+                                    android:fontFamily="@font/encodesans_medium"
+                                    android:textColor="@color/color_7D889B"
+                                    android:textSize="@dimen/_10sdp"
+                                    android:visibility="gone"
+                                    >
+
+                                </TextView>
+
+                            </LinearLayout>
+
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="right"
+                                android:layout_weight="50"
+                                android:layout_gravity="right"
+
+
+                                >
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="10.00"
+                                    android:gravity="end|center_vertical"
+                                    android:drawableLeft="@drawable/icon_left_money"
+                                    android:fontFamily="@font/encodesans_bold"
+                                    android:textColor="@color/black_1e2227"
+                                    android:textSize="@dimen/_10sdp"
+                                    android:textStyle="bold"
+                                    >
+
+                                </TextView>
+
+                            </LinearLayout>
+
+
+
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="@dimen/_15sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            >
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="50"
+                                android:fontFamily="@font/encodesans_medium"
+                                android:text="@string/propinas"
+                                android:textColor="@color/color_1E2227"
+                                android:textStyle="bold"
+                                >
+
+                            </TextView>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="right"
+                                android:layout_weight="50"
+                                android:layout_gravity="right"
+
+                                >
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="2.00"
+                                    android:gravity="end|center_vertical"
+                                    android:drawableLeft="@drawable/icon_left_money"
+                                    android:fontFamily="@font/encodesans_bold"
+                                    android:textColor="@color/black_1e2227"
+                                    android:textSize="@dimen/_10sdp"
+                                    android:textStyle="bold"
+                                    >
+
+                                </TextView>
+
+                            </LinearLayout>
+
+
+
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="@dimen/_15sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            >
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="50"
+                                android:fontFamily="@font/encodesans_medium"
+                                android:text="@string/impuestos"
+                                android:textColor="@color/color_1E2227"
+                                android:textStyle="bold"
+                                >
+
+                            </TextView>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="right"
+                                android:layout_weight="50"
+                                android:layout_gravity="right"
+
+                                >
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="0.00"
+                                    android:gravity="end|center_vertical"
+                                    android:drawableLeft="@drawable/icon_left_money"
+                                    android:fontFamily="@font/encodesans_bold"
+                                    android:textColor="@color/black_1e2227"
+                                    android:textSize="@dimen/_10sdp"
+                                    android:textStyle="bold"
+                                    >
+
+                                </TextView>
+
+                            </LinearLayout>
+
+
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+            </LinearLayout>
+
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_cobrar_next"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:paddingStart="@dimen/_16sdp"
+                android:paddingTop="@dimen/_12sdp"
+                android:paddingEnd="@dimen/_24sdp"
+                android:paddingBottom="@dimen/_12sdp"
+                android:text="@string/cobrar"
+                android:textSize="@dimen/_14sdp"
+                app:cornerRadius="@dimen/_10sdp"
+                app:icon="@drawable/ic_arrow_forward_white"
+                app:iconGravity="end"
+                app:iconSize="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                />
+
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+
+
+
+</LinearLayout>

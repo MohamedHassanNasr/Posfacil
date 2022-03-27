@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.paguelofacil.posfacil.ui.view.home.fragments.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_transactions"
+        android:name="com.paguelofacil.posfacil.ui.view.transactions.payment.fragments.TransactionsFragment"
+        android:label="@string/transactions_menu"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_reports"
+        android:name="com.paguelofacil.posfacil.ui.view.reports.fragments.InformesFragment"
+        android:label="@string/informe"
+        tools:layout="@layout/fragment_slideshow" />
+
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.paguelofacil.posfacil.ui.view.settings.fragments.AjustesFragment"
+        android:label="@string/menu_settings"
+        tools:layout="@layout/fragment_slideshow" />
+
+    <fragment
+        android:id="@+id/nav_support"
+        android:name="com.paguelofacil.posfacil.ui.view.settings.fragments.SupportFragment"
+        android:label="@string/menu_support"
+        tools:layout="@layout/fragment_slideshow" />
+
+
+
+
+</navigation>

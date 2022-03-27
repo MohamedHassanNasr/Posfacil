@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/_20sdp"
+    >
+
+    <TextView
+        android:paddingTop="@dimen/_10sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/motivo_reembolso"
+        android:fontFamily="@font/encodesans_medium"
+        android:textColor="@color/color_3D444F"
+        android:textStyle="bold"
+        android:textSize="@dimen/_13sdp"
+        android:gravity="center"
+        >
+
+    </TextView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:paddingLeft="@dimen/_10sdp"
+
+        >
+
+        <TextView
+            android:layout_weight="50"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mercancía devuelta"
+            android:fontFamily="@font/encodesans_medium"
+            android:textColor="@color/color_1E2227"
+            android:textStyle="bold"
+            android:textSize="@dimen/_11sdp"
+            >
+
+        </TextView>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            >
+
+        </RadioButton>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:paddingLeft="@dimen/_10sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/_15sdp"
+
+        >
+
+        <TextView
+            android:layout_weight="50"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cobro accidental"
+            android:fontFamily="@font/encodesans_medium"
+            android:textColor="@color/color_1E2227"
+            android:textStyle="bold"
+            android:textSize="@dimen/_11sdp"
+            >
+
+        </TextView>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            >
+
+        </RadioButton>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:paddingLeft="@dimen/_10sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/_15sdp"
+
+        >
+
+        <TextView
+            android:layout_weight="50"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pedido cancelado"
+            android:fontFamily="@font/encodesans_medium"
+            android:textColor="@color/color_1E2227"
+            android:textStyle="bold"
+            android:textSize="@dimen/_11sdp"
+            >
+
+        </TextView>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            >
+
+        </RadioButton>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:paddingLeft="@dimen/_10sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/_15sdp"
+
+        >
+
+        <TextView
+            android:layout_weight="50"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cobro fraudulento"
+            android:fontFamily="@font/encodesans_medium"
+            android:textColor="@color/color_1E2227"
+            android:textStyle="bold"
+            android:textSize="@dimen/_11sdp"
+            >
+
+        </TextView>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            >
+
+        </RadioButton>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:paddingBottom="@dimen/_10sdp"
+        android:paddingLeft="@dimen/_10sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/_15sdp"
+
+        >
+
+        <TextView
+            android:layout_weight="50"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Otro motivo"
+            android:fontFamily="@font/encodesans_medium"
+            android:textColor="@color/color_1E2227"
+            android:textStyle="bold"
+            android:textSize="@dimen/_11sdp"
+            >
+
+        </TextView>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:layout_weight="50"
+            android:id="@+id/et_password"
+            android:background="@drawable/selector_edittext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:hint="@string/escriba_aqui"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            android:lines="1"
+            android:maxLength="30"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:paddingStart="@dimen/_24sdp" />
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

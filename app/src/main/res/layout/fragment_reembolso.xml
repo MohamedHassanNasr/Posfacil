@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.view.transactions.refund.fragments.ReembolsoFragment"
+
+    >
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:elevation="2dp"
+        android:minHeight="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="@dimen/_8sdp"
+            android:paddingEnd="@dimen/_8sdp">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="?attr/actionBarSize"
+                android:layout_height="?attr/actionBarSize"
+                android:padding="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:src="@drawable/ic_arrow_left_blue"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/reembolso_toolbar"
+                android:textColor="@color/black_1e2227"
+                android:textSize="@dimen/_14ssp"
+                android:layout_marginLeft="@dimen/_60sdp"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/_21sdp"
+                android:padding="@dimen/_10sdp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+               />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="@dimen/_60sdp"
+                android:paddingBottom="@dimen/_5sdp"
+
+
+                >
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="@dimen/_4sdp"
+
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:layout_marginLeft="@dimen/_10sdp"
+
+                        >
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/iv"
+                            android:layout_width="@dimen/_35sdp"
+                            android:layout_height="@dimen/_35sdp"
+                            android:background="@color/green_80bc00"
+                            android:padding="@dimen/_4sdp"
+                             android:src="@drawable/ic_cobro_white"
+                            android:scaleType="center"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.Corner50" />
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/emitiras_reembolso"
+                                android:fontFamily="@font/encodesans_regular"
+                                android:textColor="@color/color_515A69"
+                                android:layout_marginLeft="@dimen/_5sdp"
+
+                                >
+
+
+                            </TextView>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="ID: 12012201"
+                                android:fontFamily="@font/encodesans_medium"
+                                android:textColor="@color/color_1E2227"
+                                android:layout_marginLeft="@dimen/_5sdp"
+                                android:textStyle="bold"
+                                >
+
+
+                            </TextView>
+
+                        </LinearLayout>
+
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="right"
+
+                            >
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/some_id"
+                                android:textAppearance="@style/some_id"
+                                android:fontFamily="@font/encodesans_bold"
+                                android:textColor="@color/black_1e2227"
+                                android:textSize="@dimen/_16ssp"
+                                android:textStyle="bold"
+                                >
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/default_import"
+                                android:textAppearance="@style/some_id"
+                                android:fontFamily="@font/encodesans_bold"
+                                android:textColor="@color/black_1e2227"
+                                android:textSize="@dimen/_16ssp"
+                                android:textStyle="bold"
+                                >
+
+                            </TextView>
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+
+
+                </androidx.cardview.widget.CardView>
+
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appbar_layout"
+
+        >
+
+
+        <EditText
+            android:id="@+id/et_monto_cobrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@android:color/transparent"
+            android:drawableLeft="@drawable/icon_left_money_home"
+            android:focusableInTouchMode="true"
+            android:fontFamily="@font/encodesans_medium"
+            android:gravity="center"
+            android:inputType="numberDecimal"
+            android:text="10.00"
+            android:textColor="@color/color_3d444f"
+            android:textSize="@dimen/_45sdp">
+
+        </EditText>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/encodesans_regular"
+            android:gravity="center"
+            android:text="@string/importe_reembolsar"
+            android:textColor="@color/color_515a69"
+            android:textSize="@dimen/_18sdp"
+
+            >
+
+        </TextView>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/metodo_reembolso"
+            android:textColor="@color/color_3D444F"
+            android:fontFamily="@font/encodesans_medium"
+            android:layout_marginLeft="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            >
+
+        </TextView>
+
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="0dp"
+            app:cardCornerRadius="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_16sdp"
+            android:layout_marginRight="@dimen/_16sdp"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_10sdp"
+            android:backgroundTint="@color/white_e9ebee"
+
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+               android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_mastercard_logo"
+                    android:layout_marginLeft="@dimen/_16sdp"
+                    />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:fontFamily="@font/encodesans_medium"
+                    android:text="****1654"
+                    android:textColor="@color/color_3D444F" />
+
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_3D444F"
+            android:fontFamily="@font/encodesans_medium"
+            android:text="@string/motivo_reembolso"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginLeft="@dimen/_16sdp"
+
+
+            >
+
+        </TextView>
+
+
+        <TextView
+            android:id="@+id/tv_select_motivos"
+            style="@style/customEditTextRegistrationStyle"
+            android:drawableEnd="@drawable/ic_arrow_down"
+            android:focusable="false"
+            android:hint="Seleccione"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            android:lines="1"
+            android:maxLength="30"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:paddingStart="@dimen/_24sdp" />
+
+
+    </LinearLayout>
+
+
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_confirm_reembolso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:gravity="start"
+        android:paddingStart="@dimen/_16sdp"
+        android:paddingTop="@dimen/_12sdp"
+        android:paddingEnd="@dimen/_24sdp"
+        android:paddingBottom="@dimen/_12sdp"
+        android:text="@string/confirmar_reembolso"
+        android:textSize="@dimen/_14sdp"
+        app:cornerRadius="@dimen/_10sdp"
+        app:icon="@drawable/ic_arrow_forward_white"
+        app:iconGravity="end"
+        app:iconSize="@dimen/_16sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

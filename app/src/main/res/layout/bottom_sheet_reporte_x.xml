@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:paddingTop="@dimen/_20sdp"
+    android:paddingRight="@dimen/_20sdp"
+    android:paddingLeft="@dimen/_20sdp"
+    android:paddingBottom="@dimen/_20sdp"
+    android:orientation="vertical"
+    >
+
+
+    <ImageView
+        android:id="@+id/iv_alert_dialog"
+        android:layout_width="87dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="4dp"
+        app:srcCompat="@drawable/ic_send_icon" />
+
+    <TextView
+        android:id="@+id/tv_mensaje_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="edededededededededededededededed"
+        android:fontFamily="@font/encodesans_medium"
+        android:textColor="@color/color_3D444F"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:textSize="@dimen/_12sdp"
+
+
+        />
+
+    <RadioButton
+        android:id="@+id/radioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/desea_enviar_correo_corte"
+       />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/encodesans_semibold"
+        android:text="luiselias@gmail.com"
+        android:gravity="center"
+        android:textColor="@color/color_3D444F"
+        android:textStyle="bold"
+      />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_close_dg_corte_x"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/finalizar"
+        android:textStyle="bold"
+
+  />
+
+
+
+
+
+
+</LinearLayout>
