@@ -44,7 +44,7 @@ class ListTransactionsAdapter(val listTransactions:ArrayList<Transaction>,val la
             var drawable=R.drawable.ic_cobro_white
             val context: Context =binding.tvIdTransaction.context
 
-            binding.tvIdTransaction.text=transaction.id.toString()
+            binding.tvIdTransaction.text=" "+transaction.id.toString()
             binding.tvDateTransaction.text=transaction.fechaHora
             binding.tvAmountTransaction.text=transaction.mount
             binding.tvCardTransaction.text=transaction.detailNameCard

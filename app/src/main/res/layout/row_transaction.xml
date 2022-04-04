@@ -4,7 +4,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_detail_transation"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools">
@@ -12,7 +12,6 @@
         <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/iv_icon_logo"
                 android:layout_width="@dimen/_30sdp"
-                android:layout_marginTop="20dp"
                 android:layout_height="@dimen/_30sdp"
                 android:layout_marginStart="@dimen/_8sdp"
                 android:background="@color/green_80bc00"
@@ -29,7 +28,7 @@
         android:layout_width="203dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="10dp"
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
         android:paddingBottom="@dimen/_10sdp"
@@ -46,7 +45,7 @@
                 style="@style/mediumAndBlack_1e2227_TextViewStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Codigo de operacion: "
+                android:text="@string/codigo_operacion_transaction"
                 android:gravity="center"
                 android:textSize="@dimen/_10ssp" />
             <TextView
@@ -80,7 +79,7 @@
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_mastercard_logo"
             android:gravity="center_vertical"
-            android:text="Mastercard 5400"
+            android:text="5400"
 
 
             />
@@ -94,11 +93,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="32dp"
-            android:layout_marginBottom="35dp"
+            android:layout_marginTop="10dp"
             android:text="+ $ 10.00"
             android:textColor="@color/color_4CA80B"
             android:textSize="@dimen/_13ssp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintVertical_chainStyle="packed"
             app:srcCompat="@drawable/ic_right_arrow_blue"

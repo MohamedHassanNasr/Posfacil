@@ -55,6 +55,31 @@ class EnvioComprobanteFragment : Fragment(), IOnBackPressed {
 
         }
 
+        binding.cbPhone.setOnCheckedChangeListener { compoundButton, b ->
+
+            if (b)
+            {
+                binding.etPhone.visibility=View.VISIBLE
+            }
+            else
+            {
+                binding.etPhone.visibility=View.GONE
+            }
+
+        }
+
+        binding.cbEmail.setOnCheckedChangeListener { compoundButton, b ->
+
+            if (b)
+            {
+                binding.etEmail.visibility=View.VISIBLE
+            }
+            else
+            {
+                binding.etEmail.visibility=View.GONE
+            }
+        }
+
     }
 
     private fun showBottomSheet(mensaje:String) {

@@ -75,7 +75,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_5sdp"
-        android:text="ID:"
+        android:text="@string/codigo_operacion_transaction"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.098"
         app:layout_constraintStart_toStartOf="parent"
@@ -90,7 +90,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_5sdp"
-        android:text="12345221"
+        android:text=" 12345221"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.01"
         app:layout_constraintStart_toEndOf="@+id/textView7"
@@ -104,12 +104,13 @@
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.098"
+        app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="@dimen/_5sdp"
         android:fontFamily="@font/encodesans_regular"
         android:text="23-03-2022 02:53:22 PM"
         android:textColor="@color/color_7D889B"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7"
 
         />
@@ -277,12 +278,12 @@
                 </TextView>
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="@dimen/_150sdp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="50"
+                    android:layout_weight="70"
                     android:fontFamily="@font/encodesans_medium"
                     android:gravity="right"
-                    android:text="Mastercard 5400"
+                    android:text="5400"
                     android:drawableLeft="@drawable/ic_mastercard_logo"
                     android:textColor="@color/color_3D444F">
 

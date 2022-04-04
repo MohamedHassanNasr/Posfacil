@@ -349,6 +349,7 @@
     <string name="blank_space">&#160;</string>
     <string name="codigo_operacion">Código de operación</string>
     <string name="search_for_code_monto">Buscar por código o monto</string>
+    <string name="codigo_operacion_transaction">Código de operación:</string>
 
 
 </resources>

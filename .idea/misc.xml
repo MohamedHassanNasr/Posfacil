@@ -165,7 +165,7 @@
         <entry key="..\:/Proyectos/AtikSoluciones/PosfacilApi/posfacil/app/src/main/res/layout/fragment_cobro_qr_code.xml" value="0.32592592592592595" />
         <entry key="..\:/Proyectos/AtikSoluciones/PosfacilApi/posfacil/app/src/main/res/layout/fragment_comprobante_cobro.xml" value="0.33" />
         <entry key="..\:/Proyectos/AtikSoluciones/PosfacilApi/posfacil/app/src/main/res/layout/fragment_comprobante_reembolso.xml" value="0.32592592592592595" />
-        <entry key="..\:/Proyectos/AtikSoluciones/PosfacilApi/posfacil/app/src/main/res/layout/fragment_detail_cobro.xml" value="0.32592592592592595" />
+        <entry key="..\:/Proyectos/AtikSoluciones/PosfacilApi/posfacil/app/src/main/res/layout/fragment_detail_cobro.xml" value="0.33" />
         <entry key="..\:/Proyectos/AtikSoluciones/PosfacilApi/posfacil/app/src/main/res/layout/fragment_detail_reembolso.xml" value="0.25" />
         <entry key="..\:/Proyectos/AtikSoluciones/PosfacilApi/posfacil/app/src/main/res/layout/fragment_detect_credit_card.xml" value="0.32592592592592595" />
         <entry key="..\:/Proyectos/AtikSoluciones/PosfacilApi/posfacil/app/src/main/res/layout/fragment_envio_comprobante.xml" value="0.32592592592592595" />
@@ -197,7 +197,7 @@
         <entry key="..\:/Proyectos/AtikSoluciones/PosfacilApi/posfacil/app/src/main/res/layout/menu_image.xml" value="0.32592592592592595" />
         <entry key="..\:/Proyectos/AtikSoluciones/PosfacilApi/posfacil/app/src/main/res/layout/nav_header_home.xml" value="0.32592592592592595" />
         <entry key="..\:/Proyectos/AtikSoluciones/PosfacilApi/posfacil/app/src/main/res/layout/row_motivos_reembolso.xml" value="0.32592592592592595" />
-        <entry key="..\:/Proyectos/AtikSoluciones/PosfacilApi/posfacil/app/src/main/res/layout/row_transaction.xml" value="0.32592592592592595" />
+        <entry key="..\:/Proyectos/AtikSoluciones/PosfacilApi/posfacil/app/src/main/res/layout/row_transaction.xml" value="0.33" />
         <entry key="..\:/Proyectos/AtikSoluciones/PosfacilApi/posfacil/app/src/main/res/menu/activity_home_drawer.xml" value="0.32592592592592595" />
       </map>
     </option>
