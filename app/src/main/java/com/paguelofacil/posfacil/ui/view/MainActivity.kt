@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         for (i in 0 until sectionsPagerAdapter.count) {
             val points = TextView(this)
             points.layoutParams = LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-            points.text = "__ "
+            points.text = "—"
 
             points.setTextColor(ContextCompat.getColor(this, R.color.color_FFE4E4E4))
             points.textSize = 64F

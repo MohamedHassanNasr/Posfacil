@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:background="#ffffff"
-        app:tabIndicatorColor="#2c77f1"
+        app:tabIndicatorColor="#4CA80B"
         android:layout_alignParentTop="true"
         android:elevation="5dp" />
 

@@ -6,34 +6,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.paguelofacil.posfacil.R
-import com.paguelofacil.posfacil.databinding.FragmentMyInformationBinding
 
 
 class MyInformationFragment : Fragment() {
 
 
-    lateinit var binding: FragmentMyInformationBinding
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        binding=FragmentMyInformationBinding.inflate(inflater,container,false)
-
-        loadListeners()
-
-        return binding.root
-
-    }
-
-    private fun loadListeners() {
-
-        binding.ivBack.setOnClickListener {
-
-            activity?.finish()
-        }
-
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_my_information, container, false)
     }
 
 

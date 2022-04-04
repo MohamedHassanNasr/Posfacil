@@ -14,11 +14,16 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import com.paguelofacil.posfacil.R
 import com.paguelofacil.posfacil.databinding.FragmentVerificarCobroBinding
+import com.paguelofacil.posfacil.model.ParamReembolsoPropina
+import com.paguelofacil.posfacil.repository.ConfigurationsRepo
 import com.paguelofacil.posfacil.ui.view.home.activities.HomeActivity
 import com.paguelofacil.posfacil.util.KeyboardUtil
 import kotlinx.android.synthetic.main.bottom_sheet_dialog.view.*
+import org.json.JSONArray
 
 
 class VerificarCobroFragment : Fragment() {
@@ -26,7 +31,7 @@ class VerificarCobroFragment : Fragment() {
 
     lateinit var binding:FragmentVerificarCobroBinding
     var cvSelected:Int=0
-
+    private var listPropinas= arrayListOf<ParamReembolsoPropina>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,6 +39,8 @@ class VerificarCobroFragment : Fragment() {
     ): View? {
 
         binding=FragmentVerificarCobroBinding.inflate(inflater,container,false)
+
+        getPropinas()
 
         loadListeners()
 
@@ -82,6 +89,41 @@ class VerificarCobroFragment : Fragment() {
         val intent= Intent(context, HomeActivity::class.java)
         startActivity(intent)
         activity?.finish()
+    }
+
+     /**
+     * Obtener las propinas
+     * Actualmente solo se estan obteniendo las 3 primeras
+     */
+
+    private fun getPropinas() {
+
+        val systemsParam= ConfigurationsRepo.getSystemParamsLocal()
+        val dataRefund=systemsParam._default_values_tip
+
+        val json = JSONArray(dataRefund)
+
+        val type = object : TypeToken<ParamReembolsoPropina>() {}.type
+
+
+        for (i in 1..3) {
+
+            val item = json.getString(i)
+            val propinaJson = Gson().fromJson<ParamReembolsoPropina>(item, type)
+
+            var propina: ParamReembolsoPropina = ParamReembolsoPropina(propinaJson.key,
+                propinaJson.valueToShow.replace("trans#", ""),
+                propinaJson.value)
+
+            listPropinas.add(propina)
+
+        }
+
+        binding.tvTip1.text=listPropinas[0].value+"%"
+        binding.tvTip2.text=listPropinas[1].value+"%"
+        binding.tvTip3.text=listPropinas[2].value+"%"
+
+
     }
 
 
@@ -210,6 +252,7 @@ class VerificarCobroFragment : Fragment() {
             {
                 KeyboardUtil.showKeyboard(activity)
                 binding.etCustomTaxe.requestFocus()
+                binding.etCustomTaxe.setText("0.00")
 
 
             }
@@ -253,9 +296,6 @@ class VerificarCobroFragment : Fragment() {
         binding.tvTip3.setTextColor(ContextCompat.getColor(requireContext(), R.color.color_515A69));
 
 
-        binding.tvMontoTip1.visibility=View.GONE
-        binding.tvMontoTip2.visibility=View.GONE
-        binding.tvMontoTip3.visibility=View.GONE
 
 
 

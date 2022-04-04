@@ -12,10 +12,10 @@
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:scaleType="centerCrop"
-        android:layout_marginTop="@dimen/_95sdp"
+        android:scaleType="fitXY"
+        android:layout_marginTop="@dimen/_120sdp"
         android:src="@drawable/splash_one" />
 
 
@@ -23,14 +23,16 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_98sdp"
+        android:layout_marginTop="@dimen/_90sdp"
         android:layout_gravity="top|left"
         android:text="@string/text_splash_one"
-        android:maxWidth="@dimen/_180sdp"
+        android:maxWidth="@dimen/_210sdp"
         android:layout_marginLeft="@dimen/_15sdp"
         android:fontFamily="@font/encodesans_bold"
-        android:textColor="@color/color_3d444f"
-        android:textSize="@dimen/_15sdp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_16sdp"
+        android:layout_marginRight="@dimen/_20sdp"
+
         >
 
 

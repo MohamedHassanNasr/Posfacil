@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Posfacil</string>
     <string name="log_in">Iniciar sesión</string>
     <string name="did_you_forget_your_password">¿Olvidaste tu contraseña?</string>
@@ -57,8 +57,8 @@
     <string name="importe_cobrar">Importe a cobrar</string>
     <string name="total">Total</string>
     <string name="metodo_pago">Método de pago</string>
-    <string name="recibir_comprobante">Recibir comprobante</string>
-    <string name="indica_destino_comproban">Indique donde desea recibir el comprobante</string>
+    <string name="recibir_comprobante">¿Desea recibir comprobante?</string>
+    <string name="indica_destino_comproban">¿Desea enviar comprobante?</string>
     <string name="example_email_hint">Ej. name@email.com</string>
     <string name="phone">Télefono</string>
     <string name="example_phone_hint">Ej. 64910677</string>
@@ -67,7 +67,7 @@
     <string name="paguelofacil_app">PagueloFacil</string>
     <string name="verificar_cobro">Verificar cobro</string>
     <string name="esperando_tarjeta">Esperando por tarjeta.</string>
-    <string name="send_voucher">Enviar comprobante</string>
+    <string name="send_voucher">Comprobante</string>
     <string name="currency">$</string>
     <string name="importe_cobrado">Total Cobrado</string>
     <string name="impuesto_receipt_detail">I.T.B.M.S</string>
@@ -193,4 +193,162 @@
     <string name="reporte_z">Reporte Z</string>
     <string name="pago_qr">PagueloFacil QR</string>
     <string name="pago_verificado">Se ha verificado el pago correctamente.</string>
+    <string name="panel_cobro">Panel de cobro</string>
+    <string name="invalidUser">Este usuario no está registrado.</string>
+    <string name="Please_enter_your_new_password">Por favor ingrese su nueva contraseña</string>
+    <string name="error_code_auth_new_pass">No se encontro codigo de autenticacion valido, vuelva a generar el codigo</string>
+    <string name="password_recovered">Haz recuperado tu contraseña con exito</string>
+    <string name="iniciar_sesion">Iniciar sesión</string>
+    <string name="validate_8_characters">Debe tener al menos 12 caracteres</string>
+    <string name="validate_1_mayus">Al menos una letra mayúscula</string>
+    <string name="validate_1_minu">Al menos una letra minúscula</string>
+    <string name="validate_1_number">Al menos un número</string>
+    <string name="validate_1_especial">Al menos un carácter especial</string>
+    <string name="password_no_identicos">Las contraseñas no coinciden</string>
+    <string name="Please_enter_your_confirm_password">Por favor vuelve a escribir la nueva contraseña</string>
+
+
+
+
+    <string name="something_went_wrong" tools:ignore="TypographyEllipsis">¡Algo salió mal! Inténtalo de nuevo...</string>
+    <!--media select dialog-->
+
+    <string name="invalid_password_short">Contraseña Incorrecta</string>
+    <string name="Please_enter_your_password">Por favor ingrese su contraseña</string>
+    <string name="Something_went_wrong">Algo salió mal</string>
+    <string name="It_seems_like_you_are_not_connected_with_a_stable_internet">Parece que no está conectado con una conexión a Internet estable</string>
+    <string name="Unable_to_process_your_request_Please_try_again">No se pudo procesar su solicitud. Inténtalo de nuevo.</string>
+    <string name="Yesterday">Ayer</string>
+    <string name="Today">Hoy</string>
+    <string name="Tomorrow">mañana</string>
+    <string name="Please_enter_your_email_or_Alias">Por favor ingrese su correo o Alias</string>
+
+    <!--Errors-->
+    <string name="sessionTimeout">Tu sesión ha expirado. Ingrese nuevamente.</string>
+    //401
+    //406
+    //407
+    //428
+    //500
+    //510
+    <string name="weCannotVerifyYourBusiness">Escríbenos a info@paguelofacil.com para solicitar nuevamente su  CCLW.</string>
+    // 600
+    <string name="disabledAccount">Su cuenta se desactivó por falta de procesamiento. Por favor solicite su  reactivación.</string>
+    //601
+    <string name="theInformationDoesnotMatchTheDocumentProvide">La información no concuerda con la documentación entregada. Por  favor intente nuevamente.</string>
+    //602
+    <string name="theMinimumAllowedAmount">El monto mínimo permitido es de $1.00. Introduce un nuevo monto e  intenta de nuevo.</string>
+    // 603
+    <string name="theAmountToBeReceivedIsGreater">El monto a recibir es mayor al monto máximo permitido.</string>
+    // 604
+    <string name="theCardIsNotValid">El número de la tarjeta no es válido.</string>
+    // 605
+    <string name="theSecurityCodeInNotValid">El código de verificación ingresado no es válido. Intente nuevamente.</string>
+    // 606
+    <string name="creditCardNumberNotValid">El número de la tarjeta no es válido. Intente nuevamente.</string>
+    // 607
+    <string name="theEmailEnteredIsNotCorrect">El email ingresado no es correcto. Intente nuevamente.</string>
+    // 608
+    <string name="theNameEnteredIsInvalid">El nombre ingresado no es válido. Intente nuevamente.</string>
+    // 609
+    <string name="theLastNameEnteredIsInvalid">El apellido ingresado no es válido. Intente nuevamente.</string>
+    //610
+    <string name="thePhoneNumberEnteredIsInvalid">El número de teléfono no es válido. Intente nuevamente.</string>
+    // 611
+    <string name="forSecurityReasonsYouCannotMakeMoreThanTransactionsWithTheSameCreditCard">Por seguridad, no puedes realizar más de 3 transacciones con la misma  tarjeta.</string>
+    //612
+    <string name="monthlyLimitReachedRequesting">Ha llegado a su límite mensual. Por favor solicite un aumento de límite  para poder seguir.</string>
+    //613
+    <string name="monthlyLimitReachedSending">El usuario seleccionado ha llegado a su límite mensual permitido.</string>
+    //613
+    <string name="dailyLimitReachedRequesting">Ha llegado a su límite diario. Por favor solicite un aumento de límite  para poder seguir.</string>
+    // 614
+    <string name="dailyLimitReachedSending">El usuario seleccionado a llegado a su límite diario.</string>
+    // 614
+
+    <string name="oppsSomethingWentWrongProblemWithTheService">Hay un problema con el servicio. Intenta de nuevo en unos minutos.</string>
+    // 700
+    <string name="oppsSomethingWentWrongWalletServiceEnabled">Servicio de wallet no habilitado. Contáctanos.</string>
+    // 701
+    <string name="theSelectedActivityIsEnvalid">La actividad seleccionada no es válida. Por favor, intenta de nuevo.</string>
+    // 702
+    <string name="theActivityWasCancelledPleaseTryAgain">Actividad cancelada, intenta de nuevo o contacta a nuestro equipo de  soporte.</string>
+    // 703
+    <string name="thisPaymentHasAlreadyBeenMadePleaseVerify">Este pago ya fue realizado, por favor verifique.</string>
+    // 704
+    <string name="theActivityHasBeenRejectedTryAgainOrContactOurSupportTeam">La actividad realizada ha sido rechazada, intenta de nuevo o ponte en  contacto con nuestro departamento de soporte.</string>
+    // 705
+    <string name="loggingInErrorTryAgain">Error al iniciar sesión, intenta de nuevo.</string>
+    // 706
+    <string name="wrongCodeTryAgain">Código incorrecto, intenta de nuevo.</string>
+    // 707
+    <string name="thereIsAProblemWithTheMerchantPleaseContactOurSupportTeam">Hay un problema con el comercio, ponte en contacto con nuestro  equipo de soporte.</string>
+    // 708
+    <string name="merchantServerDisabledPleaseContactOurSupportTeam">Servidor del comercio deshabilitado, ponte en contacto con nuestro  equipo de soporte.</string>
+    // 709
+    <string name="insufficientFundYouMustHaveAvailableAmountNecessaryToMakeYourPayments">Fondo insuficiente, debes tener el monto necesario disponible para  realizar tus pagos.</string>
+    // 710
+    <string name="makeSureYouHaveValidatedYourCardOrThatYouHaveTheNecessaryAmountToMakeThisAction">Problema con la tarjeta afiliada. Realiza la validación o asegúrate de  tener el monto necesario.</string>
+    //711
+    <string name="verifyYourPhoneNumberToContinue">Valida tu número de teléfono para poder seguir.</string>
+    // 712
+    <string name="firstWeNeedToVerifyYourEmailGoToYourEmailAndTryAgain">Necesitamos confirmar tus correo electrónico. Entra en tu email e  intenta de nuevo.</string>
+    // 713 , 715, 716
+    <string name="addYourIdentityDocumentToContinueYouCanDoItFromTheMainMenu">Agrega tu documento de identidad para poder seguir. Puedes hacerlo  desde el menú principal.</string>
+    //714, 717
+    <string name="pleaseTryAgain">Lo sentimos, intenta de nuevo.</string>
+    // 718, 719, 724
+    <string name="theAmountExceedsTheMaximumAmountAllowed">El monto excede el monto máximo permitido.</string>
+    // 720
+    <string name="pleaseEnterAValidAmount">Ingresa un monto válido.</string>
+    // 721
+    <string name="thePaymetHasBeenDeclined"> Pago declinado.</string>
+    // 722
+    <string name="pleaseVerifyTheInformation">Verifica la información suministrada.</string>
+    //723
+    <string name="pleaseVerifyTheRecipientAndTryAgain">Verifica el destinatario e intenta de nuevo. </string>
+    // 725, 726
+
+    <string name="invalidExternalService">Servicio de epago inválido.</string>
+    // 800
+    <string name="externalServiceDisable">Servicio de pago deshabilitado.</string>
+    // 801
+    <string name="invalidAccount">Cuenta inválida.</string>
+    // 802
+    <string name="invalidTransactionTryAgainOrContactOurSupportTeam">Error en la transacción, intenta de nuevo o comunícate con nosotros.</string>
+    // 803
+    <string name="transactionErrorTryAgainOrContactOurSupportTeam">Hubo un error, intenta de nuevo o comunícate con nosotros.</string>
+    // 804
+    <string name="invalidPaidTransaction">Transacción pagada inválida.</string>
+    // 805
+    <string name="errorPaidTryAgainOrContactOurSupportTeam"> Hubo un error en la transacción pagada, intenta de nuevo o comunícate con  nosotros.</string>
+    // 806
+    <string name="invalidCheckCodePleaseTryAgain">Código de verificación no válido. Intenta de nuevo.</string>
+    // 807
+    <string name="platformIsNotWallet">No es posible iniciar sesión con este correo ya que está registrado en nuestra plataforma de comercios. Recuerda que esta APP está enfocada en uso personal. Favor registrarse con un email nuevo.</string>
+    //100 with message check
+    <string name="invalidEmailPassword">Usuario/Contraseña no válida</string>
+    //100
+    <string name="invalidConfirmationCode">Código de confirmación inválido</string>
+    <string name="invalidConfirmationAmount">Monto de confirmación errado</string>
+    // 101
+    <string name="invalidNewPassword">Contraseña nueva no válida</string>
+    // 102
+    <string name="emailAlreadyRegistered">Este correo ya se encuentra asociado a una cuenta. Por favor ingresa otro correo.</string>
+    // 550
+
+    <string name="CardIsAlreadyAssociatedWithAUser">Esta tarjeta ya está asociada a un usuario</string>
+
+    <string name="this_week">Esta semana</string>
+    <string name="this_month">Este mes</string>
+
+
+    <string name="no_email_app_available">No hay ninguna aplicación disponible para redactar correos electrónicos</string>
+    <string name="whatsapp_not_installed">La aplicación Whatsapp no está disponible en su dispositivo</string>
+
+    <string name="blank_space">&#160;</string>
+    <string name="codigo_operacion">Código de operación</string>
+    <string name="search_for_code_monto">Buscar por código o monto</string>
+
+
 </resources>

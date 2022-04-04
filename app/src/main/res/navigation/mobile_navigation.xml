@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="com.paguelofacil.posfacil.ui.view.home.fragments.HomeFragment"
-        android:label="@string/menu_home"
+        android:label="@string/panel_cobro"
         tools:layout="@layout/fragment_home" />
 
     <fragment

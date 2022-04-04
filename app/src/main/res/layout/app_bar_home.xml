@@ -16,6 +16,8 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/white"
+            android:gravity="center"
+            android:layout_gravity="center"
             app:titleTextColor="@color/color_1E2227"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 

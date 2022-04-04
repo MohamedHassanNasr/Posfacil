@@ -107,7 +107,7 @@ tools:context=".ui.view.transactions.refund.fragments.DetailReembolsoFragment">
     android:layout_marginStart="36dp"
     android:layout_marginTop="@dimen/_5sdp"
     android:fontFamily="@font/encodesans_regular"
-    android:text="2022-03-23 15:21:20"
+    android:text="23-03-2022 02:53:22 PM"
     android:textColor="@color/color_7D889B"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/textView7"
@@ -283,6 +283,7 @@ tools:context=".ui.view.transactions.refund.fragments.DetailReembolsoFragment">
                 android:fontFamily="@font/encodesans_medium"
                 android:gravity="right"
                 android:text="Mastercard 5400"
+                android:drawableLeft="@drawable/ic_mastercard_logo"
                 android:textColor="@color/color_3D444F">
 
             </TextView>
@@ -300,7 +301,7 @@ tools:context=".ui.view.transactions.refund.fragments.DetailReembolsoFragment">
                 android:layout_height="wrap_content"
                 android:layout_weight="50"
                 android:fontFamily="@font/encodesans_medium"
-                android:text="@string/id_transaction"
+                android:text="@string/codigo_operacion"
                 android:textColor="@color/color_7D889B">
 
             </TextView>

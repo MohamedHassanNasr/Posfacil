@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.paguelofacil.posfacil.databinding.FragmentAjustesBinding
 import com.paguelofacil.posfacil.ui.view.settings.activities.AjustesActivity
-import com.paguelofacil.posfacil.util.Constantes
+import com.paguelofacil.posfacil.util.Constantes.ConstantesView
 
 
 class AjustesFragment : Fragment() {
@@ -35,13 +35,13 @@ class AjustesFragment : Fragment() {
 
         binding.llChangePass.setOnClickListener{
 
-            goViewAjustes(Constantes.PARAM_PASSWORD)
+            goViewAjustes(ConstantesView.PARAM_PASSWORD)
         }
 
         binding.llMyInfo.setOnClickListener{
 
 
-            goViewAjustes(Constantes.PARAM_PROFILE)
+            goViewAjustes(ConstantesView.PARAM_PROFILE)
 
         }
 
@@ -51,7 +51,7 @@ class AjustesFragment : Fragment() {
     {
         val params = Bundle()
 
-        params.putString(Constantes.PARAM_FRAGMENT, value)
+        params.putString(ConstantesView.PARAM_FRAGMENT, value)
 
         val intent= Intent(context, AjustesActivity::class.java)
 

@@ -163,6 +163,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/ll_legal_app"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"

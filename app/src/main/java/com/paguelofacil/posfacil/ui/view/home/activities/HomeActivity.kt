@@ -4,17 +4,18 @@ import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.Menu
-import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
+import androidx.core.view.GravityCompat
 import androidx.core.view.forEach
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.NavigationUI.onNavDestinationSelected
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
@@ -22,8 +23,6 @@ import com.google.android.material.navigation.NavigationView
 import com.paguelofacil.posfacil.R
 import com.paguelofacil.posfacil.databinding.ActivityHomeBinding
 import com.paguelofacil.posfacil.ui.view.MainActivity
-import com.paguelofacil.posfacil.ui.view.transactions.payment.fragments.TransactionsFragment
-import com.paguelofacil.posfacil.ui.view.transactions.payment.fragments.VerificarCobroFragment
 import com.paguelofacil.posfacil.util.KeyboardUtil
 
 
@@ -41,12 +40,14 @@ class HomeActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setSupportActionBar(binding.appBarHome.toolbar)
-
+        val toolbar: Toolbar = findViewById<Toolbar>(R.id.toolbar)
 
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
 
+
         drawerLayout.addDrawerListener(MyDrawerListener())
+
 
         loadListeners(navView)
 
@@ -64,7 +65,7 @@ class HomeActivity : AppCompatActivity() {
                 R.id.nav_support
             ), drawerLayout
         )
-        setupActionBarWithNavController(navController, appBarConfiguration)
+       setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
 
@@ -145,6 +146,8 @@ class HomeActivity : AppCompatActivity() {
 
 
         }
+
+
 
     }
 

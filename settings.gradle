@@ -1,15 +1,21 @@
 pluginManagement {
     repositories {
         gradlePluginPortal()
-        google()
+        mavenLocal()
         mavenCentral()
+        maven { url "https://jitpack.io" }
+        google()
+        jcenter()
     }
 }
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
-        google()
+        mavenLocal()
         mavenCentral()
+        maven { url "https://jitpack.io" }
+        google()
+        jcenter()
     }
 }
 rootProject.name = "Posfacil"

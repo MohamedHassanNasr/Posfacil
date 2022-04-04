@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/color_background"
-    tools:context=".ui.view.transactions.payment.fragments.VerificarCobroFragment">
+    tools:context=".ui.view.transactions.payment.fragments.VerificarCobroFragment"
+    >
 
 
 
@@ -186,9 +186,11 @@
 
 
     <ScrollView
+        android:layout_marginTop="@dimen/_50sdp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:focusableInTouchMode="true"
+        android:layout_marginBottom="@dimen/_60sdp"
         android:focusable="true"
 
         >
@@ -273,7 +275,7 @@
                         android:textColor="@color/color_3D444F"
                         android:textSize="@dimen/_10sdp"
                         android:fontFamily="@font/encodesans_regular"
-                        android:visibility="gone"
+
                         >
 
                     </TextView>
@@ -328,7 +330,7 @@
                         android:textColor="@color/color_3D444F"
                         android:textSize="@dimen/_10sdp"
                         android:fontFamily="@font/encodesans_regular"
-                        android:visibility="gone"
+
                         >
 
                     </TextView>
@@ -384,7 +386,7 @@
                         android:textColor="@color/color_3D444F"
                         android:textSize="@dimen/_10sdp"
                         android:fontFamily="@font/encodesans_regular"
-                        android:visibility="gone"
+
                         >
 
                     </TextView>
@@ -433,7 +435,7 @@
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_money_black"
                 android:imeOptions="actionNext"
-                android:inputType="textEmailAddress"
+                android:inputType="numberDecimal"
                 android:paddingStart="@dimen/_24sdp"
                 android:layout_marginLeft="0dp"
                 android:textSize="@dimen/_12sdp"
@@ -444,17 +446,41 @@
                 />
 
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/impuestos"
-                android:fontFamily="@font/encodesans_semibold"
-                android:textColor="@color/color_3D444F"
-                android:layout_marginTop="@dimen/_20sdp"
-                android:textStyle="bold"
+                android:orientation="horizontal"
                 >
+                <TextView
+                    android:layout_weight="50"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/impuestos"
+                    android:fontFamily="@font/encodesans_semibold"
+                    android:textColor="@color/color_3D444F"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:textStyle="bold"
+                    >
 
-            </TextView>
+                </TextView>
+
+                <TextView
+                    android:layout_weight="50"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/impuesto_sugerido"
+                    android:fontFamily="@font/encodesans_semibold"
+                    android:textColor="@color/color_3D444F"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:textStyle="bold"
+                    android:gravity="right"
+                    >
+
+                </TextView>
+
+            </LinearLayout>
+
+
 
 
             <LinearLayout
@@ -485,27 +511,15 @@
                         android:paddingStart="@dimen/_24sdp"
                         android:layout_marginLeft="0dp"
                         android:layout_marginTop="@dimen/_10sdp"
-                        android:text="0.00"
+                        android:text="0.70"
                         android:paddingEnd="@dimen/_16sdp"
                         android:textSize="@dimen/_12sdp"
-                        android:enabled="true"
+                        android:enabled="false"
 
 
 
                         />
 
-                    <TextView
-                        android:focusable="true"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/impuesto_sugerido"
-                        android:fontFamily="@font/encodesans_regular"
-                        android:textColor="@color/color_7D889B"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:textSize="@dimen/_10sdp"
-                        >
-
-                    </TextView>
 
 
                 </LinearLayout>
@@ -515,7 +529,7 @@
                 <LinearLayout
 
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:layout_weight="50"
                     android:layout_marginLeft="@dimen/_20sdp"
@@ -524,32 +538,23 @@
 
                     >
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/impuesto_default"
-                        android:fontFamily="@font/encodesans_regular"
-                        android:textColor="@color/color_3D444F"
-                        android:textSize="@dimen/_9sdp"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        >
-
-                    </TextView>
 
                     <androidx.appcompat.widget.SwitchCompat
                         android:id="@+id/sw_default_impuesto"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:checked="false"
+                        android:checked="true"
                         android:thumb="@drawable/thumb_selector"
                         app:track="@drawable/track_selector"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_10sdp"
+
                         >
 
                     </androidx.appcompat.widget.SwitchCompat>
 
 
                 </LinearLayout>
-
 
 
 
@@ -837,35 +842,44 @@
 
 
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_cobrar_next"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="start"
-                android:paddingStart="@dimen/_16sdp"
-                android:paddingTop="@dimen/_12sdp"
-                android:paddingEnd="@dimen/_24sdp"
-                android:paddingBottom="@dimen/_12sdp"
-                android:text="@string/cobrar"
-                android:textSize="@dimen/_14sdp"
-                app:cornerRadius="@dimen/_10sdp"
-                app:icon="@drawable/ic_arrow_forward_white"
-                app:iconGravity="end"
-                app:iconSize="@dimen/_16sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                />
-
-
-
 
         </LinearLayout>
 
     </ScrollView>
 
 
+    <LinearLayout
+        android:id="@+id/ll_detail_cobro"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:gravity="bottom"
+        android:orientation="vertical">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_cobrar_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:gravity="start"
+            android:paddingStart="@dimen/_16sdp"
+            android:paddingTop="@dimen/_12sdp"
+            android:paddingEnd="@dimen/_24sdp"
+            android:paddingBottom="@dimen/_12sdp"
+            android:text="@string/cobrar"
+            android:textSize="@dimen/_14sdp"
+            app:cornerRadius="@dimen/_10sdp"
+            app:icon="@drawable/ic_arrow_forward_white"
+            app:iconGravity="end"
+            app:iconSize="@dimen/_16sdp" />
+
+    </LinearLayout>
 
 
 
 
-
-</LinearLayout>
+</RelativeLayout>

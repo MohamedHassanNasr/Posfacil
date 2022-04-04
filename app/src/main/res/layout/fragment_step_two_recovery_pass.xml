@@ -118,6 +118,7 @@
         </TextView>
 
         <TextView
+            android:id="@+id/tv_email_user"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -144,10 +145,13 @@
             >
 
             <EditText
+                android:id="@+id/tv_otp_pos1"
                 android:layout_width="@dimen/_40sdp"
                 android:layout_height="wrap_content"
                 android:textColor="@color/color_7D889B"
                 android:layout_marginRight="@dimen/_5sdp"
+                android:gravity="center"
+                android:inputType="number"
 
                 >
 
@@ -155,59 +159,71 @@
             </EditText>
 
             <EditText
+                android:id="@+id/tv_otp_pos2"
                 android:layout_width="@dimen/_40sdp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/_5sdp"
                 android:textColor="@color/color_7D889B"
+                android:gravity="center"
+                android:inputType="number"
                 >
 
 
             </EditText>
 
             <EditText
+                android:id="@+id/tv_otp_pos3"
                 android:layout_width="@dimen/_40sdp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/_5sdp"
                 android:textColor="@color/color_7D889B"
+                android:gravity="center"
+                android:inputType="number"
                 >
 
 
             </EditText>
 
             <EditText
+                android:id="@+id/tv_otp_pos4"
                 android:layout_width="@dimen/_40sdp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/_5sdp"
                 android:textColor="@color/color_7D889B"
+                android:gravity="center"
+                android:inputType="number"
                 >
 
 
             </EditText>
 
             <EditText
+                android:id="@+id/tv_otp_pos5"
                 android:layout_width="@dimen/_40sdp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/_5sdp"
                 android:textColor="@color/color_7D889B"
+                android:gravity="center"
+                android:inputType="number"
                 >
 
 
             </EditText>
 
             <EditText
+                android:id="@+id/tv_otp_pos6"
                 android:layout_width="@dimen/_40sdp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/_5sdp"
                 android:textColor="@color/color_7D889B"
+                android:gravity="center"
+                android:inputType="number"
                 >
 
 
             </EditText>
 
         </LinearLayout>
-
-
-
 
 
 
@@ -219,6 +235,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/tv_resend_code"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/tv_resend_code"

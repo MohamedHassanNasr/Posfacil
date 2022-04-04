@@ -38,7 +38,8 @@
         />
 
     <RadioButton
-        android:id="@+id/radioButton"
+        android:visibility="gone"
+        android:id="@+id/rb_send_email_report_x"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -46,7 +47,8 @@
        />
 
     <TextView
-        android:id="@+id/textView15"
+        android:visibility="gone"
+        android:id="@+id/tv_send_email_report_x"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/encodesans_semibold"

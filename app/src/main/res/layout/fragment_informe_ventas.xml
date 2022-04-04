@@ -552,13 +552,60 @@
 
 
 
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        >
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_weight="40"
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:backgroundTint="@color/color_4CA80B"
+                            style="@style/CustomCardViewStyle"
+                            >
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_weight="40"
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:backgroundTint="@color/color_FFC400"
+                            app:cardCornerRadius="0dp"
+
+                            >
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_weight="20"
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:backgroundTint="@color/color_4BB7BE"
+                            style="@style/CustomCardViewStyleRight"
+                            >
+
+                        </com.google.android.material.card.MaterialCardView>
+
+
+                    </LinearLayout>
+
+
+
+
+
+
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/color_F6F7F8"
                         app:cardCornerRadius="@dimen/_15sdp"
                         app:cardElevation="0dp"
-                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
                         >
 
                         <LinearLayout
@@ -579,13 +626,17 @@
                                 android:gravity="center"
                                 >
 
-                                <ImageView
-                                    android:layout_width="18dp"
-                                    android:layout_height="18dp"
+                                <com.google.android.material.imageview.ShapeableImageView
+                                    android:layout_width="@dimen/_12sdp"
+                                    android:layout_height="@dimen/_12sdp"
+                                    app:shapeAppearanceOverlay="@style/roundedImageViewRounded"
+                                    style="@style/roundedImageViewRounded"
                                     android:background="@color/color_4CA80B"
                                     >
 
-                                </ImageView>
+                                </com.google.android.material.imageview.ShapeableImageView>
+
+
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
@@ -605,6 +656,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal"
+                                android:layout_marginTop="@dimen/_5sdp"
                                 >
 
                                 <TextView
@@ -696,13 +748,18 @@
                                 android:gravity="center"
                                 >
 
-                                <ImageView
-                                    android:layout_width="18dp"
-                                    android:layout_height="18dp"
+                                <com.google.android.material.imageview.ShapeableImageView
+                                    android:layout_width="@dimen/_12sdp"
+                                    android:layout_height="@dimen/_12sdp"
+                                    app:shapeAppearanceOverlay="@style/roundedImageViewRounded"
+                                    style="@style/roundedImageViewRounded"
                                     android:background="@color/color_FFC400"
                                     >
 
-                                </ImageView>
+                                </com.google.android.material.imageview.ShapeableImageView>
+
+
+
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
@@ -722,6 +779,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal"
+                                android:layout_marginTop="@dimen/_5sdp"
                                 >
 
                                 <TextView
@@ -813,13 +871,17 @@
                                 android:gravity="center"
                                 >
 
-                                <ImageView
-                                    android:layout_width="18dp"
-                                    android:layout_height="18dp"
+                                <com.google.android.material.imageview.ShapeableImageView
+                                    android:layout_width="@dimen/_12sdp"
+                                    android:layout_height="@dimen/_12sdp"
+                                    app:shapeAppearanceOverlay="@style/roundedImageViewRounded"
+                                    style="@style/roundedImageViewRounded"
                                     android:background="@color/color_4BB7BE"
                                     >
 
-                                </ImageView>
+                                </com.google.android.material.imageview.ShapeableImageView>
+
+
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
@@ -839,6 +901,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal"
+                                android:layout_marginTop="@dimen/_5sdp"
                                 >
 
                                 <TextView

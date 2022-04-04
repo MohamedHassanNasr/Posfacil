@@ -32,6 +32,7 @@
         android:layout_marginTop="24dp"
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
+        android:paddingBottom="@dimen/_10sdp"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
@@ -45,15 +46,17 @@
                 style="@style/mediumAndBlack_1e2227_TextViewStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ID:"
-                android:textSize="@dimen/_12ssp" />
+                android:text="Codigo de operacion: "
+                android:gravity="center"
+                android:textSize="@dimen/_10ssp" />
             <TextView
                 android:id="@+id/tv_id_transaction"
                 style="@style/mediumAndBlack_1e2227_TextViewStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="12345221"
-                android:textSize="@dimen/_12ssp" />
+                android:textSize="@dimen/_11ssp" />
 
         </LinearLayout>
 
@@ -73,9 +76,12 @@
 
         <TextView
             android:id="@+id/tv_card_transaction"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_mastercard_logo"
+            android:gravity="center_vertical"
             android:text="Mastercard 5400"
+
 
             />
 

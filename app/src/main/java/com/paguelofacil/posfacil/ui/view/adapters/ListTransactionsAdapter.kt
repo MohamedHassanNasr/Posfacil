@@ -13,7 +13,8 @@ import com.paguelofacil.posfacil.R
 import com.paguelofacil.posfacil.databinding.RowTransactionBinding
 import com.paguelofacil.posfacil.model.Transaction
 import com.paguelofacil.posfacil.ui.view.transactions.TransactionsActivity
-import com.paguelofacil.posfacil.util.Constantes
+import com.paguelofacil.posfacil.util.Constantes.ConstantesView
+
 
 class ListTransactionsAdapter(val listTransactions:ArrayList<Transaction>,val layout:Int) : RecyclerView.Adapter<ListTransactionsAdapter.ListTransactionsHolder>() {
 
@@ -53,14 +54,14 @@ class ListTransactionsAdapter(val listTransactions:ArrayList<Transaction>,val la
                 if (transaction.tipo==1)
                 {
                     val intent= Intent(context, TransactionsActivity::class.java)
-                    intent.putExtra(Constantes.PARAM_TIPO_TRANSACTION,Constantes.PARAM_TRANSACTION_COBRO)
+                    intent.putExtra(ConstantesView.PARAM_TIPO_TRANSACTION,ConstantesView.PARAM_TRANSACTION_COBRO)
                     binding.tvCardTransaction.context.startActivity(intent)
 
                 }
                 else
                 {
                     val intent= Intent(context, TransactionsActivity::class.java)
-                    intent.putExtra(Constantes.PARAM_TIPO_TRANSACTION,Constantes.PARAM_TRANSACTION_REEMBOLSO)
+                    intent.putExtra(ConstantesView.PARAM_TIPO_TRANSACTION,ConstantesView.PARAM_TRANSACTION_REEMBOLSO)
                     binding.tvCardTransaction.context.startActivity(intent)
                 }
 

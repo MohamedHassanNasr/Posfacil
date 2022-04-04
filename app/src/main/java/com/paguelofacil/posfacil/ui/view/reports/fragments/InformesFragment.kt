@@ -1,11 +1,10 @@
 package com.paguelofacil.posfacil.ui.view.reports.fragments
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
+import com.paguelofacil.posfacil.R
 import com.paguelofacil.posfacil.ui.view.adapters.InformesPagerAdapter
 import com.paguelofacil.posfacil.databinding.FragmentInformesBinding
 
@@ -14,6 +13,11 @@ class InformesFragment : Fragment() {
 
 
     lateinit var binding: FragmentInformesBinding
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,5 +46,6 @@ class InformesFragment : Fragment() {
 
 
     }
+
 
 }

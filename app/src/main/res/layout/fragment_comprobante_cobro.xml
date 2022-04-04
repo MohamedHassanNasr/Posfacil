@@ -136,7 +136,7 @@
                 android:layout_weight="50"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:checked="false"
+                android:checked="true"
                 android:thumb="@drawable/thumb_selector"
                 app:track="@drawable/track_selector"
                 >
@@ -151,19 +151,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:visibility="gone"
+            android:visibility="visible"
             >
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/indica_destino_comproban"
-                android:fontFamily="@font/encodesans_regular"
-                android:textColor="@color/color_3D444F"
-                android:layout_marginTop="@dimen/_10sdp"
-                >
-
-            </TextView>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -278,7 +267,8 @@
             android:layout_height="90dp"
             app:cardCornerRadius="@dimen/_14sdp"
             android:layout_marginTop="@dimen/_20sdp"
-            android:elevation="@dimen/_8sdp"
+            app:cardElevation="1dp"
+
 
             >
 
@@ -320,8 +310,9 @@
                     android:text="@string/tarjeta"
                     android:fontFamily="@font/encodesans_medium"
                     android:textColor="@color/color_3D444F"
-                    android:gravity="center"
+                    android:gravity="right"
                     android:layout_weight="70"
+                    android:layout_marginRight="@dimen/_30sdp"
                     >
 
                 </TextView>
@@ -348,8 +339,8 @@
             android:layout_height="90dp"
             app:cardCornerRadius="@dimen/_14sdp"
             android:layout_marginTop="@dimen/_15sdp"
-            android:elevation="@dimen/_8sdp"
             android:layout_marginBottom="@dimen/_20sdp"
+            app:cardElevation="1dp"
             >
 
             <LinearLayout
@@ -365,13 +356,14 @@
 
                 <ImageView
                     android:layout_width="50dp"
-                    android:layout_height="40dp"
+                    android:layout_height="50dp"
                     android:src="@drawable/ic_app_icon"
-                    android:layout_weight="10"
+                    android:layout_weight="20"
                     >
 
 
                 </ImageView>
+
 
 
 
@@ -381,7 +373,8 @@
                     android:text="@string/paguelofacil_app"
                     android:fontFamily="@font/encodesans_medium"
                     android:textColor="@color/color_3D444F"
-                    android:gravity="center"
+                    android:gravity="right"
+                    android:layout_marginRight="@dimen/_30sdp"
                     android:layout_weight="70"
                     >
 

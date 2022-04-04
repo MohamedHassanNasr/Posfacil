@@ -1,6 +1,6 @@
-package com.paguelofacil.posfacil.util
+package com.paguelofacil.posfacil.util.Constantes
 
-object Constantes {
+object ConstantesView {
 
     val PARAM_TIPO_TRANSACTION="tipo"
     val PARAM_TRANSACTION_COBRO="cobro"
@@ -11,5 +11,4 @@ object Constantes {
     val PARAM_CHANGE_PASS="changePass"
     val PARAM_AJUSTES_CHANGE_PASS="ajustes"
     val PARAM_LOGIN_CHANGE_PASS="login"
-
 }

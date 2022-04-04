@@ -31,7 +31,7 @@
             android:drawableStart="@drawable/ic_search_blue"
             android:drawablePadding="@dimen/_8sdp"
             android:gravity="start"
-            android:hint="@string/search_here"
+            android:hint="@string/search_for_code_monto"
             android:inputType="text"
             android:lines="1"
             android:maxLines="30"

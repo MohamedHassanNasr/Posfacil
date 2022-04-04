@@ -22,8 +22,8 @@
         android:fitsSystemWindows="true"
         android:backgroundTint="@color/color_background"
         app:headerLayout="@layout/nav_header_home"
-        android:paddingLeft="@dimen/_5sdp"
-        android:paddingRight="@dimen/_5sdp"
+        app:itemTextColor="@color/black"
+        app:itemTextAppearance="@style/NewFontStyle"
         app:menu="@menu/activity_home_drawer" >
 
         <LinearLayout

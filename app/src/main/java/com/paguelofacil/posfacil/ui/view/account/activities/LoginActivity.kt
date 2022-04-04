@@ -6,7 +6,7 @@ import com.paguelofacil.posfacil.R
 import com.paguelofacil.posfacil.databinding.ActivityLoginBinding
 import com.paguelofacil.posfacil.ui.view.account.fragments.LoginFragment
 import com.paguelofacil.posfacil.ui.view.account.fragments.StepOneRecoveryPassFragment
-import com.paguelofacil.posfacil.util.Constantes
+import com.paguelofacil.posfacil.util.Constantes.ConstantesView
 
 class LoginActivity : AppCompatActivity() {
 
@@ -29,11 +29,10 @@ class LoginActivity : AppCompatActivity() {
 
     private fun loadFragments() {
 
-
         val bundle=intent.extras
-        val tipo= bundle?.get(Constantes.PARAM_FRAGMENT).toString()
+        var destino= bundle?.get(ConstantesView.PARAM_CHANGE_PASS).toString()
 
-        if(tipo==Constantes.PARAM_PASSWORD)
+        if(destino!=null && destino==ConstantesView.PARAM_PASSWORD)
         {
             val fragmentManager=supportFragmentManager
             val fragmentTransaction=fragmentManager.beginTransaction()
@@ -47,7 +46,6 @@ class LoginActivity : AppCompatActivity() {
             fragmentTransaction.replace(R.id.container_login_fragment, LoginFragment())
             fragmentTransaction.commit()
         }
-
 
 
 
