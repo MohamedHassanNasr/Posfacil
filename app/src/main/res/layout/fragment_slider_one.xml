@@ -6,19 +6,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.view.home.fragments.SliderOneFragment">
-
-
+    
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_gravity="bottom"
         android:scaleType="fitXY"
-        android:layout_marginTop="@dimen/_120sdp"
+        android:layout_marginTop="@dimen/_100sdp"
         android:src="@drawable/splash_one" />
-
-
 
     <TextView
         android:layout_width="wrap_content"

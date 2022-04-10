@@ -37,7 +37,7 @@
             android:exported="false"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustResize"/>
+            android:windowSoftInputMode="stateVisible"/>
         <activity
             android:name=".ui.view.account.activities.LoginActivity"
             android:exported="false"

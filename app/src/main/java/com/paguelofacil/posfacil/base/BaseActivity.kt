@@ -195,14 +195,14 @@ abstract class BaseActivity : AppCompatActivity(), ApiResponseObserver<Any> {
      */
     protected fun setBaseViewModel(viewModel: BaseViewModel) {
         baseViewModel = viewModel
-        baseViewModel?.loadingState?.observe(this@BaseActivity, { state ->
+        baseViewModel?.loadingState?.observe(this@BaseActivity) { state ->
             if (state != null) {
                 when (state) {
                     LoadingState.LOADING -> showProgressDialog()
                     LoadingState.LOADED -> hideProgressDialog()
                 }
             }
-        })
+        }
     }
 
 

@@ -125,8 +125,7 @@ class HomeActivity : AppCompatActivity() {
     }
 
 
-    private fun goHome():Boolean
-    {
+    private fun goHome():Boolean {
         val intent= Intent(this, MainActivity::class.java)
         startActivity(intent)
         finish()

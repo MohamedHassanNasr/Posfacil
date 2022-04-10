@@ -30,7 +30,7 @@ class LoginActivity : AppCompatActivity() {
     private fun loadFragments() {
 
         val bundle=intent.extras
-        var destino= bundle?.get(ConstantesView.PARAM_CHANGE_PASS).toString()
+        val destino= bundle?.get(ConstantesView.PARAM_CHANGE_PASS).toString()
 
         if(destino!=null && destino==ConstantesView.PARAM_PASSWORD)
         {

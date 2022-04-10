@@ -52,7 +52,7 @@
     <string name="propinas">Propinas</string>
     <string name="impuestos">Impuestos</string>
     <string name="impuesto_default">Impuesto por default (7%)</string>
-    <string name="impuesto_sugerido">Impuesto sugerido 7%</string>
+    <string name="impuesto_sugerido">ITBMS Sugerido (7%)</string>
     <string name="resume_cobro">Resumen del cobro</string>
     <string name="importe_cobrar">Importe a cobrar</string>
     <string name="total">Total</string>

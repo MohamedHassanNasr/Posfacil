@@ -8,13 +8,16 @@
     android:background="@color/color_background"
     tools:context=".ui.view.transactions.payment.fragments.VerificarCobroFragment"
     >
-
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:elevation="@dimen/_4sdp"
+
         >
 
         <LinearLayout
@@ -85,11 +88,7 @@
                 </ImageView>
 
             </LinearLayout>
-
-
         </LinearLayout>
-
-
 
 
     </androidx.cardview.widget.CardView>
@@ -97,30 +96,28 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:elevation="@dimen/_4sdp"
-       >
+        android:elevation="@dimen/_4sdp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
             android:layout_gravity="center_vertical"
-            android:layout_marginRight="@dimen/_20sdp"
             android:layout_marginLeft="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_20sdp"
             android:layout_marginBottom="@dimen/_10sdp"
-            >
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/iv"
                 android:layout_width="@dimen/_35sdp"
                 android:layout_height="@dimen/_35sdp"
+                android:layout_marginStart="@dimen/_8sdp"
                 android:background="@color/green_80bc00"
                 android:padding="@dimen/_4sdp"
-                android:layout_marginStart="@dimen/_8sdp"
-                android:src="@drawable/ic_cobro_white"
                 android:scaleType="center"
+                android:src="@drawable/ic_cobro_white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -130,12 +127,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/importe_cobro"
-                android:fontFamily="@font/encodesans_medium"
-                android:textColor="@color/color_1E2227"
                 android:layout_marginLeft="@dimen/_5sdp"
-                android:textStyle="bold"
-                >
+                android:fontFamily="@font/encodesans_medium"
+                android:text="@string/importe_cobro"
+                android:textColor="@color/color_1E2227"
+                android:textStyle="bold">
 
 
             </TextView>
@@ -143,33 +139,32 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:gravity="right"
+                android:orientation="horizontal"
 
                 >
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/encodesans_bold"
                     android:text="@string/some_id"
                     android:textAppearance="@style/some_id"
-                    android:fontFamily="@font/encodesans_bold"
                     android:textColor="@color/black_1e2227"
                     android:textSize="@dimen/_16ssp"
-                    android:textStyle="bold"
-                    >
+                    android:textStyle="bold">
 
                 </TextView>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/encodesans_bold"
                     android:text="@string/default_import"
                     android:textAppearance="@style/some_id"
-                    android:fontFamily="@font/encodesans_bold"
                     android:textColor="@color/black_1e2227"
                     android:textSize="@dimen/_16ssp"
-                    android:textStyle="bold"
-                    >
+                    android:textStyle="bold">
 
                 </TextView>
 
@@ -180,13 +175,12 @@
         </LinearLayout>
 
 
-
-
     </androidx.cardview.widget.CardView>
+</LinearLayout>
 
 
     <ScrollView
-        android:layout_marginTop="@dimen/_50sdp"
+        android:layout_marginTop="@dimen/_100sdp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:focusableInTouchMode="true"
@@ -406,8 +400,6 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.0"
                     app:cardBackgroundColor="@color/color_E0E3E7"
-
-
                     >
 
                     <ImageView
@@ -464,23 +456,7 @@
 
                 </TextView>
 
-                <TextView
-                    android:layout_weight="50"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/impuesto_sugerido"
-                    android:fontFamily="@font/encodesans_semibold"
-                    android:textColor="@color/color_3D444F"
-                    android:layout_marginTop="@dimen/_20sdp"
-                    android:textStyle="bold"
-                    android:gravity="right"
-                    >
-
-                </TextView>
-
             </LinearLayout>
-
-
 
 
             <LinearLayout
@@ -489,19 +465,63 @@
                 android:orientation="horizontal"
                 >
 
+                <TextView
+                    android:layout_weight="50"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/impuesto_sugerido"
+                    android:fontFamily="@font/encodesans_semibold"
+                    android:textColor="@color/color_FF959595"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:textSize="@dimen/_10sdp"
+                    android:textStyle="bold"
+                    android:gravity="start"
+                    >
+                </TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+
                 <LinearLayout
 
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="50"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:gravity="left"
+                    >
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/sw_default_impuesto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:thumb="@drawable/thumb_selector"
+                        app:track="@drawable/track_selector"
+                        android:layout_gravity="start"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        >
+
+                    </androidx.appcompat.widget.SwitchCompat>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:layout_weight="50"
                     android:focusableInTouchMode="true"
-
-
                     >
 
                     <EditText
-
                         android:id="@+id/et_custom_taxe"
                         style="@style/customEditTexttaxeStyle"
                         android:layout_width="@dimen/_120sdp"
@@ -515,48 +535,9 @@
                         android:paddingEnd="@dimen/_16sdp"
                         android:textSize="@dimen/_12sdp"
                         android:enabled="false"
-
-
-
                         />
 
-
-
                 </LinearLayout>
-
-
-
-                <LinearLayout
-
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:layout_weight="50"
-                    android:layout_marginLeft="@dimen/_20sdp"
-                    android:gravity="left"
-
-
-                    >
-
-
-                    <androidx.appcompat.widget.SwitchCompat
-                        android:id="@+id/sw_default_impuesto"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:checked="true"
-                        android:thumb="@drawable/thumb_selector"
-                        app:track="@drawable/track_selector"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="@dimen/_10sdp"
-
-                        >
-
-                    </androidx.appcompat.widget.SwitchCompat>
-
-
-                </LinearLayout>
-
-
 
             </LinearLayout>
 
@@ -832,16 +813,7 @@
 
                 </androidx.cardview.widget.CardView>
 
-
-
-
-
-
-
             </LinearLayout>
-
-
-
 
         </LinearLayout>
 
@@ -878,8 +850,5 @@
             app:iconSize="@dimen/_16sdp" />
 
     </LinearLayout>
-
-
-
 
 </RelativeLayout>

@@ -12,4 +12,6 @@ object ApiEndpoints {
     const val PARAMS_SYSTEM="SystemConfig"
     const val SEARCH_USER = "ShortUsrUniversalUsers"
 
+    const val POS_STATUS = "PosStatus"
+    const val QR_PROCESS_INFO = "QrProcessInfo"
 }

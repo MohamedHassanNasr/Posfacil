@@ -34,7 +34,7 @@
 
                 <EditText
                     android:id="@+id/et_monto_cobrar"
-                    android:layout_marginLeft="-20dp"
+                    android:layout_marginStart="-20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/_45sdp"
@@ -43,9 +43,12 @@
                     android:background="@android:color/transparent"
                     android:textColor="@color/color_3d444f"
                     android:fontFamily="@font/encodesans_medium"
-                    android:drawableLeft="@drawable/icon_left_money_home"
+                    android:drawableStart="@drawable/icon_left_money_home"
                     android:text="10.00"
-                    android:gravity="right"
+                    android:gravity="end"
+                    android:cursorVisible="false"
+                    android:textIsSelectable="false"
+                    android:focusedByDefault="true"
                     android:focusableInTouchMode="true"
                     >
 

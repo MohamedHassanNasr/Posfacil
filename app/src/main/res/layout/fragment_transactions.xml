@@ -98,6 +98,7 @@
         android:layout_marginRight="@dimen/_10sdp"
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_marginBottom="@dimen/_5sdp"
+        tools:listitem="@layout/row_transaction"
         >
 
 

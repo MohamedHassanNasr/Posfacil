@@ -48,10 +48,6 @@ class LoginFragment : BaseFragment(), View.OnFocusChangeListener, View.OnClickLi
         vm.getResponseObserver()
             .observe(this@LoginFragment, this)
 
-
-
-
-
         /*  if (!user.fingerprintAuthenticatedEmail.isNullOrEmpty()) {
             showFingerPrintPrompt()
           }
@@ -93,20 +89,15 @@ class LoginFragment : BaseFragment(), View.OnFocusChangeListener, View.OnClickLi
         loadListeners()
 
         return binding.root
-
-
-
     }
 
-    private fun goHome()
-    {
+    private fun goHome() {
         val intent= Intent(context, IntroActivity::class.java)
         startActivity(intent)
         activity?.finish()
     }
 
     private fun loadListeners() {
-
 
         binding.tvForgotPassword.setOnClickListener {
 
