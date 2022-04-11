@@ -6,12 +6,27 @@ package com.paguelofacil.posfacil.data.network.api
  * @constructor Create empty Api endpoints
  */
 object ApiEndpoints {
+    /**
+     * Auth / Account
+     */
     const val LOGIN = "Login"
     const val PASSWORD_RECOVERY = "RecoveryPassword"
     const val USERS = "Users"
     const val PARAMS_SYSTEM="SystemConfig"
     const val SEARCH_USER = "ShortUsrUniversalUsers"
 
-    const val POS_STATUS = "PosStatus"
+    /**
+     * Payment
+     */
     const val QR_PROCESS_INFO = "QrProcessInfo"
+
+    /**
+     * Transactions
+     */
+    const val V_ADMIN_TXS = "V_AdminTxs"
+
+    /**
+     * Reports
+     */
+    const val POS_STATUS = "PosStatus"
 }

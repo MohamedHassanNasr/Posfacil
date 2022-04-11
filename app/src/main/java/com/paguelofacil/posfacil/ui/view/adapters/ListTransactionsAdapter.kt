@@ -16,8 +16,8 @@ import com.paguelofacil.posfacil.ui.view.transactions.TransactionsActivity
 import com.paguelofacil.posfacil.util.Constantes.ConstantesView
 
 
-class ListTransactionsAdapter(val listTransactions:ArrayList<Transaction>,val layout:Int) : RecyclerView.Adapter<ListTransactionsAdapter.ListTransactionsHolder>() {
-
+class ListTransactionsAdapter(val layout:Int) : RecyclerView.Adapter<ListTransactionsAdapter.ListTransactionsHolder>() {
+    private var listTransactions: List<Transaction> = emptyList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListTransactionsHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -28,11 +28,14 @@ class ListTransactionsAdapter(val listTransactions:ArrayList<Transaction>,val la
 
         val transaction:Transaction=listTransactions[position]
         holder.asignarDatos(transaction)
-
-
     }
 
     override fun getItemCount(): Int= listTransactions.size
+
+    fun setTransactions(transactions: List<Transaction>) {
+        this.listTransactions = transactions
+        notifyDataSetChanged()
+    }
 
     class ListTransactionsHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 

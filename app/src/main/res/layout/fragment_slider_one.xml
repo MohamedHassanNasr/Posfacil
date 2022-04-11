@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.view.home.fragments.SliderOneFragment">
-    
 
     <ImageView
         android:id="@+id/imageView2"
@@ -29,7 +28,6 @@
         android:textColor="@color/black"
         android:textSize="@dimen/_16sdp"
         android:layout_marginRight="@dimen/_20sdp"
-
         >
 
 
