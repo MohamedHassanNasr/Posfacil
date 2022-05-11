@@ -1,5 +1,8 @@
 package com.paguelofacil.posfacil.data.network.api
 
+import com.paguelofacil.posfacil.data.network.response.RefundApiResponse
+import com.paguelofacil.posfacil.model.*
+import com.paguelofacil.posfacil.util.Constantes.ApiParams
 import retrofit2.Response
 import retrofit2.http.*
 
@@ -75,5 +78,53 @@ interface WebService {
         @Path("url", encoded = true) url: String,
         @QueryMap body: HashMap<String, Any>,
     ): Response<BaseResponse<Any>>
+
+    @GET("{url}")
+    suspend fun getSpecify(
+        @Path("url", encoded = true) url: String,
+        @QueryMap queryMap: HashMap<String, Any> = HashMap(),
+    ): ReporteVentaResponse
+
+    @POST("{url}")
+    suspend fun postReportX(
+        @Path("url", encoded = true) url: String,
+        @Body body: HashMap<String, Any>,
+    ): ReportXResponse
+
+    @GET("{url}")
+    suspend fun getMerchant(
+        @Path("url", encoded = true) url: String,
+        @QueryMap queryMap: HashMap<String, Any> = HashMap(),
+    ): MerchantResponse
+
+    @POST("{url}")
+    suspend fun setRefund(
+        @Path("url", encoded = true) url: String,
+        @Body request: RefundApiRequest
+    ): RefundResponse //todo cambiar por RefundResponse
+
+    @POST("{url}")
+    suspend fun sendComprobante(
+        @Path("url", encoded = true) url: String,
+        @Body request: ComprobanteRequest
+    ): ComprobanteResponse
+
+    @POST("{url}")
+    suspend fun sendComprobanteNoOption(
+        @Path("url", encoded = true) url: String,
+        @Body request: ComprobanteNoOptionRequest
+    ): ComprobanteResponse
+
+    @GET("{url}")
+    suspend fun getSystem(
+        @Path("url", encoded = true) url: String,
+        @QueryMap queryMap: HashMap<String, Any> = HashMap()
+    ): SystemParam
+
+    @POST("{url}")
+    suspend fun QrProcessInfo(
+        @Path("url", encoded = true) url: String,
+        @Body request: RequestQr
+    ): QrResult
 
 }

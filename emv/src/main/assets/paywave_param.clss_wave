@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--refer to C-3_Kernel_3, Book_A, Book_B, EMV_v4.3_Book_3, EMV_v4.3_Book_4-->
+<PAYWAVEPARAM>
+	<AIDLIST>
+		<AID> 
+			<LocalAIDName>VSDC</LocalAIDName> 
+			<ApplicationID>A0000000031010</ApplicationID> <!--tag 9F06, Application Identifier (AID)-->
+			<PartialAIDSelection>0</PartialAIDSelection><!--0:support. 1:nonsupport, full match-->
+			<CryptogramVersion17Supported>1</CryptogramVersion17Supported> <!--MSD CVN17 support flag, 0- not support, 1- support -->
+			<ZeroAmountNoAllowed>1</ZeroAmountNoAllowed><!--Amount, Authorized of Zero Check flag, 0- Flag activated, online required, 1- Flag activated, amount zero not allowed, 2-Flag deactivated-->
+			<StatusCheckSupported>0</StatusCheckSupported><!--Status check support flag, 0- not support, 1- support--> 
+			<ReaderTTQ>B600C000</ReaderTTQ><!--tag 9F66, Terminal Transaction Qualifiers (TTQ)-->
+			<SecurityCapability>C8</SecurityCapability><!--tag 9F33 byte 3, Security Capability-->
+			<TermType>22</TermType><!--Terminal Type-->
+			<INTERWARELIST><!--set floolimt by transation type--> 
+				<Inter_WareFloorlimitByTransactionType>
+					<TransactionType>00</TransactionType><!--0x00:Sale, 0x01:Cash, 0x09:CashBack, 0x20:Refund-->  
+					<ContactlessCVMLimit>2000</ContactlessCVMLimit><!--Reader CVM Required Limit--> 
+					<ContactlessTransactionLimit>1000000000</ContactlessTransactionLimit><!--Reader contactless transaction limit-->  
+					<ContactlessFloorLimit>5000</ContactlessFloorLimit><!--Reader contactless Offline limit-->  
+					<ContactlessTransactionLimitSupported>1</ContactlessTransactionLimitSupported> <!--Reader contactless transaction limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist -->  
+					<CVMLimitSupported>1</CVMLimitSupported><!--Card reader CVM limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist -->  
+					<ContactlessFloorLimitSupported>1</ContactlessFloorLimitSupported><!--Card reader contactless Offline limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+				</Inter_WareFloorlimitByTransactionType>
+				<Inter_WareFloorlimitByTransactionType>
+					<TransactionType>01</TransactionType><!--0x00:Sale, 0x01:Cash, 0x09:CashBack, 0x20:Refund--> 
+					<ContactlessCVMLimit>2000</ContactlessCVMLimit><!--Reader CVM Required Limit-->  
+					<ContactlessTransactionLimit>1000000000</ContactlessTransactionLimit><!--Reader contactless transaction limit--> 
+					<ContactlessFloorLimit>5000</ContactlessFloorLimit><!--Reader contactless Offline limit-->   
+					<ContactlessTransactionLimitSupported>1</ContactlessTransactionLimitSupported><!--Reader contactless transaction limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+					<CVMLimitSupported>1</CVMLimitSupported><!--Card reader CVM limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+					<ContactlessFloorLimitSupported>1</ContactlessFloorLimitSupported><!--Card reader contactless Offline limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+				</Inter_WareFloorlimitByTransactionType>
+				<Inter_WareFloorlimitByTransactionType>
+					<TransactionType>09</TransactionType><!--0x00:Sale, 0x01:Cash, 0x09:CashBack, 0x20:Refund--> 
+					<ContactlessCVMLimit>0</ContactlessCVMLimit><!--Reader CVM Required Limit--> 
+					<ContactlessTransactionLimit>1000000000</ContactlessTransactionLimit><!--Reader contactless transaction limit--> 
+					<ContactlessFloorLimit>0</ContactlessFloorLimit><!--Reader contactless Offline limit-->  
+					<ContactlessTransactionLimitSupported>1</ContactlessTransactionLimitSupported><!--Reader contactless transaction limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+					<CVMLimitSupported>1</CVMLimitSupported><!--Card reader CVM limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+					<ContactlessFloorLimitSupported>1</ContactlessFloorLimitSupported><!--Card reader contactless Offline limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+				</Inter_WareFloorlimitByTransactionType>
+				<Inter_WareFloorlimitByTransactionType>
+					<TransactionType>20</TransactionType><!--0x00:Sale, 0x01:Cash, 0x09:CashBack, 0x20:Refund--> 
+					<ContactlessCVMLimit>0</ContactlessCVMLimit><!--Reader CVM Required Limit--> 
+					<ContactlessTransactionLimit>1000000000</ContactlessTransactionLimit><!--Reader contactless transaction limit--> 
+					<ContactlessFloorLimit>0</ContactlessFloorLimit><!--Reader contactless Offline limit-->  
+					<ContactlessTransactionLimitSupported>1</ContactlessTransactionLimitSupported><!--Reader contactless transaction limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+					<CVMLimitSupported>0</CVMLimitSupported><!--Card reader CVM limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist -->
+					<ContactlessFloorLimitSupported>1</ContactlessFloorLimitSupported><!--Card reader contactless Offline limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+				</Inter_WareFloorlimitByTransactionType>
+			</INTERWARELIST>
+		</AID>
+
+		<AID> 
+			<LocalAIDName>ELECTRON</LocalAIDName> 
+			<ApplicationID>A0000000032010</ApplicationID> <!--tag 9F06, Application Identifier (AID)-->
+			<PartialAIDSelection>0</PartialAIDSelection><!--0:support. 1:nonsupport, full match-->
+			<CryptogramVersion17Supported>1</CryptogramVersion17Supported> <!--MSD CVN17 support flag, 0- not support, 1- support -->
+			<ZeroAmountNoAllowed>1</ZeroAmountNoAllowed><!--Amount, Authorized of Zero Check flag, 0- Flag activated, online required, 1- Flag activated, amount zero not allowed, 2-Flag deactivated-->
+			<StatusCheckSupported>0</StatusCheckSupported><!--Status check support flag, 0- not support, 1- support--> 
+			<ReaderTTQ>36008000</ReaderTTQ><!--tag 9F66, Terminal Transaction Qualifiers (TTQ)-->
+			<SecurityCapability>C8</SecurityCapability><!--tag 9F33 byte 3, Security Capability-->
+			<TermType>22</TermType><!--Terminal Type-->
+			<INTERWARELIST><!--set floolimt by transation type--> 
+				<Inter_WareFloorlimitByTransactionType>
+					<TransactionType>00</TransactionType><!--0x00:Sale, 0x01:Cash, 0x09:CashBack, 0x20:Refund-->  
+					<ContactlessCVMLimit>2000</ContactlessCVMLimit><!--Reader CVM Required Limit--> 
+					<ContactlessTransactionLimit>1000000000</ContactlessTransactionLimit><!--Reader contactless transaction limit-->  
+					<ContactlessFloorLimit>5000</ContactlessFloorLimit><!--Reader contactless Offline limit-->  
+					<ContactlessTransactionLimitSupported>1</ContactlessTransactionLimitSupported> <!--Reader contactless transaction limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist -->  
+					<CVMLimitSupported>1</CVMLimitSupported><!--Card reader CVM limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist -->  
+					<ContactlessFloorLimitSupported>1</ContactlessFloorLimitSupported><!--Card reader contactless Offline limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+				</Inter_WareFloorlimitByTransactionType>
+				<Inter_WareFloorlimitByTransactionType>
+					<TransactionType>01</TransactionType><!--0x00:Sale, 0x01:Cash, 0x09:CashBack, 0x20:Refund--> 
+					<ContactlessCVMLimit>2000</ContactlessCVMLimit><!--Reader CVM Required Limit-->  
+					<ContactlessTransactionLimit>1000000000</ContactlessTransactionLimit><!--Reader contactless transaction limit--> 
+					<ContactlessFloorLimit>5000</ContactlessFloorLimit><!--Reader contactless Offline limit-->   
+					<ContactlessTransactionLimitSupported>1</ContactlessTransactionLimitSupported><!--Reader contactless transaction limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+					<CVMLimitSupported>1</CVMLimitSupported><!--Card reader CVM limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+					<ContactlessFloorLimitSupported>1</ContactlessFloorLimitSupported><!--Card reader contactless Offline limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+				</Inter_WareFloorlimitByTransactionType>
+				<Inter_WareFloorlimitByTransactionType>
+					<TransactionType>09</TransactionType><!--0x00:Sale, 0x01:Cash, 0x09:CashBack, 0x20:Refund--> 
+					<ContactlessCVMLimit>0</ContactlessCVMLimit><!--Reader CVM Required Limit--> 
+					<ContactlessTransactionLimit>1000000000</ContactlessTransactionLimit><!--Reader contactless transaction limit--> 
+					<ContactlessFloorLimit>0</ContactlessFloorLimit><!--Reader contactless Offline limit-->  
+					<ContactlessTransactionLimitSupported>1</ContactlessTransactionLimitSupported><!--Reader contactless transaction limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+					<CVMLimitSupported>1</CVMLimitSupported><!--Card reader CVM limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+					<ContactlessFloorLimitSupported>1</ContactlessFloorLimitSupported><!--Card reader contactless Offline limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+				</Inter_WareFloorlimitByTransactionType>
+				<Inter_WareFloorlimitByTransactionType>
+					<TransactionType>20</TransactionType><!--0x00:Sale, 0x01:Cash, 0x09:CashBack, 0x20:Refund--> 
+					<ContactlessCVMLimit>0</ContactlessCVMLimit><!--Reader CVM Required Limit--> 
+					<ContactlessTransactionLimit>1000000000</ContactlessTransactionLimit><!--Reader contactless transaction limit--> 
+					<ContactlessFloorLimit>0</ContactlessFloorLimit><!--Reader contactless Offline limit-->  
+					<ContactlessTransactionLimitSupported>1</ContactlessTransactionLimitSupported><!--Reader contactless transaction limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+					<CVMLimitSupported>0</CVMLimitSupported><!--Card reader CVM limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist -->
+					<ContactlessFloorLimitSupported>1</ContactlessFloorLimitSupported><!--Card reader contactless Offline limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+				</Inter_WareFloorlimitByTransactionType>
+			</INTERWARELIST>
+		</AID>
+
+		<AID> 
+			<LocalAIDName>INTERLINK</LocalAIDName> 
+			<ApplicationID>A0000000033010</ApplicationID> <!--tag 9F06, Application Identifier (AID)-->
+			<PartialAIDSelection>0</PartialAIDSelection><!--0:support. 1:nonsupport, full match-->
+			<CryptogramVersion17Supported>1</CryptogramVersion17Supported> <!--MSD CVN17 support flag, 0- not support, 1- support -->
+			<ZeroAmountNoAllowed>1</ZeroAmountNoAllowed><!--Amount, Authorized of Zero Check flag, 0- Flag activated, online required, 1- Flag activated, amount zero not allowed, 2-Flag deactivated-->
+			<StatusCheckSupported>0</StatusCheckSupported><!--Status check support flag, 0- not support, 1- support--> 
+			<ReaderTTQ>36008000</ReaderTTQ><!--tag 9F66, Terminal Transaction Qualifiers (TTQ)-->
+			<SecurityCapability>C8</SecurityCapability><!--tag 9F33 byte 3, Security Capability-->
+			<TermType>22</TermType><!--Terminal Type-->
+			<INTERWARELIST><!--set floolimt by transation type--> 
+				<Inter_WareFloorlimitByTransactionType>
+					<TransactionType>00</TransactionType><!--0x00:Sale, 0x01:Cash, 0x09:CashBack, 0x20:Refund-->  
+					<ContactlessCVMLimit>2000</ContactlessCVMLimit><!--Reader CVM Required Limit--> 
+					<ContactlessTransactionLimit>1000000000</ContactlessTransactionLimit><!--Reader contactless transaction limit-->  
+					<ContactlessFloorLimit>5000</ContactlessFloorLimit><!--Reader contactless Offline limit-->  
+					<ContactlessTransactionLimitSupported>1</ContactlessTransactionLimitSupported> <!--Reader contactless transaction limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist -->  
+					<CVMLimitSupported>1</CVMLimitSupported><!--Card reader CVM limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist -->  
+					<ContactlessFloorLimitSupported>1</ContactlessFloorLimitSupported><!--Card reader contactless Offline limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+				</Inter_WareFloorlimitByTransactionType>
+				<Inter_WareFloorlimitByTransactionType>
+					<TransactionType>01</TransactionType><!--0x00:Sale, 0x01:Cash, 0x09:CashBack, 0x20:Refund--> 
+					<ContactlessCVMLimit>2000</ContactlessCVMLimit><!--Reader CVM Required Limit-->  
+					<ContactlessTransactionLimit>1000000000</ContactlessTransactionLimit><!--Reader contactless transaction limit--> 
+					<ContactlessFloorLimit>5000</ContactlessFloorLimit><!--Reader contactless Offline limit-->   
+					<ContactlessTransactionLimitSupported>1</ContactlessTransactionLimitSupported><!--Reader contactless transaction limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+					<CVMLimitSupported>1</CVMLimitSupported><!--Card reader CVM limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+					<ContactlessFloorLimitSupported>1</ContactlessFloorLimitSupported><!--Card reader contactless Offline limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+				</Inter_WareFloorlimitByTransactionType>
+				<Inter_WareFloorlimitByTransactionType>
+					<TransactionType>09</TransactionType><!--0x00:Sale, 0x01:Cash, 0x09:CashBack, 0x20:Refund--> 
+					<ContactlessCVMLimit>0</ContactlessCVMLimit><!--Reader CVM Required Limit--> 
+					<ContactlessTransactionLimit>1000000000</ContactlessTransactionLimit><!--Reader contactless transaction limit--> 
+					<ContactlessFloorLimit>0</ContactlessFloorLimit><!--Reader contactless Offline limit-->  
+					<ContactlessTransactionLimitSupported>1</ContactlessTransactionLimitSupported><!--Reader contactless transaction limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+					<CVMLimitSupported>1</CVMLimitSupported><!--Card reader CVM limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+					<ContactlessFloorLimitSupported>1</ContactlessFloorLimitSupported><!--Card reader contactless Offline limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+				</Inter_WareFloorlimitByTransactionType>
+				<Inter_WareFloorlimitByTransactionType>
+					<TransactionType>20</TransactionType><!--0x00:Sale, 0x01:Cash, 0x09:CashBack, 0x20:Refund--> 
+					<ContactlessCVMLimit>0</ContactlessCVMLimit><!--Reader CVM Required Limit--> 
+					<ContactlessTransactionLimit>1000000000</ContactlessTransactionLimit><!--Reader contactless transaction limit--> 
+					<ContactlessFloorLimit>0</ContactlessFloorLimit><!--Reader contactless Offline limit-->  
+					<ContactlessTransactionLimitSupported>1</ContactlessTransactionLimitSupported><!--Reader contactless transaction limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+					<CVMLimitSupported>0</CVMLimitSupported><!--Card reader CVM limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist -->
+					<ContactlessFloorLimitSupported>1</ContactlessFloorLimitSupported><!--Card reader contactless Offline limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+				</Inter_WareFloorlimitByTransactionType>
+			</INTERWARELIST>
+		</AID>
+
+		<AID> 
+			<LocalAIDName>VISA40</LocalAIDName> 
+			<ApplicationID>A0000000034010</ApplicationID> <!--tag 9F06, Application Identifier (AID)-->
+			<PartialAIDSelection>0</PartialAIDSelection><!--0:support. 1:nonsupport, full match-->
+			<CryptogramVersion17Supported>1</CryptogramVersion17Supported> <!--MSD CVN17 support flag, 0- not support, 1- support -->
+			<ZeroAmountNoAllowed>1</ZeroAmountNoAllowed><!--Amount, Authorized of Zero Check flag, 0- Flag activated, online required, 1- Flag activated, amount zero not allowed, 2-Flag deactivated-->
+			<StatusCheckSupported>0</StatusCheckSupported><!--Status check support flag, 0- not support, 1- support--> 
+			<ReaderTTQ>36008000</ReaderTTQ><!--tag 9F66, Terminal Transaction Qualifiers (TTQ)-->
+			<SecurityCapability>C8</SecurityCapability><!--tag 9F33 byte 3, Security Capability-->
+			<TermType>22</TermType><!--Terminal Type-->
+			<INTERWARELIST><!--set floolimt by transation type--> 
+				<Inter_WareFloorlimitByTransactionType>
+					<TransactionType>00</TransactionType><!--0x00:Sale, 0x01:Cash, 0x09:CashBack, 0x20:Refund-->  
+					<ContactlessCVMLimit>2000</ContactlessCVMLimit><!--Reader CVM Required Limit--> 
+					<ContactlessTransactionLimit>1000000000</ContactlessTransactionLimit><!--Reader contactless transaction limit-->  
+					<ContactlessFloorLimit>5000</ContactlessFloorLimit><!--Reader contactless Offline limit-->  
+					<ContactlessTransactionLimitSupported>1</ContactlessTransactionLimitSupported> <!--Reader contactless transaction limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist -->  
+					<CVMLimitSupported>1</CVMLimitSupported><!--Card reader CVM limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist -->  
+					<ContactlessFloorLimitSupported>1</ContactlessFloorLimitSupported><!--Card reader contactless Offline limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+				</Inter_WareFloorlimitByTransactionType>
+				<Inter_WareFloorlimitByTransactionType>
+					<TransactionType>01</TransactionType><!--0x00:Sale, 0x01:Cash, 0x09:CashBack, 0x20:Refund--> 
+					<ContactlessCVMLimit>2000</ContactlessCVMLimit><!--Reader CVM Required Limit-->  
+					<ContactlessTransactionLimit>1000000000</ContactlessTransactionLimit><!--Reader contactless transaction limit--> 
+					<ContactlessFloorLimit>5000</ContactlessFloorLimit><!--Reader contactless Offline limit-->   
+					<ContactlessTransactionLimitSupported>1</ContactlessTransactionLimitSupported><!--Reader contactless transaction limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+					<CVMLimitSupported>1</CVMLimitSupported><!--Card reader CVM limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+					<ContactlessFloorLimitSupported>1</ContactlessFloorLimitSupported><!--Card reader contactless Offline limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+				</Inter_WareFloorlimitByTransactionType>
+				<Inter_WareFloorlimitByTransactionType>
+					<TransactionType>09</TransactionType><!--0x00:Sale,0x01:Cash, 0x09:CashBack, 0x20:Refund--> 
+					<ContactlessCVMLimit>0</ContactlessCVMLimit><!--Reader CVM Required Limit--> 
+					<ContactlessTransactionLimit>1000000000</ContactlessTransactionLimit><!--Reader contactless transaction limit--> 
+					<ContactlessFloorLimit>0</ContactlessFloorLimit><!--Reader contactless Offline limit-->  
+					<ContactlessTransactionLimitSupported>1</ContactlessTransactionLimitSupported><!--Reader contactless transaction limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+					<CVMLimitSupported>1</CVMLimitSupported><!--Card reader CVM limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+					<ContactlessFloorLimitSupported>1</ContactlessFloorLimitSupported><!--Card reader contactless Offline limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+				</Inter_WareFloorlimitByTransactionType>
+				<Inter_WareFloorlimitByTransactionType>
+					<TransactionType>20</TransactionType><!--0x00:Sale, 0x01:Cash, 0x09:CashBack, 0x20:Refund--> 
+					<ContactlessCVMLimit>0</ContactlessCVMLimit><!--Reader CVM Required Limit--> 
+					<ContactlessTransactionLimit>1000000000</ContactlessTransactionLimit><!--Reader contactless transaction limit--> 
+					<ContactlessFloorLimit>0</ContactlessFloorLimit><!--Reader contactless Offline limit-->  
+					<ContactlessTransactionLimitSupported>1</ContactlessTransactionLimitSupported><!--Reader contactless transaction limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+					<CVMLimitSupported>0</CVMLimitSupported><!--Card reader CVM limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist -->
+					<ContactlessFloorLimitSupported>1</ContactlessFloorLimitSupported><!--Card reader contactless Offline limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+				</Inter_WareFloorlimitByTransactionType>
+			</INTERWARELIST>
+		</AID>
+
+		<AID> 
+			<LocalAIDName>VISA50</LocalAIDName> 
+			<ApplicationID>A0000000035010</ApplicationID> <!--tag 9F06, Application Identifier (AID)-->
+			<PartialAIDSelection>0</PartialAIDSelection><!--0:support. 1:nonsupport, full match-->
+			<CryptogramVersion17Supported>1</CryptogramVersion17Supported> <!--MSD CVN17 support flag, 0- not support, 1- support -->
+			<ZeroAmountNoAllowed>1</ZeroAmountNoAllowed><!--Amount, Authorized of Zero Check flag, 0- Flag activated, online required, 1- Flag activated, amount zero not allowed, 2-Flag deactivated-->
+			<StatusCheckSupported>0</StatusCheckSupported><!--Status check support flag, 0- not support, 1- support--> 
+			<ReaderTTQ>36008000</ReaderTTQ><!--tag 9F66, Terminal Transaction Qualifiers (TTQ)-->
+			<SecurityCapability>48</SecurityCapability><!--tag 9F33 byte 3, Security Capability-->
+			<TermType>22</TermType><!--Terminal Type-->
+			<INTERWARELIST><!--set floolimt by transation type--> 
+				<Inter_WareFloorlimitByTransactionType>
+					<TransactionType>00</TransactionType><!--0x00:Sale, 0x01:Cash, 0x09:CashBack, 0x20:Refund-->  
+					<ContactlessCVMLimit>2000</ContactlessCVMLimit><!--Reader CVM Required Limit--> 
+					<ContactlessTransactionLimit>1000000000</ContactlessTransactionLimit><!--Reader contactless transaction limit-->  
+					<ContactlessFloorLimit>5000</ContactlessFloorLimit><!--Reader contactless Offline limit-->  
+					<ContactlessTransactionLimitSupported>1</ContactlessTransactionLimitSupported> <!--Reader contactless transaction limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist -->  
+					<CVMLimitSupported>1</CVMLimitSupported><!--Card reader CVM limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist -->  
+					<ContactlessFloorLimitSupported>1</ContactlessFloorLimitSupported><!--Card reader contactless Offline limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+				</Inter_WareFloorlimitByTransactionType>
+				<Inter_WareFloorlimitByTransactionType>
+					<TransactionType>01</TransactionType><!--0x00:Sale, 0x01:Cash, 0x09:CashBack, 0x20:Refund--> 
+					<ContactlessCVMLimit>2000</ContactlessCVMLimit><!--Reader CVM Required Limit-->  
+					<ContactlessTransactionLimit>1000000000</ContactlessTransactionLimit><!--Reader contactless transaction limit--> 
+					<ContactlessFloorLimit>5000</ContactlessFloorLimit><!--Reader contactless Offline limit-->   
+					<ContactlessTransactionLimitSupported>1</ContactlessTransactionLimitSupported><!--Reader contactless transaction limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+					<CVMLimitSupported>1</CVMLimitSupported><!--Card reader CVM limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+					<ContactlessFloorLimitSupported>1</ContactlessFloorLimitSupported><!--Card reader contactless Offline limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+				</Inter_WareFloorlimitByTransactionType>
+				<Inter_WareFloorlimitByTransactionType>
+					<TransactionType>09</TransactionType><!--0x00:Sale, 0x01:Cash, 0x09:CashBack, 0x20:Refund--> 
+					<ContactlessCVMLimit>0</ContactlessCVMLimit><!--Reader CVM Required Limit--> 
+					<ContactlessTransactionLimit>1000000000</ContactlessTransactionLimit><!--Reader contactless transaction limit--> 
+					<ContactlessFloorLimit>0</ContactlessFloorLimit><!--Reader contactless Offline limit-->  
+					<ContactlessTransactionLimitSupported>1</ContactlessTransactionLimitSupported><!--Reader contactless transaction limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+					<CVMLimitSupported>1</CVMLimitSupported><!--Card reader CVM limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+					<ContactlessFloorLimitSupported>1</ContactlessFloorLimitSupported><!--Card reader contactless Offline limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+				</Inter_WareFloorlimitByTransactionType>
+				<Inter_WareFloorlimitByTransactionType>
+					<TransactionType>20</TransactionType><!--0x00:Sale, 0x01:Cash, 0x09:CashBack, 0x20:Refund--> 
+					<ContactlessCVMLimit>0</ContactlessCVMLimit><!--Reader CVM Required Limit--> 
+					<ContactlessTransactionLimit>1000000000</ContactlessTransactionLimit><!--Reader contactless transaction limit--> 
+					<ContactlessFloorLimit>0</ContactlessFloorLimit><!--Reader contactless Offline limit-->  
+					<ContactlessTransactionLimitSupported>1</ContactlessTransactionLimitSupported><!--Reader contactless transaction limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+					<CVMLimitSupported>0</CVMLimitSupported><!--Card reader CVM limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist -->
+					<ContactlessFloorLimitSupported>1</ContactlessFloorLimitSupported><!--Card reader contactless Offline limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+				</Inter_WareFloorlimitByTransactionType>
+			</INTERWARELIST>
+		</AID>
+
+		<AID> 
+			<LocalAIDName>VISA PLUS</LocalAIDName> 
+			<ApplicationID>A0000000038010</ApplicationID> <!--tag 9F06, Application Identifier (AID)-->
+			<PartialAIDSelection>0</PartialAIDSelection><!--0:support. 1:nonsupport, full match-->
+			<CryptogramVersion17Supported>1</CryptogramVersion17Supported> <!--MSD CVN17 support flag, 0- not support, 1- support -->
+			<ZeroAmountNoAllowed>1</ZeroAmountNoAllowed><!--Amount, Authorized of Zero Check flag, 0- Flag activated, online required, 1- Flag activated, amount zero not allowed, 2-Flag deactivated-->
+			<StatusCheckSupported>0</StatusCheckSupported><!--Status check support flag, 0- not support, 1- support--> 
+			<ReaderTTQ>36008000</ReaderTTQ><!--tag 9F66, Terminal Transaction Qualifiers (TTQ)-->
+			<SecurityCapability>C8</SecurityCapability><!--tag 9F33 byte 3, Security Capability-->
+			<TermType>22</TermType><!--Terminal Type-->
+			<INTERWARELIST><!--set floolimt by transation type--> 
+				<Inter_WareFloorlimitByTransactionType>
+					<TransactionType>00</TransactionType><!--0x00:Sale, 0x01:Cash, 0x09:CashBack, 0x20:Refund-->  
+					<ContactlessCVMLimit>2000</ContactlessCVMLimit><!--Reader CVM Required Limit--> 
+					<ContactlessTransactionLimit>1000000000</ContactlessTransactionLimit><!--Reader contactless transaction limit-->  
+					<ContactlessFloorLimit>5000</ContactlessFloorLimit><!--Reader contactless Offline limit-->  
+					<ContactlessTransactionLimitSupported>1</ContactlessTransactionLimitSupported> <!--Reader contactless transaction limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist -->  
+					<CVMLimitSupported>1</CVMLimitSupported><!--Card reader CVM limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist -->  
+					<ContactlessFloorLimitSupported>1</ContactlessFloorLimitSupported><!--Card reader contactless Offline limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+				</Inter_WareFloorlimitByTransactionType>
+				<Inter_WareFloorlimitByTransactionType>
+					<TransactionType>01</TransactionType><!--0x00:Sale, 0x01:Cash, 0x09:CashBack, 0x20:Refund--> 
+					<ContactlessCVMLimit>2000</ContactlessCVMLimit><!--Reader CVM Required Limit-->  
+					<ContactlessTransactionLimit>1000000000</ContactlessTransactionLimit><!--Reader contactless transaction limit--> 
+					<ContactlessFloorLimit>5000</ContactlessFloorLimit><!--Reader contactless Offline limit-->   
+					<ContactlessTransactionLimitSupported>1</ContactlessTransactionLimitSupported><!--Reader contactless transaction limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+					<CVMLimitSupported>1</CVMLimitSupported><!--Card reader CVM limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+					<ContactlessFloorLimitSupported>1</ContactlessFloorLimitSupported><!--Card reader contactless Offline limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+				</Inter_WareFloorlimitByTransactionType>
+				<Inter_WareFloorlimitByTransactionType>
+					<TransactionType>09</TransactionType><!--0x00:Sale, 0x01:Cash, 0x09:CashBack, 0x20:Refund--> 
+					<ContactlessCVMLimit>0</ContactlessCVMLimit><!--Reader CVM Required Limit--> 
+					<ContactlessTransactionLimit>1000000000</ContactlessTransactionLimit><!--Reader contactless transaction limit--> 
+					<ContactlessFloorLimit>0</ContactlessFloorLimit><!--Reader contactless Offline limit-->  
+					<ContactlessTransactionLimitSupported>1</ContactlessTransactionLimitSupported><!--Reader contactless transaction limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+					<CVMLimitSupported>1</CVMLimitSupported><!--Card reader CVM limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+					<ContactlessFloorLimitSupported>1</ContactlessFloorLimitSupported><!--Card reader contactless Offline limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+				</Inter_WareFloorlimitByTransactionType>
+				<Inter_WareFloorlimitByTransactionType>
+					<TransactionType>20</TransactionType><!--0x00:Sale, 0x01:Cash, 0x09:CashBack, 0x20:Refund--> 
+					<ContactlessCVMLimit>0</ContactlessCVMLimit><!--Reader CVM Required Limit--> 
+					<ContactlessTransactionLimit>1000000000</ContactlessTransactionLimit><!--Reader contactless transaction limit--> 
+					<ContactlessFloorLimit>0</ContactlessFloorLimit><!--Reader contactless Offline limit-->  
+					<ContactlessTransactionLimitSupported>1</ContactlessTransactionLimitSupported><!--Reader contactless transaction limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+					<CVMLimitSupported>0</CVMLimitSupported><!--Card reader CVM limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist -->
+					<ContactlessFloorLimitSupported>1</ContactlessFloorLimitSupported><!--Card reader contactless Offline limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+				</Inter_WareFloorlimitByTransactionType>
+			</INTERWARELIST>
+		</AID>        
+	</AIDLIST>
+	
+	<PROGRAMIDLIST>
+		<PROGRAMID>
+			<ProgramId>60098008040000000000000000000000</ProgramId><!--tag 9F5A(get from card), Application Program Identifier (Program ID)-->  
+			<ContactlessCVMLimit>2000</ContactlessCVMLimit><!--Reader CVM Required Limit--> 
+			<ContactlessTransactionLimit>1000000000</ContactlessTransactionLimit><!--Reader contactless transaction limit--> 
+			<ContactlessFloorLimit>5000</ContactlessFloorLimit><!--Reader contactless Offline limit--> 
+			<ContactlessTransactionLimitSupported>0</ContactlessTransactionLimitSupported><!--Reader contactless transaction limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+			<CVMLimitSupported>0</CVMLimitSupported><!--Card reader CVM limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+			<ContactlessFloorLimitSupported>0</ContactlessFloorLimitSupported><!--Card reader contactless Offline limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+			<CryptogramVersion17Supported>1</CryptogramVersion17Supported><!--MSD CVN17 support flag, 0- not support, 1- support --> 
+			<ZeroAmountNoAllowed>1</ZeroAmountNoAllowed><!--Amount, Authorized of Zero Check flag, 0- Flag activated, online required, 1- Flag activated, amount zero not allowed, 2-Flag deactivated--> 
+			<StatusCheckSupported>0</StatusCheckSupported><!--Status check support flag, 0- not support, 1- support--> 
+			<ReaderTTQ>36008000</ReaderTTQ><!--tag 9F66, Terminal Transaction Qualifiers (TTQ)--> 
+		</PROGRAMID>
+		<PROGRAMID>
+			<ProgramId>000001</ProgramId><!--tag 9F5A(get from card), Application Program Identifier (Program ID)-->  
+			<ContactlessCVMLimit>2000</ContactlessCVMLimit><!--Reader CVM Required Limit--> 
+			<ContactlessTransactionLimit>1000000000</ContactlessTransactionLimit><!--Reader contactless transaction limit--> 
+			<ContactlessFloorLimit>5000</ContactlessFloorLimit><!--Reader contactless Offline limit--> 
+			<ContactlessTransactionLimitSupported>0</ContactlessTransactionLimitSupported><!--Reader contactless transaction limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+			<CVMLimitSupported>0</CVMLimitSupported><!--Card reader CVM limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+			<ContactlessFloorLimitSupported>0</ContactlessFloorLimitSupported><!--Card reader contactless Offline limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+			<CryptogramVersion17Supported>1</CryptogramVersion17Supported><!--MSD CVN17 support flag, 0- not support, 1- support --> 
+			<ZeroAmountNoAllowed>1</ZeroAmountNoAllowed><!--Amount, Authorized of Zero Check flag, 0- Flag activated, online required, 1- Flag activated, amount zero not allowed, 2-Flag deactivated--> 
+			<StatusCheckSupported>0</StatusCheckSupported><!--Status check support flag, 0- not support, 1- support--> 
+			<ReaderTTQ>36008000</ReaderTTQ><!--tag 9F66, Terminal Transaction Qualifiers (TTQ)--> 
+		</PROGRAMID>
+		<PROGRAMID>
+			<ProgramId>000002</ProgramId><!--tag 9F5A(get from card), Application Program Identifier (Program ID)-->  
+			<ContactlessCVMLimit>2000</ContactlessCVMLimit><!--Reader CVM Required Limit--> 
+			<ContactlessTransactionLimit>1000000000</ContactlessTransactionLimit><!--Reader contactless transaction limit--> 
+			<ContactlessFloorLimit>5000</ContactlessFloorLimit><!--Reader contactless Offline limit--> 
+			<ContactlessTransactionLimitSupported>0</ContactlessTransactionLimitSupported><!--Reader contactless transaction limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+			<CVMLimitSupported>0</CVMLimitSupported><!--Card reader CVM limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+			<ContactlessFloorLimitSupported>0</ContactlessFloorLimitSupported><!--Card reader contactless Offline limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist --> 
+			<CryptogramVersion17Supported>1</CryptogramVersion17Supported><!--MSD CVN17 support flag, 0- not support, 1- support --> 
+			<ZeroAmountNoAllowed>1</ZeroAmountNoAllowed><!--Amount, Authorized of Zero Check flag, 0- Flag activated, online required, 1- Flag activated, amount zero not allowed, 2-Flag deactivated--> 
+			<StatusCheckSupported>0</StatusCheckSupported><!--Status check support flag, 0- not support, 1- support--> 
+			<ReaderTTQ>36008000</ReaderTTQ><!--tag 9F66, Terminal Transaction Qualifiers (TTQ)--> 
+		</PROGRAMID>
+	</PROGRAMIDLIST>
+</PAYWAVEPARAM>

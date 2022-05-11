@@ -23,7 +23,6 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingStart="@dimen/_8sdp"
             android:paddingEnd="@dimen/_8sdp">
 
             <ImageView
@@ -54,20 +53,19 @@
 
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/tv_main_total_amount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_20sdp"
-        android:text="+ $10.00"
+        android:text="+ $0.00"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.098"
+        app:layout_constraintHorizontal_bias="0.08"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appbar_layout"
         android:fontFamily="@font/encodesans_medium"
         android:textColor="@color/color_6BBE22"
         android:textSize="@dimen/_20sdp"
         android:textStyle="bold"
-
         />
 
     <TextView
@@ -75,18 +73,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_5sdp"
-        android:text="@string/codigo_operacion_transaction"
+        android:text="@string/codOper"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.098"
+        app:layout_constraintHorizontal_bias="0.08"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/tv_main_total_amount"
         android:textColor="@color/color_3D444F"
         android:fontFamily="@font/encodesans_medium"
         android:textStyle="bold"
         />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/tv_code"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_5sdp"
@@ -94,14 +92,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.01"
         app:layout_constraintStart_toEndOf="@+id/textView7"
-        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/tv_main_total_amount"
         android:textColor="@color/color_3D444F"
         android:fontFamily="@font/encodesans_medium"
         android:textStyle="bold"
         />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/tv_datetime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -123,7 +121,7 @@
         android:src="@drawable/ic_cobro_black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.863"
-        app:layout_constraintStart_toEndOf="@+id/textView6"
+        app:layout_constraintStart_toEndOf="@+id/tv_main_total_amount"
         app:layout_constraintTop_toBottomOf="@+id/appbar_layout" />
 
     <androidx.cardview.widget.CardView
@@ -136,11 +134,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" >
+        app:layout_constraintTop_toBottomOf="@+id/tv_datetime" >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/_5sdp"
             android:layout_margin="@dimen/_10sdp"
             android:orientation="vertical">
 
@@ -152,6 +151,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/montoText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="50"
@@ -162,12 +162,14 @@
                 </TextView>
 
                 <TextView
+                    android:id="@+id/tv_amount"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="50"
                     android:fontFamily="@font/encodesans_medium"
                     android:gravity="right"
-                    android:text="$9.42"
+                    android:text="$0.00"
+                    android:textStyle="bold"
                     android:textColor="@color/color_3D444F">
 
                 </TextView>
@@ -181,6 +183,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/itbmText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="50"
@@ -191,12 +194,14 @@
                 </TextView>
 
                 <TextView
+                    android:id="@+id/tv_taxes"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="50"
                     android:fontFamily="@font/encodesans_medium"
                     android:gravity="right"
-                    android:text="$0.58"
+                    android:text="$0.00"
+                    android:textStyle="bold"
                     android:textColor="@color/color_3D444F">
 
                 </TextView>
@@ -210,6 +215,40 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/propinaText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:fontFamily="@font/encodesans_medium"
+                    android:text="@string/tip"
+                    android:textColor="@color/color_7D889B">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/tv_tip"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:fontFamily="@font/encodesans_medium"
+                    android:gravity="right"
+                    android:text="$0.00"
+                    android:textStyle="bold"
+                    android:textColor="@color/color_3D444F">
+
+                </TextView>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/totalText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="50"
@@ -220,12 +259,14 @@
                 </TextView>
 
                 <TextView
+                    android:id="@+id/tv_total_amount"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="50"
                     android:fontFamily="@font/encodesans_medium"
                     android:gravity="right"
-                    android:text="$10.00"
+                    android:text="$0.00"
+                    android:textStyle="bold"
                     android:textColor="@color/color_3D444F">
 
                 </TextView>
@@ -239,6 +280,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/tipoText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="50"
@@ -249,12 +291,14 @@
                 </TextView>
 
                 <TextView
+                    android:id="@+id/tv_type"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="50"
                     android:fontFamily="@font/encodesans_medium"
                     android:gravity="right"
                     android:text="Cobro"
+                    android:textStyle="bold"
                     android:textColor="@color/color_3D444F">
 
                 </TextView>
@@ -268,6 +312,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/paymentText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="50"
@@ -277,17 +322,46 @@
 
                 </TextView>
 
-                <TextView
-                    android:layout_width="@dimen/_150sdp"
+                <LinearLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="70"
-                    android:fontFamily="@font/encodesans_medium"
-                    android:gravity="right"
-                    android:text="5400"
-                    android:drawableLeft="@drawable/ic_mastercard_logo"
-                    android:textColor="@color/color_3D444F">
+                    android:orientation="horizontal">
 
-                </TextView>
+                    <ImageView
+                        android:id="@+id/logoDetails"
+                        android:layout_width="36dp"
+                        android:layout_height="24dp"
+                        android:fontFamily="@font/encodesans_medium"
+                        android:gravity="center"
+                        android:text=""
+                        android:src="@drawable/visa"
+                        android:textColor="@color/color_3D444F">
+
+                    </ImageView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/encodesans_medium"
+                        android:gravity="center"
+                        android:paddingTop="4dp"
+                        android:layout_gravity="center"
+                        android:text=" **** "
+                        android:textStyle="bold"
+                        android:textColor="@color/color_3D444F">
+
+                    </TextView>
+                    <TextView
+                        android:id="@+id/tv_payment_method"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/encodesans_medium"
+                        android:gravity="end"
+                        android:text="0000"
+                        android:textStyle="bold"
+                        android:textColor="@color/color_3D444F">
+
+                    </TextView>
+                </LinearLayout>
 
             </LinearLayout>
 
@@ -298,6 +372,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/codOperText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="50"
@@ -308,14 +383,15 @@
                 </TextView>
 
                 <TextView
+                    android:id="@+id/tv_op_code"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="50"
                     android:fontFamily="@font/encodesans_medium"
                     android:gravity="right"
-                    android:text="0003423423"
+                    android:text="0000000"
+                    android:textStyle="bold"
                     android:textColor="@color/color_3D444F">
-
                 </TextView>
 
             </LinearLayout>
@@ -327,6 +403,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/statusText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="50"
@@ -337,21 +414,20 @@
                 </TextView>
 
                 <TextView
+                    android:id="@+id/tv_status"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="50"
                     android:fontFamily="@font/encodesans_medium"
                     android:gravity="right"
                     android:text="Completado"
+                    android:textStyle="bold"
                     android:textColor="@color/color_4CA80B">
-
                 </TextView>
 
             </LinearLayout>
 
-
         </LinearLayout>
-
 
     </androidx.cardview.widget.CardView>
 
@@ -374,8 +450,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-
-
         />
 
     <com.google.android.material.button.MaterialButton
@@ -394,8 +468,6 @@
         app:layout_constraintBottom_toTopOf="@+id/btn_reembolar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:icon="@drawable/ic_other_cobro"
-        app:iconGravity="end"
         app:iconSize="@dimen/_16sdp"
         />
 

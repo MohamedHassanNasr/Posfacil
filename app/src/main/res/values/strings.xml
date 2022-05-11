@@ -56,6 +56,7 @@
     <string name="resume_cobro">Resumen del cobro</string>
     <string name="importe_cobrar">Importe a cobrar</string>
     <string name="total">Total</string>
+    <string name="tip">Propina</string>
     <string name="metodo_pago">Método de pago</string>
     <string name="recibir_comprobante">¿Desea recibir comprobante?</string>
     <string name="indica_destino_comproban">¿Desea enviar comprobante?</string>
@@ -66,9 +67,12 @@
     <string name="tarjeta">Tarjeta</string>
     <string name="paguelofacil_app">PagueloFacil</string>
     <string name="verificar_cobro">Verificar cobro</string>
-    <string name="esperando_tarjeta">Esperando por tarjeta.</string>
+    <string name="esperando_tarjeta">Esperando por tarjeta...</string>
     <string name="send_voucher">Comprobante</string>
     <string name="currency">$</string>
+    <string name="currency_amount_pattern">$%1$s</string>
+    <string name="possitive_amount_pattern">+ %1$s</string>
+    <string name="negative_amount_pattern">- %1$s</string>
     <string name="importe_cobrado">Total Cobrado</string>
     <string name="impuesto_receipt_detail">I.T.B.M.S</string>
     <string name="propina">Propina</string>
@@ -77,8 +81,9 @@
     <string name="resend_receipt">Reenviar comprobante</string>
     <string name="other_transaction">Realizar otro cobro</string>
     <string name="card_reconocida">Tarjeta reconocida correctamente.</string>
+    <string name="visible_card_pattern">**** %1$s</string>
     <string name="aceptar">Aceptar</string>
-    <string name="verificando_card">Estamos verificando la tarjeta.</string>
+    <string name="verificando_card">Estamos verificando la tarjeta...</string>
     <string name="cobro_succes">Se ha realizado el cobro exitosamente.</string>
     <string name="recuperar_password">Recuperar contraseña</string>
     <string name="tarjeta_reconocida_correctamente">Tarjeta reconocida correctamente.</string>
@@ -88,8 +93,8 @@
     <string name="filter">Filtros</string>
     <string name="select_filter">Aplicar filtros</string>
     <string name="transaction_status">Estatus de la transacción</string>
-    <string name="success_transaction">Transacciones exitosas</string>
-    <string name="error_transactions">Transacciones fallidas</string>
+    <string name="success_transaction">Transacciones aprobadas</string>
+    <string name="error_transactions">Transacciones declinadas</string>
     <string name="method_pay_filter">Método de pago</string>
     <string name="user_filters">Usuarios</string>
     <string name="card_filter_visa">Visa</string>
@@ -145,6 +150,7 @@
     <string name="voucher_enviado">Se ha enviado el comprobante con éxito.</string>
     <string name="ventas">Ventas</string>
     <string name="reportes">Reportes</string>
+    <string name="se_ha_enviado_el_reporte_z_exitosamente">Se ha enviado el reporte Z exitosamente.</string>
     <string name="title_firma">Para finalizar, regálanos tu firma</string>
     <string name="subtitle_firma">Trata de realizarla lo más parecido a tu documento de identidad.</string>
     <string name="validacion_pago">Validación del pago</string>
@@ -169,10 +175,11 @@
     <string name="volver">Volver</string>
     <string name="si_aceptar">Sí, aceptar</string>
     <string name="reporte_z_generado">Se ha generado su reporte Z exitosamente.</string>
+    <string name="aun_no_genero_el_reporte_z">Aún no genero el reporte Z</string>
     <string name="correo_electronico">Correo electrónico</string>
     <string name="scanea_qr">Escanea el código QR con tu aplicación de PagueloFacil para finalizar tu pago.</string>
     <string name="verificar">Verificar</string>
-    <string name="reembolso">reembolso</string>
+    <string name="reembolso">Reembolso</string>
     <string name="detalle_reembolso">Detalle del reembolso</string>
     <string name="metodo_reembolso">Metodo de reembolso</string>
     <string name="emitiras_reembolso">Emitirás un reembolso</string>
@@ -350,6 +357,36 @@
     <string name="codigo_operacion">Código de operación</string>
     <string name="search_for_code_monto">Buscar por código o monto</string>
     <string name="codigo_operacion_transaction">Código de operación:</string>
+    <string name="the_minimum_amount">El importe minimo debe ser de $ 1.00</string>
+    <string name="onBoardinPoint">_</string>
+    <string name="paguelofacil">Monto de PagueloFacil</string>
+    <string name="codId">"Cod. Operación: "</string>
+    <string name="pagueloFacil">Paguelo Facil</string>
+    <string name="titleReportZ">Reporte Z</string>
+    <string name="codOper">"Cod. Oper: "</string>
 
+    <!--keyboard number-->
+    <string name="num_0">0</string>
+    <string name="num_1">1</string>
+    <string name="num_2">2</string>
+    <string name="num_3">3</string>
+    <string name="num_4">4</string>
+    <string name="num_5">5</string>
+    <string name="num_6">6</string>
+    <string name="num_7">7</string>
+    <string name="num_8">8</string>
+    <string name="num_9">9</string>
+    <string name="num_00">00</string>
+    <string name="num_000">000</string>
+    <string name="num_ok">OK</string>
+    <string name="num_back">&#060;</string>
+    <string name="num_delete_str">&#8592;</string>
+    <string name="num_cancel_str">&#215;</string>
+    <string name="num_ok_str">OK</string>
+
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_main3">Main3Activity</string>
 
 </resources>

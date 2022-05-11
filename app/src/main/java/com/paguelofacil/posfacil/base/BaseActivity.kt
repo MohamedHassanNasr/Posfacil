@@ -20,6 +20,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.GestureDetectorCompat
 import com.androidadvance.topsnackbar.TSnackbar
+import com.paguelofacil.posfacil.ApplicationClass
 import com.paguelofacil.posfacil.R
 import com.paguelofacil.posfacil.data.network.api.ApiError
 import com.paguelofacil.posfacil.data.network.api.ApiRequestCode
@@ -226,7 +227,7 @@ abstract class BaseActivity : AppCompatActivity(), ApiResponseObserver<Any> {
      */
     override fun onException(requestCode: Int, exception: ApiError) {
         baseViewModel?.setLoadingState(LoadingState.LOADED)
-        showSnack(exception.message ?: getString(R.string.something_went_wrong))
+        showSnack(exception.message ?: ApplicationClass.language.somethingWentWrong)
         when (exception.code) {
             ApiRequestCode.USER_NOT_LOGGED_IN, ApiRequestCode.SESSION_EXPIRED1, ApiRequestCode.SESSION_EXPIRED2, ApiRequestCode.SESSION_EXPIRED3,
             ApiRequestCode.SESSION_EXPIRED4, ApiRequestCode.SESSION_EXPIRED5, ApiRequestCode.SESSION_EXPIRED6,
@@ -255,7 +256,7 @@ abstract class BaseActivity : AppCompatActivity(), ApiResponseObserver<Any> {
      */
     override fun noInternetConnection(requestCode: Int, msg: String?) {
         baseViewModel?.setLoadingState(LoadingState.LOADED)
-        showSnack(msg ?: getString(R.string.something_went_wrong))
+        showSnack(msg ?: ApplicationClass.language.somethingWentWrong)
     }
 
     /**

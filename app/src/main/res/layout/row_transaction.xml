@@ -47,15 +47,16 @@
                 android:layout_height="wrap_content"
                 android:text="@string/codigo_operacion_transaction"
                 android:gravity="center"
-                android:textSize="@dimen/_10ssp" />
+                android:textSize="12sp" />
             <TextView
                 android:id="@+id/tv_id_transaction"
                 style="@style/mediumAndBlack_1e2227_TextViewStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_2sdp"
                 android:gravity="center"
                 android:text="12345221"
-                android:textSize="@dimen/_11ssp" />
+                android:textSize="10sp" />
 
         </LinearLayout>
 
@@ -73,16 +74,36 @@
             android:textSize="@dimen/_10ssp" />
 
 
-        <TextView
-            android:id="@+id/tv_card_transaction"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/ic_mastercard_logo"
-            android:gravity="center_vertical"
-            android:text="5400"
-
-
-            />
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="36dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_app_icon"
+                android:drawablePadding="@dimen/_5sdp"
+                android:gravity="center_vertical"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/_5sdp"
+                android:gravity="center_vertical"
+                android:paddingTop="4dp"
+                android:layout_gravity="center"
+                android:text="**** "
+                />
+            <TextView
+                android:id="@+id/tv_card_transaction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/_5sdp"
+                android:gravity="center_vertical"
+                android:text="5400"
+                />
+        </LinearLayout>
 
 
     </LinearLayout>
@@ -92,7 +113,7 @@
             style="@style/mediumAndBlack_1e2227_TextViewStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="32dp"
+            android:layout_marginEnd="@dimen/_8sdp"
             android:layout_marginTop="10dp"
             android:text="+ $ 10.00"
             android:textColor="@color/color_4CA80B"

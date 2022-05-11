@@ -19,143 +19,109 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:fitsSystemWindows="true"
         android:backgroundTint="@color/color_background"
+        android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_home"
-        app:itemTextColor="@color/black"
         app:itemTextAppearance="@style/NewFontStyle"
-        app:menu="@menu/activity_home_drawer" >
+        app:itemTextColor="@color/black"
+        app:itemVerticalPadding="0dp"
+        app:menu="@menu/activity_home_drawer">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="@dimen/_20sdp"
             android:orientation="vertical"
             android:paddingLeft="@dimen/_10sdp"
-            android:paddingRight="@dimen/_10sdp"
-            android:layout_marginBottom="@dimen/_20sdp"
-            android:layout_gravity="bottom"
-            >
+            android:paddingRight="@dimen/_10sdp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="bottom"
-                android:orientation="horizontal"
-
-
-
-                >
+                android:orientation="horizontal">
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:cardCornerRadius="@dimen/_10sdp"
-                    app:cardElevation="0dp"
-                    >
+                    app:cardElevation="0dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
                         android:layout_margin="@dimen/_5sdp"
-                        >
-
+                        android:orientation="horizontal">
 
                         <androidx.cardview.widget.CardView
                             android:id="@+id/cv_idioma_espanol"
-                            android:layout_weight="50"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            app:cardCornerRadius="@dimen/_8sdp"
-                            app:cardBackgroundColor="@color/color_6BBE22"
                             android:layout_gravity="center"
-                            app:cardElevation="0dp"
+                            android:layout_weight="50"
+                            app:cardBackgroundColor="@color/color_6BBE22"
+                            app:cardCornerRadius="@dimen/_8sdp"
+                            app:cardElevation="0dp">
 
-
-                            >
                             <TextView
                                 android:id="@+id/tv_idioma_espanol"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/menu_idioma_espanol"
+                                android:layout_gravity="center"
                                 android:layout_marginTop="@dimen/_10sdp"
                                 android:layout_marginBottom="@dimen/_10sdp"
-                                android:gravity="center"
-                                android:layout_gravity="center"
-                                android:textColor="@color/white"
                                 android:fontFamily="@font/encodesans_medium"
+                                android:gravity="center"
+                                android:textColor="@color/white"
                                 android:textStyle="bold"
-
-
-
-                                >
-
-                            </TextView>
+                                tools:text="@string/menu_idioma_espanol" />
 
                         </androidx.cardview.widget.CardView>
 
-
                         <androidx.cardview.widget.CardView
                             android:id="@+id/cv_idioma_ingles"
-                            android:layout_weight="50"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            app:cardCornerRadius="@dimen/_8sdp"
-                            app:cardBackgroundColor="@color/white"
                             android:layout_gravity="center"
-                            app:cardElevation="0dp"
+                            android:layout_weight="50"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="@dimen/_8sdp"
+                            app:cardElevation="0dp">
 
-                            >
                             <TextView
                                 android:id="@+id/tv_idioma_ingles"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/menu_idioma_ingles"
+                                android:layout_gravity="center"
                                 android:layout_marginTop="@dimen/_10sdp"
                                 android:layout_marginBottom="@dimen/_10sdp"
-                                android:gravity="center"
-                                android:layout_gravity="center"
-                                android:textColor="@color/color_7D889B"
                                 android:fontFamily="@font/encodesans_medium"
-                                android:textStyle="bold"
-
-                                >
-
-                            </TextView>
+                                android:gravity="center"
+                                android:text="@string/menu_idioma_ingles"
+                                android:textColor="@color/color_7D889B"
+                                android:textStyle="bold" />
 
                         </androidx.cardview.widget.CardView>
 
-
                     </LinearLayout>
 
-
                 </androidx.cardview.widget.CardView>
-
 
             </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/menu_powered_by"
-                android:fontFamily="@font/encodesans_regular"
-                android:textColor="@color/color_7D889B"
                 android:layout_marginTop="@dimen/_15sdp"
-                android:textSize="@dimen/_10sdp"
+                android:fontFamily="@font/encodesans_regular"
                 android:lineSpacingExtra="2sp"
-
-                >
-
-            </TextView>
-
+                android:text="@string/menu_powered_by"
+                android:textColor="@color/color_7D889B"
+                android:textSize="@dimen/_10sdp" />
 
         </LinearLayout>
 
-
-
-
     </com.google.android.material.navigation.NavigationView>
-
-
-
 
 </androidx.drawerlayout.widget.DrawerLayout>

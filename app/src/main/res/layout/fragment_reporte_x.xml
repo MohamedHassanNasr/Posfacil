@@ -9,28 +9,29 @@ android:background="@color/color_background"
 tools:context=".ui.view.reports.fragments.ReporteXFragment">
 
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:id="@+id/sv_reporte_x"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        app:layout_constraintBottom_toTopOf="@+id/btn_enviar_reporte_x"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:gravity="center"
         android:layout_marginBottom="@dimen/_100sdp"
+        android:gravity="center"
         android:visibility="visible"
-        >
+        app:layout_constraintBottom_toTopOf="@+id/btn_enviar_reporte_x"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingTop="@dimen/_20sdp"
-            android:layout_marginBottom="@dimen/_20sdp"
-            android:layout_marginRight="@dimen/_20sdp"
             android:layout_marginLeft="@dimen/_20sdp"
-            android:orientation="vertical">
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/_20sdp">
 
             <TextView
+                android:id="@+id/title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/encodesans_semibold"
@@ -38,7 +39,6 @@ tools:context=".ui.view.reports.fragments.ReporteXFragment">
                 android:textColor="@color/color_3D444F"
                 android:textSize="@dimen/_18sdp"
                 android:textStyle="bold">
-
 
             </TextView>
 
@@ -64,6 +64,7 @@ tools:context=".ui.view.reports.fragments.ReporteXFragment">
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/propietarioTitle"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="50"
@@ -74,12 +75,14 @@ tools:context=".ui.view.reports.fragments.ReporteXFragment">
                         </TextView>
 
                         <TextView
+                            android:id="@+id/propietario"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="50"
                             android:fontFamily="@font/encodesans_medium"
                             android:gravity="right"
-                            android:text="\@Merchantname"
+                            android:text=""
+                            android:textStyle="bold"
                             android:textColor="@color/color_3D444F">
 
                         </TextView>
@@ -93,6 +96,7 @@ tools:context=".ui.view.reports.fragments.ReporteXFragment">
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/titleIdPos"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="50"
@@ -103,12 +107,14 @@ tools:context=".ui.view.reports.fragments.ReporteXFragment">
                         </TextView>
 
                         <TextView
+                            android:id="@+id/idPos"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="50"
                             android:fontFamily="@font/encodesans_medium"
                             android:gravity="right"
-                            android:text="123456789"
+                            android:text=""
+                            android:textStyle="bold"
                             android:textColor="@color/color_3D444F">
 
                         </TextView>
@@ -122,6 +128,7 @@ tools:context=".ui.view.reports.fragments.ReporteXFragment">
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/dateTitle"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="50"
@@ -132,12 +139,14 @@ tools:context=".ui.view.reports.fragments.ReporteXFragment">
                         </TextView>
 
                         <TextView
+                            android:id="@+id/dateReportSellX"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="50"
                             android:fontFamily="@font/encodesans_medium"
                             android:gravity="right"
-                            android:text="2022-03-23"
+                            android:text=""
+                            android:textStyle="bold"
                             android:textColor="@color/color_3D444F">
 
                         </TextView>
@@ -151,6 +160,7 @@ tools:context=".ui.view.reports.fragments.ReporteXFragment">
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/hourTitle"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="50"
@@ -161,12 +171,14 @@ tools:context=".ui.view.reports.fragments.ReporteXFragment">
                         </TextView>
 
                         <TextView
+                            android:id="@+id/hourDate"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="50"
                             android:fontFamily="@font/encodesans_medium"
                             android:gravity="right"
-                            android:text="15:21:55"
+                            android:text=""
+                            android:textStyle="bold"
                             android:textColor="@color/color_3D444F">
 
                         </TextView>
@@ -179,6 +191,7 @@ tools:context=".ui.view.reports.fragments.ReporteXFragment">
             </androidx.cardview.widget.CardView>
 
             <TextView
+                android:id="@+id/titleReport"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_30sdp"
@@ -191,7 +204,9 @@ tools:context=".ui.view.reports.fragments.ReporteXFragment">
 
             </TextView>
 
+
             <TextView
+                android:id="@+id/txsTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_10sdp"
@@ -204,998 +219,33 @@ tools:context=".ui.view.reports.fragments.ReporteXFragment">
 
             </TextView>
 
-
-            <androidx.cardview.widget.CardView
+            <RelativeLayout
+                android:id="@+id/layoutTxs"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_15sdp"
-                app:cardCornerRadius="@dimen/_15sdp"
-                app:cardElevation="@dimen/_2sdp">
+                android:layout_height="wrap_content">
 
-                <LinearLayout
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/layoutTxsReport"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:padding="12dp"
+                    app:cardCornerRadius="@dimen/_15sdp"
+                    app:cardElevation="@dimen/_2sdp">
 
-                    <LinearLayout
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_listTransactionX"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/_10sdp"
-                        android:layout_marginRight="@dimen/_10sdp"
-                        android:layout_marginBottom="@dimen/_10sdp"
-                        android:orientation="vertical">
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:text="ID: 12345221"
-                                android:textColor="@color/color_1E2227"
-                                android:textStyle="bold">
-
-                            </TextView>
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:gravity="right"
-                                android:text="+ $ 10.00"
-                                android:textColor="@color/color_1E2227"
-                                android:textStyle="bold">
-
-                            </TextView>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:text="2022-03-23 15:21:20"
-                                android:textColor="@color/color_7D889B">
-
-                            </TextView>
-
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:text="Mastercard 5400"
-                                android:textColor="@color/color_7D889B">
-
-                            </TextView>
-
-
-                        </LinearLayout>
-
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/_10sdp"
-                        android:layout_marginRight="@dimen/_10sdp"
-                        android:layout_marginBottom="@dimen/_10sdp"
-                        android:orientation="vertical">
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:text="ID: 12345221"
-                                android:textColor="@color/color_1E2227"
-                                android:textStyle="bold">
-
-                            </TextView>
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:gravity="right"
-                                android:text="+ $ 12.00"
-                                android:textColor="@color/color_1E2227"
-                                android:textStyle="bold">
-
-                            </TextView>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:text="2022-03-23 15:21:20"
-                                android:textColor="@color/color_7D889B">
-
-                            </TextView>
-
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:text="Mastercard 5400"
-                                android:textColor="@color/color_7D889B">
-
-                            </TextView>
-
-
-                        </LinearLayout>
-
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/_10sdp"
-                        android:layout_marginRight="@dimen/_10sdp"
-                        android:layout_marginBottom="@dimen/_10sdp"
-                        android:orientation="vertical">
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:text="ID: 12345221"
-                                android:textColor="@color/color_1E2227"
-                                android:textStyle="bold">
-
-                            </TextView>
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:gravity="right"
-                                android:text="+ $ 8.00"
-                                android:textColor="@color/color_1E2227"
-                                android:textStyle="bold">
-
-                            </TextView>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:text="2022-03-23 15:21:20"
-                                android:textColor="@color/color_7D889B">
-
-                            </TextView>
-
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:text="Mastercard 5400"
-                                android:textColor="@color/color_7D889B">
-
-                            </TextView>
-
-
-                        </LinearLayout>
-
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/_10sdp"
-                        android:layout_marginRight="@dimen/_10sdp"
-                        android:layout_marginBottom="@dimen/_10sdp"
-                        android:orientation="vertical">
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:text="ID: 12345221"
-                                android:textColor="@color/color_1E2227"
-                                android:textStyle="bold">
-
-                            </TextView>
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:gravity="right"
-                                android:text="- $ 18.50"
-                                android:textColor="@color/color_1E2227"
-                                android:textStyle="bold">
-
-                            </TextView>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:text="2022-03-23 15:21:20"
-                                android:textColor="@color/color_7D889B">
-
-                            </TextView>
-
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:text="Mastercard 5400"
-                                android:textColor="@color/color_7D889B">
-
-                            </TextView>
-
-
-                        </LinearLayout>
-
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/_10sdp"
-                        android:layout_marginRight="@dimen/_10sdp"
-                        android:layout_marginBottom="@dimen/_10sdp"
-                        android:orientation="vertical">
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:text="ID: 12345221"
-                                android:textColor="@color/color_1E2227"
-                                android:textStyle="bold">
-
-                            </TextView>
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:gravity="right"
-                                android:text="+ $ 10.00"
-                                android:textColor="@color/color_1E2227"
-                                android:textStyle="bold">
-
-                            </TextView>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:text="2022-03-23 15:21:20"
-                                android:textColor="@color/color_7D889B">
-
-                            </TextView>
-
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:text="Mastercard 5400"
-                                android:textColor="@color/color_7D889B">
-
-                            </TextView>
-
-
-                        </LinearLayout>
-
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/_10sdp"
-                        android:layout_marginRight="@dimen/_10sdp"
-                        android:layout_marginBottom="@dimen/_10sdp"
-                        android:orientation="vertical">
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:text="ID: 12345221"
-                                android:textColor="@color/color_1E2227"
-                                android:textStyle="bold">
-
-                            </TextView>
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:gravity="right"
-                                android:text="+ $ 12.00"
-                                android:textColor="@color/color_1E2227"
-                                android:textStyle="bold">
-
-                            </TextView>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:text="2022-03-23 15:21:20"
-                                android:textColor="@color/color_7D889B">
-
-                            </TextView>
-
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:text="Mastercard 5400"
-                                android:textColor="@color/color_7D889B">
-
-                            </TextView>
-
-
-                        </LinearLayout>
-
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/_10sdp"
-                        android:layout_marginRight="@dimen/_10sdp"
-                        android:layout_marginBottom="@dimen/_10sdp"
-                        android:orientation="vertical">
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:text="ID: 12345221"
-                                android:textColor="@color/color_1E2227"
-                                android:textStyle="bold">
-
-                            </TextView>
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:gravity="right"
-                                android:text="+ $ 8.00"
-                                android:textColor="@color/color_1E2227"
-                                android:textStyle="bold">
-
-                            </TextView>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:text="2022-03-23 15:21:20"
-                                android:textColor="@color/color_7D889B">
-
-                            </TextView>
-
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:text="Mastercard 5400"
-                                android:textColor="@color/color_7D889B">
-
-                            </TextView>
-
-
-                        </LinearLayout>
-
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/_10sdp"
-                        android:layout_marginRight="@dimen/_10sdp"
-                        android:layout_marginBottom="@dimen/_10sdp"
-                        android:orientation="vertical">
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:text="ID: 12345221"
-                                android:textColor="@color/color_1E2227"
-                                android:textStyle="bold">
-
-                            </TextView>
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:gravity="right"
-                                android:text="- $ 18.50"
-                                android:textColor="@color/color_1E2227"
-                                android:textStyle="bold">
-
-                            </TextView>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:text="2022-03-23 15:21:20"
-                                android:textColor="@color/color_7D889B">
-
-                            </TextView>
-
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:text="Mastercard 5400"
-                                android:textColor="@color/color_7D889B">
-
-                            </TextView>
-
-
-                        </LinearLayout>
-
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/_10sdp"
-                        android:layout_marginRight="@dimen/_10sdp"
-                        android:layout_marginBottom="@dimen/_10sdp"
-                        android:orientation="vertical">
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:text="ID: 12345221"
-                                android:textColor="@color/color_1E2227"
-                                android:textStyle="bold">
-
-                            </TextView>
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:gravity="right"
-                                android:text="+ $ 10.00"
-                                android:textColor="@color/color_1E2227"
-                                android:textStyle="bold">
-
-                            </TextView>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:text="2022-03-23 15:21:20"
-                                android:textColor="@color/color_7D889B">
-
-                            </TextView>
-
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:text="Mastercard 5400"
-                                android:textColor="@color/color_7D889B">
-
-                            </TextView>
-
-
-                        </LinearLayout>
-
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/_10sdp"
-                        android:layout_marginRight="@dimen/_10sdp"
-                        android:layout_marginBottom="@dimen/_10sdp"
-                        android:orientation="vertical">
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:text="ID: 12345221"
-                                android:textColor="@color/color_1E2227"
-                                android:textStyle="bold">
-
-                            </TextView>
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:gravity="right"
-                                android:text="+ $ 12.00"
-                                android:textColor="@color/color_1E2227"
-                                android:textStyle="bold">
-
-                            </TextView>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:text="2022-03-23 15:21:20"
-                                android:textColor="@color/color_7D889B">
-
-                            </TextView>
-
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:text="Mastercard 5400"
-                                android:textColor="@color/color_7D889B">
-
-                            </TextView>
-
-
-                        </LinearLayout>
-
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/_10sdp"
-                        android:layout_marginRight="@dimen/_10sdp"
-                        android:layout_marginBottom="@dimen/_10sdp"
-                        android:orientation="vertical">
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:text="ID: 12345221"
-                                android:textColor="@color/color_1E2227"
-                                android:textStyle="bold">
-
-                            </TextView>
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:gravity="right"
-                                android:text="+ $ 8.00"
-                                android:textColor="@color/color_1E2227"
-                                android:textStyle="bold">
-
-                            </TextView>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:text="2022-03-23 15:21:20"
-                                android:textColor="@color/color_7D889B">
-
-                            </TextView>
-
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:text="Mastercard 5400"
-                                android:textColor="@color/color_7D889B">
-
-                            </TextView>
-
-
-                        </LinearLayout>
-
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/_10sdp"
-                        android:layout_marginRight="@dimen/_10sdp"
-                        android:layout_marginBottom="@dimen/_10sdp"
-                        android:orientation="vertical">
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:text="ID: 12345221"
-                                android:textColor="@color/color_1E2227"
-                                android:textStyle="bold">
-
-                            </TextView>
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:gravity="right"
-                                android:text="- $ 18.50"
-                                android:textColor="@color/color_1E2227"
-                                android:textStyle="bold">
-
-                            </TextView>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:text="2022-03-23 15:21:20"
-                                android:textColor="@color/color_7D889B">
-
-                            </TextView>
-
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:fontFamily="@font/encodesans_medium"
-                                android:text="Mastercard 5400"
-                                android:textColor="@color/color_7D889B">
-
-                            </TextView>
-
-
-                        </LinearLayout>
-
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-
-            </androidx.cardview.widget.CardView>
+                        android:layout_height="match_parent"
+                        android:padding="12dp"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                </androidx.cardview.widget.CardView>
+            </RelativeLayout>
 
 
             <TextView
+                android:id="@+id/totalsGeneral"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_30sdp"
@@ -1230,6 +280,7 @@ tools:context=".ui.view.reports.fragments.ReporteXFragment">
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/cantsTxs"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="50"
@@ -1240,12 +291,14 @@ tools:context=".ui.view.reports.fragments.ReporteXFragment">
                         </TextView>
 
                         <TextView
+                            android:id="@+id/globalSize"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="50"
                             android:fontFamily="@font/encodesans_medium"
                             android:gravity="right"
-                            android:text="286"
+                            android:text=""
+                            android:textStyle="bold"
                             android:textColor="@color/color_3D444F">
 
                         </TextView>
@@ -1259,6 +312,7 @@ tools:context=".ui.view.reports.fragments.ReporteXFragment">
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/sellsTitle"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="50"
@@ -1269,12 +323,14 @@ tools:context=".ui.view.reports.fragments.ReporteXFragment">
                         </TextView>
 
                         <TextView
+                            android:id="@+id/globalAmount"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="50"
                             android:fontFamily="@font/encodesans_medium"
                             android:gravity="right"
-                            android:text="$ 4452.26"
+                            android:text=""
+                            android:textStyle="bold"
                             android:textColor="@color/color_3D444F">
 
                         </TextView>
@@ -1288,6 +344,7 @@ tools:context=".ui.view.reports.fragments.ReporteXFragment">
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/baseTitle"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="50"
@@ -1298,12 +355,14 @@ tools:context=".ui.view.reports.fragments.ReporteXFragment">
                         </TextView>
 
                         <TextView
+                            android:id="@+id/globalBase"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="50"
                             android:fontFamily="@font/encodesans_medium"
                             android:gravity="right"
-                            android:text="$ 3560.22"
+                            android:text=""
+                            android:textStyle="bold"
                             android:textColor="@color/color_3D444F">
 
                         </TextView>
@@ -1317,6 +376,7 @@ tools:context=".ui.view.reports.fragments.ReporteXFragment">
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/itbmsTitle"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="50"
@@ -1327,12 +387,14 @@ tools:context=".ui.view.reports.fragments.ReporteXFragment">
                         </TextView>
 
                         <TextView
+                            android:id="@+id/tbms"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="50"
                             android:fontFamily="@font/encodesans_medium"
                             android:gravity="right"
-                            android:text="$ 522.87"
+                            android:text=""
+                            android:textStyle="bold"
                             android:textColor="@color/color_3D444F">
 
                         </TextView>
@@ -1346,6 +408,7 @@ tools:context=".ui.view.reports.fragments.ReporteXFragment">
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/tipsTitle"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="50"
@@ -1356,12 +419,14 @@ tools:context=".ui.view.reports.fragments.ReporteXFragment">
                         </TextView>
 
                         <TextView
+                            android:id="@+id/propinas"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="50"
                             android:fontFamily="@font/encodesans_medium"
                             android:gravity="right"
-                            android:text="$ 102.17"
+                            android:text=""
+                            android:textStyle="bold"
                             android:textColor="@color/color_3D444F">
 
                         </TextView>
@@ -1375,6 +440,7 @@ tools:context=".ui.view.reports.fragments.ReporteXFragment">
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/refundsTitle"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="50"
@@ -1385,12 +451,14 @@ tools:context=".ui.view.reports.fragments.ReporteXFragment">
                         </TextView>
 
                         <TextView
+                            android:id="@+id/refunds"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="50"
                             android:fontFamily="@font/encodesans_medium"
                             android:gravity="right"
-                            android:text="- $ 241.17"
+                            android:text=""
+                            android:textStyle="bold"
                             android:textColor="@color/color_3D444F">
 
                         </TextView>
@@ -1404,6 +472,7 @@ tools:context=".ui.view.reports.fragments.ReporteXFragment">
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/totalTitle"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="50"
@@ -1414,12 +483,14 @@ tools:context=".ui.view.reports.fragments.ReporteXFragment">
                         </TextView>
 
                         <TextView
+                            android:id="@+id/globalTotal"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="50"
                             android:fontFamily="@font/encodesans_medium"
                             android:gravity="right"
-                            android:text="$ 4836.13"
+                            android:text=""
+                            android:textStyle="bold"
                             android:textColor="@color/color_3D444F">
 
                         </TextView>
@@ -1431,675 +502,20 @@ tools:context=".ui.view.reports.fragments.ReporteXFragment">
 
             </androidx.cardview.widget.CardView>
 
-
-            <androidx.cardview.widget.CardView
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_15sdp"
-                app:cardCornerRadius="@dimen/_15sdp"
-                app:cardElevation="@dimen/_2sdp">
+                android:layout_height="wrap_content">
 
-                <LinearLayout
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_listPaymentMethodsGlobal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_10sdp"
-                    android:orientation="vertical">
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/metodo_pago"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="VISA"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/detalle_ventas_reporte"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$ 1000.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/base"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$ 600.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/itbms"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$300.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/detalle_propinas_reporte"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$ 100.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/detalle_devoluciones_reporte"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="- $ 50.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/detalle_Total_reporte"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$ 950.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_15sdp"
-                app:cardCornerRadius="@dimen/_15sdp"
-                app:cardElevation="@dimen/_2sdp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_10sdp"
-                    android:orientation="vertical">
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/metodo_pago"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="Mastercard"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/detalle_ventas_reporte"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$ 1000.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/base"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$ 600.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/itbms"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$300.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/detalle_propinas_reporte"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$ 100.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/detalle_devoluciones_reporte"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="- $ 50.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/detalle_Total_reporte"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$ 950.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_15sdp"
-                app:cardCornerRadius="@dimen/_15sdp"
-                app:cardElevation="@dimen/_2sdp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_10sdp"
-                    android:orientation="vertical">
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/metodo_pago"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="PagueloFacil"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/detalle_ventas_reporte"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$ 1000.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/base"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$ 600.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/itbms"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$300.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/detalle_propinas_reporte"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$ 100.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/detalle_devoluciones_reporte"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="- $ 50.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/detalle_Total_reporte"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$ 950.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
+            </RelativeLayout>
 
             <TextView
+                android:id="@+id/detailsUser"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_30sdp"
@@ -2112,1764 +528,19 @@ tools:context=".ui.view.reports.fragments.ReporteXFragment">
 
             </TextView>
 
-
-            <TextView
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_15sdp"
-                android:fontFamily="@font/encodesans_semibold"
-                android:text="Michelle Marine"
-                android:textColor="@color/color_3D444F"
-                android:textSize="@dimen/_12sdp"
-                android:textStyle="bold">
-
-
-            </TextView>
-
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_15sdp"
-                app:cardCornerRadius="@dimen/_15sdp"
-                app:cardElevation="@dimen/_2sdp">
-
-                <LinearLayout
+                android:layout_height="wrap_content">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_userX"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_10sdp"
-                    android:orientation="vertical">
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/detalle_ventas_reporte"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$ 1826.18"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/base"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$ 1550.32"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/itbms"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$ 258.87"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/detalle_propinas_reporte"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$ 103.18"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/detalle_devoluciones_reporte"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="- $ 100.23"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/detalle_Total_reporte"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$ 1918.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_15sdp"
-                app:cardCornerRadius="@dimen/_15sdp"
-                app:cardElevation="@dimen/_2sdp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_10sdp"
-                    android:orientation="vertical">
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/metodo_pago"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="VISA"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/detalle_ventas_reporte"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$ 1000.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/base"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$ 600.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/itbms"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$300.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/detalle_propinas_reporte"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$ 100.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/detalle_devoluciones_reporte"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="- $ 50.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/detalle_Total_reporte"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$ 950.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_15sdp"
-                app:cardCornerRadius="@dimen/_15sdp"
-                app:cardElevation="@dimen/_2sdp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_10sdp"
-                    android:orientation="vertical">
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/metodo_pago"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="Mastercard"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/detalle_ventas_reporte"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$ 1000.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/base"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$ 600.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/itbms"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$300.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/detalle_propinas_reporte"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$ 100.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/detalle_devoluciones_reporte"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="- $ 50.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/detalle_Total_reporte"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$ 950.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_15sdp"
-                app:cardCornerRadius="@dimen/_15sdp"
-                app:cardElevation="@dimen/_2sdp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_10sdp"
-                    android:orientation="vertical">
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/metodo_pago"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="PagueloFacil"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/detalle_ventas_reporte"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$ 1000.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/base"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$ 600.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/itbms"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$300.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/detalle_propinas_reporte"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$ 100.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/detalle_devoluciones_reporte"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="- $ 50.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/detalle_Total_reporte"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$ 950.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_15sdp"
-                android:fontFamily="@font/encodesans_semibold"
-                android:text="Marcos Ferrer"
-                android:textColor="@color/color_3D444F"
-                android:textSize="@dimen/_12sdp"
-                android:textStyle="bold">
-
-
-            </TextView>
-
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_15sdp"
-                app:cardCornerRadius="@dimen/_15sdp"
-                app:cardElevation="@dimen/_2sdp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_10sdp"
-                    android:orientation="vertical">
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/detalle_ventas_reporte"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$ 1826.18"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/base"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$ 1550.32"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/itbms"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$ 258.87"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/detalle_propinas_reporte"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$ 103.18"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/detalle_devoluciones_reporte"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="- $ 100.23"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/detalle_Total_reporte"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$ 1918.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_15sdp"
-                app:cardCornerRadius="@dimen/_15sdp"
-                app:cardElevation="@dimen/_2sdp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_10sdp"
-                    android:orientation="vertical">
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/metodo_pago"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="VISA"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/detalle_ventas_reporte"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$ 1000.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/base"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$ 600.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/itbms"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$300.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/detalle_propinas_reporte"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$ 100.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/detalle_devoluciones_reporte"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="- $ 50.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/detalle_Total_reporte"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$ 950.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_15sdp"
-                app:cardCornerRadius="@dimen/_15sdp"
-                app:cardElevation="@dimen/_2sdp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_10sdp"
-                    android:orientation="vertical">
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/metodo_pago"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="Mastercard"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/detalle_ventas_reporte"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$ 1000.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/base"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$ 600.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/itbms"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$300.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/detalle_propinas_reporte"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$ 100.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/detalle_devoluciones_reporte"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="- $ 50.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/detalle_Total_reporte"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$ 950.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_15sdp"
-                app:cardCornerRadius="@dimen/_15sdp"
-                android:layout_marginBottom="@dimen/_10sdp"
-                app:cardElevation="@dimen/_2sdp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_10sdp"
-                    android:orientation="vertical">
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/metodo_pago"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="PagueloFacil"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/detalle_ventas_reporte"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$ 1000.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/base"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$ 600.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/itbms"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$300.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/detalle_propinas_reporte"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$ 100.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/detalle_devoluciones_reporte"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="- $ 50.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:text="@string/detalle_Total_reporte"
-                            android:textColor="@color/color_7D889B">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="50"
-                            android:fontFamily="@font/encodesans_medium"
-                            android:gravity="right"
-                            android:text="$ 950.00"
-                            android:textColor="@color/color_3D444F">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-
-
-
-
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+            </RelativeLayout>
 
         </LinearLayout>
 
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
     <com.google.android.material.button.MaterialButton
         android:visibility="visible"

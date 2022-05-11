@@ -75,6 +75,7 @@
 
 
     <TextView
+        android:id="@+id/today"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/hoy"
@@ -84,25 +85,31 @@
         android:textColor="@color/color_1E2227"
         android:textStyle="bold"
         android:layout_marginTop="@dimen/_20sdp"
-
-
         >
 
     </TextView>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_transactions"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/_10sdp"
-        android:layout_marginRight="@dimen/_10sdp"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:layout_marginBottom="@dimen/_5sdp"
-        tools:listitem="@layout/row_transaction"
-        >
+        android:paddingHorizontal="22dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_transactions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            tools:listitem="@layout/row_transaction"
+            >
 
 
-    </androidx.recyclerview.widget.RecyclerView>
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 
 

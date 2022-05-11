@@ -1,31 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.view.MainActivity">
+    tools:context=".ui.view.main.MainXActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toBottomOf="@+id/bottomNavLinearLayout"
+            app:layout_constraintStart_toEndOf="parent" />
 
 
-    <LinearLayout
-        android:id="@+id/bottomNavLinearLayout"
+        <LinearLayout
+            android:id="@+id/bottomNavLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintDimensionRatio="1:0.17"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/pointOne"
+                android:layout_width="wrap_content"
+                android:layout_height="4dp"
+                android:src="@drawable/ic_line"
+                android:layout_marginHorizontal="4dp"
+                android:background="@color/greenLight"
+                android:visibility="visible"
+                app:tint="@color/led_green" />
+
+            <ImageView
+                android:id="@+id/pointTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="4dp"
+                android:src="@drawable/ic_line"
+                android:layout_marginHorizontal="4dp"
+                android:background="@color/white"
+                app:tint="@color/led_green"
+                android:visibility="visible"/>
+
+            <ImageView
+                android:id="@+id/pointThird"
+                android:layout_width="wrap_content"
+                android:layout_height="4dp"
+                android:layout_marginHorizontal="4dp"
+                android:src="@drawable/ic_line"
+                app:tint="@color/led_green"
+                android:background="@color/white"
+                android:visibility="visible"/>
+
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/txt_onBoardingTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:layout_gravity="top|left"
+        tools:text="@string/text_splash_one"
+        android:maxWidth="@dimen/_210sdp"
+        android:layout_marginLeft="@dimen/_15sdp"
+        android:fontFamily="@font/encodesans_bold"
+        android:textColor="@color/white"
+        android:textSize="26dp">
+
+    </TextView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_go_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:gravity="center|top"
-        >
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        android:paddingStart="@dimen/_16sdp"
+        android:paddingTop="@dimen/_12sdp"
+        android:paddingEnd="@dimen/_24sdp"
+        android:paddingBottom="@dimen/_12sdp"
+        android:textAlignment="center"
+        android:layout_marginBottom="@dimen/_20sdp"
+        tools:text="@string/log_in"
+        android:fontFamily="@font/encodesans_medium"
+        android:textSize="@dimen/_14sdp"
+        app:cornerRadius="@dimen/_10sdp"
+        app:iconSize="@dimen/_16sdp" />
 
-
-    </LinearLayout>
-
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/view_pager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintTop_toBottomOf="@+id/bottomNavLinearLayout"
-        app:layout_constraintStart_toEndOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

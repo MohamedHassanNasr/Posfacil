@@ -1,17 +1,17 @@
 package com.paguelofacil.posfacil.base
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.app.Dialog
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.provider.MediaStore
 import android.view.*
+import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.FrameLayout
 import android.widget.TextView
@@ -20,6 +20,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.GestureDetectorCompat
 import androidx.fragment.app.Fragment
 import com.androidadvance.topsnackbar.TSnackbar
+import com.paguelofacil.posfacil.ApplicationClass
 import com.paguelofacil.posfacil.R
 import com.paguelofacil.posfacil.data.network.api.ApiError
 import com.paguelofacil.posfacil.data.network.api.ApiRequestCode
@@ -30,8 +31,6 @@ import com.paguelofacil.posfacil.util.Constantes.LoadingState
 import com.paguelofacil.posfacil.util.KeyboardUtil
 import com.paguelofacil.posfacil.util.LoadingDialog
 import timber.log.Timber
-import java.io.File
-import java.io.IOException
 import java.net.ConnectException
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException
@@ -75,13 +74,13 @@ abstract class BaseFragment : Fragment(), ApiResponseObserver<Any> {
         progressDialog = LoadingDialog(requireContext())
         mAppDialog = Dialog(requireContext())
         mAppDialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
-        mAppDialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        mAppDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
     }
 
     private fun initialiseGestureListeners() {
         gestureDetector = GestureDetectorCompat(requireContext(), MyGestureListener {
             try {
-                KeyboardUtil.hideKeyboard(requireActivity())
+                //KeyboardUtil.hideKeyboard(requireActivity())
             } catch (e: Exception) {
                 Timber.e(e)
             }
@@ -125,14 +124,14 @@ abstract class BaseFragment : Fragment(), ApiResponseObserver<Any> {
 
     protected fun setBaseViewModel(viewModel: BaseViewModel) {
         this.baseViewModel = viewModel
-        baseViewModel.loadingState.observe(this@BaseFragment, { state ->
+        baseViewModel.loadingState.observe(this@BaseFragment) { state ->
             if (state != null) {
                 when (state) {
                     LoadingState.LOADING -> showProgressDialog()
                     LoadingState.LOADED -> hideProgressDialog()
                 }
             }
-        })
+        }
     }
 
     fun showToastLong(message: CharSequence?) {
@@ -160,14 +159,15 @@ abstract class BaseFragment : Fragment(), ApiResponseObserver<Any> {
             requireContext(),
             R.drawable.dr_rect_grey_999999_filled_rounded_corner
         )
-        val textView = snackBarView.findViewById<View>(com.androidadvance.topsnackbar.R.id.snackbar_text) as TextView
+        val textView =
+            snackBarView.findViewById<View>(com.androidadvance.topsnackbar.R.id.snackbar_text) as TextView
         textView.setTextColor(Color.WHITE)
         textView.maxLines = 5
 
         val params: FrameLayout.LayoutParams = snackBarView.layoutParams as FrameLayout.LayoutParams
         params.setMargins(
             params.leftMargin + 32,
-            params.topMargin + 16,
+            params.topMargin + 120,
             params.rightMargin + 32,
             params.bottomMargin
         )
@@ -243,7 +243,6 @@ abstract class BaseFragment : Fragment(), ApiResponseObserver<Any> {
     }
 
 
-
     @SuppressLint("ClickableViewAccessibility")
     protected open fun setOneTapToCloseKeyboard(view: View?) {
         //Set up touch listener for non-text box views to hide keyboard.
@@ -299,6 +298,17 @@ abstract class BaseFragment : Fragment(), ApiResponseObserver<Any> {
             )
         } else {
             et.setCompoundDrawablesWithIntrinsicBounds(null, null, null, null)
+        }
+    }
+
+    fun proccessException(apiError: ApiError?) {
+        if (apiError == null) {
+            noInternetConnection(
+                0,
+                ApplicationClass.instance.getString(R.string.It_seems_like_you_are_not_connected_with_a_stable_internet)
+            )
+        } else {
+            onException(0, apiError)
         }
     }
 

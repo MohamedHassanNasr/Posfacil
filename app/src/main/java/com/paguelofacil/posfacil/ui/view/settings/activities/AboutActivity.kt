@@ -1,38 +1,38 @@
 package com.paguelofacil.posfacil.ui.view.settings.activities
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.paguelofacil.posfacil.R
+import androidx.appcompat.app.AppCompatActivity
+import com.paguelofacil.posfacil.ApplicationClass
 import com.paguelofacil.posfacil.databinding.ActivityAboutBinding
-import com.paguelofacil.posfacil.ui.view.home.activities.HomeActivity
 
 class AboutActivity : AppCompatActivity() {
-
 
     lateinit var binding: ActivityAboutBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding= ActivityAboutBinding.inflate(layoutInflater)
+        binding = ActivityAboutBinding.inflate(layoutInflater)
 
         loadListeners()
-
+        loadLanguage()
         setContentView(binding.root)
     }
 
     private fun loadListeners() {
-
-        binding.ivBack.setOnClickListener{
-
+        binding.ivBack.setOnClickListener {
             goHome()
         }
     }
 
-    private fun goHome()
-    {
+    private fun loadLanguage() {
+        binding.tvTitle.text = ApplicationClass.language.aboutSupport
+        binding.textViewApplication.text = ApplicationClass.language.about_app
+        binding.textViewVersionAplicacion.text = ApplicationClass.language.aboutVersionApp
+        binding.textViewVersion.text = ApplicationClass.language.aboutVersionSpoc
+    }
 
+    private fun goHome() {
         finish()
     }
 

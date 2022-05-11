@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tran_type">
+        <item>Sale</item>
+        <item>Refund</item>
+        <item>Cashback</item>
+        <item>Inquiry</item>
+    </string-array>
+
+
+    <declare-styleable name="ClssLightState">
+        <attr name="offSrc" format="reference" />
+        <attr name="onSrc" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="ClssLightStd">
+        <attr name="lightStandard" format="enum">
+            <enum name="standard" value="0" />
+            <enum name="europe" value="1" />
+        </attr>
+    </declare-styleable>
+</resources>

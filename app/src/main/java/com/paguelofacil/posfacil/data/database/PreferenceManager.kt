@@ -2,6 +2,7 @@ package com.paguelofacil.posfacil.data.database
 
 import android.content.SharedPreferences
 import com.paguelofacil.posfacil.ApplicationClass
+import com.paguelofacil.posfacil.util.Constantes.AppConstants.Companion.IDIOMA_INGLES
 
 
 /**
@@ -11,7 +12,9 @@ import com.paguelofacil.posfacil.ApplicationClass
  */
 object PreferenceManager {
     val APP_FORCE_CLOSED_LAST_TIME = "app_force_closed_last_time"
-    var sharedPref: SharedPreferences = androidx.preference.PreferenceManager.getDefaultSharedPreferences(ApplicationClass.instance)
+    val keyLanguage = "language"
+    var sharedPref: SharedPreferences =
+        androidx.preference.PreferenceManager.getDefaultSharedPreferences(ApplicationClass.instance)
 
     /**
      * Helper method to retrieve a String value from [SharedPreferences].
@@ -21,6 +24,14 @@ object PreferenceManager {
      */
     fun getStringPreference(key: String, defValue: String?): String? {
         return sharedPref.getString(key, defValue)
+    }
+
+    fun getLanguageDevice(): String {
+        return sharedPref.getString(keyLanguage, IDIOMA_INGLES) ?: IDIOMA_INGLES
+    }
+
+    fun setLanguageDevice(language:String) {
+        sharedPref.edit().putString(keyLanguage, language).commit()
     }
 
     /**

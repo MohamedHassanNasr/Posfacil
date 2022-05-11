@@ -56,14 +56,15 @@
         android:text="@string/desea_enviar_correo_corte"
         android:layout_gravity="center"
         android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/encodesans_regular"
         />
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/emailReportz"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/encodesans_semibold"
-        android:text="luiselias@gmail.com"
+        android:text=""
         android:gravity="center"
         android:layout_gravity="center"
         android:textColor="@color/color_3D444F"

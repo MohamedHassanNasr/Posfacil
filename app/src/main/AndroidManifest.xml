@@ -5,14 +5,20 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.pax.permission.MAGCARD" />
+    <uses-permission android:name="com.pax.permission.PED" />
+    <uses-permission android:name="com.pax.permission.ICC" />
+    <uses-permission android:name="com.pax.permission.PICC" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
+        android:name=".ApplicationClass"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="${build_prefix}${marca_prefix}"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:name=".ApplicationClass"
+        android:testOnly="false"
         android:theme="@style/AppTheme">
         <activity
             android:name=".ui.view.home.activities.IntroActivity"
@@ -37,14 +43,25 @@
             android:exported="false"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateVisible"/>
+            android:windowSoftInputMode="stateVisible" />
         <activity
             android:name=".ui.view.account.activities.LoginActivity"
             android:exported="false"
 
-            android:windowSoftInputMode="adjustResize"/>
+            android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".ui.view.MainActivity"
+            android:name=".pax.MainActivity"
+            android:exported="true"/>
+        <activity android:name=".pax.SelectParamFileActivity"/>
+        <activity
+            android:name=".pax.trans.TransResultActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".pax.SettingsActivity" />
+        <activity android:name=".pax.KernelLibInfoActivity" />
+        <activity android:name=".pax.trans.TransProcessActivity" />
+        <activity android:name=".pax.trans.ApduTimeRecordActivity" />
+        <activity
+            android:name=".ui.view.main.MainXActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

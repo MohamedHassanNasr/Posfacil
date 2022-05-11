@@ -21,10 +21,12 @@ import androidx.core.graphics.ColorUtils
 import com.paguelofacil.posfacil.ApplicationClass
 import com.paguelofacil.posfacil.R
 import com.paguelofacil.posfacil.data.database.PreferenceManager
-import com.paguelofacil.posfacil.data.database.local.LocalDataSource
 import com.paguelofacil.posfacil.util.Constantes.CoroutinesBase
 import com.paguelofacil.posfacil.util.Constantes.LastUpdatedOn
 import java.text.DecimalFormat
+import java.text.SimpleDateFormat
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 import java.util.*
 
 
@@ -70,10 +72,162 @@ fun formatAndAddDecimalToNumber(text: String): String {
  * Format amount
  *
  * @param amount to be formatted
- * @return the formatted string value of the [amount] with two digit precession
+ * @return the formatted string value of the [amount] with two digits precission
  */
 fun formatAmount(amount: Double?): String {
     return amount?.let { String.format("%.2f", amount) } ?: { 0.00 }.toString()
+}
+
+/**
+ * Format currency amount
+ *
+ * @param amount to be formatted
+ * @return the formatted string value of the [amount] with two digits precission and currency symbol prepend
+ */
+fun formatCurrencyAmount(amount: Double?): String {
+    return String.format(
+        ApplicationClass.instance.getString(R.string.currency_amount_pattern),
+        formatAmount(amount)
+    )
+}
+
+/**
+ * Format currency amount
+ *
+ * @param amount to be formatted
+ * @return the formatted string value of the [amount] with currency symbol prepend
+ */
+fun formatCurrencyAmount(amount: String?): String {
+    return String.format(
+        ApplicationClass.instance.getString(R.string.currency_amount_pattern),
+        amount
+    )
+}
+
+/**
+ * Format possitive amount
+ *
+ * @param amount to be formatted
+ * @return the formatted string value of the [amount] with two digits precission and possitive symbol prepend
+ */
+fun formatPossitiveAmount(amount: Double?): String {
+    return String.format(
+        ApplicationClass.instance.getString(R.string.possitive_amount_pattern),
+        formatAmount(amount)
+    )
+}
+
+/**
+ * Format negative amount
+ *
+ * @param amount to be formatted
+ * @return the formatted string value of the [amount] with two digits precission and negatives symbol prepend
+ */
+fun formatNegativeAmount(amount: Double?): String {
+    return String.format(
+        ApplicationClass.instance.getString(R.string.negative_amount_pattern),
+        formatAmount(amount)
+    )
+}
+
+/**
+ * Format possitive amount
+ *
+ * @param amount to be formatted
+ * @return the formatted string value of the [amount] with possitive numeric symbol prepend
+ */
+fun formatPossitiveAmount(amount: String?): String {
+    return String.format(
+        ApplicationClass.instance.getString(R.string.possitive_amount_pattern),
+        amount
+    )
+}
+
+/**
+ * Format negative amount
+ *
+ * @param amount to be formatted
+ * @return the formatted string value of the [amount] with negative numeric symbol prepend
+ */
+fun formatNegativeAmount(amount: String?): String {
+    return String.format(
+        ApplicationClass.instance.getString(R.string.negative_amount_pattern),
+        amount
+    )
+}
+
+/**
+ * Format possitive currency amount
+ *
+ * @param amount to be formatted
+ * @return the formatted string value of the [amount] with two digits precission and possitive currency symbol prepend
+ */
+fun formatPossitiveCurrencyAmount(amount: Double?): String {
+    return formatPossitiveAmount(formatCurrencyAmount(amount))
+}
+
+/**
+ * Format negative currency amount
+ *
+ * @param amount to be formatted
+ * @return the formatted string value of the [amount] with two digits precission and negative currency symbol prepend
+ */
+fun formatNegativeCurrencyAmount(amount: Double?): String {
+    return formatNegativeAmount(formatCurrencyAmount(amount))
+}
+
+/**
+ * Format possitive currency amount
+ *
+ * @param amount to be formatted
+ * @return the formatted string value of the [amount] with possitive currency symbol prepend
+ */
+fun formatPossitiveCurrencyAmount(amount: String?): String {
+    return formatPossitiveAmount(formatCurrencyAmount(amount))
+}
+
+/**
+ * Format negative currency amount
+ *
+ * @param amount to be formatted
+ * @return the formatted string value of the [amount] with negative currency symbol prepend
+ */
+fun formatNegativeCurrencyAmount(amount: String?): String {
+    return formatNegativeAmount(formatCurrencyAmount(amount))
+}
+
+/**
+ * Format ISO DateTime to Local Date String
+ *
+ * @param dateTime to be formatted
+ * @return the formatted date value of the string [dateTime]
+ */
+fun convertISOToLocalDate(dateTime: String?): String {
+    return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+        val localDateTime = dateTime?.let { LocalDateTime.parse(it) } ?: LocalDateTime.now()
+        localDateTime.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"))
+    } else {
+        val parsedDateTime =
+            dateTime?.let { SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").parse(it) } ?: Date()
+        SimpleDateFormat("dd-MM-yyyy").format(parsedDateTime)
+    }
+}
+
+/**
+ * Format ISO DateTime to Local DateTime String
+ *
+ * @param dateTime to be formatted
+ * @return the formatted datetime value of the string [dateTime]
+ */
+fun convertISOToLocalDateTime(dateTime: String?): String {
+    return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+        val localDateTime = dateTime?.let { LocalDateTime.parse(it) } ?: LocalDateTime.now()
+        localDateTime.format(DateTimeFormatter.ofPattern("dd-MM-yyyy hh:mm a"))
+    } else {
+        val dateTime =
+            dateTime?.let { SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").parse(it) } ?: Date()
+        SimpleDateFormat("dd-MM-yyyy HH:mm a").format(dateTime)
+    }
 }
 
 /**
@@ -238,19 +392,6 @@ fun formatAccountNo(accountNo: String, spaceAfterDigits: Int): String {
 }
 
 /**
- * Is email valid
- *
- * @param emailId
- * @return true if the [emailId] matched with email pattern. Otherwise false
- */
-fun isEmailValid(emailId: String): Boolean {
-    val EMAIL_PATTERN = ("[A-Z0-9a-z-!#$%^&*()_+=|:;'<,>.?/]+@[A-Za-z0-9.]+\\.[A-Za-z]{2,50}")
-    return if (emailId.length < 3 || emailId.length > 265) false else {
-        emailId.matches(Regex(EMAIL_PATTERN))
-    }
-}
-
-/**
  * Show toast message
  *
  * @param message
@@ -267,26 +408,14 @@ fun showToast(message: String?, length: Int? = Toast.LENGTH_SHORT) {
  */
 
 fun clearLocalDataForPreviousUser() = CoroutinesBase.io {
-    LocalDataSource.instance.apply {
-     //   walletBalanceDao().delete()
-       // cardsLocalDao().deleteAll()
 
-        //recentPendingActivitiesLocalDao().deleteAll()
-        //recentCompletedActivitiesLocalDao().deleteAll()
-
-        //servicesLocalDao().deleteAll()
-
-        //fundRequestsLocalDao().deleteAll()
-        //bankAccountsLocalDao().deleteAll()
-
-        PreferenceManager.sharedPref.edit {
-            remove(LastUpdatedOn.FUND_REQUESTS)
-            remove(LastUpdatedOn.SERVICES)
-            remove(LastUpdatedOn.SHOPS)
-            remove(LastUpdatedOn.CONTACTS)
-            remove(LastUpdatedOn.PENDING_ACTIVITIES)
-            remove(LastUpdatedOn.COMPLETED_ACTIVITIES)
-        }
+    PreferenceManager.sharedPref.edit {
+        remove(LastUpdatedOn.FUND_REQUESTS)
+        remove(LastUpdatedOn.SERVICES)
+        remove(LastUpdatedOn.SHOPS)
+        remove(LastUpdatedOn.CONTACTS)
+        remove(LastUpdatedOn.PENDING_ACTIVITIES)
+        remove(LastUpdatedOn.COMPLETED_ACTIVITIES)
     }
 }
 
@@ -323,10 +452,18 @@ fun whatsApp(context: Context, phone: String, countryCode: String) {
         if (sendIntent.resolveActivity(context.packageManager) != null) {
             context.startActivity(sendIntent)
         } else {
-            Toast.makeText(context, context.getString(R.string.whatsapp_not_installed), Toast.LENGTH_LONG).show()
+            Toast.makeText(
+                context,
+                context.getString(R.string.whatsapp_not_installed),
+                Toast.LENGTH_LONG
+            ).show()
         }
     } catch (e: Exception) {
-        Toast.makeText(context, context.getString(R.string.whatsapp_not_installed), Toast.LENGTH_SHORT).show()
+        Toast.makeText(
+            context,
+            context.getString(R.string.whatsapp_not_installed),
+            Toast.LENGTH_SHORT
+        ).show()
     }
 }
 
@@ -347,7 +484,11 @@ fun composeEmail(context: Context, addresses: Array<String>, subject: String) {
     if (intent.resolveActivity(context.packageManager) != null) {
         context.startActivity(intent)
     } else {
-        Toast.makeText(context, context.getString(R.string.no_email_app_available), Toast.LENGTH_LONG).show()
+        Toast.makeText(
+            context,
+            context.getString(R.string.no_email_app_available),
+            Toast.LENGTH_LONG
+        ).show()
     }
 }
 
@@ -444,26 +585,30 @@ fun <T> MutableList<T>.moveDown(item: T): Boolean {
 /**
  * Moves first element **T** up an index that satisfies the given **predicate**, unless its already at the top
  */
-inline fun <T> MutableList<T>.moveUp(crossinline predicate: (T) -> Boolean) = find(predicate)?.let { moveUp(it) }
+inline fun <T> MutableList<T>.moveUp(crossinline predicate: (T) -> Boolean) =
+    find(predicate)?.let { moveUp(it) }
 
 /**
  * Moves first element **T** down an index that satisfies the given **predicate**, unless its already at the bottom
  */
-inline fun <T> MutableList<T>.moveDown(crossinline predicate: (T) -> Boolean) = find(predicate)?.let { moveDown(it) }
+inline fun <T> MutableList<T>.moveDown(crossinline predicate: (T) -> Boolean) =
+    find(predicate)?.let { moveDown(it) }
 
 /**
  * Moves all **T** elements up an index that satisfy the given **predicate**, unless they are already at the top
  */
-inline fun <T> MutableList<T>.moveUpAll(crossinline predicate: (T) -> Boolean) = asSequence().withIndex()
-    .filter { predicate.invoke(it.value) }
-    .forEach { moveUpAt(it.index) }
+inline fun <T> MutableList<T>.moveUpAll(crossinline predicate: (T) -> Boolean) =
+    asSequence().withIndex()
+        .filter { predicate.invoke(it.value) }
+        .forEach { moveUpAt(it.index) }
 
 /**
  * Moves all **T** elements down an index that satisfy the given **predicate**, unless they are already at the bottom
  */
-inline fun <T> MutableList<T>.moveDownAll(crossinline predicate: (T) -> Boolean) = asSequence().withIndex()
-    .filter { predicate.invoke(it.value) }
-    .forEach { moveDownAt(it.index) }
+inline fun <T> MutableList<T>.moveDownAll(crossinline predicate: (T) -> Boolean) =
+    asSequence().withIndex()
+        .filter { predicate.invoke(it.value) }
+        .forEach { moveDownAt(it.index) }
 
 /**
  * Swaps the position of two items at two respective indices

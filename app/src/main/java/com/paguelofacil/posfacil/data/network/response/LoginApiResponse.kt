@@ -99,6 +99,8 @@ data class Contact(
 
     //@field:SerializedName("merchantProfile")
     //val merchantProfile: String? = null,
+    @field:SerializedName("merchantProfile")
+    val merchantProfile: @RawValue MerchantProfile? = null,
 
     @field:SerializedName("cfgProfile")
     val cfgProfile: String? = null,
@@ -243,4 +245,8 @@ data class Contact(
         }
         return stringBuilder.toString()
     }
+
+    data class MerchantProfile(
+        val idProfile: Int
+    )
 }

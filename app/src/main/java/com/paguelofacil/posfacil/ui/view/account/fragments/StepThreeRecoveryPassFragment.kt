@@ -9,9 +9,14 @@ import android.text.method.PasswordTransformationMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
+import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.android.material.button.MaterialButton
+import com.paguelofacil.posfacil.ApplicationClass
 import com.paguelofacil.posfacil.R
 import com.paguelofacil.posfacil.base.BaseFragment
 import com.paguelofacil.posfacil.data.network.api.ApiRequestCode
@@ -20,21 +25,21 @@ import com.paguelofacil.posfacil.repository.UserRepo
 import com.paguelofacil.posfacil.ui.interfaces.BottomSheetCallback
 import com.paguelofacil.posfacil.ui.view.account.dialog.ForgotPasswordRecoveredSuccessDialog
 import com.paguelofacil.posfacil.ui.view.account.viewmodel.ForgotPasswordViewModel
-import com.paguelofacil.posfacil.ui.view.home.activities.HomeActivity
 import com.paguelofacil.posfacil.ui.view.home.activities.IntroActivity
 import com.paguelofacil.posfacil.util.isValidPassword
+import com.paguelofacil.posfacil.util.networkErrorConverter
 import java.util.regex.Matcher
 import java.util.regex.Pattern
 
 
-class StepThreeRecoveryPassFragment : BaseFragment(), View.OnFocusChangeListener, View.OnClickListener{
-
+class StepThreeRecoveryPassFragment : BaseFragment(), View.OnFocusChangeListener,
+    View.OnClickListener {
 
     lateinit var binding: FragmentStepThreeRecoveryPassBinding
 
     private lateinit var vm: ForgotPasswordViewModel
 
-    var error=0
+    var error = 0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,57 +56,81 @@ class StepThreeRecoveryPassFragment : BaseFragment(), View.OnFocusChangeListener
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
-        binding=FragmentStepThreeRecoveryPassBinding.inflate(inflater,container,false)
+        binding = FragmentStepThreeRecoveryPassBinding.inflate(inflater, container, false)
 
         loadListeners()
-
-
+        loadLanguage()
         return binding.root
+    }
 
-
+    private fun loadLanguage() {
+        binding.titlePassword.text = ApplicationClass.language.recuperarPassword
+        binding.textViewTitle.text = ApplicationClass.language.stepThree_title_recovery_pass
+        binding.textViewMessage.text = ApplicationClass.language.stepTwoRecoveryPass
+        binding.tvPasswordLabel.text = ApplicationClass.language.newPass
+        binding.tvNewPasswordLabel.text = ApplicationClass.language.repeatNewPass
+        binding.tvValidatePass1.text = getString(R.string.validate_8_characters)
+        binding.tvValidatePass2.text = getString(R.string.validate_1_mayus)
+        binding.tvValidatePass3.text = getString(R.string.validate_1_minu)
+        binding.tvValidatePass4.text = getString(R.string.validate_1_number)
+        binding.tvValidatePass5.text = getString(R.string.validate_1_especial)
+        binding.btnUpdatePassword.text = ApplicationClass.language.btnUpdatePass
     }
 
     private fun loadListeners() {
 
-        binding.btnUpdatePassword.setOnClickListener{
-
-
-           // showSnack("ASCTUALIZAR PASSWORD before")
-
-
-            if(validated())
-            {
-
-
-                if(UserRepo.getUser().tempCodeAuth!=null)
-                {
-                    vm.verifyOtpStep2(UserRepo.getUser().tempCodeAuth!!)
-                }
-                else
-                {
+        binding.btnUpdatePassword.setOnClickListener {
+            if (validated()) {
+                if (UserRepo.getUser().tempCodeAuth != null) {
+                    resetPassword()
+                } else {
                     showSnack(getString(R.string.error_code_auth_new_pass))
                 }
-
-              //  showSnack("ASCTUALIZAR PASSWORD")
             }
-
-
-           // val intent= Intent(context, HomeActivity::class.java)
-            //startActivity(intent)
-            //activity?.finish()
-
         }
 
-        binding.lnArrowBack.setOnClickListener{
-
-            var fr = activity?.supportFragmentManager?.beginTransaction()
-            fr?.replace(R.id.container_login_fragment, StepTwoRecoveryPassFragment())
-            fr?.commit()
-
+        binding.lnArrowBack.setOnClickListener {
+            activity?.supportFragmentManager?.popBackStack()
         }
 
+    }
+
+    private fun resetPassword(){
+        vm.verifyOtpStep2(UserRepo.getUser().tempCodeAuth!!, onFailure = {
+            showWarningDialog(it){
+                resetPassword()
+            }
+        })
+    }
+
+    private fun showWarningDialog(message: String, onFailure: ()-> Unit){
+        val dialog = context?.let { BottomSheetDialog(it) }
+
+        val view = layoutInflater.inflate(R.layout.bottom_sheet_warning, null)
+        val title =view.findViewById<TextView>(R.id.titleError)
+        val description =view.findViewById<TextView>(R.id.descriptionError)
+        val btn = view.findViewById<MaterialButton>(R.id.btnAccept)
+
+        title.text = "!Ha ocurrido un error!"
+        description.text = if ((message == "400") or (message == "400") or (message == "400")){
+            "Su contraseña\nno ha podido ser actualizada"
+        }else{
+            networkErrorConverter(message)
+        }
+
+        btn.text = "Intentar nuevamente"
+        btn.setOnClickListener {
+            dialog?.dismiss()
+            onFailure()
+        }
+
+        dialog?.setCancelable(true)
+
+        dialog?.setContentView(view)
+
+        dialog?.show()
     }
 
 
@@ -109,11 +138,8 @@ class StepThreeRecoveryPassFragment : BaseFragment(), View.OnFocusChangeListener
         super.onStart()
         binding.etPassword.onFocusChangeListener = this
         binding.etNewPassword.onFocusChangeListener = this
-      //  binding.etConfirmationCode.onFocusChangeListener = this
         binding.etPassword.addTextChangedListener(passwordTextWatcher)
         binding.etNewPassword.addTextChangedListener(newPasswordTextWatcher)
-      //  binding.etConfirmationCode.addTextChangedListener(confirmationCodeTextWatcher)
-      //  binding.ivClearPassword.setOnClickListener(this)
         binding.ivViewPass.setOnClickListener(this)
         binding.ivViewRepeatPass.setOnClickListener(this)
     }
@@ -131,19 +157,23 @@ class StepThreeRecoveryPassFragment : BaseFragment(), View.OnFocusChangeListener
                 if (hasFocus) {
                     binding.etPassword.text?.let {
                         if (it.isNotEmpty()) {
-                           // binding.ivClearPassword.visibility = View.VISIBLE
+                            // binding.ivClearPassword.visibility = View.VISIBLE
                             binding.ivViewPass.visibility = View.VISIBLE
                         } else {
-                           // binding.ivClearPassword.visibility = View.GONE
+                            // binding.ivClearPassword.visibility = View.GONE
                             binding.ivViewPass.visibility = View.GONE
                         }
                     }
                 } else {
-                  //  binding.ivClearPassword.visibility = View.GONE
+                    //  binding.ivClearPassword.visibility = View.GONE
                     binding.ivViewPass.visibility = View.GONE
                 }
 
-                updateTickMark(binding.etPassword, isValidPassword(binding.etPassword.text.toString()), hasFocus)
+                updateTickMark(
+                    binding.etPassword,
+                    isValidPassword(binding.etPassword.text.toString()),
+                    hasFocus
+                )
             }
             binding.etNewPassword -> {
                 if (hasFocus) {
@@ -161,14 +191,17 @@ class StepThreeRecoveryPassFragment : BaseFragment(), View.OnFocusChangeListener
                     binding.ivViewRepeatPass.visibility = View.GONE
                 }
 
-                updateTickMark(binding.etNewPassword, isValidPassword(binding.etNewPassword.text.toString()), hasFocus)
+                updateTickMark(
+                    binding.etNewPassword,
+                    isValidPassword(binding.etNewPassword.text.toString()),
+                    hasFocus
+                )
             }
 
         }
     }
 
-    private fun validateText()
-    {
+    private fun validateText() {
         clearValidate()
 
         //VALIDATE 1
@@ -202,45 +235,34 @@ class StepThreeRecoveryPassFragment : BaseFragment(), View.OnFocusChangeListener
 
         //VALIDATE 2
 
-        var str = binding.etPassword.text.toString()
+        val str: String = binding.etPassword.text.toString()
 
         var ch: Char
-        var capitalFlag = false
-        var lowerCaseFlag = false
-        var numberFlag = false
         for (i in 0 until str.length) {
-            ch = binding.etPassword.text.toString().get(i)
             ch = str.get(i);
 
-            if (Character.isDigit(ch))
-            {
+            if (Character.isDigit(ch)) {
                 showValidate4(true) // numero
             }
 
-            if(Character.isUpperCase(ch))
-            {
+            if (Character.isUpperCase(ch)) {
                 showValidate2(true) // mayuscula
             }
-            if(Character.isLowerCase(ch))
-            {
+            if (Character.isLowerCase(ch)) {
                 showValidate3(true) // minuscula
             }
 
 
         }
 
-        if(isValidPassEspecial(str))
-        {
+        if (isValidPassEspecial(str)) {
             showValidate5(true) // character especial
-        }
-        else
-        {
+        } else {
             showValidate5(false) // character especial
         }
 
-        binding.lnDetailNewPass.visibility=View.VISIBLE
+        binding.lnDetailNewPass.visibility = View.VISIBLE
     }
-
 
 
     private fun validated(): Boolean {
@@ -252,23 +274,20 @@ class StepThreeRecoveryPassFragment : BaseFragment(), View.OnFocusChangeListener
             error++
             binding.etPassword.requestFocus()
             showSnack(getString(R.string.Please_enter_your_new_password))
-        }
-        else if (binding.etNewPassword.text.toString().isEmpty()) {
+        } else if (binding.etNewPassword.text.toString().isEmpty()) {
             error++
             binding.etNewPassword.requestFocus()
             showSnack(getString(R.string.Please_enter_your_confirm_password))
         }
 
 
-        if(!binding.etNewPassword.text.toString().isEmpty() &&
-            !binding.etPassword.text.toString().isEmpty()    )
-        {
+        if (!binding.etNewPassword.text.toString().isEmpty() &&
+            !binding.etPassword.text.toString().isEmpty()
+        ) {
             if (!binding.etNewPassword.text.toString().equals(binding.etPassword.text.toString())) {
                 error++
                 showSnack(getString(R.string.password_no_identicos))
-            }
-            else
-            {
+            } else {
                 validateText()
 
             }
@@ -276,14 +295,12 @@ class StepThreeRecoveryPassFragment : BaseFragment(), View.OnFocusChangeListener
 
 
         println("++++++++++++++++++++++ cant error ++++++++++ $error")
-        return error==0
-
+        return error == 0
 
 
     }
 
-    private fun clearValidate()
-    {
+    private fun clearValidate() {
         binding.tvValidatePass1.setTextColor(
             ContextCompat.getColor(
                 requireContext(),
@@ -356,8 +373,7 @@ class StepThreeRecoveryPassFragment : BaseFragment(), View.OnFocusChangeListener
         return password.matches(Regex(specialCharacters))
     }
 
-    private fun showValidate2(validate:Boolean)
-    {
+    private fun showValidate2(validate: Boolean) {
         if (!validate) {
             binding.tvValidatePass2.setTextColor(
                 ContextCompat.getColor(
@@ -388,8 +404,7 @@ class StepThreeRecoveryPassFragment : BaseFragment(), View.OnFocusChangeListener
 
     }
 
-    private fun showValidate3(validate:Boolean)
-    {
+    private fun showValidate3(validate: Boolean) {
         if (!validate) {
             binding.tvValidatePass3.setTextColor(
                 ContextCompat.getColor(
@@ -420,8 +435,7 @@ class StepThreeRecoveryPassFragment : BaseFragment(), View.OnFocusChangeListener
 
     }
 
-    private fun showValidate4(validate:Boolean)
-    {
+    private fun showValidate4(validate: Boolean) {
         if (!validate) {
             binding.tvValidatePass4.setTextColor(
                 ContextCompat.getColor(
@@ -451,8 +465,8 @@ class StepThreeRecoveryPassFragment : BaseFragment(), View.OnFocusChangeListener
         }
 
     }
-    private fun showValidate5(validate:Boolean)
-    {
+
+    private fun showValidate5(validate: Boolean) {
         if (!validate) {
             binding.tvValidatePass5.setTextColor(
                 ContextCompat.getColor(
@@ -486,13 +500,17 @@ class StepThreeRecoveryPassFragment : BaseFragment(), View.OnFocusChangeListener
     private val passwordTextWatcher: TextWatcher = object : TextWatcher {
         override fun beforeTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {}
         override fun onTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {
-            updateTickMark(binding.etPassword, isValidPassword(binding.etPassword.text.toString()), false)
+            updateTickMark(
+                binding.etPassword,
+                isValidPassword(binding.etPassword.text.toString()),
+                false
+            )
             validateText()
             if (charSequence.toString().isNotEmpty()) {
-               // binding.ivClearPassword.visibility = View.VISIBLE
+                // binding.ivClearPassword.visibility = View.VISIBLE
                 binding.ivViewPass.visibility = View.VISIBLE
             } else {
-               // binding.ivClearPassword.visibility = View.GONE
+                // binding.ivClearPassword.visibility = View.GONE
                 binding.ivViewPass.visibility = View.GONE
             }
         }
@@ -503,7 +521,11 @@ class StepThreeRecoveryPassFragment : BaseFragment(), View.OnFocusChangeListener
     private val newPasswordTextWatcher: TextWatcher = object : TextWatcher {
         override fun beforeTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {}
         override fun onTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {
-            updateTickMark(binding.etNewPassword, isValidPassword(binding.etNewPassword.text.toString()), false)
+            updateTickMark(
+                binding.etNewPassword,
+                isValidPassword(binding.etNewPassword.text.toString()),
+                false
+            )
             if (charSequence.toString().isNotEmpty()) {
                 // binding.ivClearPassword.visibility = View.VISIBLE
                 binding.ivViewRepeatPass.visibility = View.VISIBLE
@@ -521,7 +543,7 @@ class StepThreeRecoveryPassFragment : BaseFragment(), View.OnFocusChangeListener
         super.onResponseSuccess(requestCode, responseCode, msg, data)
         when (requestCode) {
             ApiRequestCode.PASSWORD_RECOVERY_STEP2 -> {
-                vm.verifyOtpStep3(binding.etPassword.text.toString(), UserRepo.getUser().tempCodeAuth!!)
+                verifyStep()
             }
             ApiRequestCode.PASSWORD_RECOVERY_STEP3 -> {
                 ForgotPasswordRecoveredSuccessDialog(
@@ -529,15 +551,27 @@ class StepThreeRecoveryPassFragment : BaseFragment(), View.OnFocusChangeListener
                         override fun onActionOccur(
                             eventType: Int
                         ) {
-                            val intent= Intent(context, IntroActivity::class.java)
+                            val intent = Intent(context, IntroActivity::class.java)
                             startActivity(intent)
                             activity?.finish()
                             //requireActivity().finish()
                         }
                     }
-                ).show()
+                ).show(parentFragmentManager, "")
             }
         }
+    }
+
+    private fun verifyStep(){
+        vm.verifyOtpStep3(
+            binding.etPassword.text.toString(),
+            UserRepo.getUser().tempCodeAuth!!,
+            onFailure = {
+                showWarningDialog(it){
+                    verifyStep()
+                }
+            }
+        )
     }
 
     override fun onClick(v: View?) {
@@ -545,32 +579,56 @@ class StepThreeRecoveryPassFragment : BaseFragment(), View.OnFocusChangeListener
 
             binding.ivViewPass -> {
                 if (binding.etPassword.transformationMethod == PasswordTransformationMethod.getInstance()) {
-                    binding.etPassword.transformationMethod = HideReturnsTransformationMethod.getInstance()
+                    binding.etPassword.transformationMethod =
+                        HideReturnsTransformationMethod.getInstance()
                     binding.etPassword.text?.let {
                         binding.etPassword.setSelection(it.length)
                     }
-                    binding.ivViewPass.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.ic_visibility_on))
+                    binding.ivViewPass.setImageDrawable(
+                        ContextCompat.getDrawable(
+                            requireContext(),
+                            R.drawable.ic_visibility_on
+                        )
+                    )
                 } else {
-                    binding.etPassword.transformationMethod = PasswordTransformationMethod.getInstance()
+                    binding.etPassword.transformationMethod =
+                        PasswordTransformationMethod.getInstance()
                     binding.etPassword.text?.let {
                         binding.etPassword.setSelection(it.length)
                     }
-                    binding.ivViewPass.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.ic_visibility_off))
+                    binding.ivViewPass.setImageDrawable(
+                        ContextCompat.getDrawable(
+                            requireContext(),
+                            R.drawable.ic_visibility_off
+                        )
+                    )
                 }
             }
             binding.ivViewRepeatPass -> {
                 if (binding.etNewPassword.transformationMethod == PasswordTransformationMethod.getInstance()) {
-                    binding.etNewPassword.transformationMethod = HideReturnsTransformationMethod.getInstance()
+                    binding.etNewPassword.transformationMethod =
+                        HideReturnsTransformationMethod.getInstance()
                     binding.etNewPassword.text?.let {
                         binding.etNewPassword.setSelection(it.length)
                     }
-                    binding.ivViewRepeatPass.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.ic_visibility_on))
+                    binding.ivViewRepeatPass.setImageDrawable(
+                        ContextCompat.getDrawable(
+                            requireContext(),
+                            R.drawable.ic_visibility_on
+                        )
+                    )
                 } else {
-                    binding.etNewPassword.transformationMethod = PasswordTransformationMethod.getInstance()
+                    binding.etNewPassword.transformationMethod =
+                        PasswordTransformationMethod.getInstance()
                     binding.etNewPassword.text?.let {
                         binding.etNewPassword.setSelection(it.length)
                     }
-                    binding.ivViewRepeatPass.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.ic_visibility_off))
+                    binding.ivViewRepeatPass.setImageDrawable(
+                        ContextCompat.getDrawable(
+                            requireContext(),
+                            R.drawable.ic_visibility_off
+                        )
+                    )
                 }
             }
         }

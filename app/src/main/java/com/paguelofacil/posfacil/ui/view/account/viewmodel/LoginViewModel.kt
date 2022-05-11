@@ -10,7 +10,9 @@ class LoginViewModel: BaseViewModel() {
 
     fun signIn(email: String, password: String) = CoroutinesBase.main {
         setLoadingState(LoadingState.LOADING)
-        updateResponseObserver(repo.login(email, password)) {}
+        updateResponseObserver(repo.login(email, password), callback = {}) {
+
+        }
         setLoadingState(LoadingState.LOADED)
     }
 

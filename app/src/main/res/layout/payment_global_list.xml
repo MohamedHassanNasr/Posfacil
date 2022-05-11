@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_15sdp"
+    app:cardCornerRadius="@dimen/_15sdp"
+    app:cardElevation="@dimen/_2sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/paymentTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:fontFamily="@font/encodesans_medium"
+                android:text="@string/metodo_pago"
+                android:textColor="@color/color_7D889B">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/namePay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:fontFamily="@font/encodesans_medium"
+                android:gravity="right"
+                android:text=""
+                android:textStyle="bold"
+                android:textColor="@color/color_3D444F">
+
+            </TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/sellsPay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:fontFamily="@font/encodesans_medium"
+                android:text="@string/detalle_ventas_reporte"
+                android:textColor="@color/color_7D889B">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/sells"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:fontFamily="@font/encodesans_medium"
+                android:gravity="right"
+                android:text="$ 0.00"
+                android:textStyle="bold"
+                android:textColor="@color/color_3D444F">
+
+            </TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/basePay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:fontFamily="@font/encodesans_medium"
+                android:text="@string/base"
+                android:textColor="@color/color_7D889B">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/base"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:fontFamily="@font/encodesans_medium"
+                android:gravity="right"
+                android:text="$ 0.00"
+                android:textStyle="bold"
+                android:textColor="@color/color_3D444F">
+
+            </TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/itbmsPay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:fontFamily="@font/encodesans_medium"
+                android:text="@string/itbms"
+                android:textColor="@color/color_7D889B">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/impuesto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:fontFamily="@font/encodesans_medium"
+                android:gravity="right"
+                android:text="$ 0.00"
+                android:textStyle="bold"
+                android:textColor="@color/color_3D444F">
+
+            </TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/propinaTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:fontFamily="@font/encodesans_medium"
+                android:text="@string/detalle_propinas_reporte"
+                android:textColor="@color/color_7D889B">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/propinaPay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:fontFamily="@font/encodesans_medium"
+                android:gravity="right"
+                android:text="$ 0.00"
+                android:textStyle="bold"
+                android:textColor="@color/color_3D444F">
+
+            </TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/refundPay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:fontFamily="@font/encodesans_medium"
+                android:text="@string/detalle_devoluciones_reporte"
+                android:textColor="@color/color_7D889B">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/rembolsoPay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:fontFamily="@font/encodesans_medium"
+                android:gravity="right"
+                android:text="$ 0.00"
+                android:textStyle="bold"
+                android:textColor="@color/color_3D444F">
+
+            </TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/totalPay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:fontFamily="@font/encodesans_medium"
+                android:text="@string/detalle_Total_reporte"
+                android:textColor="@color/color_7D889B">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/total"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:fontFamily="@font/encodesans_medium"
+                android:gravity="right"
+                android:text="$ 0.00"
+                android:textStyle="bold"
+                android:textColor="@color/color_3D444F">
+
+            </TextView>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

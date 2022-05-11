@@ -13,8 +13,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="bottom"
         android:scaleType="fitXY"
-        android:layout_marginTop="@dimen/_100sdp"
-        android:src="@drawable/splash_one" />
+        android:layout_marginTop="@dimen/_100sdp"/>
 
     <TextView
         android:layout_width="wrap_content"

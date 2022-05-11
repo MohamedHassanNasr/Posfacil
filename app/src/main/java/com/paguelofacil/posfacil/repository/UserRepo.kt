@@ -1,6 +1,6 @@
 package com.paguelofacil.posfacil.repository
 
-import android.system.Os.remove
+import android.content.SharedPreferences
 import androidx.core.content.edit
 import com.google.gson.Gson
 import com.paguelofacil.posfacil.BuildConfig
@@ -11,9 +11,10 @@ import com.paguelofacil.posfacil.data.network.api.ApiEndpoints
 import com.paguelofacil.posfacil.data.network.api.ApiRequestCode
 import com.paguelofacil.posfacil.data.network.api.BaseResponse
 import com.paguelofacil.posfacil.data.network.response.LoginApiResponse
-import com.paguelofacil.posfacil.util.Constantes.ApiParams
+import com.paguelofacil.posfacil.model.MerchantResponse
 import com.paguelofacil.posfacil.util.Constantes.LastUpdatedOn
 import com.paguelofacil.posfacil.util.clearLocalDataForPreviousUser
+import timber.log.Timber
 import java.util.*
 import kotlin.collections.HashMap
 
@@ -27,7 +28,7 @@ const val USER_ENTITY = "USER_ENTITY"
  */
 
 object UserRepo : BaseRepo() {
-    private val sharedPref = PreferenceManager.sharedPref
+    private val sharedPref: SharedPreferences = PreferenceManager.sharedPref
 
     /**
      * Save logged in user detail or update an existing logged in user detail in the local source.
@@ -69,6 +70,7 @@ object UserRepo : BaseRepo() {
             val response = apiRequest(ApiRequestCode.UPDATE_USER_LOCALE) {
                 remoteDao.put(ApiEndpoints.USERS + "/" + user.id, body)
             }
+            Timber.e("DATAAAA USER ${response.data}")
             if (response.isInternetOn) {
                 if (response.headerStatus.code != null && (response.headerStatus.code == ApiRequestCode.SUCCESS || response.headerStatus.code == 202 || response.headerStatus.code == ApiRequestCode.CREATED)) {
                     user.locale = locale
@@ -167,7 +169,6 @@ object UserRepo : BaseRepo() {
                 remove(LastUpdatedOn.COMPLETED_ACTIVITIES)
             }
         }
-
         user.loggedIn = true
         user.token = response.token
         user.session = response.sessionId
@@ -176,6 +177,8 @@ object UserRepo : BaseRepo() {
         user.userName = response.contact.login
         user.firstName = response.contact.name
         user.lastName = response.contact.lastname
+        user.idMerchant = response.contact.idMerchant
+        user.merchantProfile = response.contact.merchantProfile
 
         //if the user has not used fingerprint authentication for login
         if (!user.fingerPrintAuthenticatedLogin) {
@@ -200,5 +203,16 @@ object UserRepo : BaseRepo() {
         }
 
         setOrUpdateUser(user, true)
+    }
+
+    suspend fun refreshLogin(){
+        remoteDao.get(
+            url = ApiEndpoints.REFRESH_LOGIN_USER
+        )
+    }
+
+    suspend fun getMerchant(idMerchant: String): MerchantResponse {
+        val url = "${BuildConfig.API_BASE_URL}/${ApiEndpoints.MERCHANT_URL}$${idMerchant}"
+        return remoteDao.getMerchant(url)
     }
 }

@@ -6,11 +6,17 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class TransactionApiResponse(
-    @field:SerializedName("idTransaction")
-    val idTransaction: Int? = null,
+    @field:SerializedName("idTx")
+    val idTx: Int? = null,
 
     @field:SerializedName("amount")
-    val amount: Float? = null,
+    val amount: Double? = null,
+
+    @field:SerializedName("tax")
+    val tax: Double? = null,
+
+    @field:SerializedName("tip")
+    val tip: Double? = null,
 
     @field:SerializedName("codOper")
     val codOper: String? = null,
@@ -18,16 +24,15 @@ data class TransactionApiResponse(
     @field:SerializedName("status")
     val status: String? = null,
 
-    @field:SerializedName("dateTms")
-    val dateTms: String? = null,
+    @field:SerializedName("date")
+    val date: String? = null,
 
-    @field:SerializedName("merchantName")
-    val merchantName: String? = null,
+    @field:SerializedName("operatorId")
+    val operatorId: Int? = null,
 
-    //
-    // many fields
-    //
+    @field:SerializedName("cardNumber")
+    val cardNumber: String? = null,
 
-    @field:SerializedName("cardVisibleNum")
-    val cardVisibleNum: String? = null,
+    @field:SerializedName("cardType")
+    val cardType: String? = null
 ) : Parcelable

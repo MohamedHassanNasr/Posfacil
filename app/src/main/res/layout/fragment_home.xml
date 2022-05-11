@@ -18,19 +18,15 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center"
                 android:layout_gravity="center"
-                android:layout_marginTop="@dimen/_20sdp"
-                >
-
-
-
+                android:layout_marginTop="@dimen/_20sdp">
 
                 <EditText
                     android:id="@+id/et_monto_cobrar"
@@ -44,74 +40,59 @@
                     android:textColor="@color/color_3d444f"
                     android:fontFamily="@font/encodesans_medium"
                     android:drawableStart="@drawable/icon_left_money_home"
-                    android:text="10.00"
+                    android:text="0.00"
                     android:gravity="end"
                     android:cursorVisible="false"
                     android:textIsSelectable="false"
-                    android:focusedByDefault="true"
-                    android:focusableInTouchMode="true"
-                    >
-
-                </EditText>
-
+                    android:focusedByDefault="false"/>
 
             </LinearLayout>
 
             <TextView
+                android:id="@+id/textViewTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/monto_cobrar"
+                tools:text="@string/monto_cobrar"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/_20sdp"
                 android:gravity="center"
                 android:fontFamily="@font/encodesans_regular"
                 android:textColor="@color/color_515a69"
-                android:textSize="@dimen/_18sdp"
-
-                >
-
-            </TextView>
+                android:textSize="@dimen/_18sdp"/>
 
         </LinearLayout>
 
-
-
     </ScrollView>
 
-
-
-
     <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_gravity="bottom"
-    android:gravity="bottom"
-    android:layout_marginTop="@dimen/_50sdp"
-    android:orientation="vertical">
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_next"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/_20sdp"
-        android:layout_marginStart="@dimen/_16sdp"
-        android:layout_marginTop="@dimen/_100sdp"
-        android:layout_marginEnd="@dimen/_16sdp"
-        android:gravity="start"
-        android:paddingStart="@dimen/_16sdp"
-        android:paddingTop="@dimen/_12sdp"
-        android:paddingEnd="@dimen/_24sdp"
-        android:paddingBottom="@dimen/_12sdp"
-        android:text="@string/cobrar"
-        android:textSize="@dimen/_14sdp"
-        app:cornerRadius="@dimen/_10sdp"
-        app:icon="@drawable/ic_arrow_forward_white"
-        app:iconGravity="end"
+        android:layout_height="match_parent"
         android:layout_gravity="bottom"
-        app:iconSize="@dimen/_16sdp" />
+        android:layout_marginTop="@dimen/_50sdp"
+        android:gravity="bottom"
+        android:orientation="vertical">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_100sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:gravity="center"
+            android:paddingStart="@dimen/_16sdp"
+            android:paddingTop="@dimen/_12sdp"
+            android:paddingEnd="@dimen/_24sdp"
+            android:paddingBottom="@dimen/_12sdp"
+            android:textAlignment="center"
+            android:textSize="@dimen/_14sdp"
+            app:cornerRadius="@dimen/_10sdp"
+            app:iconSize="@dimen/_16sdp"
+            tools:text="@string/cobrar" />
 
     </LinearLayout>
-
 
 </RelativeLayout>
 

@@ -16,8 +16,6 @@ class TransactionsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_transactions)
-
         binding= ActivityTransactionsBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
@@ -28,27 +26,25 @@ class TransactionsActivity : AppCompatActivity() {
     }
 
     private fun loadFragments() {
+        val bundle = intent.extras
+        val tipo = bundle?.get(ConstantesView.PARAM_TIPO_TRANSACTION).toString()
 
-        val bundle=intent.extras
-        val tipo= bundle?.get(ConstantesView.PARAM_TIPO_TRANSACTION).toString()
-
-        if (tipo==ConstantesView.PARAM_TRANSACTION_COBRO) {
-
-            val fragmentManager=supportFragmentManager
+        if (tipo == ConstantesView.PARAM_TRANSACTION_COBRO) {
+            val fragmentManager = supportFragmentManager
             val fragmentTransaction=fragmentManager.beginTransaction()
-            fragmentTransaction.replace(R.id.container_frag_transactions, DetailCobroFragment())
-            fragmentTransaction.commit()
-
-        }
-        else if (tipo==ConstantesView.PARAM_TRANSACTION_REEMBOLSO){
-
-            val fragmentManager=supportFragmentManager
-            val fragmentTransaction=fragmentManager.beginTransaction()
-            fragmentTransaction.replace(R.id.container_frag_transactions, DetailReembolsoFragment())
+            val fragment = DetailCobroFragment()
+            fragment.arguments = bundle
+            fragmentTransaction.replace(R.id.container_frag_transactions, fragment)
             fragmentTransaction.commit()
         }
-
-
+        else if (tipo == ConstantesView.PARAM_TRANSACTION_REEMBOLSO){
+            val fragmentManager=supportFragmentManager
+            val fragmentTransaction=fragmentManager.beginTransaction()
+            val fragment = DetailReembolsoFragment()
+            fragment.arguments = bundle
+            fragmentTransaction.replace(R.id.container_frag_transactions, fragment)
+            fragmentTransaction.commit()
+        }
     }
 
 }

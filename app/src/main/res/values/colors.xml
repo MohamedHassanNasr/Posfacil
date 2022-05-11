@@ -25,7 +25,7 @@
     <color name="white">#ffffff</color>
 
     <!--greens-->
-    <color name="green_80bc00">#6BBE22</color>
+    <color name="green_80bc00">#30850F</color>
     <color name="color_649300">#649300</color>
 
     <!--others-->
@@ -39,15 +39,15 @@
     <color name="transparent">#00000000</color>
     <color name="blue_00859b">#00859b</color>
     <color name="light_grey">#e9ebee</color>
-    <color name="color_lime_green">#80BC00</color>
+    <color name="color_lime_green">#30850F</color>
     <color name="color_blue_grey">#97A0AF</color>
     <color name="color_light_black">#3d444f</color>
     <color name="color_grey">#515a69</color>
     <color name="color_dark_grey">#7d889b</color>
     <color name="color_dark_grey2">#97a0af</color>
     <color name="color_light_black2">#1e2227</color>
-    <color name="color_green">#80bc00</color>
-    <color name="lime_green_new">#80bc00</color>
+    <color name="color_green">#30850F</color>
+    <color name="lime_green_new">#30850F</color>
     <color name="color_background">#f6f7f8</color>
     <color name="transparent_green">#19649300</color>
     <color name="color_edb600">#edb600</color>
@@ -59,11 +59,11 @@
     <color name="color_E0E3E7">#E0E3E7</color>
     <color name="color_515A69">#515A69</color>
     <color name="color_E9EBEE">#E9EBEE</color>
-    <color name="color_4CA80B">#4CA80B</color>
+    <color name="color_4CA80B">#30850F</color>
     <color name="color_F6F7F8">#F6F7F8</color>
     <color name="color_FFC400">#FFC400</color>
     <color name="color_4BB7BE">#4BB7BE</color>
-    <color name="color_6BBE22">#6BBE22</color>
+    <color name="color_6BBE22">#30850F</color>
     <color name="color_D7DAE0">#D7DAE0</color>
     <color name="color_C3C8D3">#C3C8D3</color>
     <color name="color_EDB600">#EDB600</color>
@@ -72,4 +72,18 @@
     <color name="color_E11900">#E11900</color>
     <color name="color_30850F">#30850F</color>
 
+    <color name="black_overlay">#171717</color>
+    <color name="gray">#EEEEEE</color>
+    <color name="primary_text_light">@android:color/primary_text_light</color>
+    <color name="colorPrimaryDark">#00ACC2</color><!--#35C031-->
+    <color name="colorPrimary">#00ACC2</color><!--#258DBF-->
+
+    <color name="led_green">#2AFF00</color>
+    <color name="led_blue">#0000FF</color>
+    <color name="led_red">#FF0000</color>
+    <color name="led_yellow">#FAFB18</color>
+    <color name="secondary_text_light">@android:color/secondary_text_light</color>
+    <color name="colorAccent">#00ACC2</color>
+
+    <color name="greenLight">#6BBE22</color>
 </resources>

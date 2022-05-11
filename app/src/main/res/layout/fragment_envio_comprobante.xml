@@ -24,39 +24,32 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingStart="@dimen/_8sdp"
-            android:paddingEnd="@dimen/_8sdp">
+            android:layout_height="match_parent">
 
             <ImageView
                 android:id="@+id/iv_back"
                 android:layout_width="?attr/actionBarSize"
                 android:layout_height="?attr/actionBarSize"
-                android:layout_marginTop="8dp"
                 android:padding="@dimen/_10sdp"
                 android:src="@drawable/ic_arrow_left_blue"
+                app2:layout_constraintBottom_toBottomOf="parent"
                 app2:layout_constraintStart_toStartOf="parent"
-                app2:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintBottom_toBottomOf="parent" />
 
             <TextView
                 android:id="@+id/tv_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_85sdp"
-                android:layout_marginTop="23dp"
+                android:layout_marginTop="32dp"
                 android:gravity="center"
                 android:text="@string/send_voucher"
                 android:textColor="@color/black_1e2227"
                 android:textSize="@dimen/_14ssp"
                 android:textStyle="bold"
+                app2:layout_constraintEnd_toEndOf="parent"
                 app2:layout_constraintStart_toStartOf="parent"
                 app2:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/iv_back" />
+                app:layout_constraintBottom_toBottomOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.appbar.AppBarLayout>
@@ -75,6 +68,7 @@
         app2:layout_constraintTop_toBottomOf="@+id/appbar_layout">
 
         <TextView
+            android:id="@+id/comprobanteSend"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/encodesans_regular"
@@ -94,6 +88,7 @@
             android:layout_marginTop="@dimen/_15sdp"
             >
             <TextView
+                android:id="@+id/emailtv"
                 android:layout_weight="80"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -136,6 +131,7 @@
             android:layout_marginTop="@dimen/_15sdp"
             >
             <TextView
+                android:id="@+id/phonetv"
                 android:layout_weight="80"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -150,7 +146,7 @@
                 android:id="@+id/cb_phone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:checked="true"
+                android:checked="false"
 
                 />
 
@@ -167,7 +163,8 @@
             android:imeOptions="actionNext"
             android:inputType="textEmailAddress"
             android:paddingStart="@dimen/_24sdp"
-            android:paddingEnd="@dimen/_16sdp" />
+            android:paddingEnd="@dimen/_16sdp"
+            android:visibility="gone"/>
 
 
     </LinearLayout>

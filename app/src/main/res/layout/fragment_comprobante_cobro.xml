@@ -4,410 +4,413 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/color_background"
- tools:context=".ui.view.transactions.payment.fragments.ComprobanteCobroFragment">
+    android:orientation="vertical"
+    tools:context=".ui.view.transactions.payment.fragments.ComprobanteCobroFragment">
 
-
-<androidx.cardview.widget.CardView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:elevation="@dimen/_4sdp"
-    >
-
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_gravity="center_vertical"
-        android:layout_marginRight="@dimen/_20sdp"
-        android:layout_marginLeft="@dimen/_20sdp"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:layout_marginBottom="@dimen/_10sdp"
+        android:elevation="@dimen/_4sdp"
         >
 
         <LinearLayout
-            android:id="@+id/ln_arrow_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="20"
-            >
-
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/ic_arrow_rigth"
-                >
-
-            </ImageView>
-
-        </LinearLayout>
-
-
-
-        <TextView
-            android:layout_weight="60"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/metodo_pago"
-            android:fontFamily="@font/encodesans_medium"
-            android:textColor="@color/color_1E2227"
-            android:gravity="center"
-            android:layout_gravity="center"
-            >
-
-
-        </TextView>
-
-        <LinearLayout
-            android:id="@+id/ln_close_back"
-            android:layout_weight="20"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_gravity="center"
-
-            >
-
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/ic_baseline_close_24"
-                >
-
-            </ImageView>
-
-        </LinearLayout>
-
-
-    </LinearLayout>
-
-
-
-
-</androidx.cardview.widget.CardView>
-
-
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-
-    >
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="@dimen/_20sdp"
-        android:layout_marginLeft="@dimen/_20sdp"
-        android:layout_marginRight="@dimen/_20sdp"
-        android:paddingBottom="@dimen/_20sdp"
-
-        >
-
-
-        <LinearLayout
-
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_weight="50"
-            android:gravity="left"
-
-
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
             >
 
-            <TextView
+            <LinearLayout
+                android:id="@+id/ln_arrow_back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="20"
+                >
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_arrow_rigth"
+                    >
+
+                </ImageView>
+
+            </LinearLayout>
+
+
+
+            <TextView
+                android:id="@+id/textViewMetodoPago"
+                android:layout_weight="60"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/metodo_pago"
+                android:fontFamily="@font/encodesans_medium"
+                android:textColor="@color/color_1E2227"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:textSize="14sp"
+                >
+
+
+            </TextView>
+
+            <LinearLayout
+                android:id="@+id/ln_close_back"
+                android:layout_weight="20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_gravity="center"
+
+                >
+
+                <ImageView
+                    android:id="@+id/finishOper"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_baseline_close_24"
+                    >
+
+                </ImageView>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:paddingBottom="@dimen/_20sdp"
+
+            >
+
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
                 android:layout_weight="50"
+                android:gravity="left"
+
+
+                >
+
+                <TextView
+                    android:id="@+id/textViewDeseaRecibirComprobante"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:fontFamily="@font/encodesans_semibold"
+                    android:text="@string/recibir_comprobante"
+                    android:textColor="@color/color_3D444F"
+                    android:textStyle="bold"
+                    >
+
+                </TextView>
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/sw_input_destination_receipt"
+                    android:layout_weight="50"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:thumb="@drawable/thumb_selector"
+                    app:track="@drawable/track_selector"
+                    >
+
+                </androidx.appcompat.widget.SwitchCompat>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ln_custom_destination"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    >
+                    <TextView
+                        android:id="@+id/textViewCorreoElectronico"
+                        android:layout_weight="80"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/encodesans_medium"
+                        android:text="@string/correo_electronico"
+                        android:textStyle="bold"
+                        android:textColor="@color/color_3D444F">
+
+                    </TextView>
+
+                    <CheckBox
+                        android:id="@+id/cb_email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+
+                        />
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_email"
+                    style="@style/customEditTexttaxeStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress"
+                    android:paddingStart="@dimen/_24sdp"
+                    android:layout_marginLeft="0dp"
+                    android:hint="@string/example_email_hint"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:paddingEnd="@dimen/_16sdp"
+                    android:visibility="visible"
+                    />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    >
+                    <TextView
+                        android:id="@+id/textViewTelefono"
+                        android:layout_weight="80"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/encodesans_medium"
+                        android:text="@string/phone"
+                        android:textStyle="bold"
+                        android:textColor="@color/color_3D444F">
+
+                    </TextView>
+
+                    <CheckBox
+                        android:id="@+id/cb_phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+
+                        />
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_phone"
+                    style="@style/customEditTexttaxeStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress"
+                    android:paddingStart="@dimen/_24sdp"
+                    android:layout_marginLeft="0dp"
+                    android:hint="@string/example_phone_hint"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:paddingEnd="@dimen/_16sdp"
+                    android:visibility="gone"
+                    />
+
+
+            </LinearLayout>
+
+
+
+
+            <TextView
+                android:id="@+id/textViewSeleccioneMetodoPago"
+                android:layout_weight="50"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/seleccione_metodo_pago"
                 android:fontFamily="@font/encodesans_semibold"
-                android:text="@string/recibir_comprobante"
                 android:textColor="@color/color_3D444F"
+                android:layout_marginTop="@dimen/_20sdp"
                 android:textStyle="bold"
                 >
 
             </TextView>
 
-            <androidx.appcompat.widget.SwitchCompat
-                android:id="@+id/sw_input_destination_receipt"
-                android:layout_weight="50"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:thumb="@drawable/thumb_selector"
-                app:track="@drawable/track_selector"
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_metodo_card"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                app:cardCornerRadius="@dimen/_14sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                app:cardElevation="1dp"
+
+
                 >
 
-            </androidx.appcompat.widget.SwitchCompat>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+
+                    >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_mastercard_logo"
+                        android:layout_weight="10"
+                        >
+
+
+                    </ImageView>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/visa"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_weight="10"
+                        >
+
+
+                    </ImageView>
+
+                    <TextView
+                        android:id="@+id/textViewTarjeta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tarjeta"
+                        android:fontFamily="@font/encodesans_medium"
+                        android:textColor="@color/color_3D444F"
+                        android:gravity="right"
+                        android:layout_weight="70"
+                        android:layout_marginRight="@dimen/_30sdp"
+                        >
+
+                    </TextView>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_right_arrow_blue"
+                        android:layout_weight="10"
+
+                        >
+
+                    </ImageView>
+
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_paguelofacil"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                app:cardCornerRadius="@dimen/_14sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                app:cardElevation="1dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+
+                    >
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ic_app_icon"
+                        android:layout_weight="20"
+                        >
+
+
+                    </ImageView>
+
+
+
+
+                    <TextView
+                        android:id="@+id/textViewPagueloFacil"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/paguelofacil_app"
+                        android:fontFamily="@font/encodesans_medium"
+                        android:textColor="@color/color_3D444F"
+                        android:gravity="right"
+                        android:layout_marginRight="@dimen/_30sdp"
+                        android:layout_weight="70"
+                        >
+
+                    </TextView>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_right_arrow_blue"
+                        android:layout_weight="10"
+
+                        >
+
+                    </ImageView>
+
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
 
 
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/ln_custom_destination"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="visible"
-            >
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:layout_marginTop="@dimen/_15sdp"
-                >
-                <TextView
-                    android:layout_weight="80"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/encodesans_medium"
-                    android:text="@string/correo_electronico"
-                    android:textStyle="bold"
-                    android:textColor="@color/color_3D444F">
-
-                </TextView>
-
-                <CheckBox
-                    android:id="@+id/cb_email"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-
-                    />
-
-            </LinearLayout>
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/et_email"
-                style="@style/customEditTexttaxeStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:imeOptions="actionNext"
-                android:inputType="textEmailAddress"
-                android:paddingStart="@dimen/_24sdp"
-                android:layout_marginLeft="0dp"
-                android:hint="@string/example_email_hint"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:paddingEnd="@dimen/_16sdp"
-                android:visibility="gone"
-                />
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:layout_marginTop="@dimen/_15sdp"
-                >
-                <TextView
-                    android:layout_weight="80"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/encodesans_medium"
-                    android:text="@string/phone"
-                    android:textStyle="bold"
-                    android:textColor="@color/color_3D444F">
-
-                </TextView>
-
-                <CheckBox
-                    android:id="@+id/cb_phone"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-
-                    />
-
-            </LinearLayout>
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/et_phone"
-                style="@style/customEditTexttaxeStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:imeOptions="actionNext"
-                android:inputType="textEmailAddress"
-                android:paddingStart="@dimen/_24sdp"
-                android:layout_marginLeft="0dp"
-                android:hint="@string/example_phone_hint"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:paddingEnd="@dimen/_16sdp"
-                android:visibility="gone"
-                />
-
-
-        </LinearLayout>
-
-
-
-
-        <TextView
-            android:layout_weight="50"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/seleccione_metodo_pago"
-            android:fontFamily="@font/encodesans_semibold"
-            android:textColor="@color/color_3D444F"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:textStyle="bold"
-            >
-
-        </TextView>
-
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cv_metodo_card"
-            android:layout_width="match_parent"
-            android:layout_height="90dp"
-            app:cardCornerRadius="@dimen/_14sdp"
-            android:layout_marginTop="@dimen/_20sdp"
-            app:cardElevation="1dp"
-
-
-            >
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="center"
-                android:gravity="center_vertical"
-                android:layout_marginLeft="@dimen/_10sdp"
-                android:layout_marginRight="@dimen/_10sdp"
-
-                >
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_mastercard_logo"
-                    android:layout_weight="10"
-                    >
-
-
-                </ImageView>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_visa_logo"
-                    android:layout_marginLeft="@dimen/_5sdp"
-                    android:layout_weight="10"
-                    >
-
-
-                </ImageView>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/tarjeta"
-                    android:fontFamily="@font/encodesans_medium"
-                    android:textColor="@color/color_3D444F"
-                    android:gravity="right"
-                    android:layout_weight="70"
-                    android:layout_marginRight="@dimen/_30sdp"
-                    >
-
-                </TextView>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_right_arrow_blue"
-                    android:layout_weight="10"
-
-                    >
-
-                </ImageView>
-
-
-            </LinearLayout>
-
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cv_paguelofacil"
-            android:layout_width="match_parent"
-            android:layout_height="90dp"
-            app:cardCornerRadius="@dimen/_14sdp"
-            android:layout_marginTop="@dimen/_15sdp"
-            android:layout_marginBottom="@dimen/_20sdp"
-            app:cardElevation="1dp"
-            >
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="center"
-                android:gravity="center_vertical"
-                android:layout_marginLeft="@dimen/_10sdp"
-                android:layout_marginRight="@dimen/_10sdp"
-
-                >
-
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/ic_app_icon"
-                    android:layout_weight="20"
-                    >
-
-
-                </ImageView>
-
-
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/paguelofacil_app"
-                    android:fontFamily="@font/encodesans_medium"
-                    android:textColor="@color/color_3D444F"
-                    android:gravity="right"
-                    android:layout_marginRight="@dimen/_30sdp"
-                    android:layout_weight="70"
-                    >
-
-                </TextView>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_right_arrow_blue"
-                    android:layout_weight="10"
-
-                    >
-
-                </ImageView>
-
-
-            </LinearLayout>
-
-
-        </androidx.cardview.widget.CardView>
-
-
-
-
-    </LinearLayout>
-
-</ScrollView>
-
-
-
-
-
-
-
+    </ScrollView>
 
 </LinearLayout>
+

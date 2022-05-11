@@ -1,15 +1,17 @@
+import org.gradle.api.initialization.resolve.RepositoriesMode
+
 pluginManagement {
     repositories {
         gradlePluginPortal()
         mavenLocal()
         mavenCentral()
-        maven { url "https://jitpack.io" }
+        maven { url 'https://jitpack.io' }
         google()
         jcenter()
     }
 }
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
     repositories {
         mavenLocal()
         mavenCentral()
@@ -19,4 +21,8 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "Posfacil"
+
 include ':app'
+include ':commonlib'
+include ':emv'
+include ':sdk'
