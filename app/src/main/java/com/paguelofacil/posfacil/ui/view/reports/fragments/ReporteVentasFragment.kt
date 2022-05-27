@@ -70,6 +70,7 @@ class ReporteVentasFragment : Fragment() {
         rdb.text = ApplicationClass.language.deseaEnviarCorreoCorte
         btnAceptar.text = ApplicationClass.language.siAceptar
         btnClose.text = ApplicationClass.language.volver
+        description.text = ApplicationClass.language.no_charge_day
 
         btnAceptar.setOnClickListener {
 

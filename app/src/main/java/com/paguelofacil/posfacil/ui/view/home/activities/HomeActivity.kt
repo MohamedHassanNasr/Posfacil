@@ -3,8 +3,10 @@ package com.paguelofacil.posfacil.ui.view.home.activities
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.view.KeyEvent
 import android.view.Menu
 import android.view.View
+import android.widget.Button
 import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -19,6 +21,8 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.android.material.button.MaterialButton
 import com.google.android.material.navigation.NavigationView
 import com.paguelofacil.posfacil.ApplicationClass
 import com.paguelofacil.posfacil.R
@@ -28,6 +32,7 @@ import com.paguelofacil.posfacil.ui.view.home.viewmodel.HomeViewModel
 import com.paguelofacil.posfacil.util.Constantes.AppConstants.Companion.IDIOMA_ESPANOL
 import com.paguelofacil.posfacil.util.Constantes.AppConstants.Companion.IDIOMA_INGLES
 import com.paguelofacil.posfacil.util.KeyboardUtil
+import com.paguelofacil.posfacil.util.networkErrorConverter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -74,7 +79,7 @@ class HomeActivity : AppCompatActivity() {
         viewModel.titleObserver.observe(this){
             Timber.e("BIEBIEBIEBIE ${it.first}")
             if (it.second){
-                binding.appBarHome.titleApp.text = "Panel de cobro"//ApplicationClass.language.panelCobro
+                binding.appBarHome.titleApp.text = ApplicationClass.language.billing_panel
             }else{
                 binding.appBarHome.titleApp.text = it.first
             }
@@ -121,7 +126,7 @@ class HomeActivity : AppCompatActivity() {
 
         viewModel.titleObserver.observe(this){
             if (it.second){
-                binding.appBarHome.titleApp.text = "Panel de cobro"
+                binding.appBarHome.titleApp.text = ApplicationClass.language.billing_panel
             }else{
                 binding.appBarHome.titleApp.text = it.first
             }
@@ -276,4 +281,50 @@ class HomeActivity : AppCompatActivity() {
         viewModel.resetTimer()
     }
 
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+        if (keyCode == KeyEvent.KEYCODE_BACK){
+            exitByBack()
+            return true
+        }
+        return super.onKeyDown(keyCode, event)
+    }
+
+    private fun exitByBack(){
+        bottomSheetClose()
+    }
+
+    private fun bottomSheetClose(){
+        val dialog = this?.let { BottomSheetDialog(it) }
+
+        val view = layoutInflater.inflate(R.layout.bottom_sheet_is_close, null)
+        val title =view.findViewById<TextView>(R.id.tv_mensaje_dialog)
+        val btnSi =view.findViewById<Button>(R.id.btn_si_aceptar)
+        val volver = view.findViewById<MaterialButton>(R.id.btn_volver)
+
+        title.text = resources.getString(R.string.closeSession)//ApplicationClass.language.close_session_confirmation
+
+        btnSi.text = ApplicationClass.language.siAceptar
+        volver.text = ApplicationClass.language.volver
+
+
+        btnSi.setOnClickListener {
+            KeyboardUtil.hideKeyboard(this)
+            finish()
+        }
+
+        volver.setOnClickListener {
+            dialog?.dismiss()
+        }
+
+        dialog?.setCancelable(true)
+
+        dialog?.setContentView(view)
+
+        dialog?.show()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        KeyboardUtil.hideKeyboard(this)
+    }
 }

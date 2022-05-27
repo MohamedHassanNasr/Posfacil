@@ -7,6 +7,7 @@ import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import com.paguelofacil.posfacil.ApplicationClass
@@ -45,7 +46,7 @@ class HomeFragment : BaseFragment() {
         title.text = "Ajustes"*/
         val vm = ViewModelProvider(requireActivity()).get<HomeViewModel>(modelClass = HomeViewModel::class.java)
 
-        vm.setTitle("Panel de cobro", true)
+        vm.setTitle(ApplicationClass.language.billing_panel, true)
         Timber.e("VIEEE ${viewModel.x}")
     }
 
@@ -123,10 +124,17 @@ class HomeFragment : BaseFragment() {
         binding.btnNext.setOnClickListener {
             if (importeMinimoSuccess()) {
                 KeyboardUtil.hideKeyboard(requireActivity())
-                viewModel.checkZReport()
+                viewModel.checkZReport(Sys)
             } else {
                 showSnack(ApplicationClass.language.theMinimumAllowedAmount)
             }
+        }
+
+        binding.etMontoCobrar.imeOptions = EditorInfo.IME_ACTION_DONE
+        binding.etMontoCobrar.setOnEditorActionListener { textView, i, keyEvent ->
+            KeyboardUtil.hideKeyboard(requireActivity())
+            binding.etMontoCobrar.clearFocus()
+            true
         }
     }
 
@@ -189,4 +197,6 @@ class HomeFragment : BaseFragment() {
         startActivity(intent)
         requireActivity().finish()
     }
+
+
 }

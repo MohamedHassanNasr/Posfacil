@@ -5,14 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="@dimen/_15sdp"
+    android:padding="16dp"
     tools:context=".ui.view.account.fragments.StepOneRecoveryPassFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:padding="10dp">
+        android:layout_gravity="center">
 
         <ImageView
             android:id="@+id/ln_arrow_back"
@@ -20,21 +19,21 @@
             android:layout_height="30dp"
             android:src="@drawable/ic_arrow_rigth"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/titlePassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Recuperar contraseña"
             android:fontFamily="@font/encodesans_bold"
-            android:textSize="18sp"
-            android:textStyle="bold"
+            android:text="Recuperar contraseña"
             android:textColor="@color/black_1e2227"
-            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="@dimen/_13sdp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -120,7 +119,7 @@
             android:layout_marginTop="@dimen/_16sdp"
             android:layout_marginEnd="@dimen/_16sdp"
             android:focusable="false"
-            android:gravity="start"
+            android:gravity="center"
             android:paddingStart="@dimen/_16sdp"
             android:paddingTop="@dimen/_12sdp"
             android:paddingEnd="@dimen/_24sdp"
@@ -128,8 +127,6 @@
             tools:text="@string/btn_recovery_pass"
             android:textSize="@dimen/_14sdp"
             app:cornerRadius="@dimen/_10sdp"
-            app:icon="@drawable/ic_arrow_forward_white"
-            app:iconGravity="end"
             app:iconSize="@dimen/_16sdp" />
 
     </LinearLayout>

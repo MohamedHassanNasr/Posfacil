@@ -33,6 +33,9 @@ class CancelBottomSheet(
         )
 
         binding.btnVolver.text = ApplicationClass.language.volver
+        binding.description.text = ApplicationClass.language.cancel_question
+        binding.tvMensajeDialog.text = ApplicationClass.language.cancel_operation
+        binding.btnSiCancelar.text = ApplicationClass.language.cancel
 
         initOnClick()
 

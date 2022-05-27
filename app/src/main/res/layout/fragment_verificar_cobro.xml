@@ -22,9 +22,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginLeft="6dp"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginRight="@dimen/_20sdp"
+                android:layout_marginRight="6dp"
                 android:layout_marginBottom="@dimen/_10sdp"
                 android:gravity="center"
                 android:orientation="horizontal">
@@ -32,8 +32,7 @@
                 <LinearLayout
                     android:id="@+id/ln_arrow_back"
                     android:layout_width="48dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="20">
+                    android:layout_height="wrap_content">
 
                     <ImageView
                         android:layout_width="48dp"
@@ -43,7 +42,7 @@
 
                 <TextView
                     android:id="@+id/textViewTitle"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="60"
@@ -59,7 +58,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_weight="20"
                     android:gravity="center"
                     android:orientation="horizontal">
 
@@ -369,7 +367,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="0dp"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:cursorVisible="false"
+                android:cursorVisible="true"
                 android:drawableStart="@drawable/ic_money_black"
                 android:focusableInTouchMode="true"
                 android:focusedByDefault="true"
@@ -452,23 +450,24 @@
                     android:orientation="vertical">
 
                     <EditText
-                        android:id="@+id/et_custom_taxe"
-                        style="@style/customEditTexttaxeStyle"
+                        android:id="@+id/etCustomTaxe"
                         android:layout_width="@dimen/_120sdp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="0dp"
                         android:layout_marginTop="@dimen/_10sdp"
-                        android:cursorVisible="false"
-                        android:drawableStart="@drawable/ic_money_black"
+                        android:textSize="@dimen/_12sdp"
                         android:enabled="false"
-                        android:focusableInTouchMode="true"
-                        android:focusedByDefault="true"
-                        android:inputType="numberDecimal"
+                        style="@style/customEditTexttaxeStyle"
                         android:paddingStart="@dimen/_24sdp"
                         android:paddingEnd="@dimen/_16sdp"
+                        android:inputType="numberDecimal"
+                        android:textColor="@color/color_3d444f"
+                        android:fontFamily="@font/encodesans_medium"
+                        android:drawableStart="@drawable/ic_money_black"
                         android:text="0.70"
+                        android:cursorVisible="false"
                         android:textIsSelectable="false"
-                        android:textSize="@dimen/_12sdp" />
+                        android:focusedByDefault="false"  />
 
                 </LinearLayout>
 
@@ -766,12 +765,12 @@
             android:layout_marginRight="@dimen/_20sdp"
             android:layout_marginBottom="@dimen/_10sdp"
             android:gravity="center"
-            android:textAlignment="center"
             android:paddingStart="@dimen/_16sdp"
             android:paddingTop="@dimen/_12sdp"
             android:paddingEnd="@dimen/_24sdp"
             android:paddingBottom="@dimen/_12sdp"
             android:text="@string/cobrar"
+            android:textAlignment="center"
             android:textSize="@dimen/_14sdp"
             app:cornerRadius="@dimen/_10sdp"
             app:iconSize="@dimen/_16sdp" />

@@ -24,7 +24,7 @@ import kotlin.collections.HashMap
 class CobroRepository @Inject constructor(val posService: CobroService): BaseRepo() {
     var db = FirebaseFirestore.getInstance()
 
-    fun saveDataCardFirestore(data: HashMap<String, Any>) {
+    fun saveDataCardFirestore(data: HashMap<String, Any?>) {
         try {
             data["fecha"] = FieldValue.serverTimestamp()
             db.collection("logs-deteccion-tarjeta")

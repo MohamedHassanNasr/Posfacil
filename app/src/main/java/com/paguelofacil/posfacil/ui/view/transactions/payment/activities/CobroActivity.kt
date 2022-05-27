@@ -7,8 +7,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.paguelofacil.posfacil.R
 import com.paguelofacil.posfacil.databinding.ActivityCobroBinding
-import com.paguelofacil.posfacil.pax.MainActivity.Companion.EXTRA_RESULT_CARD_NUMBER
-import com.paguelofacil.posfacil.pax.MainActivity.Companion.EXTRA_RESULT_PAY_IS_SUCCESS
+import com.paguelofacil.posfacil.pax.DetectedCardActivity.Companion.EXTRA_RESULT_CARD_NUMBER
 import com.paguelofacil.posfacil.ui.view.home.activities.HomeActivity
 import com.paguelofacil.posfacil.ui.view.transactions.payment.fragments.FirmaFragment
 import com.paguelofacil.posfacil.ui.view.transactions.payment.fragments.VerificarCobroFragment

@@ -1,9 +1,7 @@
 package com.paguelofacil.posfacil.ui.view.reports.fragments
 
 import android.annotation.SuppressLint
-import android.graphics.Color
 import android.os.Bundle
-import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,7 +13,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import com.paguelofacil.posfacil.ApplicationClass
-import com.paguelofacil.posfacil.R
 import com.paguelofacil.posfacil.base.BaseFragment
 import com.paguelofacil.posfacil.databinding.FragmentInformeVentasBinding
 import com.paguelofacil.posfacil.model.TransactionByUser
@@ -54,7 +51,7 @@ class InformeVentasFragment : BaseFragment() {
         }
         Timber.e("PARAM $param1 $param2")
         lifecycleScope.launch {
-            viewModelTransaction.getReportesVentas()
+            viewModelTransaction.getReportesVentas(Sys)
         }
         initObservers()
         binding.titleResumen.text = ApplicationClass.language.resumenVentasHoy
@@ -229,7 +226,7 @@ class InformeVentasFragment : BaseFragment() {
                 }
             }catch (e: Exception){
                 Timber.e("EXCEPTION $e")
-                Toast.makeText(activity, "No se encontraron cobros realizadios", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity, "No se encontraron cobros realizados"/*ApplicationClass.language.no_charge_done*/, Toast.LENGTH_SHORT).show()
             }
         }
     }

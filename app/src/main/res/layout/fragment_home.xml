@@ -35,6 +35,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/_45sdp"
                     android:inputType="numberDecimal"
+                    android:imeOptions="actionDone"
                     android:layout_marginTop="@dimen/_20sdp"
                     android:background="@android:color/transparent"
                     android:textColor="@color/color_3d444f"
@@ -42,7 +43,7 @@
                     android:drawableStart="@drawable/icon_left_money_home"
                     android:text="0.00"
                     android:gravity="end"
-                    android:cursorVisible="false"
+                    android:cursorVisible="true"
                     android:textIsSelectable="false"
                     android:focusedByDefault="false"/>
 

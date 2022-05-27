@@ -45,6 +45,7 @@ class EnvioComprobanteFragment : Fragment(), IOnBackPressed {
         binding.emailtv.text = ApplicationClass.language.email
         binding.phonetv.text = ApplicationClass.language.phone
         binding.btnSendVoucher.text = ApplicationClass.language.send
+        binding.tvTitle.text = ApplicationClass.language.voucher
 
         loadListeners()
 
@@ -113,14 +114,14 @@ class EnvioComprobanteFragment : Fragment(), IOnBackPressed {
         val description =view.findViewById<TextView>(R.id.descriptionError)
         val btn = view.findViewById<MaterialButton>(R.id.btnAccept)
 
-        title.text = "!Ha ocurrido un error!"
+        title.text = ApplicationClass.language.error
         description.text = if ((message == "400") or (message == "400") or (message == "400")){
-            "Verifique los datos e intente\nnuevamente"
+            ApplicationClass.language.check_data
         }else{
             networkErrorConverter(message)
         }
 
-        btn.text = "Intentar nuevamente"
+        btn.text = ApplicationClass.language.try_againg
         btn.setOnClickListener {
             dialog?.dismiss()
             onFailure()

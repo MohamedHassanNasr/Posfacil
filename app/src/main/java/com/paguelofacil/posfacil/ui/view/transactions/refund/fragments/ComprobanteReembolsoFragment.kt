@@ -41,6 +41,7 @@ class ComprobanteReembolsoFragment : Fragment() {
         binding.textView13.text = ApplicationClass.language.codeOperation
         binding.btnTransaction.text = ApplicationClass.language.volverTransactions
         binding.btnResendVoucher.text = ApplicationClass.language.resendReceipt
+        binding.tvTitle.text = ApplicationClass.language.voucher
 
         loadListeners()
 

@@ -8,6 +8,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
+import android.util.Patterns
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -30,7 +31,9 @@ import com.paguelofacil.posfacil.ui.view.account.viewmodel.LoginViewModel
 import com.paguelofacil.posfacil.ui.view.home.activities.HomeActivity
 import com.paguelofacil.posfacil.ui.view.home.activities.IntroActivity
 import com.paguelofacil.posfacil.util.Constantes.CoreConstants
+import com.paguelofacil.posfacil.util.KeyboardUtil
 import com.paguelofacil.posfacil.util.isValidPassword
+import timber.log.Timber
 
 
 class LoginFragment : BaseFragment(), View.OnFocusChangeListener, View.OnClickListener {
@@ -43,8 +46,6 @@ class LoginFragment : BaseFragment(), View.OnFocusChangeListener, View.OnClickLi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         vm = ViewModelProvider(requireActivity())[LoginViewModel::class.java]
-
-        setBaseViewModel(vm)
 
         vm.getResponseObserver()
             .observe(this@LoginFragment, this)
@@ -82,13 +83,14 @@ class LoginFragment : BaseFragment(), View.OnFocusChangeListener, View.OnClickLi
         user.fingerPrintAuthenticatedLogin = false
         user.introShown = true
         UserRepo.setOrUpdateUser(user, true)
-
+        setBaseViewModel(vm)
+        binding.etEmail.clearFocus()
+        binding.etPassword.clearFocus()
+        Timber.e("ANTES DE HIDE")
+        KeyboardUtil.hideKeyboard(requireActivity())
+        Timber.e("ANTES DE HIDE from view")
+        KeyboardUtil.hideKeyboard(requireActivity(), view)
         loadLanguage()
-
-        if (!user.email.isNullOrEmpty()) {
-            binding.etEmail.setText(user.email.toString())
-            binding.etEmail.setSelection(binding.etEmail.text?.length ?: 0)
-        }
 
         return binding.root
     }
@@ -131,7 +133,7 @@ class LoginFragment : BaseFragment(), View.OnFocusChangeListener, View.OnClickLi
 
             binding.btnLogin -> {
                 if (validated()) {
-                    vm.signIn(binding.etEmail.text.toString(), binding.etPassword.text.toString())
+                    vm.signIn(binding.etEmail.text.toString().trim(), binding.etPassword.text.toString().trim())
                 }
             }
 
@@ -173,11 +175,11 @@ class LoginFragment : BaseFragment(), View.OnFocusChangeListener, View.OnClickLi
     }
 
     private fun isEmailValidated(): Boolean {
-        if (binding.etEmail.text.isNullOrBlank()) {
-            return false
+        return if (!binding.etEmail.text.isNullOrEmpty()) {
+            binding.etEmail.text!!.matches(Patterns.EMAIL_ADDRESS.toRegex())
+        }else{
+            false
         }
-
-        return true
     }
 
     override fun onFocusChange(v: View?, hasFocus: Boolean) {

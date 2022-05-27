@@ -71,7 +71,7 @@ class CobroViewModel @Inject constructor(
         mutableDataCobro.value = entity
     }
 
-    fun saveDataCardFirestore(data: HashMap<String, Any>) {
+    fun saveDataCardFirestore(data: HashMap<String, Any?>) {
         cobroRepository.saveDataCardFirestore(data)
     }
 

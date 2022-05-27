@@ -29,6 +29,7 @@ class SendReceiptPaymentFragment : Fragment() {
     ): View {
         binding = FragmentSendReceiptPaymentBinding.inflate(inflater, container, false)
 
+        binding.tvTitle.text = ApplicationClass.language.voucher
         loadListeners()
         loadLanguage()
         loadData()

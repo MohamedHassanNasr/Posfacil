@@ -6,6 +6,7 @@ import android.graphics.Rect
 import android.util.TypedValue
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import timber.log.Timber
 import kotlin.math.roundToInt
 
 
@@ -21,6 +22,7 @@ object KeyboardUtil {
     }
 
     fun hideKeyboard(context: Context?, view: View?) {
+        Timber.e("HIDE VIEW")
         val inputMethodManager: InputMethodManager? = context?.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager?
         inputMethodManager?.hideSoftInputFromWindow(view?.windowToken, 0)
     }
@@ -33,8 +35,10 @@ object KeyboardUtil {
     }
 
     fun hideKeyboard(activity: Activity?) {
+        Timber.e("HIDEE")
         val inputMethodManager = activity?.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
         activity.currentFocus?.let {
+            Timber.e("HIDEE no null")
             inputMethodManager.hideSoftInputFromWindow(it.windowToken, 0)
         }
     }

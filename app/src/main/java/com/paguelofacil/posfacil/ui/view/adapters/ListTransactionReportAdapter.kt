@@ -47,16 +47,16 @@ class ListTransactionReportAdapter(
             logoCard.text = (
                 when(transactionList[position].paymentMethod){
                     "VISA"->{
-                        "Visa "
+                        "Visa ****"
                     }
                     "WALLET"->{
-                        "Paguelo Facil "
+                        "Paguelo Facil ****"
                     }
                     "MC"->{
-                        "Mastercard "
+                        "Mastercard ****"
                     }
                     else->{
-                        "Paguelo Facil "
+                        "Paguelo Facil ****"
                     }
                 }
             )

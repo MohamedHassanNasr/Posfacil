@@ -67,7 +67,8 @@ data class UserEntity(
     var locale: String? = null,
     var tempCodeAuth: String? = null,
     var tempEmailLogin: String? = null,
-    var merchantProfile: @RawValue Contact.MerchantProfile? = null
+    var merchantProfile: @RawValue Contact.MerchantProfile? = null,
+    var lang: String? = null
 ) : Parcelable {
 
     fun getFullName(): String {

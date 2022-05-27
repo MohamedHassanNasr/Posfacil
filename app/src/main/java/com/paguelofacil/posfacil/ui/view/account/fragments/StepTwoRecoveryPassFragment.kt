@@ -103,14 +103,14 @@ class StepTwoRecoveryPassFragment : BaseFragment(), View.OnClickListener {
         val description =view.findViewById<TextView>(R.id.descriptionError)
         val btn = view.findViewById<MaterialButton>(R.id.btnAccept)
 
-        title.text = "!Ha ocurrido un error!"
+        title.text = ApplicationClass.language.error
         description.text = if ((message == "400") or (message == "400") or (message == "400")){
             ApplicationClass.language.errorPaidTryAgainOrContactOurSupportTeam
         }else{
             networkErrorConverter(message)
         }
 
-        btn.text = "Intentar nuevamente"
+        btn.text = ApplicationClass.language.try_againg
         btn.setOnClickListener {
             dialog?.dismiss()
             onFailure()

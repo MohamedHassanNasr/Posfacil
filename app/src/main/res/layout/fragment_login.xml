@@ -66,9 +66,9 @@
             android:drawableStart="@drawable/ic_add_mail"
             android:imeOptions="actionNext"
             android:inputType="textEmailAddress"
+            android:focusedByDefault="false"
             android:paddingStart="@dimen/_24sdp"
-            android:paddingEnd="@dimen/_16sdp"
-            android:text="aceballos_adm@pf.com" />
+            android:paddingEnd="@dimen/_16sdp" />
 
         <TextView
             android:id="@+id/tv_password_label"
@@ -86,13 +86,11 @@
                 android:id="@+id/et_password"
                 style="@style/customEditTextRegistrationStyle"
                 android:drawableStart="@drawable/ic_add_password"
-                android:hint="@string/string_123"
                 android:imeOptions="actionDone"
                 android:inputType="textPassword"
                 android:lines="1"
                 android:maxLength="30"
                 android:paddingStart="@dimen/_24sdp"
-                android:text="Posfacil2022.1"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

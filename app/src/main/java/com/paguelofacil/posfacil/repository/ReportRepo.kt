@@ -10,6 +10,7 @@ import com.paguelofacil.posfacil.model.MerchantResponse
 import com.paguelofacil.posfacil.model.ReportXResponse
 import com.paguelofacil.posfacil.model.ReporteVentaResponse
 import com.paguelofacil.posfacil.util.Resultado
+import com.pax.dal.ISys
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.Response
@@ -37,27 +38,27 @@ object ReportRepo : BaseRepo() {
         }
     }
 
-    suspend fun getReporte(): ReporteVentaResponse {
+    suspend fun getReporte(Sys: String): ReporteVentaResponse {
         val body = HashMap<String, Any>()
 
-        body["serial"] = ApiEndpoints.ATIK_SERIAL
+        body["serial"] = Sys
         //url https://middle-test.pfserver.net/PFManagementServices/api/v2/PosReport/test-atik-dev-serial
-        return remoteDao.getSpecify("$API_BASE_URL/${ApiEndpoints.REPORTS_SELL}/${ApiEndpoints.ATIK_SERIAL}")
+        return remoteDao.getSpecify("$API_BASE_URL/${ApiEndpoints.REPORTS_SELL}/${Sys}")
     }
 
-    suspend fun getReporteX(email: String): ReportXResponse {
+    suspend fun getReporteX(email: String, Sys: ISys): ReportXResponse {
         val body = HashMap<String, Any>()
         body["command"] = "X"
-        body["serial"] = ApiEndpoints.ATIK_SERIAL
+        body["serial"] = Sys.baseInfo.sn
         body["email"] = email
 
         return remoteDao.postReportX(ApiEndpoints.POS_COMMAND,body)
     }
 
-    suspend fun getReporteZ(email: String): ReportXResponse {
+    suspend fun getReporteZ(email: String, Sys: ISys): ReportXResponse {
         val body = HashMap<String, Any>()
         body["command"] = "Z"
-        body["serial"] = ApiEndpoints.ATIK_SERIAL
+        body["serial"] = Sys.baseInfo.sn
         body["email"] = email
 
         return remoteDao.postReportX(ApiEndpoints.POS_COMMAND,body)

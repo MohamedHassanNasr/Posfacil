@@ -20,12 +20,14 @@ import com.paguelofacil.posfacil.data.network.api.ApiRequestCode
 import com.paguelofacil.posfacil.data.network.response.SystemParamsResponse
 import com.paguelofacil.posfacil.databinding.ActivityIntroBinding
 import com.paguelofacil.posfacil.repository.ConfigurationsRepo
+import com.paguelofacil.posfacil.repository.UserRepo
 import com.paguelofacil.posfacil.ui.view.account.viewmodel.SystemConfigViewModel
 import com.paguelofacil.posfacil.ui.view.home.viewmodel.HomeViewModel
 import com.paguelofacil.posfacil.util.networkErrorConverter
 import kotlinx.coroutines.launch
 import org.json.JSONObject
 import timber.log.Timber
+import java.util.*
 
 class IntroActivity :  BaseActivity(), View.OnClickListener, View.OnFocusChangeListener {
 
@@ -70,14 +72,14 @@ class IntroActivity :  BaseActivity(), View.OnClickListener, View.OnFocusChangeL
         val description =view.findViewById<Button>(R.id.descriptionError)
         val btn = view.findViewById<MaterialButton>(R.id.btnAccept)
 
-        title.text = "!Ha ocurrido un error!"
+        title.text = ApplicationClass.language.error
         description.text = if ((message == "400") or (message == "400") or (message == "400")){
             ApplicationClass.language.errorPaidTryAgainOrContactOurSupportTeam
         }else{
             networkErrorConverter(message)
         }
 
-        btn.text = "Intentar nuevamente"
+        btn.text = ApplicationClass.language.try_againg
         btn.setOnClickListener {
             dialog?.dismiss()
             onFailure()
@@ -127,8 +129,7 @@ class IntroActivity :  BaseActivity(), View.OnClickListener, View.OnFocusChangeL
 
         val json = JSONObject(dataScreen)
 
-
-        val urlScreen = json.getString("es")
+        val urlScreen = json.getString(vm.getLanguageDeviceLocal().toLowerCase(Locale.getDefault()))
 
         Glide.with(this)
             .load(urlScreen).fitCenter()

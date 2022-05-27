@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.view.main.MainXActivity">
+    tools:context=".ui.view.main.MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -38,7 +38,7 @@
                 android:layout_marginHorizontal="4dp"
                 android:background="@color/greenLight"
                 android:visibility="visible"
-                app:tint="@color/led_green" />
+                app:tint="@color/transparent" />
 
             <ImageView
                 android:id="@+id/pointTwo"
@@ -47,8 +47,8 @@
                 android:src="@drawable/ic_line"
                 android:layout_marginHorizontal="4dp"
                 android:background="@color/white"
-                app:tint="@color/led_green"
-                android:visibility="visible"/>
+                android:visibility="visible"
+                app:tint="@color/transparent" />
 
             <ImageView
                 android:id="@+id/pointThird"
@@ -56,9 +56,9 @@
                 android:layout_height="4dp"
                 android:layout_marginHorizontal="4dp"
                 android:src="@drawable/ic_line"
-                app:tint="@color/led_green"
                 android:background="@color/white"
-                android:visibility="visible"/>
+                android:visibility="visible"
+                app:tint="@color/transparent"/>
 
 
         </LinearLayout>

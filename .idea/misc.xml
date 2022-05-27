@@ -3,10 +3,33 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/GitHub - Atik/posfacil-master/app/src/main/res/drawable-mdpi/btn_bg.xml" value="0.1" />
+        <entry key="..\:/GitHub - Atik/posfacil-master/app/src/main/res/drawable-mdpi/btn_bg_light.xml" value="0.1" />
+        <entry key="..\:/GitHub - Atik/posfacil-master/app/src/main/res/drawable-mdpi/btn_ok_light.xml" value="0.1" />
+        <entry key="..\:/GitHub - Atik/posfacil-master/app/src/main/res/drawable-mdpi/dotted_line_border_bg.xml" value="0.1" />
+        <entry key="..\:/GitHub - Atik/posfacil-master/app/src/main/res/drawable-mdpi/launcher_act_bg.xml" value="0.1" />
+        <entry key="..\:/GitHub - Atik/posfacil-master/app/src/main/res/drawable-mdpi/line.xml" value="0.1" />
+        <entry key="..\:/GitHub - Atik/posfacil-master/app/src/main/res/drawable-mdpi/selector_keyboard_num_bg.xml" value="0.1" />
+        <entry key="..\:/GitHub - Atik/posfacil-master/app/src/main/res/drawable-mdpi/spinner_bg.xml" value="0.1" />
         <entry key="..\:/GitHub - Atik/posfacil-master/app/src/main/res/drawable/ic_exclamation_inside_white_cicle.xml" value="0.1125" />
+        <entry key="..\:/GitHub - Atik/posfacil-master/app/src/main/res/layout/activity_ajustes.xml" value="0.17572463768115942" />
+        <entry key="..\:/GitHub - Atik/posfacil-master/app/src/main/res/layout/activity_apdu_time_record.xml" value="0.17572463768115942" />
         <entry key="..\:/GitHub - Atik/posfacil-master/app/src/main/res/layout/activity_cobro.xml" value="0.20416666666666666" />
         <entry key="..\:/GitHub - Atik/posfacil-master/app/src/main/res/layout/activity_home.xml" value="0.20416666666666666" />
         <entry key="..\:/GitHub - Atik/posfacil-master/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/GitHub - Atik/posfacil-master/app/src/main/res/layout/activity_main_2.xml" value="0.17572463768115942" />
+        <entry key="..\:/GitHub - Atik/posfacil-master/app/src/main/res/layout/activity_select_param_file.xml" value="0.1" />
+        <entry key="..\:/GitHub - Atik/posfacil-master/app/src/main/res/layout/activity_settings.xml" value="0.17572463768115942" />
+        <entry key="..\:/GitHub - Atik/posfacil-master/app/src/main/res/layout/activity_trans_process.xml" value="0.18" />
+        <entry key="..\:/GitHub - Atik/posfacil-master/app/src/main/res/layout/activity_trans_result.xml" value="0.33" />
+        <entry key="..\:/GitHub - Atik/posfacil-master/app/src/main/res/layout/bottom_sheet_cancel.xml" value="0.2" />
+        <entry key="..\:/GitHub - Atik/posfacil-master/app/src/main/res/layout/bottom_sheet_dg_motivos.xml" value="0.1" />
+        <entry key="..\:/GitHub - Atik/posfacil-master/app/src/main/res/layout/bottom_sheet_dialog.xml" value="0.22" />
+        <entry key="..\:/GitHub - Atik/posfacil-master/app/src/main/res/layout/bottom_sheet_pago_success.xml" value="0.1" />
+        <entry key="..\:/GitHub - Atik/posfacil-master/app/src/main/res/layout/bottom_sheet_reporte_x.xml" value="0.1" />
+        <entry key="..\:/GitHub - Atik/posfacil-master/app/src/main/res/layout/bottom_sheet_warning_with_list.xml" value="0.1" />
+        <entry key="..\:/GitHub - Atik/posfacil-master/app/src/main/res/layout/clss_light_layout.xml" value="0.1" />
+        <entry key="..\:/GitHub - Atik/posfacil-master/app/src/main/res/layout/dlg_enter_pin.xml" value="0.15942028985507245" />
         <entry key="..\:/GitHub - Atik/posfacil-master/app/src/main/res/layout/fragment_cobro_qr_code.xml" value="0.20416666666666666" />
         <entry key="..\:/GitHub - Atik/posfacil-master/app/src/main/res/layout/fragment_comprobante_cobro.xml" value="0.20416666666666666" />
         <entry key="..\:/GitHub - Atik/posfacil-master/app/src/main/res/layout/fragment_detect_credit_card.xml" value="0.20416666666666666" />
@@ -15,15 +38,16 @@
         <entry key="..\:/GitHub - Atik/posfacil-master/app/src/main/res/layout/fragment_home.xml" value="0.20416666666666666" />
         <entry key="..\:/GitHub - Atik/posfacil-master/app/src/main/res/layout/fragment_login.xml" value="0.20416666666666666" />
         <entry key="..\:/GitHub - Atik/posfacil-master/app/src/main/res/layout/fragment_my_information.xml" value="0.20416666666666666" />
+        <entry key="..\:/GitHub - Atik/posfacil-master/app/src/main/res/layout/fragment_send_receipt_payment.xml" value="0.22" />
         <entry key="..\:/GitHub - Atik/posfacil-master/app/src/main/res/layout/fragment_step_one_recovery_pass.xml" value="0.20416666666666666" />
         <entry key="..\:/GitHub - Atik/posfacil-master/app/src/main/res/layout/fragment_step_three_recovery_pass.xml" value="0.20416666666666666" />
         <entry key="..\:/GitHub - Atik/posfacil-master/app/src/main/res/layout/fragment_step_two_recovery_pass.xml" value="0.21" />
         <entry key="..\:/GitHub - Atik/posfacil-master/app/src/main/res/layout/fragment_verificar_cobro.xml" value="0.20416666666666666" />
+        <entry key="..\:/GitHub - Atik/posfacil-master/app/src/main/res/layout/layout_loading_dialog.xml" value="0.1" />
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/drawable-hdpi/ic_circle_green.xml" value="0.206" />
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/drawable-xhdpi/ic_circle_yellow.xml" value="0.206" />
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/drawable/circle_black.xml" value="0.206" />
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/drawable/circle_yellow.xml" value="0.206" />
-        <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/drawable/dr_rect_fff1f0_filled_edb600_border_rounded_corner.xml" value="0.144" />
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/drawable/ic_add_mail.xml" value="0.1455" />
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/drawable/ic_add_password.xml" value="0.1455" />
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/drawable/ic_alerta_yellow.xml" value="0.206" />
@@ -31,19 +55,12 @@
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/drawable/ic_asterisk.xml" value="0.1425" />
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/drawable/ic_circle_gray.xml" value="0.206" />
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/drawable/ic_filter.xml" value="0.1455" />
-        <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/drawable/ic_line.xml" value="0.1595" />
-        <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/drawable/ic_support_email.xml" value="0.195" />
-        <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/drawable/ic_support_phone.xml" value="0.195" />
-        <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/drawable/ic_support_web.xml" value="0.195" />
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/drawable/ic_visa_logo.xml" value="0.1425" />
-        <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/activity_about.xml" value="0.25" />
-        <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/activity_ajustes.xml" value="0.25" />
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/activity_cobro.xml" value="0.25" />
+        <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/activity_detected_card.xml" value="0.16799999999999998" />
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/activity_home.xml" value="0.25" />
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/activity_intro.xml" value="0.2" />
-        <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/activity_login.xml" value="0.25" />
-        <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/activity_main.xml" value="0.264" />
-        <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/activity_main_2.xml" value="0.264" />
+        <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/activity_movements_filter.xml" value="0.25" />
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/activity_settings.xml" value="0.2" />
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/activity_transactions.xml" value="0.25" />
@@ -51,14 +68,12 @@
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/bottom_sheet_alert_z.xml" value="0.25" />
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/bottom_sheet_cancel.xml" value="0.25" />
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/bottom_sheet_dg_motivos.xml" value="0.25" />
-        <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/bottom_sheet_dialog.xml" value="0.2" />
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/bottom_sheet_pago_success.xml" value="0.25" />
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/bottom_sheet_reporte_x.xml" value="0.25" />
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/bottom_sheet_warning.xml" value="0.25" />
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/bottom_sheet_warning_with_list.xml" value="0.25" />
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/content_home.xml" value="0.25" />
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/custom_toolbar_home.xml" value="0.25" />
-        <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/fragment_ajustes.xml" value="0.25" />
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/fragment_cobro_qr_code.xml" value="0.25" />
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/fragment_comprobante_cobro.xml" value="0.25" />
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/fragment_comprobante_reembolso.xml" value="0.25" />
@@ -66,8 +81,6 @@
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/fragment_detail_reembolso.xml" value="0.25" />
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/fragment_detect_credit_card.xml" value="0.25" />
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/fragment_envio_comprobante.xml" value="0.25" />
-        <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/fragment_firma.xml" value="0.25" />
-        <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/fragment_gallery.xml" value="0.25" />
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/fragment_informe_ventas.xml" value="0.25" />
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/fragment_informes.xml" value="0.25" />
@@ -83,23 +96,15 @@
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/fragment_slider_three.xml" value="0.24615384615384617" />
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/fragment_slider_two.xml" value="0.24615384615384617" />
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/fragment_slideshow.xml" value="0.24537037037037038" />
-        <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/fragment_step_one_recovery_pass.xml" value="0.25" />
-        <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/fragment_step_three_recovery_pass.xml" value="0.25" />
-        <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/fragment_step_two_recovery_pass.xml" value="0.25" />
-        <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/fragment_support.xml" value="0.25" />
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/fragment_transactions.xml" value="0.25" />
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/fragment_verificar_cobro.xml" value="0.25" />
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/imager_container.xml" value="0.2212962962962963" />
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/include_badge_user.xml" value="0.10989583333333333" />
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/item_list_warning.xml" value="0.25" />
-        <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/layout_loading_dialog.xml" value="0.25" />
-        <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/layout_password_recovered.xml" value="0.25" />
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/list_transactions_report_x_card.xml" value="0.2" />
-        <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/menu_image.xml" value="0.10989583333333333" />
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/nav_header_home.xml" value="0.25" />
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/payment_global_list.xml" value="0.25" />
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/report_by_user.xml" value="0.25" />
-        <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/row_motivos_reembolso.xml" value="0.25" />
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/row_transaction.xml" value="0.25" />
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/layout/user_transaction_card.xml" value="0.25" />
         <entry key="..\:/Users/51928/AndroidStudioProjects/POSFacil/app/src/main/res/menu/activity_home_drawer.xml" value="0.24615384615384617" />

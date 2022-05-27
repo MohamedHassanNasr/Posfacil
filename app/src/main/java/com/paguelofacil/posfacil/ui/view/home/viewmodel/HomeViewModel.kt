@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.paguelofacil.posfacil.base.BaseViewModel
 import com.paguelofacil.posfacil.data.database.entity.UserEntity
+import com.paguelofacil.posfacil.data.network.api.ApiEndpoints
 import com.paguelofacil.posfacil.data.network.request.ReportZRequest
 import com.paguelofacil.posfacil.data.network.response.ReportZResponse
 import com.paguelofacil.posfacil.model.LanguageData
@@ -14,6 +15,7 @@ import com.paguelofacil.posfacil.repository.UserRepo
 import com.paguelofacil.posfacil.repository.language.LanguageRepository
 import com.paguelofacil.posfacil.repository.report.ReportRepository
 import com.paguelofacil.posfacil.repository.user.UserRepository
+import com.pax.dal.ISys
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.Flow
@@ -61,10 +63,10 @@ class HomeViewModel @Inject constructor(
         mutableDataUser.value = dataUser
     }
 
-    fun checkZReport() {
+    fun checkZReport(Sys: ISys?) {
         execute {
             viewModelScope.launch {
-                val response = reportRepository.checkReportZ()
+                val response = reportRepository.checkReportZ(Sys?.baseInfo?.sn ?: ApiEndpoints.ATIK_SERIAL)
                 processResponseResultado(response) {
                     mutableValidateReportZ.postValue(it)
                 }

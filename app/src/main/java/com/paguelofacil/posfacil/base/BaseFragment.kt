@@ -30,6 +30,11 @@ import com.paguelofacil.posfacil.ui.view.account.activities.LoginActivity
 import com.paguelofacil.posfacil.util.Constantes.LoadingState
 import com.paguelofacil.posfacil.util.KeyboardUtil
 import com.paguelofacil.posfacil.util.LoadingDialog
+import com.pax.dal.*
+import com.pax.dal.entity.EPedType
+import com.pax.dal.entity.EPiccType
+import com.pax.dal.entity.EScannerType
+import com.pax.neptunelite.api.NeptuneLiteUser
 import timber.log.Timber
 import java.net.ConnectException
 import java.net.SocketTimeoutException
@@ -50,9 +55,18 @@ abstract class BaseFragment : Fragment(), ApiResponseObserver<Any> {
     private lateinit var progressDialog: LoadingDialog
     protected var outputUri: Uri? = null
     private lateinit var gestureDetector: GestureDetectorCompat
+    lateinit var dalProxyClient: NeptuneLiteUser
+    lateinit var Dal: IDAL
+    lateinit var Mag: IMag
+    lateinit var Ped: IPed
+    lateinit var ICC: IIcc
+    lateinit var Picc: IPicc
+    lateinit var Sys: ISys
+    lateinit var Scanner: IScanner
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        initNeptune()
         initialiseProgressDialog()
         initialiseGestureListeners()
         initialiseKeyboardListener()
@@ -68,6 +82,22 @@ abstract class BaseFragment : Fragment(), ApiResponseObserver<Any> {
     override fun onPause() {
         super.onPause()
         getRootView()?.viewTreeObserver?.removeOnGlobalLayoutListener(keyboardListener)
+    }
+
+    private fun initNeptune() {
+        try {
+            Timber.e("INICIANDO NEPTUNE")
+            dalProxyClient = NeptuneLiteUser.getInstance()
+            Dal = dalProxyClient?.getDal(requireActivity())
+            Ped = Dal?.getPed(EPedType.INTERNAL)
+            Mag = Dal?.getMag()
+            Sys = Dal?.getSys()
+            ICC = Dal?.getIcc()
+            Picc = Dal?.getPicc(EPiccType.INTERNAL)
+            Scanner = Dal?.getScanner(EScannerType.REAR)
+        } catch (e: Exception) {
+            Timber.e("INICIANDO NEPTUNE ERROR $e")
+        }
     }
 
     private fun initialiseProgressDialog() {

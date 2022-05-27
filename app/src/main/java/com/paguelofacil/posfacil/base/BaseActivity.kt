@@ -30,6 +30,11 @@ import com.paguelofacil.posfacil.ui.view.account.activities.LoginActivity
 import com.paguelofacil.posfacil.util.Constantes.LoadingState
 import com.paguelofacil.posfacil.util.KeyboardUtil
 import com.paguelofacil.posfacil.util.LoadingDialog
+import com.pax.dal.*
+import com.pax.dal.entity.EPedType
+import com.pax.dal.entity.EPiccType
+import com.pax.dal.entity.EScannerType
+import com.pax.neptunelite.api.NeptuneLiteUser
 import timber.log.Timber
 import java.io.File
 import java.io.IOException
@@ -47,13 +52,38 @@ abstract class BaseActivity : AppCompatActivity(), ApiResponseObserver<Any> {
     private lateinit var appDialog: Dialog
     protected var outputUri: Uri? = null
     private lateinit var gestureDetector: GestureDetectorCompat
+    lateinit var dalProxyClient: NeptuneLiteUser
+    lateinit var Dal: IDAL
+    lateinit var Mag: IMag
+    lateinit var Ped: IPed
+    lateinit var ICC: IIcc
+    lateinit var Picc: IPicc
+    lateinit var Sys: ISys
+    lateinit var Scanner: IScanner
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        initNeptune()
         initialiseProgressDialog()
         initialiseGestureListeners()
         initialiseKeyboardListener()
         setOneTapToCloseKeyboard(getRootView())
+    }
+
+    private fun initNeptune() {
+        try {
+            Timber.e("INICIANDO NEPTUNE")
+            dalProxyClient = NeptuneLiteUser.getInstance()
+            Dal = dalProxyClient?.getDal(this)
+            Ped = Dal?.getPed(EPedType.INTERNAL)
+            Mag = Dal?.getMag()
+            Sys = Dal?.getSys()
+            ICC = Dal?.getIcc()
+            Picc = Dal?.getPicc(EPiccType.INTERNAL)
+            Scanner = Dal?.getScanner(EScannerType.REAR)
+        } catch (e: Exception) {
+            Timber.e("INICIANDO NEPTUNE ERROR $e")
+        }
     }
 
     override fun onResume() {

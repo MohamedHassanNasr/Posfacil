@@ -191,27 +191,26 @@
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appbar_layout"
-
         >
-
 
         <EditText
             android:id="@+id/et_monto_cobrar"
+            android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:textSize="@dimen/_45sdp"
+            android:imeOptions="actionDone"
+            android:inputType="numberDecimal"
             android:layout_marginTop="@dimen/_20sdp"
             android:background="@android:color/transparent"
-            android:drawableLeft="@drawable/icon_left_money_home"
-            android:focusableInTouchMode="true"
-            android:fontFamily="@font/encodesans_medium"
-            android:gravity="center"
-            android:cursorVisible="false"
-            android:textIsSelectable="false"
-            android:inputType="numberDecimal"
-            android:text="0.00"
             android:textColor="@color/color_3d444f"
-            android:textSize="@dimen/_45sdp">
+            android:fontFamily="@font/encodesans_medium"
+            android:drawableStart="@drawable/icon_left_money_home"
+            android:text="0.00"
+            android:gravity="end"
+            android:cursorVisible="true"
+            android:textIsSelectable="false"
+            android:focusedByDefault="false">
 
         </EditText>
 

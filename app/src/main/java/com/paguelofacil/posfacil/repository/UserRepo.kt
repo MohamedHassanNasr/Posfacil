@@ -179,6 +179,7 @@ object UserRepo : BaseRepo() {
         user.lastName = response.contact.lastname
         user.idMerchant = response.contact.idMerchant
         user.merchantProfile = response.contact.merchantProfile
+        user.lang = response.contact.lang
 
         //if the user has not used fingerprint authentication for login
         if (!user.fingerPrintAuthenticatedLogin) {

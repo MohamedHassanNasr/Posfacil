@@ -23,6 +23,3 @@ dependencyResolutionManagement {
 rootProject.name = "Posfacil"
 
 include ':app'
-include ':commonlib'
-include ':emv'
-include ':sdk'

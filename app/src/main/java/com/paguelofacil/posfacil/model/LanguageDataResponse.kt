@@ -1,6 +1,8 @@
 package com.paguelofacil.posfacil.model
 
 import com.google.gson.annotations.SerializedName
+import com.paguelofacil.posfacil.ApplicationClass
+import com.paguelofacil.posfacil.R
 import com.paguelofacil.posfacil.util.nullToCero
 import com.paguelofacil.posfacil.util.nullToEmpty
 
@@ -489,7 +491,27 @@ data class LanguageFileResponse(
     @field:SerializedName("subtitle_firma")
     val subtitleFirma: String?,
     @field:SerializedName("desea_enviar_correo_corte")
-    val deseaEnviarCorreoCorte: String?
+    val deseaEnviarCorreoCorte: String?,
+    val pf_qr: String?,
+    val select: String?,
+    val voucher: String?,
+    val billing_panel: String?,
+    val no_charge_day: String?,
+    val cancel_operation: String?,
+    val cancel_question: String?,
+    val cancel: String?,
+    val error: String?,
+    val pwd_not_update: String?,
+    val try_againg: String?,
+    val check_data: String?,
+    val completed: String?,
+    val sales_reports: String?,
+    val report_z: String?,
+    val grand_totals: String?,
+    val filter_search: String?,
+    val recovered_pwd: String?/*,
+    val no_charge_done: String?,
+    val close_session_confirmation: String?*/
 ) {
     fun toLanguageFile() = LanguageFile(
         cardFilterMastercard = this.cardFilterMastercard.nullToEmpty(),
@@ -726,7 +748,27 @@ data class LanguageFileResponse(
         importeCobro = this.importeCobro.nullToEmpty(),
         realizarReporte = this.realizarReporte.nullToEmpty(),
         subtitleFirma = this.subtitleFirma.nullToEmpty(),
-        deseaEnviarCorreoCorte = this.deseaEnviarCorreoCorte.nullToEmpty()
+        deseaEnviarCorreoCorte = this.deseaEnviarCorreoCorte.nullToEmpty(),
+        pf_qr = this.pf_qr.nullToEmpty(),
+        select = this.select.nullToEmpty(),
+        voucher = this.voucher.nullToEmpty(),
+        billing_panel = this.billing_panel.nullToEmpty(),
+        no_charge_day = this.no_charge_day.nullToEmpty(),
+        cancel_operation = this.cancel_operation.nullToEmpty(),
+        cancel_question = this.cancel_question.nullToEmpty(),
+        cancel = this.cancel.nullToEmpty(),
+        error = this.error.nullToEmpty(),
+        pwd_not_update = this.pwd_not_update.nullToEmpty(),
+        try_againg = this.try_againg.nullToEmpty(),
+        check_data = this.check_data.nullToEmpty(),
+        completed = this.completed.nullToEmpty(),
+        sales_reports = this.sales_reports.nullToEmpty(),
+        report_z = this.report_z.nullToEmpty(),
+        grand_totals = this.grand_totals.nullToEmpty(),
+        filter_search = this.filter_search.nullToEmpty(),
+        recovered_pwd = this.recovered_pwd.nullToEmpty()/*,
+        no_charge_done = ApplicationClass.instance.resources.getString(R.string.noChrgeDay),
+        close_session_confirmation = ApplicationClass.instance.resources.getString(R.string.closeSession)*/
     )
 
 }

@@ -35,6 +35,7 @@ class ForgotPasswordRecoveredSuccessDialog(
             ViewGroup.LayoutParams.MATCH_PARENT,
             ViewGroup.LayoutParams.WRAP_CONTENT
         )
+        binding.tvSuccess.text = ApplicationClass.language.recovered_pwd
         binding.btnOk.text = ApplicationClass.language.logIn
         return binding.root
     }

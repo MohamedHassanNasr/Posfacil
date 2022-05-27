@@ -1,5 +1,7 @@
 package com.paguelofacil.posfacil.ui.view.transactions.payment.fragments
 
+import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
@@ -8,9 +10,12 @@ import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.getSystemService
+import androidx.core.content.getSystemService
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.bumptech.glide.Glide
@@ -22,7 +27,6 @@ import com.paguelofacil.posfacil.data.entity.CobroEntity
 import com.paguelofacil.posfacil.databinding.FragmentVerificarCobroBinding
 import com.paguelofacil.posfacil.model.ParamReembolsoPropina
 import com.paguelofacil.posfacil.model.QrSend
-import com.paguelofacil.posfacil.model.TransactionBundle
 import com.paguelofacil.posfacil.repository.ConfigurationsRepo
 import com.paguelofacil.posfacil.ui.view.custom_view.CancelBottomSheet
 import com.paguelofacil.posfacil.ui.view.home.activities.HomeActivity
@@ -277,17 +281,28 @@ class VerificarCobroFragment : Fragment() {
             }
         }
 
+        binding.etCustomTaxe.setOnFocusChangeListener { view, b ->
+            Timber.e("FOCUS ET $b")
+            binding.etCustomTaxe.isCursorVisible = b
+        }
+
 
         binding.swDefaultImpuesto.setOnCheckedChangeListener { compoundButton, b ->
+            val inputMethodManager = activity?.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+            activity?.currentFocus?.let {
+                Timber.e("VIEWWW NONUL")
+                inputMethodManager.hideSoftInputFromWindow(it.windowToken, 0)
+            }
+            binding.etCustomTaxe.setSelection(binding.etCustomTaxe.length())
+            KeyboardUtil.hideKeyboard(activity)
             binding.etCustomTaxe.isEnabled = !b
-
             if (!b) {
                 binding.textViewImporteImpuesto.text = valueCeroString
-                impuestoTotal = 0.0
+                impuestoTotal = 0.00
                 calculateImporteTotal()
                 binding.etCustomTaxe.setText(valueCeroString)
                 //KeyboardUtil.showKeyboard(activity, binding.etCustomTaxe)
-                binding.etCustomTaxe.requestFocus()
+                binding.etCustomTip.setSelection(binding.etCustomTip.length())
                 addListenerETCustomTaxe()
             } else {
                 removeListenerETCustomTaxe()

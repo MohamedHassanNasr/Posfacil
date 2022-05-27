@@ -3,6 +3,7 @@ package com.paguelofacil.posfacil.ui.view.account.fragments
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Patterns
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -75,20 +76,19 @@ class StepOneRecoveryPassFragment : BaseFragment(), View.OnFocusChangeListener {
     }
 
     private fun validated(): Boolean {
-        if (binding.etEmail.text.isNullOrBlank()) {
-            showSnack(ApplicationClass.language.pleaseEnterYourEmailOrAlias)
-            return false
+        return if (!binding.etEmail.text.isNullOrEmpty()) {
+            binding.etEmail.text!!.matches(Patterns.EMAIL_ADDRESS.toRegex())
+        }else{
+            false
         }
-
-        return true
     }
 
     fun isEmailValidated(): Boolean {
-        if (binding.etEmail.text.isNullOrBlank()) {
-            return false
+        return if (!binding.etEmail.text.isNullOrEmpty()) {
+            binding.etEmail.text!!.matches(Patterns.EMAIL_ADDRESS.toRegex())
+        }else{
+            false
         }
-
-        return true
     }
 
     private fun captureParams() {
@@ -232,14 +232,14 @@ class StepOneRecoveryPassFragment : BaseFragment(), View.OnFocusChangeListener {
         val description =view.findViewById<TextView>(R.id.descriptionError)
         val btn = view.findViewById<MaterialButton>(R.id.btnAccept)
 
-        title.text = "!Ha ocurrido un error!"
+        title.text = ApplicationClass.language.error
         description.text = if ((message == "400") or (message == "400") or (message == "400")){
-            "Su contraseña\nno ha podido ser actualizada"
+            ApplicationClass.language.pwd_not_update
         }else{
             networkErrorConverter(message)
         }
 
-        btn.text = "Intentar nuevamente"
+        btn.text = ApplicationClass.language.try_againg
         btn.setOnClickListener {
             dialog?.dismiss()
             onFailure()

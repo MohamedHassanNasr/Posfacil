@@ -78,7 +78,6 @@
     <color name="colorPrimaryDark">#00ACC2</color><!--#35C031-->
     <color name="colorPrimary">#00ACC2</color><!--#258DBF-->
 
-    <color name="led_green">#2AFF00</color>
     <color name="led_blue">#0000FF</color>
     <color name="led_red">#FF0000</color>
     <color name="led_yellow">#FAFB18</color>

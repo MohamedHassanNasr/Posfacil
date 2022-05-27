@@ -77,6 +77,7 @@ class TransactionsFragment : BaseFragment() {
         changeTitle(boolean = false)
 
         Timber.e("TRANSACTION CREATE $transactions")
+        binding.etSearch.hint = (ApplicationClass.language.filter_search)
 
         loadListeners()
 

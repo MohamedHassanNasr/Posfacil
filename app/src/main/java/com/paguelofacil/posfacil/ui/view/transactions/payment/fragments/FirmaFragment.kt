@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.fragment.app.activityViewModels
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.paguelofacil.posfacil.ApplicationClass
@@ -74,13 +75,17 @@ class FirmaFragment : Fragment() {
         val btnBack = view.findViewById<Button>(R.id.btn_volver)
         val btnCancel = view.findViewById<Button>(R.id.btn_si_cancelar)
         val ivCancel = view.findViewById<ImageView>(R.id.iv_close_dg)
+        val desp = view.findViewById<TextView>(R.id.description)
+        val title = view.findViewById<TextView>(R.id.tv_mensaje_dialog)
 
+        desp.text = ApplicationClass.language.cancel_question
+        title.text = ApplicationClass.language.cancel_operation
         btnBack.text = ApplicationClass.language.volver
 
         btnBack.setOnClickListener { dialog?.dismiss() }
 
         ivCancel.setOnClickListener { dialog?.dismiss() }
-
+        btnCancel.text = ApplicationClass.language.cancel
         btnCancel.setOnClickListener {
             dialog?.dismiss()
             goHome()

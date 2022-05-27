@@ -1,20 +1,23 @@
 package com.paguelofacil.posfacil.ui.view.transactions.payment.fragments
 
 import android.app.Activity
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
+import android.widget.ArrayAdapter
+import androidx.fragment.app.Fragment
 import com.paguelofacil.posfacil.ApplicationClass
 import com.paguelofacil.posfacil.R
 import com.paguelofacil.posfacil.databinding.FragmentComprobanteCobroBinding
 import com.paguelofacil.posfacil.model.QrSend
-import com.paguelofacil.posfacil.pax.MainActivity
+import com.paguelofacil.posfacil.pax.DetectedCardActivity
 import com.paguelofacil.posfacil.ui.view.custom_view.CancelBottomSheet
 import com.paguelofacil.posfacil.ui.view.home.activities.HomeActivity
+import com.paguelofacil.posfacil.util.KeyboardUtil
 import timber.log.Timber
 
 
@@ -27,7 +30,6 @@ class ComprobanteCobroFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
         binding=FragmentComprobanteCobroBinding.inflate(inflater,container,false)
         val inputMethodManager: InputMethodManager? = activity?.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager?
         inputMethodManager?.hideSoftInputFromWindow(view?.windowToken, 0)
@@ -58,82 +60,86 @@ class ComprobanteCobroFragment : Fragment() {
         }
 
         binding.cvMetodoCard.setOnClickListener {
-            if (binding.swInputDestinationReceipt.isChecked){
-//                val bundle = Bundle()
-//                val fr = activity?.supportFragmentManager?.beginTransaction()
-//                val frg = DetectCreditCardFragment()
-//                bundle.putString("EMAIL", binding.etEmail.text.toString())
-//                bundle.putString("PHONE", binding.etPhone.text.toString())
-//                frg.setArguments(bundle)
-//                fr?.replace(R.id.container_frag_cobro, frg)
-//                fr?.addToBackStack(null)?.commit()
-                val intent = Intent(requireContext(),MainActivity::class.java)
-                requireActivity().startActivityForResult(intent,1000)
-            }else{
-                val intent = Intent(requireContext(),MainActivity::class.java)
-                requireActivity().startActivityForResult(intent,1000)
-//                val fr = activity?.supportFragmentManager?.beginTransaction()
-//                fr?.replace(R.id.container_frag_cobro, DetectCreditCardFragment())
-//                fr?.addToBackStack(null)?.commit()
-            }
+            showDialogDetectedCard()
         }
 
-        binding.lnArrowBack.setOnClickListener{
+
+        binding.lnArrowBack.setOnClickListener {
             goBackFragment()
         }
 
-        binding.lnCloseBack.setOnClickListener{
+        binding.lnCloseBack.setOnClickListener {
             showBottomSheet()
         }
 
         binding.swInputDestinationReceipt.setOnCheckedChangeListener { compoundButton, b ->
+            KeyboardUtil.hideKeyboard(activity)
             if (b) {
-                binding.lnCustomDestination.visibility=View.VISIBLE
+                binding.lnCustomDestination.visibility = View.VISIBLE
             } else {
-                binding.lnCustomDestination.visibility=View.GONE
+                binding.lnCustomDestination.visibility = View.GONE
             }
         }
 
         binding.cbPhone.setOnCheckedChangeListener { compoundButton, b ->
             if (b) {
-                binding.etPhone.visibility=View.VISIBLE
+                binding.etPhone.visibility = View.VISIBLE
             } else {
-                binding.etPhone.visibility=View.GONE
+                binding.etPhone.visibility = View.GONE
             }
         }
 
         binding.cbEmail.setOnCheckedChangeListener { compoundButton, b ->
             if (b) {
-                binding.etEmail.visibility=View.VISIBLE
+                binding.etEmail.visibility = View.VISIBLE
             } else {
-                binding.etEmail.visibility=View.GONE
+                binding.etEmail.visibility = View.GONE
             }
         }
 
         binding.cvPaguelofacil.setOnClickListener {
             val details = arguments?.getParcelable<QrSend>("data")
             Timber.e("DATA DETAILS $details")
-            if (binding.swInputDestinationReceipt.isChecked){
+            if (binding.swInputDestinationReceipt.isChecked) {
                 val bundle = Bundle()
                 val fr = activity?.supportFragmentManager?.beginTransaction()
                 val frg = CobroQrCodeFragment()
                 bundle.putString("EMAIL", binding.etEmail.text.toString())
                 bundle.putString("PHONE", binding.etPhone.text.toString())
-                bundle.putParcelable("data", QrSend(
-                    amount = details?.amount?: "",
-                    taxes = details?.taxes ?: "",
-                    tip = details?.tip ?: ""
-                ))
+                bundle.putParcelable(
+                    "data", QrSend(
+                        amount = details?.amount ?: "",
+                        taxes = details?.taxes ?: "",
+                        tip = details?.tip ?: ""
+                    )
+                )
                 frg.setArguments(bundle)
                 fr?.replace(R.id.container_frag_cobro, frg)
                 fr?.addToBackStack(null)?.commit()
-            }else{
+            } else {
                 val fr = activity?.supportFragmentManager?.beginTransaction()
                 fr?.replace(R.id.container_frag_cobro, CobroQrCodeFragment())
                 fr?.addToBackStack(null)?.commit()
             }
         }
+    }
+    private fun showDialogDetectedCard() {
+        val builderSingle: AlertDialog.Builder = AlertDialog.Builder(requireContext())
+        builderSingle.setIcon(R.drawable.ic_app_icon)
+        builderSingle.setTitle("Selecciona una opción:-")
 
+        val arrayAdapter =
+            ArrayAdapter<String>(requireContext(), android.R.layout.select_dialog_singlechoice)
+        arrayAdapter.add("Chip")
+        arrayAdapter.add("Banda")
+        arrayAdapter.add("Contact-less")
+
+        builderSingle.setNegativeButton("Cancelar") { dialog, _ -> dialog.dismiss() }
+
+        builderSingle.setAdapter(
+            arrayAdapter
+        ) { _, which -> goToDetectedCard(which) }
+        builderSingle.show()
     }
 
     private fun showBottomSheetClose(){
@@ -165,6 +171,12 @@ class ComprobanteCobroFragment : Fragment() {
         dialog?.show(parentFragmentManager, "")
     }
 
+    private fun goToDetectedCard(optionSelected: Int) {
+        val intent = Intent(requireContext(), DetectedCardActivity::class.java)
+        intent.putExtra(OPTION_CARD_SELECTED, optionSelected)
+        requireActivity().startActivityForResult(intent, 1000)
+    }
+
     private fun dismissBottomSheetCancel() {
         dialog?.dismiss()
     }
@@ -175,4 +187,7 @@ class ComprobanteCobroFragment : Fragment() {
         activity?.finish()
     }
 
+    companion object {
+        const val OPTION_CARD_SELECTED = "OPTION_CARD_SELECTED"
+    }
 }

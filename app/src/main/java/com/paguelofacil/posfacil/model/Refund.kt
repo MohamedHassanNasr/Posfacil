@@ -22,7 +22,7 @@ data class AddionalData(
 )
 
 data class PosAddionalData(
-    val serial: String = ApiEndpoints.ATIK_SERIAL,
+    val serial: String,
     val idUser: Long,
     val idMerchant: Long
 )

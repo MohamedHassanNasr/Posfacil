@@ -423,7 +423,6 @@
                     android:layout_weight="50"
                     android:fontFamily="@font/encodesans_medium"
                     android:gravity="right"
-                    android:text="Completado"
                     android:textStyle="bold"
                     android:textColor="@color/color_4CA80B">
 

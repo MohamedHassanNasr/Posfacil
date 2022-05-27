@@ -25,6 +25,7 @@ class DetailReembolsoFragment : Fragment() {
 
         binding=FragmentDetailReembolsoBinding.inflate(inflater,container,false)
 
+        binding.btnResendVoucher.text = ApplicationClass.language.voucher
         binding.montoText.text = ApplicationClass.language.monto
         binding.itbmText.text = ApplicationClass.language.itbms
         binding.propinaText.text = ApplicationClass.language.propina
@@ -83,6 +84,6 @@ class DetailReembolsoFragment : Fragment() {
                     R.drawable.visa else R.drawable.ic_mastercard_logo),
             null, null, null)
         binding.tvOpCode.text = detail?.opCode.toString()
-        //binding.tvStatus.setText()
+        binding.tvStatus.text = detail?.status
     }
 }

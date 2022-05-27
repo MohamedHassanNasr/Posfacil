@@ -47,7 +47,8 @@ class CobroQrCodeFragment : Fragment() {
     ): View {
         binding = FragmentCobroQrCodeBinding.inflate(inflater, container, false)
 
-        binding.titleQr.text = ApplicationClass.language.scaneaQR
+        binding.titleQr.text = ApplicationClass.language.pf_qr
+        binding.descriptionQr.text = ApplicationClass.language.scaneaQR
         binding.btnVerificar.text = ApplicationClass.language.verificar
         binding.btnOtherTransaction.text = ApplicationClass.language.otherTransaction
         loadListeners()
@@ -129,14 +130,14 @@ class CobroQrCodeFragment : Fragment() {
         val description =view.findViewById<TextView>(R.id.descriptionError)
         val btn = view.findViewById<MaterialButton>(R.id.btnAccept)
 
-        title.text = "!Ha ocurrido un error!"
+        title.text = ApplicationClass.language.error
         description.text = if ((message == "400") or (message == "400") or (message == "400")){
-            "Intente nuevamente"
+            ApplicationClass.language.try_againg
         }else{
             networkErrorConverter(message)
         }
 
-        btn.text = "Intentar nuevamente"
+        btn.text = ApplicationClass.language.try_againg
         btn.setOnClickListener {
             dialog?.dismiss()
             onFailure()
@@ -158,8 +159,13 @@ class CobroQrCodeFragment : Fragment() {
         val btnBack = view.findViewById<Button>(R.id.btn_volver)
         val btnCancel = view.findViewById<Button>(R.id.btn_si_cancelar)
         val ivCancel = view.findViewById<ImageView>(R.id.iv_close_dg)
+        val desp = view.findViewById<TextView>(R.id.description)
+        val title = view.findViewById<TextView>(R.id.tv_mensaje_dialog)
 
+        desp.text = ApplicationClass.language.cancel_question
         btnBack.text = ApplicationClass.language.volver
+        title.text = ApplicationClass.language.cancel_operation
+        btnCancel.text = ApplicationClass.language.cancel
 
         btnBack.setOnClickListener {
             dialog?.dismiss()

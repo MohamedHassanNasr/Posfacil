@@ -9,15 +9,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="@dimen/_15sdp"
+        android:padding="16dp"
         tools:context=".ui.view.account.fragments.StepThreeRecoveryPassFragment">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/ln_arrow_back"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp">
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:layout_width="30dp"
@@ -32,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:text="Recuperar contraseña"
                 android:fontFamily="@font/encodesans_bold"
-                android:textSize="18sp"
+                android:textSize="@dimen/_13sdp"
                 android:textStyle="bold"
                 android:textColor="@color/black_1e2227"
                 app:layout_constraintStart_toStartOf="parent"
@@ -301,7 +300,7 @@
                 android:layout_marginStart="@dimen/_16sdp"
                 android:layout_marginTop="@dimen/_16sdp"
                 android:layout_marginEnd="@dimen/_16sdp"
-                android:gravity="start"
+                android:gravity="center"
                 android:paddingStart="@dimen/_16sdp"
                 android:paddingTop="@dimen/_12sdp"
                 android:paddingEnd="@dimen/_24sdp"
@@ -309,8 +308,6 @@
                 tools:text="@string/btn_update_pass"
                 android:textSize="@dimen/_14sdp"
                 app:cornerRadius="@dimen/_10sdp"
-                app:icon="@drawable/ic_arrow_forward_white"
-                app:iconGravity="end"
                 app:iconSize="@dimen/_16sdp" />
 
         </LinearLayout>

@@ -30,6 +30,7 @@ class DetailCobroFragment : Fragment() {
 
         binding = FragmentDetailCobroBinding.inflate(inflater, container, false)
 
+        binding.btnResendVoucher.text = ApplicationClass.language.voucher
         binding.montoText.text = ApplicationClass.language.monto
         binding.itbmText.text = ApplicationClass.language.itbms
         binding.propinaText.text = ApplicationClass.language.propina
@@ -143,7 +144,7 @@ class DetailCobroFragment : Fragment() {
             })
         binding.tvPaymentMethod.text = detail?.cardNumber
         binding.tvOpCode.text = detail?.opCode.toString()
-        //binding.tvStatus.setText()
+        binding.tvStatus.text = detail?.status
         if (detail?.opCode?.contains("REV") == true) {
             binding.btnReembolar.visibility = View.GONE
         } else {

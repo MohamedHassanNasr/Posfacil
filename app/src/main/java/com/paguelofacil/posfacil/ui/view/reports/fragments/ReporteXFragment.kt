@@ -16,6 +16,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.button.MaterialButton
 import com.paguelofacil.posfacil.ApplicationClass
 import com.paguelofacil.posfacil.R
+import com.paguelofacil.posfacil.base.BaseFragment
 import com.paguelofacil.posfacil.databinding.FragmentReporteXBinding
 import com.paguelofacil.posfacil.model.*
 import com.paguelofacil.posfacil.repository.UserRepo
@@ -29,7 +30,7 @@ import kotlinx.coroutines.launch
 import timber.log.Timber
 
 
-class ReporteXFragment : Fragment() {
+class ReporteXFragment : BaseFragment() {
 
     private val viewModel: ReporteXViewModel by activityViewModels()
     lateinit var binding:FragmentReporteXBinding
@@ -61,6 +62,9 @@ class ReporteXFragment : Fragment() {
         binding.detailsUser.text = ApplicationClass.language.detalleUsuario
         binding.dateTitle.text = ApplicationClass.language.date
         binding.btnEnviarReporteX.text = ApplicationClass.language.enviarReporte
+        binding.title.text = ApplicationClass.language.sales_reports
+        binding.btnGenerarReporteZ.text = ApplicationClass.language.report_z
+        binding.totalsGeneral.text = ApplicationClass.language.grand_totals
 
 
         return binding.root
@@ -92,7 +96,8 @@ class ReporteXFragment : Fragment() {
                         getReporteXApi()
                     }
                 }*/
-            }
+            },
+            Sys = Sys
         )
     }
 
@@ -110,14 +115,14 @@ class ReporteXFragment : Fragment() {
         val description =view.findViewById<TextView>(R.id.descriptionError)
         val btn = view.findViewById<MaterialButton>(R.id.btnAccept)
 
-        title.text = "!Ha ocurrido un error!"
+        title.text = ApplicationClass.language.error
         description.text = if ((message == "400") or (message == "400") or (message == "400")){
             ApplicationClass.language.errorPaidTryAgainOrContactOurSupportTeam
         }else{
             networkErrorConverter(message)
         }
 
-        btn.text = "Intentar nuevamente"
+        btn.text = ApplicationClass.language.try_againg
         btn.setOnClickListener {
             dialog?.dismiss()
             onFailure()
@@ -652,24 +657,25 @@ class ReporteXFragment : Fragment() {
         val tvSendEmail=view.findViewById<TextView>(R.id.tv_send_email_report_x)
         var checked = false
 
+        rbSendEmail.text = ApplicationClass.language.deseaEnviarCorreoCorte
+
         rbSendEmail.setOnClickListener {
             checked = !checked
             rbSendEmail.isChecked = checked
         }
 
-        btnclose.text=getString(R.string.aceptar)
         if (showCorreo)
         {
             rbSendEmail.visibility=View.VISIBLE
             tvSendEmail.visibility=View.VISIBLE
             tvSendEmail.text = UserRepo.getUser().email ?: ""
-            btnclose.text=getString(R.string.finalizar)
+            btnclose.text= ApplicationClass.language.finalizar
         }
         else
         {
             rbSendEmail.visibility=View.GONE
             tvSendEmail.visibility=View.GONE
-            btnclose.text=getString(R.string.aceptar)
+            btnclose.text= ApplicationClass.language.aceptar
         }
 
         view.tv_mensaje_dialog.text=mensaje
@@ -693,10 +699,10 @@ class ReporteXFragment : Fragment() {
     private fun getReporteXEvent(rbSendEmail: RadioButton, success:() -> Unit){
         lifecycleScope.launch {
             viewModel.getReporteX(sendEmail = rbSendEmail.isChecked,onSuccess = {
-                showSuccesReportX(getString(R.string.reporte_x_generado),false)
+                showSuccesReportX(ApplicationClass.language.reporteXGenerado,false)
                 Timber.e("susccer reportx")
                 success()
-            }){
+            }, Sys = Sys){
                 /*showWarningDialog(it, onFailure = {
                     getReporteXEvent(
                         rbSendEmail = rbSendEmail,
@@ -724,13 +730,13 @@ class ReporteXFragment : Fragment() {
         {
             rbSendEmail.visibility=View.VISIBLE
             tvSendEmail.visibility=View.VISIBLE
-            btnclose.text=getString(R.string.finalizar)
+            btnclose.text= ApplicationClass.language.finalizar
         }
         else
         {
             rbSendEmail.visibility=View.GONE
             tvSendEmail.visibility=View.GONE
-            btnclose.text=getString(R.string.aceptar)
+            btnclose.text= ApplicationClass.language.aceptar
         }
 
         view.tv_mensaje_dialog.text=mensaje
@@ -768,6 +774,7 @@ class ReporteXFragment : Fragment() {
         rdCortez.text = ApplicationClass.language.deseaEnviarCorreoCorte
         btnAceptar.text = ApplicationClass.language.siAceptar
         btnClose.text = ApplicationClass.language.volver
+        description.text = ApplicationClass.language.no_charge_day
 
         rdCortez.setOnClickListener {
             checked = !checked
@@ -819,7 +826,8 @@ class ReporteXFragment : Fragment() {
                         )
                     }
                 }*/
-            }
+            },
+            system = Sys
         )
     }
 

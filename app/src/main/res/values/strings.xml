@@ -136,7 +136,7 @@
     <string name="about_support">Acerca de</string>
     <string name="legal_support">Legal</string>
     <string name="about_version_app">Versión: de la aplicacion:</string>
-    <string name="about_version_spoc">Vesion SPoC:</string>
+    <string name="about_version_spoc">Version SPoC:</string>
     <string name="about_app">Aplicación</string>
     <string name="transactions_menu">Transacciones</string>
     <string name="informe">Informe</string>
@@ -229,6 +229,7 @@
     <string name="Today">Hoy</string>
     <string name="Tomorrow">mañana</string>
     <string name="Please_enter_your_email_or_Alias">Por favor ingrese su correo o Alias</string>
+    <string name="areYourExit">¿Esta seguro de salir de la aplicación?</string>
 
     <!--Errors-->
     <string name="sessionTimeout">Tu sesión ha expirado. Ingrese nuevamente.</string>
@@ -388,5 +389,7 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="title_activity_main3">Main3Activity</string>
+    <string name="noChrgeDay">No se encontraron cobros realizados</string>
+    <string name="closeSession">¿Esta seguro que desea cerrar sesión?</string>
 
 </resources>

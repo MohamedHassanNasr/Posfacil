@@ -20,8 +20,8 @@
             android:orientation="horizontal"
             android:gravity="center"
             android:layout_gravity="center_vertical"
-            android:layout_marginRight="@dimen/_20sdp"
-            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="6dp"
+            android:layout_marginLeft="6dp"
             android:layout_marginTop="@dimen/_10sdp"
             android:layout_marginBottom="@dimen/_10sdp"
             >
@@ -30,7 +30,6 @@
                 android:id="@+id/ln_arrow_back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="20"
                 >
 
                 <ImageView
@@ -48,7 +47,7 @@
             <TextView
                 android:id="@+id/textViewMetodoPago"
                 android:layout_weight="60"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/metodo_pago"
                 android:fontFamily="@font/encodesans_medium"
@@ -64,7 +63,6 @@
 
             <LinearLayout
                 android:id="@+id/ln_close_back"
-                android:layout_weight="20"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"

@@ -29,6 +29,7 @@ import com.paguelofacil.posfacil.repository.UserRepo
 import com.paguelofacil.posfacil.ui.interfaces.MotivosEvent
 import com.paguelofacil.posfacil.ui.view.adapters.ListMotivoReembolsoAdapter
 import com.paguelofacil.posfacil.ui.view.transactions.refund.viewmodel.ReembolsoViewModel
+import com.paguelofacil.posfacil.util.KeyboardUtil
 import kotlinx.coroutines.launch
 import org.json.JSONArray
 import timber.log.Timber
@@ -56,13 +57,14 @@ class ReembolsoFragment : BaseFragment(), MotivosEvent{
 
         binding = FragmentReembolsoBinding.inflate(inflater,container,false)
         //setBaseViewModel(viewModel)
-
+        binding.etMontoCobrar.setSelection(binding.etMontoCobrar.length())
         binding.tvTitle.text = ApplicationClass.language.reembolsoToolbar
         binding.emitRefund.text = ApplicationClass.language.emitirasReembolso
         binding.importRefund.text = ApplicationClass.language.importeReembolsar
         binding.methodRefund.text = ApplicationClass.language.metodoReembolso
         binding.motivoRefund.text = ApplicationClass.language.motivoReembolso
         binding.btnConfirmReembolso.text = ApplicationClass.language.confirmarReembolso
+        binding.motivos.text = ApplicationClass.language.select
         /*binding.motivos.text = ApplicationClass.language*/
 
         initObservers()
@@ -124,6 +126,7 @@ class ReembolsoFragment : BaseFragment(), MotivosEvent{
                             codOperRelatedTransaction = binding.tvOpCode.text.toString(),
                             additionalData = AddionalData(
                                 pos = PosAddionalData(
+                                    serial = Sys.baseInfo.sn,
                                     idUser = it.id ?: 0,
                                     idMerchant = it.idMerchant?.dropLast(2)?.toLong() ?: 0
                                 )
@@ -174,6 +177,13 @@ class ReembolsoFragment : BaseFragment(), MotivosEvent{
 
         binding.ivBack.setOnClickListener{
             activity?.finish()
+        }
+
+        binding.etMontoCobrar.imeOptions = EditorInfo.IME_ACTION_DONE
+        binding.etMontoCobrar.setOnEditorActionListener { textView, i, keyEvent ->
+            KeyboardUtil.hideKeyboard(requireActivity())
+            binding.etMontoCobrar.clearFocus()
+            true
         }
     }
     private var isAdding = false

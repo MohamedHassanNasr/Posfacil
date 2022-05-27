@@ -5,11 +5,11 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="com.pax.permission.MAGCARD" />
-    <uses-permission android:name="com.pax.permission.PED" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <uses-permission android:name="com.pax.permission.ICC" />
     <uses-permission android:name="com.pax.permission.PICC" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.pax.permission.MAGCARD" />
 
     <application
         android:name=".ApplicationClass"
@@ -50,18 +50,10 @@
 
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".pax.MainActivity"
+            android:name=".pax.DetectedCardActivity"
             android:exported="true"/>
-        <activity android:name=".pax.SelectParamFileActivity"/>
         <activity
-            android:name=".pax.trans.TransResultActivity"
-            android:windowSoftInputMode="adjustResize" />
-        <activity android:name=".pax.SettingsActivity" />
-        <activity android:name=".pax.KernelLibInfoActivity" />
-        <activity android:name=".pax.trans.TransProcessActivity" />
-        <activity android:name=".pax.trans.ApduTimeRecordActivity" />
-        <activity
-            android:name=".ui.view.main.MainXActivity"
+            android:name=".ui.view.main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
