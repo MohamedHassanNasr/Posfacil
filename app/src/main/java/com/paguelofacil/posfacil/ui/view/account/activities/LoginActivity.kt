@@ -11,6 +11,7 @@ import com.paguelofacil.posfacil.ui.view.account.fragments.StepOneRecoveryPassFr
 import com.paguelofacil.posfacil.ui.view.account.viewmodel.LoginViewModel
 import com.paguelofacil.posfacil.util.Constantes.ConstantesView
 import dagger.hilt.android.AndroidEntryPoint
+import java.nio.charset.Charset
 
 @AndroidEntryPoint
 class LoginActivity : AppCompatActivity() {
