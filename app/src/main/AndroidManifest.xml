@@ -22,38 +22,48 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".ui.view.home.activities.IntroActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".ui.view.settings.activities.AjustesActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".ui.view.transactions.TransactionsActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".ui.view.settings.activities.AboutActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".ui.view.transactions.payment.activities.MovementsFilterActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".ui.view.transactions.payment.activities.CobroActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".ui.view.home.activities.HomeActivity"
             android:exported="false"
             android:label="@string/title_activity_home"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateVisible" />
         <activity
             android:name=".ui.view.account.activities.LoginActivity"
+            android:screenOrientation="portrait"
             android:exported="false"
 
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".pax.DetectedCardActivity"
+            android:screenOrientation="portrait"
             android:exported="true"/>
         <activity
             android:name=".ui.view.main.MainActivity"
+            android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
