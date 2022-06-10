@@ -1,11 +1,10 @@
 package com.paguelofacil.posfacil.ui.view.main
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import android.view.View
 import androidx.activity.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
@@ -22,6 +21,10 @@ import com.paguelofacil.posfacil.ui.view.main.viewmodel.MainViewModel
 import com.paguelofacil.posfacil.util.KeyboardUtil
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_send_receipt_payment.*
+import kotlinx.coroutines.cancel
+import kotlinx.coroutines.cancelAndJoin
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import timber.log.Timber
 import kotlin.math.abs
 
@@ -40,7 +43,7 @@ class MainActivity : BaseActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        initNeptune()
         setBaseViewModel(viewModel)
         initObservers()
 
@@ -104,23 +107,50 @@ class MainActivity : BaseActivity() {
                 super.onPageSelected(position)
                 when {
                     position % 3 == 0 -> {
+                        var currentProgressOne = 0
+                        binding.pointTwo.progress = 0
+                        binding.pointThird.progress = 0
                         binding.txtOnBoardingTitle.text = ApplicationClass.language.textSplashOne
-                        binding.pointTwo.setBackgroundColor(this@MainActivity.resources.getColor(R.color.white))
-                        binding.pointThird.setBackgroundColor(this@MainActivity.resources.getColor(R.color.white))
+                        lifecycleScope.launch {
+                            for (i in 0..100){
+                                currentProgressOne += i
+                                binding.pointOne.progress = i
+                                delay(50)
+                            }
+                        }
+                        /*binding.pointTwo.setBackgroundColor(this@MainActivity.resources.getColor(R.color.white))
+                        binding.pointThird.setBackgroundColor(this@MainActivity.resources.getColor(R.color.white))*/
                     }
                     position % 3 == 1 -> {
+                        var currentProgressTwo = 0
+                        binding.pointThird.progress = 0
                         binding.txtOnBoardingTitle.text = ApplicationClass.language.textSplashTwo
-                        binding.pointTwo.setBackgroundColor(this@MainActivity.resources.getColor(R.color.greenLight))
-                        binding.pointThird.setBackgroundColor(this@MainActivity.resources.getColor(R.color.white))
+                        lifecycleScope.launch {
+                            for (i in 0..100){
+                                currentProgressTwo += i
+                                binding.pointTwo.progress = i
+                                delay(50)
+                            }
+                        }
+                        /*binding.pointTwo.setBackgroundColor(this@MainActivity.resources.getColor(R.color.greenLight))
+                        binding.pointThird.setBackgroundColor(this@MainActivity.resources.getColor(R.color.white))*/
                     }
                     position % 3 == 2 -> {
+                        var currentProgressThird = 0
                         binding.txtOnBoardingTitle.text = ApplicationClass.language.textSplashThree
-                        binding.pointTwo.setBackgroundColor(this@MainActivity.resources.getColor(R.color.greenLight))
-                        binding.pointThird.setBackgroundColor(this@MainActivity.resources.getColor(R.color.greenLight))
+                        lifecycleScope.launch {
+                            for (i in 0..100){
+                                currentProgressThird += i
+                                binding.pointThird.progress = i
+                                delay(50)
+                            }
+                        }
+                        /*binding.pointTwo.setBackgroundColor(this@MainActivity.resources.getColor(R.color.greenLight))
+                        binding.pointThird.setBackgroundColor(this@MainActivity.resources.getColor(R.color.greenLight))*/
                     }
                 }
                 sliderHandler.removeCallbacks(runnable)
-                sliderHandler.postDelayed(runnable, 5000)
+                sliderHandler.postDelayed(runnable, 5500)
             }
         })
 

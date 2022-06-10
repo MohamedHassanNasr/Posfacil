@@ -32,13 +32,13 @@ class ReporteXViewModel: BaseViewModel() {
     val merchant: LiveData<MerchantResponse> = _merchant
 
 
-    suspend fun getReporteX(onSuccess: () -> Unit, sendEmail: Boolean, Sys: ISys,onFailure: (String)-> Unit){
+    suspend fun getReporteX(onSuccess: () -> Unit, sendEmail: Boolean, serial: String,onFailure: (String)-> Unit){
         execute {
             viewModelScope.launch {
                 val user = UserRepo.getUser()
                 user.let {
                     it.email?.let {email->
-                        val response = ReportRepo.getReporteX(if (sendEmail){email}else{""}, Sys)
+                        val response = ReportRepo.getReporteX(if (sendEmail){email}else{""}, serial)
                         if (response.headerStatus.code.toString() == "200"){
                             Timber.e("200")
                             mutableTransactionList.postValue(response)
@@ -93,13 +93,13 @@ class ReporteXViewModel: BaseViewModel() {
         }
     }
 
-    suspend fun getReportZ(sendEmail: Boolean, system: ISys, onSuccess: () -> Unit, onFailure: (String) -> Unit){
+    suspend fun getReportZ(sendEmail: Boolean, serial: String, onSuccess: () -> Unit, onFailure: (String) -> Unit){
         execute {
             viewModelScope.launch {
                 val user = UserRepo.getUser()
                 user?.let {
                     it.email?.let {email->
-                        val response = ReportRepo.getReporteZ(if (sendEmail){email}else{""}, system)
+                        val response = ReportRepo.getReporteZ(if (sendEmail){email}else{""}, serial)
                         if (response.headerStatus.code.toString() == "200"){
                             _reportez.postValue(response)
                         }else{

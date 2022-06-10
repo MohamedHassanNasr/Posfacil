@@ -4,6 +4,7 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Color
 import android.os.Bundle
+import android.provider.Settings
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -21,19 +22,30 @@ import com.google.zxing.qrcode.QRCodeWriter
 import com.paguelofacil.posfacil.ApplicationClass
 import com.paguelofacil.posfacil.R
 import com.paguelofacil.posfacil.databinding.FragmentCobroQrCodeBinding
+import com.paguelofacil.posfacil.model.GetSearchCodeByJson
 import com.paguelofacil.posfacil.model.QrSend
+import com.paguelofacil.posfacil.repository.UserRepo
 import com.paguelofacil.posfacil.ui.view.home.activities.HomeActivity
 import com.paguelofacil.posfacil.ui.view.transactions.payment.viewmodel.CobroViewModel
 import com.paguelofacil.posfacil.util.LoadingDialog
 import com.paguelofacil.posfacil.util.networkErrorConverter
+import kotlinx.coroutines.CoroutineExceptionHandler
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import timber.log.Timber
+import java.util.*
 
 
 class CobroQrCodeFragment : Fragment() {
 
     lateinit var binding: FragmentCobroQrCodeBinding
     private val viewModel: CobroViewModel by activityViewModels()
+    val uuid = UUID.randomUUID()
+    private val txValue = "28_ASDF347384WEEJ"//"${UserRepo.getUser().idMerchant.toString().dropLast(2)}_$uuid"
+
+    private val error = CoroutineExceptionHandler{ _, exception ->
+        Timber.e("Error ${exception.message.toString()}")
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,32 +68,15 @@ class CobroQrCodeFragment : Fragment() {
 
         val details = arguments?.getParcelable<QrSend>("data")
 
-        lifecycleScope.launch {
+        lifecycleScope.launch(Dispatchers.IO + error) {
             Timber.e("DATA QR $details")
             details.let {
                 viewModel.getSystemUrlQr(
                     amount = details?.amount ?: "",
                     taxes = details?.taxes ?: "",
                     tip = details?.tip ?: "",
-                    onSuccess = {url, code->
-                        Timber.e("ONSUCCES")
-                        val enconder = QRCodeWriter()
-                        val bitMatrix = enconder.encode(url, BarcodeFormat.QR_CODE, 512, 512)
-                        val width = bitMatrix.width
-                        val height = bitMatrix.height
-
-                        val bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565)
-                        Timber.e("BITMAP $bitmap")
-                        for (x in 0 until width) {
-                            for (y in 0 until height) {
-                                bitmap.setPixel(x, y, if (bitMatrix.get(x, y)) Color.BLACK else Color.WHITE)
-                            }
-                        }
-                        binding.ivQr.setImageBitmap(bitmap)
-                    },
-                    onFailure = {
-                        Toast.makeText(activity, it, Toast.LENGTH_SHORT).show()
-                    }
+                    tx = txValue,
+                    idSearch = Settings.Secure.getString(requireActivity().contentResolver, Settings.Secure.ANDROID_ID)
                 )
             }
         }
@@ -105,6 +100,57 @@ class CobroQrCodeFragment : Fragment() {
 
     private fun initObservers() {
         viewModel.liveDataCobro.observe(viewLifecycleOwner, { })
+
+        val details = arguments?.getParcelable<QrSend>("data")
+
+        viewModel.qrRespose.observe(viewLifecycleOwner){
+            Timber.e("ONSUCCES")
+            val enconder = QRCodeWriter()
+            val bitMatrix = enconder.encode(it.second, BarcodeFormat.QR_CODE, 512, 512)
+            val width = bitMatrix.width
+            val height = bitMatrix.height
+
+            val bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565)
+            Timber.e("BITMAP $bitmap")
+            for (x in 0 until width) {
+                for (y in 0 until height) {
+                    bitmap.setPixel(x, y, if (bitMatrix.get(x, y)) Color.BLACK else Color.WHITE)
+                }
+            }
+            binding.ivQr.setImageBitmap(bitmap)
+
+            /** registrar qr*/
+            lifecycleScope.launch(Dispatchers.IO + error) {
+                if (it.first){
+                    try {
+                        UserRepo.getUser().let {
+                            viewModel.loadUtilsQr(
+                                email = "pruebaswallet@gmail.com",
+                                password = "Panama2020.",
+                                codeByJson = GetSearchCodeByJson(
+                                    amount = details?.amount?.replace(',', '.')?.toDouble() ?: 0.0,
+                                    discount = 0.0,
+                                    taxes = details?.taxes?.replace(',', '.')?.toDouble() ?: 0.0,
+                                    description = "Pago Qr test",
+                                    others = GetSearchCodeByJson.Others(
+                                        idUser = it.id!!.toInt(),
+                                        idMerchant = it.idMerchant!!.dropLast(2).toInt(),
+                                        tip = details?.tip?.replace(',', '.')?.toDouble() ?: 0.0
+                                    )
+                                ),
+                                onFailure = {
+                                    Timber.e("ERROR EN LAS CONSULTAS DE QR, ERROR: $it")
+                                }
+                            )
+                        }
+                    }catch (e: Exception){
+                        Timber.e("ERROR GENERAL $e ${e.cause} ${e.localizedMessage}")
+                    }
+                }else{
+                    Toast.makeText(activity, it.second, Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
     }
 
     private fun loadListeners() {
@@ -118,8 +164,16 @@ class CobroQrCodeFragment : Fragment() {
             requireActivity().finish()
         }
 
-        binding.btnVerificar.setOnClickListener { showBottomSheetSucces() } //todo si hay error llamar al warningdialog
+        binding.btnVerificar.setOnClickListener {
+            verificarQr()
+        } //todo si hay error llamar al warningdialog
 
+    }
+
+    private fun verificarQr(){
+        lifecycleScope.launch(Dispatchers.IO + error) {
+            viewModel.verificarQr(tx = txValue)
+        }
     }
 
     private fun showWarningDialog(message: String, onFailure: ()-> Unit){

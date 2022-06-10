@@ -2,37 +2,34 @@ package com.paguelofacil.posfacil.ui.view.account.fragments
 
 import android.content.Intent
 import android.graphics.drawable.Drawable
-import android.net.Uri
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
 import android.util.Patterns
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
-import androidx.core.content.ContextCompat
+import android.widget.Toast
 import androidx.core.content.res.ResourcesCompat
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.activityViewModels
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.paguelofacil.posfacil.ApplicationClass
 import com.paguelofacil.posfacil.R
 import com.paguelofacil.posfacil.base.BaseFragment
-import com.paguelofacil.posfacil.data.network.api.ApiError
 import com.paguelofacil.posfacil.data.network.api.ApiRequestCode
 import com.paguelofacil.posfacil.data.network.response.LoginApiResponse
 import com.paguelofacil.posfacil.databinding.FragmentLoginBinding
 import com.paguelofacil.posfacil.repository.UserRepo
 import com.paguelofacil.posfacil.ui.view.account.viewmodel.LoginViewModel
-import com.paguelofacil.posfacil.ui.view.home.activities.HomeActivity
 import com.paguelofacil.posfacil.ui.view.home.activities.IntroActivity
-import com.paguelofacil.posfacil.util.Constantes.CoreConstants
 import com.paguelofacil.posfacil.util.KeyboardUtil
 import com.paguelofacil.posfacil.util.isValidPassword
+import com.pax.dal.entity.ETermInfoKey
+import kotlinx.coroutines.CoroutineExceptionHandler
 import timber.log.Timber
 
 
@@ -41,14 +38,15 @@ class LoginFragment : BaseFragment(), View.OnFocusChangeListener, View.OnClickLi
 
     lateinit var binding: FragmentLoginBinding
 
-    private lateinit var vm: LoginViewModel
+    private val vm: LoginViewModel by activityViewModels()
+
+    private val error = CoroutineExceptionHandler { _, exception ->
+        Timber.e("Error ${exception.message.toString()}")
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        vm = ViewModelProvider(requireActivity())[LoginViewModel::class.java]
-
-        vm.getResponseObserver()
-            .observe(this@LoginFragment, this)
+        vm.getResponseObserver().observe(this@LoginFragment, this)
     }
 
     private fun loadLanguage() {
@@ -75,11 +73,8 @@ class LoginFragment : BaseFragment(), View.OnFocusChangeListener, View.OnClickLi
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-
         binding = FragmentLoginBinding.inflate(inflater, container, false)
         val user = UserRepo.getUser()
-
         user.fingerPrintAuthenticatedLogin = false
         user.introShown = true
         UserRepo.setOrUpdateUser(user, true)

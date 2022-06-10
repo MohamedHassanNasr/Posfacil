@@ -30,6 +30,7 @@ import com.paguelofacil.posfacil.ui.interfaces.MotivosEvent
 import com.paguelofacil.posfacil.ui.view.adapters.ListMotivoReembolsoAdapter
 import com.paguelofacil.posfacil.ui.view.transactions.refund.viewmodel.ReembolsoViewModel
 import com.paguelofacil.posfacil.util.KeyboardUtil
+import com.pax.dal.entity.ETermInfoKey
 import kotlinx.coroutines.launch
 import org.json.JSONArray
 import timber.log.Timber
@@ -113,46 +114,49 @@ class ReembolsoFragment : BaseFragment(), MotivosEvent{
                 val user = UserRepo.getUser()
                 Timber.e("IDD ${user.idMerchant}")
                 user?.let {
-                    viewModel.setRefund(
-                        request = RefundApiRequest(
-                            amount = binding.etMontoCobrar.text.toString().replace(',', '.').toDouble(),
-                            taxAmount = 0f.toDouble(),
-                            email = it.email ?: "",
-                            phone = it.phone ?: "",
-                            concept = binding.motivos.text.toString(),
-                            description = binding.motivos.text.toString(),
-                            idMerchant = it.idMerchant?.dropLast(2)?.toLong() ?: 0,
-                            idMerchantService = 5230,
-                            codOperRelatedTransaction = binding.tvOpCode.text.toString(),
-                            additionalData = AddionalData(
-                                pos = PosAddionalData(
-                                    serial = Sys.baseInfo.sn,
-                                    idUser = it.id ?: 0,
-                                    idMerchant = it.idMerchant?.dropLast(2)?.toLong() ?: 0
+                    Sys?.termInfo?.let {serial->
+                        viewModel.setRefund(
+                            request = RefundApiRequest(
+                                amount = binding.etMontoCobrar.text.toString().replace(',', '.').toDouble(),
+                                taxAmount = 0f.toDouble(),
+                                email = it.email ?: "",
+                                phone = it.phone ?: "",
+                                concept = binding.motivos.text.toString(),
+                                description = binding.motivos.text.toString(),
+                                idMerchant = it.idMerchant?.dropLast(2)?.toLong() ?: 0,
+                                idMerchantService = 5230,
+                                codOperRelatedTransaction = binding.tvOpCode.text.toString(),
+                                additionalData = AddionalData(
+                                    pos = PosAddionalData(
+                                        serial = serial[ETermInfoKey.SN] ?: "",
+                                        idUser = it.id ?: 0,
+                                        idMerchant = it.idMerchant?.dropLast(2)?.toLong() ?: 0
+                                    )
                                 )
-                            )
-                        ),
-                        onSuccess = {
-                            //todo navegar
-                            val fr = activity?.supportFragmentManager?.beginTransaction()
-                            val fragment = ComprobanteReembolsoFragment()
-                            val bundle = Bundle()
-                            it?.let { bundle.putParcelable("data", RefundResult(
-                                opCode = it.data.codOper,
-                                amount = it.data.totalPay,
-                                cardNumber = binding.tvPaymentMethod.text.toString(),
-                                cardType = it.data.cardType,
-                                date = it.serverTime,
-                                motivo = binding.motivos.text.toString() //todo cambiar
-                            )) }
-                            fragment.arguments = bundle
-                            fr?.replace(R.id.container_frag_transactions, fragment)
-                            fr?.commit()
-                        },
-                        onFailure = {
-                            Toast.makeText(activity, it, Toast.LENGTH_SHORT).show()
-                        }
-                    )
+                            ),
+                            onSuccess = {
+                                //todo navegar
+                                val fr = activity?.supportFragmentManager?.beginTransaction()
+                                val fragment = ComprobanteReembolsoFragment()
+                                val bundle = Bundle()
+                                it?.let { bundle.putParcelable("data", RefundResult(
+                                    opCode = it.data.codOper,
+                                    amount = it.data.totalPay,
+                                    cardNumber = binding.tvPaymentMethod.text.toString(),
+                                    cardType = it.data.cardType,
+                                    date = it.serverTime,
+                                    motivo = binding.motivos.text.toString() //todo cambiar
+                                )) }
+                                fragment.arguments = bundle
+                                fr?.replace(R.id.container_frag_transactions, fragment)
+                                fr?.commit()
+                            },
+                            onFailure = {
+                                Toast.makeText(activity, it, Toast.LENGTH_SHORT).show()
+                            }
+                        )
+                    }
+
                 }
             }
         }

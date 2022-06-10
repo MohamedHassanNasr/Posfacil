@@ -29,10 +29,10 @@ object ReportRepo : BaseRepo() {
      *
      * @return
      */
-    suspend fun checkZReport(): BaseResponse<Any> {
+    suspend fun checkZReport(serial: String): BaseResponse<Any> {
         val body = HashMap<String, Any>()
 
-        body["serial"] = "test-atik-dev-serial"
+        body["serial"] = serial
         return apiRequest(ApiRequestCode.SUCCESS) {
             remoteDao.post(ApiEndpoints.POS_STATUS, body)
         }
@@ -46,19 +46,19 @@ object ReportRepo : BaseRepo() {
         return remoteDao.getSpecify("$API_BASE_URL/${ApiEndpoints.REPORTS_SELL}/${Sys}")
     }
 
-    suspend fun getReporteX(email: String, Sys: ISys): ReportXResponse {
+    suspend fun getReporteX(email: String, serial: String): ReportXResponse {
         val body = HashMap<String, Any>()
         body["command"] = "X"
-        body["serial"] = Sys.baseInfo.sn
+        body["serial"] = serial
         body["email"] = email
 
         return remoteDao.postReportX(ApiEndpoints.POS_COMMAND,body)
     }
 
-    suspend fun getReporteZ(email: String, Sys: ISys): ReportXResponse {
+    suspend fun getReporteZ(email: String, serial: String): ReportXResponse {
         val body = HashMap<String, Any>()
         body["command"] = "Z"
-        body["serial"] = Sys.baseInfo.sn
+        body["serial"] = serial
         body["email"] = email
 
         return remoteDao.postReportX(ApiEndpoints.POS_COMMAND,body)

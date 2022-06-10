@@ -6,31 +6,10 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <ImageView
-        android:id="@+id/circle"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="6dp"
-        android:src="@drawable/circle_yellow"
-        app:layout_constraintTop_toTopOf="@id/imageWarning"
-        app:layout_constraintEnd_toEndOf="@id/imageWarning"
-        app:layout_constraintStart_toStartOf="@id/imageWarning"
-        app:layout_constraintBottom_toBottomOf="@id/imageWarning"/>
-
-    <RelativeLayout
-        android:layout_width="18dp"
-        android:layout_height="24dp"
-        android:background="@color/black"
-        android:layout_marginTop="9dp"
-        app:layout_constraintTop_toTopOf="@id/imageWarning"
-        app:layout_constraintEnd_toEndOf="@id/imageWarning"
-        app:layout_constraintStart_toStartOf="@id/imageWarning"
-        app:layout_constraintBottom_toBottomOf="@id/imageWarning"/>
-
-    <ImageView
         android:id="@+id/imageWarning"
         android:layout_width="58dp"
         android:layout_height="58dp"
-        android:src="@drawable/ic_warning"
+        android:src="@drawable/ic_alerta_yellow"
         android:layout_marginTop="12dp"
         android:contentDescription=""
         app:layout_constraintTop_toTopOf="parent"
@@ -48,7 +27,7 @@
         android:textAlignment="center"
         android:fontFamily="@font/encodesans_semibold"
         android:textColor="@color/color_1E2227"
-        app:layout_constraintTop_toBottomOf="@id/circle"
+        app:layout_constraintTop_toBottomOf="@id/imageWarning"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 

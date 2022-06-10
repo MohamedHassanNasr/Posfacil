@@ -196,6 +196,7 @@ class VerificarCobroFragment : Fragment() {
             val fr = activity?.supportFragmentManager?.beginTransaction()
             val bundle= Bundle()
             val fg = ComprobanteCobroFragment()
+            Timber.e("MONTOOOOO UWU ${binding.textViewImporteTotal.text.toString().trim()}/${binding.textViewImporteImpuesto.text.toString().trim()}")
             bundle.putParcelable("data", QrSend(
                 amount = binding.textViewImporteTotal.text.toString().trim(),
                 taxes = binding.textViewImporteImpuesto.text.toString().trim(),

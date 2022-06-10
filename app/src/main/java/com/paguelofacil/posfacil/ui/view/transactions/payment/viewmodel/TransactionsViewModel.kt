@@ -22,10 +22,10 @@ class TransactionsViewModel @Inject constructor(private val transactionRepositor
     private val _textSearch = MutableLiveData<String>()
     val textSearch : LiveData<String> = _textSearch
 
-    fun getAllTransactions() {
+    fun getAllTransactions(serial: String) {
         execute {
             viewModelScope.launch {
-                val response = transactionRepository.getAllTransactions()
+                val response = transactionRepository.getAllTransactions(serial)
                 processResponseResultado(response) {
                     if (UserRepo.getUser().merchantProfile?.idProfile != 3){
                         mutableTransactionList.postValue(it?.filter { item->

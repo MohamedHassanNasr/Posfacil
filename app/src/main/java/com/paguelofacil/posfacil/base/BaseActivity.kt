@@ -70,7 +70,7 @@ abstract class BaseActivity : AppCompatActivity(), ApiResponseObserver<Any> {
         setOneTapToCloseKeyboard(getRootView())
     }
 
-    private fun initNeptune() {
+    fun initNeptune() {
         try {
             Timber.e("INICIANDO NEPTUNE")
             dalProxyClient = NeptuneLiteUser.getInstance()

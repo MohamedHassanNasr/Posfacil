@@ -52,7 +52,7 @@ android {
             def date = new Date().format('yyyyMMdd')
             def versionName = variant.versionName
             def versionCode = variant.versionCode
-            outputFileName = "${appName}-${buildType}-${date}-${versionName}-(${versionCode}).apk"
+            outputFileName = "PAX_POSFacil-${buildType}-${date}-${versionName}.apk"
         }
     }
 

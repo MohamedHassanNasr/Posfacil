@@ -1,5 +1,6 @@
 package com.paguelofacil.posfacil.repository.transaction
 
+import com.paguelofacil.posfacil.data.network.api.ApiEndpoints
 import com.paguelofacil.posfacil.data.network.api.BaseResponse
 import com.paguelofacil.posfacil.data.network.response.TransactionApiResponse
 import com.paguelofacil.posfacil.util.Resultado
@@ -20,7 +21,7 @@ class TransactionRepository @Inject constructor(private val transactionService: 
      *
      * @param conditional operation dateTms
      */
-    suspend fun getAllTransactions(): Resultado<BaseResponse<MutableList<TransactionApiResponse>>> {
-        return withContext(Dispatchers.IO) { transactionService.getAllTransactions() }
+    suspend fun getAllTransactions(serial: String): Resultado<BaseResponse<MutableList<TransactionApiResponse>>> {
+        return withContext(Dispatchers.IO) { transactionService.getAllTransactions(serial) }
     }
 }

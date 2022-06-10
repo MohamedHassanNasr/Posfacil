@@ -1,6 +1,7 @@
 package com.paguelofacil.posfacil.repository.cobro
 
 import android.os.Build
+import android.provider.Settings
 import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import com.google.firebase.firestore.FieldValue
@@ -14,6 +15,8 @@ import com.paguelofacil.posfacil.model.Others
 import com.paguelofacil.posfacil.model.QrInfo
 import com.paguelofacil.posfacil.model.RequestQr
 import com.paguelofacil.posfacil.repository.UserRepo
+import com.paguelofacil.posfacil.tools.TransaccionResponse
+import com.paguelofacil.posfacil.tools.TransactionRequest
 import com.paguelofacil.posfacil.util.Constantes.ApiParams
 import timber.log.Timber
 import java.util.*
@@ -21,7 +24,7 @@ import javax.inject.Inject
 import kotlin.collections.HashMap
 
 
-class CobroRepository @Inject constructor(val posService: CobroService): BaseRepo() {
+class CobroRepository @Inject constructor(val posService: CobroService) : BaseRepo() {
     var db = FirebaseFirestore.getInstance()
 
     fun saveDataCardFirestore(data: HashMap<String, Any?>) {
@@ -40,6 +43,22 @@ class CobroRepository @Inject constructor(val posService: CobroService): BaseRep
         }
     }
 
+    fun saveTracksFirestore(data: HashMap<String, Any?>) {
+        try {
+            data["fecha"] = FieldValue.serverTimestamp()
+            db.collection("list-tracks")
+                .add(data)
+                .addOnSuccessListener { documentReference ->
+                    showToast("Registro Tracks Exitoso")
+                }
+                .addOnFailureListener { e ->
+                    showToast("Registro Tracks Error")
+                }
+        } catch (e: Exception) {
+            showToast("Registro Tracks Error")
+        }
+    }
+
     fun getFlagsDeteccionTarjetaFirestore(mutableFlags: MutableLiveData<Map<String, Boolean>?>) {
         try {
             db.collection("flag")
@@ -47,7 +66,7 @@ class CobroRepository @Inject constructor(val posService: CobroService): BaseRep
                 .get()
                 .addOnSuccessListener { document ->
                     if (document != null) {
-                        mutableFlags.postValue(document.data as Map<String,Boolean>)
+                        mutableFlags.postValue(document.data as Map<String, Boolean>)
                     } else {
                         mutableFlags.postValue(null)
                     }
@@ -64,36 +83,38 @@ class CobroRepository @Inject constructor(val posService: CobroService): BaseRep
         amount: String,
         taxes: String,
         tip: String,
-        onSuucces: (String, String)-> Unit,
-        onFailure: (String)-> Unit
-    ){
-        val uuid = UUID.randomUUID()
+        tx: String,
+        idSearch: String,
+        onSuucces: (String, String) -> Unit,
+        onFailure: (String) -> Unit
+    ) {
         val map = HashMap<String, Any>()
 
         map[ApiParams.CONDITIONAL] = "props::POSFACIL"
         val response = remoteDao.getSystem(
             url = "${ApiEndpoints.PARAMS_SYSTEM}", map
         )
-        Timber.e("MODEL ${Build.MODEL} $uuid")
-        if (response.headerStatus.code == 200){
+        if (response.headerStatus.code == 200) {
             getUrl(
                 RequestQr(
                     type = "QR_INFO",
-                    qrInfo = Gson().toJson(QrInfo(
-                        idSearch = Build.MODEL,
-                        tx = "${UserRepo.getUser().idMerchant.toString().dropLast(2)}_$uuid",
-                        amount = amount,
-                        taxes = taxes,
-                        description = "TEST-POS",
-                        others = Others(
-                            idUser = UserRepo.getUser().id.toString(),
-                            idMerchant = UserRepo.getUser().idMerchant.toString().dropLast(2),
-                            tip = tip
+                    qrInfo = Gson().toJson(
+                        QrInfo(
+                            idSearch = idSearch,
+                            tx = tx,
+                            amount = amount,
+                            taxes = taxes,
+                            description = "TEST-POS",
+                            others = Others(
+                                idUser = UserRepo.getUser().id.toString(),
+                                idMerchant = UserRepo.getUser().idMerchant.toString().dropLast(2),
+                                tip = tip
+                            )
                         )
-                    ))
+                    )
                 ),
                 onSuucces = {
-                    onSuucces(response.data.values._url_qr,it)
+                    onSuucces(response.data.values._url_qr, it)
                 },
                 onFailure = {
                     Timber.e("FAILURE SYSTEM qr")
@@ -103,21 +124,41 @@ class CobroRepository @Inject constructor(val posService: CobroService): BaseRep
         }
     }
 
-    suspend fun getUrl(requestQr: RequestQr, onSuucces: (String) -> Unit, onFailure: (String) -> Unit){
+    suspend fun getUrl(
+        requestQr: RequestQr,
+        onSuucces: (String) -> Unit,
+        onFailure: (String) -> Unit
+    ) {
         val response = remoteDao.QrProcessInfo(
             url = ApiEndpoints.QR_ENDPOINT,
             requestQr
         )
 
-        if (response.headerStatus.code == 200){
+        if (response.headerStatus.code == 200) {
             onSuucces(response.data.code)
-        }else{
+        } else {
             onFailure(response.headerStatus.description)
         }
     }
 
     private fun showToast(message: String) {
         Toast.makeText(ApplicationClass.instance.baseContext, message, Toast.LENGTH_LONG).show()
+    }
+
+    suspend fun setTransaction(
+        transactionRequest: TransactionRequest,
+        onFailure: (String) -> Unit,
+        onSuucces: (TransaccionResponse) -> Unit
+    ) {
+        val response = remoteDao.processTx(
+            url = ApiEndpoints.PROCESS_TX, request = transactionRequest
+        )
+
+        if (response.headerStatus.code == 200) {
+            onSuucces(response)
+        } else {
+            onFailure(response.headerStatus.description)
+        }
     }
 
 }
