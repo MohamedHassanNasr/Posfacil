@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--refer to C-2_Kernel_2,  Book_A, Book_B, EMV_v4.3_Book_3, EMV_v4.3_Book_4-->
+<PAYPASSPARAM>
+	<AIDLIST>
+		<AID>
+			<LocalAIDName>MCHIP</LocalAIDName>
+			<ApplicationID>A0000000041010</ApplicationID>
+			<PartialAIDSelection>0</PartialAIDSelection><!--0:support. 1:nonsupport, full match-->
+			<TerminalAIDVersion>0002</TerminalAIDVersion><!--tag 9F09, Application Version Number-->
+			<TACDenial>0400000000</TACDenial><!--tag DF8121, Terminal Action Code – Denial-->
+			<TACOnline>F850ACF800</TACOnline><!--tag DF8122, Terminal Action Code – Online-->
+			<TACDefault>FC50ACA000</TACDefault><!--tag DF8120, Terminal Action Code – Default-->
+			<TerminalRisk>28F8000000000000</TerminalRisk> <!--tag 9F1D, Terminal Risk Management Data-->
+			<ContactlessCVMLimit>3000</ContactlessCVMLimit><!--tag DF8126, Reader CVM Required Limit--> 
+			<ContactlessFloorLimit>5000</ContactlessFloorLimit><!--tag DF8123, Reader Contactless Floor Limit--> 
+			<ContactlessTransactionLimit_NoOnDevice>999999999</ContactlessTransactionLimit_NoOnDevice><!--tag DF8124, Reader Contactless Transaction Limit (No On-device CVM)--> 
+			<ContactlessTransactionLimit_OnDevice>999999999</ContactlessTransactionLimit_OnDevice><!--tag DF8125,Reader Contactless Transaction Limit (On-device CVM) -->
+			<ContactlessTransactionLimitSupported>1</ContactlessTransactionLimitSupported> <!--Reader contactless transaction limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist -->
+			<CVMLimitSupported>1</CVMLimitSupported> <!--Card reader CVM limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist -->
+			<ContactlessFloorLimitSupported>1</ContactlessFloorLimitSupported> <!--Card reader contactless Offline limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist -->
+			<KernelConfiguration>20</KernelConfiguration><!--tag DF811B, Kernel Configuration-->
+			<TornLeftTime>06</TornLeftTime><!--tag DF811C, Max Lifetime of Torn Transaction Log Record-->
+			<MaximumTornNumber>2</MaximumTornNumber><!--tag DF811D, Max Number of Torn Transaction Log Records-->
+			<CardDataInput>E0</CardDataInput><!--tag DF8117, Card Data Input Capability-->
+			<MagneticCVM>60</MagneticCVM><!--tag DF811E, Mag-stripe CVM Capability – CVM Required-->
+			<MageticNoCVM>00</MageticNoCVM><!--tag DF812C, Mag-stripe CVM Capability – No CVM Required-->
+			<CVMCapability_CVMRequired>68</CVMCapability_CVMRequired><!--tag DF8118, CVM Capability – CVM Required-->
+			<CVMCapability_NoCVMRequired>68</CVMCapability_NoCVMRequired><!--tag DF8119, CVM Capability – No CVM Required-->
+			<SecurityCapability>08</SecurityCapability><!--tag DF811F, Security Capability-->
+			<AdditionalTerminalCapability>E000F0A001</AdditionalTerminalCapability><!--tag 9F40, Additional Terminal Capabilities-->
+			<KernelID>02</KernelID><!--tag DF810C, Kernel ID-->
+			<TerminalType>22</TerminalType><!--tag 9F35, Terminal Type-->
+		</AID>	
+		
+		<AID>
+			<LocalAIDName>MAESTRO</LocalAIDName>
+			<ApplicationID>A0000000043060</ApplicationID>
+			<PartialAIDSelection>0</PartialAIDSelection><!--0:support. 1:nonsupport, full match-->
+			<TerminalAIDVersion>0002</TerminalAIDVersion><!--tag 9F09, Application Version Number-->
+			<TACDenial>0000800000</TACDenial><!--tag DF8121, Terminal Action Code – Denial-->
+			<TACOnline>F850ACF800</TACOnline><!--tag DF8122, Terminal Action Code – Online-->
+			<TACDefault>FC50ACA000</TACDefault><!--tag DF8120, Terminal Action Code – Default-->
+			<TerminalRisk>66F8800000000000</TerminalRisk> <!--tag 9F1D, Terminal Risk Management Data-->
+			<ContactlessCVMLimit>3000</ContactlessCVMLimit><!--tag DF8126, Reader CVM Required Limit--> 
+			<ContactlessFloorLimit>5000</ContactlessFloorLimit><!--tag DF8123, Reader Contactless Floor Limit--> 
+			<ContactlessTransactionLimit_NoOnDevice>999999999</ContactlessTransactionLimit_NoOnDevice><!--tag DF8124, Reader Contactless Transaction Limit (No On-device CVM)--> 
+			<ContactlessTransactionLimit_OnDevice>999999999</ContactlessTransactionLimit_OnDevice><!--tag DF8125,Reader Contactless Transaction Limit (On-device CVM) -->
+			<ContactlessTransactionLimitSupported>1</ContactlessTransactionLimitSupported> <!--Reader contactless transaction limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist -->
+			<CVMLimitSupported>1</CVMLimitSupported> <!--Card reader CVM limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist -->
+			<ContactlessFloorLimitSupported>1</ContactlessFloorLimitSupported> <!--Card reader contactless Offline limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist -->
+			<KernelConfiguration>20</KernelConfiguration><!--tag DF811B, Kernel Configuration-->
+			<TornLeftTime>06</TornLeftTime><!--tag DF811C, Max Lifetime of Torn Transaction Log Record-->
+			<MaximumTornNumber>2</MaximumTornNumber><!--tag DF811D, Max Number of Torn Transaction Log Records-->
+			<CardDataInput>E0</CardDataInput><!--tag DF8117, Card Data Input Capability-->
+			<MagneticCVM>60</MagneticCVM><!--tag DF811E, Mag-stripe CVM Capability – CVM Required-->
+			<MageticNoCVM>00</MageticNoCVM><!--tag DF812C, Mag-stripe CVM Capability – No CVM Required-->
+			<CVMCapability_CVMRequired>68</CVMCapability_CVMRequired><!--tag DF8118, CVM Capability – CVM Required-->
+			<CVMCapability_NoCVMRequired>68</CVMCapability_NoCVMRequired><!--tag DF8119, CVM Capability – No CVM Required-->
+			<SecurityCapability>08</SecurityCapability><!--tag DF811F, Security Capability-->
+			<AdditionalTerminalCapability>E000F0A001</AdditionalTerminalCapability><!--tag 9F40, Additional Terminal Capabilities-->
+			<KernelID>02</KernelID><!--tag DF810C, Kernel ID-->
+			<TerminalType>22</TerminalType><!--tag 9F35, Terminal Type-->
+		</AID>
+		
+		<AID>
+			<LocalAIDName>CIRRUS</LocalAIDName>
+			<ApplicationID>A0000000046000</ApplicationID>
+			<PartialAIDSelection>0</PartialAIDSelection><!--0:support. 1:nonsupport, full match-->
+			<TerminalAIDVersion>0002</TerminalAIDVersion><!--tag 9F09, Application Version Number-->
+			<TACDenial>0400000000</TACDenial><!--tag DF8121, Terminal Action Code – Denial-->
+			<TACOnline>F850ACF800</TACOnline><!--tag DF8122, Terminal Action Code – Online-->
+			<TACDefault>FC50ACA000</TACDefault><!--tag DF8120, Terminal Action Code – Default-->
+			<TerminalRisk>66F8800000000000</TerminalRisk> <!--tag 9F1D, Terminal Risk Management Data-->
+			<ContactlessCVMLimit>3000</ContactlessCVMLimit><!--tag DF8126, Reader CVM Required Limit--> 
+			<ContactlessFloorLimit>5000</ContactlessFloorLimit><!--tag DF8123, Reader Contactless Floor Limit--> 
+			<ContactlessTransactionLimit_NoOnDevice>999999999</ContactlessTransactionLimit_NoOnDevice><!--tag DF8124, Reader Contactless Transaction Limit (No On-device CVM)--> 
+			<ContactlessTransactionLimit_OnDevice>999999999</ContactlessTransactionLimit_OnDevice><!--tag DF8125,Reader Contactless Transaction Limit (On-device CVM) -->
+			<ContactlessTransactionLimitSupported>1</ContactlessTransactionLimitSupported> <!--Reader contactless transaction limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist -->
+			<CVMLimitSupported>1</CVMLimitSupported> <!--Card reader CVM limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist -->
+			<ContactlessFloorLimitSupported>1</ContactlessFloorLimitSupported> <!--Card reader contactless Offline limit check flag, 0- Deactivated, 1- Active and exist, 2- Active but not exist -->
+			<KernelConfiguration>20</KernelConfiguration><!--tag DF811B, Kernel Configuration-->
+			<TornLeftTime>06</TornLeftTime><!--tag DF811C, Max Lifetime of Torn Transaction Log Record-->
+			<MaximumTornNumber>2</MaximumTornNumber><!--tag DF811D, Max Number of Torn Transaction Log Records-->
+			<CardDataInput>E0</CardDataInput><!--tag DF8117, Card Data Input Capability-->
+			<MagneticCVM>60</MagneticCVM><!--tag DF811E, Mag-stripe CVM Capability – CVM Required-->
+			<MageticNoCVM>00</MageticNoCVM><!--tag DF812C, Mag-stripe CVM Capability – No CVM Required-->
+			<CVMCapability_CVMRequired>68</CVMCapability_CVMRequired><!--tag DF8118, CVM Capability – CVM Required-->
+			<CVMCapability_NoCVMRequired>68</CVMCapability_NoCVMRequired><!--tag DF8119, CVM Capability – No CVM Required-->
+			<SecurityCapability>08</SecurityCapability><!--tag DF811F, Security Capability-->
+			<AdditionalTerminalCapability>E000F0A001</AdditionalTerminalCapability><!--tag 9F40, Additional Terminal Capabilities-->
+			<KernelID>02</KernelID><!--tag DF810C, Kernel ID-->
+			<TerminalType>22</TerminalType><!--tag 9F35, Terminal Type-->
+		</AID>	
+	</AIDLIST>	
+</PAYPASSPARAM>
+

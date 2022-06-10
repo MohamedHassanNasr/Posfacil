@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+        android:id="@+id/imageWarning"
+        android:layout_width="58dp"
+        android:layout_height="58dp"
+        android:src="@drawable/ic_alerta_yellow"
+        android:layout_marginTop="12dp"
+        android:contentDescription=""
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/titleError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ha ocurrido un error"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:paddingTop="8dp"
+        android:textAlignment="center"
+        android:fontFamily="@font/encodesans_semibold"
+        android:textColor="@color/color_1E2227"
+        app:layout_constraintTop_toBottomOf="@id/imageWarning"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/descriptionError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ha ocurrido un error, por favor\nintente nuevamente"
+        android:textAlignment="center"
+        android:paddingTop="8dp"
+        android:fontFamily="@font/encodesans_medium"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/titleError"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAccept"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintDimensionRatio="1:0.16"
+        android:text=""
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/descriptionError"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -33,22 +33,20 @@
                 android:id="@+id/ln_arrow_back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="20"
-                >
+                android:padding="5dp">
 
                 <ImageView
+                    android:id="@+id/backButton"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:src="@drawable/ic_arrow_rigth"
-                    >
-
-                </ImageView>
+                    android:src="@drawable/ic_arrow_rigth"/>
 
             </LinearLayout>
 
 
 
             <TextView
+                android:id="@+id/titleQr"
                 android:layout_weight="60"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -56,6 +54,7 @@
                 android:fontFamily="@font/encodesans_medium"
                 android:textColor="@color/color_1E2227"
                 android:gravity="center"
+                android:textStyle="bold"
                 android:layout_gravity="center"
                 >
 
@@ -64,22 +63,18 @@
 
             <LinearLayout
                 android:id="@+id/ln_close_back"
-                android:layout_weight="20"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center"
-                android:layout_gravity="center"
-
-                >
+                android:padding="5dp"
+                android:layout_gravity="center">
 
                 <ImageView
+                    android:id="@+id/finishOper"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:src="@drawable/ic_baseline_close_24"
-                    >
-
-                </ImageView>
+                    android:src="@drawable/ic_baseline_close_24"/>
 
             </LinearLayout>
 
@@ -112,14 +107,13 @@
                 android:id="@+id/iv_qr"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="@dimen/_16sdp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_qrcode"/>
+                android:scaleType="fitCenter"/>
 
         </androidx.cardview.widget.CardView>
 
 
         <TextView
+            android:id="@+id/descriptionQr"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/scanea_qr"
@@ -129,6 +123,7 @@
             android:gravity="center"
             android:textSize="@dimen/_15sdp"
             android:textStyle="bold"
+            android:textAlignment="center"
             android:layout_gravity="center"
             android:layout_marginRight="@dimen/_10sdp"
             android:layout_marginLeft="@dimen/_10sdp"

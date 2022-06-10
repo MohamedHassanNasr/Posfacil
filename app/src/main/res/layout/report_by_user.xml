@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/nameUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:fontFamily="@font/encodesans_semibold"
+        android:text="Michelle Marine"
+        android:textColor="@color/color_3D444F"
+        android:textSize="@dimen/_12sdp"
+        android:textStyle="bold">
+
+
+    </TextView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        app:cardCornerRadius="@dimen/_15sdp"
+        app:cardElevation="@dimen/_2sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/sellUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:fontFamily="@font/encodesans_medium"
+                    android:text="@string/detalle_ventas_reporte"
+                    android:textColor="@color/color_7D889B">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/selssuser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:fontFamily="@font/encodesans_medium"
+                    android:gravity="right"
+                    android:text="$ 0.00"
+                    android:textStyle="bold"
+                    android:textColor="@color/color_3D444F">
+
+                </TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/baseUserTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:fontFamily="@font/encodesans_medium"
+                    android:text="@string/base"
+                    android:textColor="@color/color_7D889B">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/baseUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:fontFamily="@font/encodesans_medium"
+                    android:gravity="right"
+                    android:text="$ 0.00"
+                    android:textStyle="bold"
+                    android:textColor="@color/color_3D444F">
+
+                </TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/itbmsUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:fontFamily="@font/encodesans_medium"
+                    android:text="@string/itbms"
+                    android:textColor="@color/color_7D889B">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/impuestoUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:fontFamily="@font/encodesans_medium"
+                    android:gravity="right"
+                    android:text="$ 0.00"
+                    android:textStyle="bold"
+                    android:textColor="@color/color_3D444F">
+
+                </TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/propinaUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:fontFamily="@font/encodesans_medium"
+                    android:text="@string/detalle_propinas_reporte"
+                    android:textColor="@color/color_7D889B">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/propinasUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:fontFamily="@font/encodesans_medium"
+                    android:gravity="right"
+                    android:text="$ 0.00"
+                    android:textStyle="bold"
+                    android:textColor="@color/color_3D444F">
+
+                </TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/devolucionUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:fontFamily="@font/encodesans_medium"
+                    android:text="@string/detalle_devoluciones_reporte"
+                    android:textColor="@color/color_7D889B">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/refundsUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:fontFamily="@font/encodesans_medium"
+                    android:gravity="right"
+                    android:text="-$ 0.00"
+                    android:textStyle="bold"
+                    android:textColor="@color/color_3D444F">
+
+                </TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/totalUserTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:fontFamily="@font/encodesans_medium"
+                    android:text="@string/detalle_Total_reporte"
+                    android:textColor="@color/color_7D889B">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/totalUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:fontFamily="@font/encodesans_medium"
+                    android:gravity="right"
+                    android:text="$ 0.00"
+                    android:textStyle="bold"
+                    android:textColor="@color/color_3D444F">
+
+                </TextView>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_listPaymentMethodsUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/payment_global_list"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    </RelativeLayout>
+
+</LinearLayout>

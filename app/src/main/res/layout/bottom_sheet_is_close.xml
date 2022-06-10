@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:paddingRight="@dimen/_20sdp"
+    android:paddingLeft="@dimen/_20sdp"
+    android:paddingBottom="@dimen/_20sdp"
+    android:layout_marginRight="@dimen/_20sdp"
+    android:layout_marginLeft="@dimen/_20sdp"
+    android:orientation="vertical"
+    >
+
+
+    <ImageView
+        android:id="@+id/iv_alert_dialog"
+        android:layout_width="87dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/ic_alerta_yellow" />
+
+    <TextView
+        android:id="@+id/tv_mensaje_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/encodesans_medium"
+        android:textColor="@color/color_3D444F"
+        android:textStyle="bold"
+        android:text="@string/areYourExit"
+        android:textSize="@dimen/_12sdp"
+        android:gravity="center"
+
+        />
+
+    <TextView
+        android:id="@+id/emailReportz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/encodesans_semibold"
+        android:text=""
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:textColor="@color/color_3D444F"
+        android:textStyle="bold"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/_20sdp"
+        >
+        <Button
+            android:layout_weight="50"
+            android:id="@+id/btn_volver"
+            android:layout_width="126dp"
+            android:layout_height="53dp"
+            android:backgroundTint="@color/color_C3C8D3"
+            android:paddingLeft="@dimen/_20sdp"
+            android:paddingRight="@dimen/_20sdp"
+            android:text="@string/volver"
+            android:textColor="@color/color_3D444F"
+            android:textSize="@dimen/_10sdp"
+            android:textStyle="bold"
+            />
+
+        <Button
+            android:layout_weight="50"
+            android:id="@+id/btn_si_aceptar"
+            android:layout_width="126dp"
+            android:layout_height="53dp"
+            android:paddingLeft="@dimen/_20sdp"
+            android:paddingRight="@dimen/_20sdp"
+            android:text="@string/si_aceptar"
+            android:textSize="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:textStyle="bold"
+
+            />
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

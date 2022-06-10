@@ -2,10 +2,13 @@ package com.paguelofacil.posfacil.ui.view.account.dialog
 
 import android.content.Context
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import com.paguelofacil.posfacil.ApplicationClass
 import com.paguelofacil.posfacil.R
 import com.paguelofacil.posfacil.databinding.LayoutPasswordRecoveredBinding
 import com.paguelofacil.posfacil.ui.interfaces.BottomSheetCallback
@@ -13,18 +16,28 @@ import com.paguelofacil.posfacil.ui.interfaces.BottomSheetCallback
 class ForgotPasswordRecoveredSuccessDialog(
     context: Context,
     private val callback: BottomSheetCallback,
-) : BottomSheetDialog(context), View.OnClickListener {
+) : BottomSheetDialogFragment(), View.OnClickListener {
     private lateinit var binding: LayoutPasswordRecoveredBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = DataBindingUtil.inflate(
-            layoutInflater,
-            R.layout.layout_password_recovered, null, false
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+
+        binding = LayoutPasswordRecoveredBinding.inflate(inflater)
+        requireDialog().window?.setLayout(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT
         )
-        setContentView(binding.root)
-        window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+        binding.tvSuccess.text = ApplicationClass.language.recovered_pwd
+        binding.btnOk.text = ApplicationClass.language.logIn
+        return binding.root
     }
 
     override fun onStart() {

@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.view.transactions.payment.fragments.FirmaFragment"
     android:background="@color/color_background"
-
-    >
-
+    tools:context=".ui.view.transactions.payment.fragments.FirmaFragment">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar_layout"
@@ -28,15 +24,14 @@
             android:layout_height="match_parent"
             android:paddingStart="@dimen/_8sdp"
             android:paddingEnd="@dimen/_8sdp"
-            android:paddingBottom="@dimen/_8sdp"
-            >
+            android:paddingBottom="@dimen/_8sdp">
 
             <ImageView
                 android:id="@+id/iv_back"
                 android:layout_width="?attr/actionBarSize"
                 android:layout_height="@dimen/_35sdp"
-                android:padding="@dimen/_5sdp"
                 android:layout_marginTop="@dimen/_15sdp"
+                android:padding="@dimen/_5sdp"
                 android:src="@drawable/ic_baseline_close_24"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
@@ -58,121 +53,104 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
-
-    <ScrollView
-        android:id="@+id/scrollView3"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
-        android:paddingBottom="@dimen/_50sdp"
-        app:layout_constraintTop_toBottomOf="@+id/appbar_layout">
+        app:layout_constraintTop_toBottomOf="@+id/appbar_layout"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-        <LinearLayout
-
+        <TextView
+            android:id="@+id/textViewRegalanosFirma"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingBottom="@dimen/_20sdp">
+            android:layout_marginTop="@dimen/_20sdp"
+            android:fontFamily="@font/encodesans_regular"
+            android:gravity="center"
+            android:text="@string/title_firma"
+            android:textColor="@color/color_3D444F"
+            android:textSize="@dimen/_15sdp"
+            android:textStyle="bold" />
 
+        <TextView
+            android:id="@+id/textViewMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/encodesans_regular"
+            android:gravity="center"
+            android:text="@string/subtitle_firma"
+            android:textColor="@color/color_7D889B"
+            android:textSize="@dimen/_12sdp">
 
-            <TextView
+        </TextView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_firma"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            app:cardCornerRadius="@dimen/_15sdp"
+            app:cardElevation="@dimen/_10sdp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_30sdp"
-                android:fontFamily="@font/encodesans_regular"
-                android:gravity="center"
-                android:text="@string/title_firma"
-                android:textColor="@color/color_3D444F"
-                android:textSize="@dimen/_15sdp"
-                android:textStyle="bold">
+                android:layout_height="@dimen/_250sdp">
 
+                <com.paguelofacil.posfacil.components.DrawByTouch
+                    android:id="@+id/draw_by_touch"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            </TextView>
+                <ImageView
+                    android:id="@+id/imageViewClearSignature"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="27dp"
+                    android:layout_marginEnd="36dp"
+                    android:layout_marginBottom="86dp"
+                    android:src="@drawable/ic_delete_round"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:fontFamily="@font/encodesans_regular"
-                android:gravity="center"
-                android:text="@string/subtitle_firma"
-                android:textColor="@color/color_7D889B"
-                android:textSize="@dimen/_12sdp"
-
-                >
-
-            </TextView>
-
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cv_firma"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/_20sdp"
-                android:layout_marginTop="@dimen/_40sdp"
-                android:layout_marginRight="@dimen/_20sdp"
-                app:cardCornerRadius="@dimen/_15sdp"
-                app:cardElevation="@dimen/_10sdp"
-
-                >
-
-                <androidx.constraintlayout.widget.ConstraintLayout
+                <View
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/_250sdp">
+                    android:layout_height="2dp"
+                    android:layout_marginLeft="@dimen/_25sdp"
+                    android:layout_marginRight="@dimen/_25sdp"
+                    android:layout_marginBottom="60dp"
+                    android:background="#c0c0c0"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
 
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    <ImageView
-                        android:id="@+id/imageView4"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="27dp"
-                        android:layout_marginEnd="36dp"
-                        android:layout_marginBottom="86dp"
-                        android:src="@drawable/ic_delete_round"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.0" />
+        </androidx.cardview.widget.CardView>
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_firmar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_30sdp"
+            android:paddingStart="@dimen/_16sdp"
+            android:paddingTop="@dimen/_12sdp"
+            android:paddingEnd="@dimen/_24sdp"
+            android:paddingBottom="@dimen/_12sdp"
+            android:text="@string/finalizar" />
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:layout_marginLeft="@dimen/_25sdp"
-                        android:layout_marginRight="@dimen/_25sdp"
-                        android:layout_marginBottom="60dp"
-                        android:background="#c0c0c0"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-
-            </androidx.cardview.widget.CardView>
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_firmar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="80dp"
-                android:paddingStart="@dimen/_16sdp"
-                android:paddingTop="@dimen/_12sdp"
-                android:paddingEnd="@dimen/_24sdp"
-                android:paddingBottom="@dimen/_12sdp"
-                android:text="@string/finalizar"
-                android:layout_marginLeft="@dimen/_20sdp"
-                android:layout_marginRight="@dimen/_20sdp"
-                android:layout_marginBottom="@dimen/_50sdp"
-                 />
-
-
-        </LinearLayout>
-
-    </ScrollView>
-
-
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

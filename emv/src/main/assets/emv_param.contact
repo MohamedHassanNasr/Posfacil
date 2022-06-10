@@ -1,0 +1,651 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<EMVPARAM>
+
+    <AIDLIST>
+        <AID>
+            <PartialAIDSelection>0</PartialAIDSelection><!--Partial AID Selection Flag, 0:Partial Match, 1: Full Match-->
+            <ApplicationID>A0000000031010</ApplicationID><!--tag:4F, Application ID-->
+            <LocalAIDName>VISA Debit/Credit</LocalAIDName><!--Local Application Name-->
+            <TerminalAIDVersion>008c</TerminalAIDVersion> <!--tag:9F09, Application Version Number-->
+            <TACDenial>0010000000</TACDenial><!--Terminal Action Code – Denial-->
+            <TACOnline>D84004F800</TACOnline><!--Terminal Action Code – Online-->
+            <TACDefault>D84000A800</TACDefault><!-- Terminal Action Code - Default-->
+            <FloorLimit>500000</FloorLimit><!-- tag:9F1B, Terminal Floor Limit-->
+            <Threshold>0</Threshold><!--Threshold,Notes: If Target Percentage is 99 and Threshold is 0xffffffff, all the transaction will be done online.-->
+            <TargetPercentage>0</TargetPercentage><!--Target Percentage,Refer to the risk management in EMV specification-->
+            <MaxTargetPercentage>0</MaxTargetPercentage><!--Max TargetPercentage,Refer to the risk management in EMV specification-->
+            <TerminalDefaultTDOL>0F9F02065F2A029A039C0195059F3704</TerminalDefaultTDOL><!--Default Transaction Certificate Data Object List-->
+            <TerminalDefaultDDOL>039F3704</TerminalDefaultDDOL><!--Default Dynamic Data Authentication Data Object List-->
+            <TerminalRiskManagementData></TerminalRiskManagementData><!--tag:9F1D, Terminal Risk Management Data, It needn't be set unless issuer requires.-->
+            <TerminalType>22</TerminalType> <!--tag:9F35, Terminal Type-->
+            <CardDataInputCapability>E0</CardDataInputCapability><!--tag:9F33 Byte 1, Card Data Input Capability-->
+            <CVMCapability>F8</CVMCapability><!--tag:9F33 Byte 2, CVM Capability-->
+            <SecurityCapability>C8</SecurityCapability><!--tag:9F33 Byte 3, Security Capability-->
+            <AdditionalTerminalCapabilities>FF80F0A001</AdditionalTerminalCapabilities><!--tag:9F40, Additional Terminal Capability-->
+            <GetDataForPINTryCounter>1</GetDataForPINTryCounter><!--Whether support get the PIN retry counter before let cardholder enter offline PIN. 0: NOT supported, 1:supported-->
+            <BypassPINEntry>1</BypassPINEntry><!--Whether support Bypass PIN entry. 0:NOT supported, 1:supported-->
+            <SubsequentBypassPINEntry>0</SubsequentBypassPINEntry><!--Whether support Bypass all other PIN when one PIN has been Bypassed. 0: NOT supported, 1:supported-->
+            <ForcedOnlineCapability>0</ForcedOnlineCapability><!--Merchant force online Flag. 1: means always require online transaction, 0:Whether require online is decided by terminal and card-->
+        </AID>
+
+        <AID>
+            <PartialAIDSelection>0</PartialAIDSelection><!--Partial AID Selection Flag, 0:Partial Match, 1: Full Match-->
+            <ApplicationID>A0000000032010</ApplicationID><!--tag:4F, Application ID-->
+            <LocalAIDName>VISA Electron</LocalAIDName><!--Local Application Name-->
+            <TerminalAIDVersion>008c</TerminalAIDVersion> <!--tag:9F09, Application Version Number-->
+            <TACDenial>0010000000</TACDenial><!--Terminal Action Code – Denial-->
+            <TACOnline>D84004F800</TACOnline><!--Terminal Action Code – Online-->
+            <TACDefault>D84000A800</TACDefault><!-- Terminal Action Code - Default-->
+            <FloorLimit>500000</FloorLimit><!-- tag:9F1B, Terminal Floor Limit-->
+            <Threshold>0</Threshold><!--Threshold,Notes: If Target Percentage is 99 and Threshold is 0xffffffff, all the transaction will be done online.-->
+            <TargetPercentage>0</TargetPercentage><!--Target Percentage,Refer to the risk management in EMV specification-->
+            <MaxTargetPercentage>0</MaxTargetPercentage><!--Max TargetPercentage,Refer to the risk management in EMV specification-->
+            <TerminalDefaultTDOL>0F9F02065F2A029A039C0195059F3704</TerminalDefaultTDOL><!--Default Transaction Certificate Data Object List-->
+            <TerminalDefaultDDOL>039F3704</TerminalDefaultDDOL><!--Default Dynamic Data Authentication Data Object List-->
+            <TerminalRiskManagementData></TerminalRiskManagementData><!--tag:9F1D, Terminal Risk Management Data, It needn't be set unless issuer requires.-->
+            <TerminalType>22</TerminalType> <!--tag:9F35, Terminal Type-->
+            <CardDataInputCapability>E0</CardDataInputCapability><!--tag:9F33 Byte 1, Card Data Input Capability-->
+            <CVMCapability>F8</CVMCapability><!--tag:9F33 Byte 2, CVM Capability-->
+            <SecurityCapability>C8</SecurityCapability><!--tag:9F33 Byte 3, Security Capability-->
+            <AdditionalTerminalCapabilities>FF80F0A001</AdditionalTerminalCapabilities><!--tag:9F40, Additional Terminal Capability-->
+            <GetDataForPINTryCounter>1</GetDataForPINTryCounter><!--Whether support get the PIN retry counter before let cardholder enter offline PIN. 0: NOT supported, 1:supported-->
+            <BypassPINEntry>1</BypassPINEntry><!--Whether support Bypass PIN entry. 0:NOT supported, 1:supported-->
+            <SubsequentBypassPINEntry>0</SubsequentBypassPINEntry><!--Whether support Bypass all other PIN when one PIN has been Bypassed. 0: NOT supported, 1:supported-->
+            <ForcedOnlineCapability>0</ForcedOnlineCapability><!--Merchant force online Flag. 1: means always require online transaction, 0:Whether require online is decided by terminal and card-->
+        </AID>
+
+        <AID>
+            <PartialAIDSelection>0</PartialAIDSelection><!--Partial AID Selection Flag, 0:Partial Match, 1: Full Match-->
+            <ApplicationID>A0000000033010</ApplicationID><!--tag:4F, Application ID-->
+            <LocalAIDName>VISA Interlink</LocalAIDName><!--Local Application Name-->
+            <TerminalAIDVersion>008c</TerminalAIDVersion> <!--tag:9F09, Application Version Number-->
+            <TACDenial>0010000000</TACDenial><!--Terminal Action Code – Denial-->
+            <TACOnline>DC4004F800</TACOnline><!--Terminal Action Code – Online-->
+            <TACDefault>DC4000A800</TACDefault><!-- Terminal Action Code - Default-->
+            <FloorLimit>500000</FloorLimit><!-- tag:9F1B, Terminal Floor Limit-->
+            <Threshold>0</Threshold><!--Threshold,Notes: If Target Percentage is 99 and Threshold is 0xffffffff, all the transaction will be done online.-->
+            <TargetPercentage>0</TargetPercentage><!--Target Percentage,Refer to the risk management in EMV specification-->
+            <MaxTargetPercentage>0</MaxTargetPercentage><!--Max TargetPercentage,Refer to the risk management in EMV specification-->
+            <TerminalDefaultTDOL>0F9F02065F2A029A039C0195059F3704</TerminalDefaultTDOL><!--Default Transaction Certificate Data Object List-->
+            <TerminalDefaultDDOL>039F3704</TerminalDefaultDDOL><!--Default Dynamic Data Authentication Data Object List-->
+            <TerminalRiskManagementData></TerminalRiskManagementData><!--tag:9F1D, Terminal Risk Management Data, It needn't be set unless issuer requires.-->
+            <TerminalType>22</TerminalType> <!--tag:9F35, Terminal Type-->
+            <CardDataInputCapability>E0</CardDataInputCapability><!--tag:9F33 Byte 1, Card Data Input Capability-->
+            <CVMCapability>F8</CVMCapability><!--tag:9F33 Byte 2, CVM Capability-->
+            <SecurityCapability>C8</SecurityCapability><!--tag:9F33 Byte 3, Security Capability-->
+            <AdditionalTerminalCapabilities>FF80F0A001</AdditionalTerminalCapabilities><!--tag:9F40, Additional Terminal Capability-->
+            <GetDataForPINTryCounter>1</GetDataForPINTryCounter><!--Whether support get the PIN retry counter before let cardholder enter offline PIN. 0: NOT supported, 1:supported-->
+            <BypassPINEntry>1</BypassPINEntry><!--Whether support Bypass PIN entry. 0:NOT supported, 1:supported-->
+            <SubsequentBypassPINEntry>0</SubsequentBypassPINEntry><!--Whether support Bypass all other PIN when one PIN has been Bypassed. 0: NOT supported, 1:supported-->
+            <ForcedOnlineCapability>0</ForcedOnlineCapability><!--Merchant force online Flag. 1: means always require online transaction, 0:Whether require online is decided by terminal and card-->
+        </AID>
+
+        <AID>
+            <PartialAIDSelection>0</PartialAIDSelection><!--Partial AID Selection Flag, 0:Partial Match, 1: Full Match-->
+            <ApplicationID>A000000004</ApplicationID><!--tag:4F, Application ID-->
+            <LocalAIDName>MasterCard Card</LocalAIDName><!--Local Application Name-->
+            <TerminalAIDVersion>008c</TerminalAIDVersion> <!--tag:9F09, Application Version Number-->
+            <TACDenial>0010000000</TACDenial><!--Terminal Action Code – Denial-->
+            <TACOnline>D84004F800</TACOnline><!--Terminal Action Code – Online-->
+            <TACDefault>D84000A800</TACDefault><!-- Terminal Action Code - Default-->
+            <FloorLimit>500000</FloorLimit><!-- tag:9F1B, Terminal Floor Limit-->
+            <Threshold>0</Threshold><!--Threshold,Notes: If Target Percentage is 99 and Threshold is 0xffffffff, all the transaction will be done online.-->
+            <TargetPercentage>0</TargetPercentage><!--Target Percentage,Refer to the risk management in EMV specification-->
+            <MaxTargetPercentage>0</MaxTargetPercentage><!--Max TargetPercentage,Refer to the risk management in EMV specification-->
+            <TerminalDefaultTDOL>0F9F02065F2A029A039C0195059F3704</TerminalDefaultTDOL><!--Default Transaction Certificate Data Object List-->
+            <TerminalDefaultDDOL>039F3704</TerminalDefaultDDOL><!--Default Dynamic Data Authentication Data Object List-->
+            <TerminalRiskManagementData></TerminalRiskManagementData><!--tag:9F1D, Terminal Risk Management Data, It needn't be set unless issuer requires.-->
+            <TerminalType>22</TerminalType> <!--tag:9F35, Terminal Type-->
+            <CardDataInputCapability>E0</CardDataInputCapability><!--tag:9F33 Byte 1, Card Data Input Capability-->
+            <CVMCapability>F8</CVMCapability><!--tag:9F33 Byte 2, CVM Capability-->
+            <SecurityCapability>C8</SecurityCapability><!--tag:9F33 Byte 3, Security Capability-->
+            <AdditionalTerminalCapabilities>FF80F0A001</AdditionalTerminalCapabilities><!--tag:9F40, Additional Terminal Capability-->
+            <GetDataForPINTryCounter>1</GetDataForPINTryCounter><!--Whether support get the PIN retry counter before let cardholder enter offline PIN. 0: NOT supported, 1:supported-->
+            <BypassPINEntry>1</BypassPINEntry><!--Whether support Bypass PIN entry. 0:NOT supported, 1:supported-->
+            <SubsequentBypassPINEntry>0</SubsequentBypassPINEntry><!--Whether support Bypass all other PIN when one PIN has been Bypassed. 0: NOT supported, 1:supported-->
+            <ForcedOnlineCapability>0</ForcedOnlineCapability><!--Merchant force online Flag. 1: means always require online transaction, 0:Whether require online is decided by terminal and card-->
+        </AID>
+
+        <AID>
+            <PartialAIDSelection>0</PartialAIDSelection><!--Partial AID Selection Flag, 0:Partial Match, 1: Full Match-->
+            <ApplicationID>A0000000041010</ApplicationID><!--tag:4F, Application ID-->
+            <LocalAIDName>MasterCard Credit/Debit</LocalAIDName><!--Local Application Name-->
+            <TerminalAIDVersion>0002</TerminalAIDVersion> <!--tag:9F09, Application Version Number-->
+            <TACDenial>0400000000</TACDenial><!--Terminal Action Code – Denial-->
+            <TACOnline>F850ACF800</TACOnline><!--Terminal Action Code – Online-->
+            <TACDefault>FC50ACA000</TACDefault><!-- Terminal Action Code - Default-->
+            <FloorLimit>500000</FloorLimit><!-- tag:9F1B, Terminal Floor Limit-->
+            <Threshold>0</Threshold><!--Threshold,Notes: If Target Percentage is 99 and Threshold is 0xffffffff, all the transaction will be done online.-->
+            <TargetPercentage>0</TargetPercentage><!--Target Percentage,Refer to the risk management in EMV specification-->
+            <MaxTargetPercentage>0</MaxTargetPercentage><!--Max TargetPercentage,Refer to the risk management in EMV specification-->
+            <TerminalDefaultTDOL>0F9F02065F2A029A039C0195059F3704</TerminalDefaultTDOL><!--Default Transaction Certificate Data Object List-->
+            <TerminalDefaultDDOL>039F3704</TerminalDefaultDDOL><!--Default Dynamic Data Authentication Data Object List-->
+            <TerminalRiskManagementData></TerminalRiskManagementData><!--tag:9F1D, Terminal Risk Management Data, It needn't be set unless issuer requires.-->
+            <TerminalType>22</TerminalType> <!--tag:9F35, Terminal Type-->
+            <CardDataInputCapability>E0</CardDataInputCapability><!--tag:9F33 Byte 1, Card Data Input Capability-->
+            <CVMCapability>F8</CVMCapability><!--tag:9F33 Byte 2, CVM Capability-->
+            <SecurityCapability>C8</SecurityCapability><!--tag:9F33 Byte 3, Security Capability-->
+            <AdditionalTerminalCapabilities>FF80F0A001</AdditionalTerminalCapabilities><!--tag:9F40, Additional Terminal Capability-->
+            <GetDataForPINTryCounter>1</GetDataForPINTryCounter><!--Whether support get the PIN retry counter before let cardholder enter offline PIN. 0: NOT supported, 1:supported-->
+            <BypassPINEntry>1</BypassPINEntry><!--Whether support Bypass PIN entry. 0:NOT supported, 1:supported-->
+            <SubsequentBypassPINEntry>0</SubsequentBypassPINEntry><!--Whether support Bypass all other PIN when one PIN has been Bypassed. 0: NOT supported, 1:supported-->
+            <ForcedOnlineCapability>0</ForcedOnlineCapability><!--Merchant force online Flag. 1: means always require online transaction, 0:Whether require online is decided by terminal and card-->
+        </AID>
+
+        <AID>
+            <PartialAIDSelection>0</PartialAIDSelection><!--Partial AID Selection Flag, 0:Partial Match, 1: Full Match-->
+            <ApplicationID>A0000000042010</ApplicationID><!--tag:4F, Application ID-->
+            <LocalAIDName>MasterCard Specific</LocalAIDName><!--Local Application Name-->
+            <TerminalAIDVersion>0002</TerminalAIDVersion> <!--tag:9F09, Application Version Number-->
+            <TACDenial>0000000000</TACDenial><!--Terminal Action Code – Denial-->
+            <TACOnline>F850ACF800</TACOnline><!--Terminal Action Code – Online-->
+            <TACDefault>FC50ACA000</TACDefault><!-- Terminal Action Code - Default-->
+            <FloorLimit>500000</FloorLimit><!-- tag:9F1B, Terminal Floor Limit-->
+            <Threshold>0</Threshold><!--Threshold,Notes: If Target Percentage is 99 and Threshold is 0xffffffff, all the transaction will be done online.-->
+            <TargetPercentage>0</TargetPercentage><!--Target Percentage,Refer to the risk management in EMV specification-->
+            <MaxTargetPercentage>0</MaxTargetPercentage><!--Max TargetPercentage,Refer to the risk management in EMV specification-->
+            <TerminalDefaultTDOL>0F9F02065F2A029A039C0195059F3704</TerminalDefaultTDOL><!--Default Transaction Certificate Data Object List-->
+            <TerminalDefaultDDOL>039F3704</TerminalDefaultDDOL><!--Default Dynamic Data Authentication Data Object List-->
+            <TerminalRiskManagementData></TerminalRiskManagementData><!--tag:9F1D, Terminal Risk Management Data, It needn't be set unless issuer requires.-->
+            <TerminalType>22</TerminalType> <!--tag:9F35, Terminal Type-->
+            <CardDataInputCapability>E0</CardDataInputCapability><!--tag:9F33 Byte 1, Card Data Input Capability-->
+            <CVMCapability>F8</CVMCapability><!--tag:9F33 Byte 2, CVM Capability-->
+            <SecurityCapability>C8</SecurityCapability><!--tag:9F33 Byte 3, Security Capability-->
+            <AdditionalTerminalCapabilities>FF80F0A001</AdditionalTerminalCapabilities><!--tag:9F40, Additional Terminal Capability-->
+            <GetDataForPINTryCounter>1</GetDataForPINTryCounter><!--Whether support get the PIN retry counter before let cardholder enter offline PIN. 0: NOT supported, 1:supported-->
+            <BypassPINEntry>1</BypassPINEntry><!--Whether support Bypass PIN entry. 0:NOT supported, 1:supported-->
+            <SubsequentBypassPINEntry>0</SubsequentBypassPINEntry><!--Whether support Bypass all other PIN when one PIN has been Bypassed. 0: NOT supported, 1:supported-->
+            <ForcedOnlineCapability>0</ForcedOnlineCapability><!--Merchant force online Flag. 1: means always require online transaction, 0:Whether require online is decided by terminal and card-->
+
+        </AID>
+
+        <AID>
+            <PartialAIDSelection>0</PartialAIDSelection><!--Partial AID Selection Flag, 0:Partial Match, 1: Full Match-->
+            <ApplicationID>A0000000043060</ApplicationID><!--tag:4F, Application ID-->
+            <LocalAIDName>Maestro Debit</LocalAIDName><!--Local Application Name-->
+            <TerminalAIDVersion>0002</TerminalAIDVersion> <!--tag:9F09, Application Version Number-->
+            <TACDenial>0000000000</TACDenial><!--Terminal Action Code – Denial-->
+            <TACOnline>F850ACF800</TACOnline><!--Terminal Action Code – Online-->
+            <TACDefault>FC50ACA000</TACDefault><!-- Terminal Action Code - Default-->
+            <FloorLimit>500000</FloorLimit><!-- tag:9F1B, Terminal Floor Limit-->
+            <Threshold>0</Threshold><!--Threshold,Notes: If Target Percentage is 99 and Threshold is 0xffffffff, all the transaction will be done online.-->
+            <TargetPercentage>0</TargetPercentage><!--Target Percentage,Refer to the risk management in EMV specification-->
+            <MaxTargetPercentage>0</MaxTargetPercentage><!--Max TargetPercentage,Refer to the risk management in EMV specification-->
+            <TerminalDefaultTDOL>0F9F02065F2A029A039C0195059F3704</TerminalDefaultTDOL><!--Default Transaction Certificate Data Object List-->
+            <TerminalDefaultDDOL>039F3704</TerminalDefaultDDOL><!--Default Dynamic Data Authentication Data Object List-->
+            <TerminalRiskManagementData></TerminalRiskManagementData><!--tag:9F1D, Terminal Risk Management Data, It needn't be set unless issuer requires.-->
+            <TerminalType>22</TerminalType> <!--tag:9F35, Terminal Type-->
+            <CardDataInputCapability>E0</CardDataInputCapability><!--tag:9F33 Byte 1, Card Data Input Capability-->
+            <CVMCapability>F8</CVMCapability><!--tag:9F33 Byte 2, CVM Capability-->
+            <SecurityCapability>C8</SecurityCapability><!--tag:9F33 Byte 3, Security Capability-->
+            <AdditionalTerminalCapabilities>FF80F0A001</AdditionalTerminalCapabilities><!--tag:9F40, Additional Terminal Capability-->
+            <GetDataForPINTryCounter>1</GetDataForPINTryCounter><!--Whether support get the PIN retry counter before let cardholder enter offline PIN. 0: NOT supported, 1:supported-->
+            <BypassPINEntry>1</BypassPINEntry><!--Whether support Bypass PIN entry. 0:NOT supported, 1:supported-->
+            <SubsequentBypassPINEntry>0</SubsequentBypassPINEntry><!--Whether support Bypass all other PIN when one PIN has been Bypassed. 0: NOT supported, 1:supported-->
+            <ForcedOnlineCapability>0</ForcedOnlineCapability><!--Merchant force online Flag. 1: means always require online transaction, 0:Whether require online is decided by terminal and card-->
+        </AID>
+
+        <AID>
+            <PartialAIDSelection>0</PartialAIDSelection><!--Partial AID Selection Flag, 0:Partial Match, 1: Full Match-->
+            <ApplicationID>A0000000046000</ApplicationID><!--tag:4F, Application ID-->
+            <LocalAIDName>Mastercard Cirrus</LocalAIDName><!--Local Application Name-->
+            <TerminalAIDVersion>0002</TerminalAIDVersion> <!--tag:9F09, Application Version Number-->
+            <TACDenial>0000000000</TACDenial><!--Terminal Action Code – Denial-->
+            <TACOnline>F850ACF800</TACOnline><!--Terminal Action Code – Online-->
+            <TACDefault>FC50ACA000</TACDefault><!-- Terminal Action Code - Default-->
+            <FloorLimit>500000</FloorLimit><!-- tag:9F1B, Terminal Floor Limit-->
+            <Threshold>0</Threshold><!--Threshold,Notes: If Target Percentage is 99 and Threshold is 0xffffffff, all the transaction will be done online.-->
+            <TargetPercentage>0</TargetPercentage><!--Target Percentage,Refer to the risk management in EMV specification-->
+            <MaxTargetPercentage>0</MaxTargetPercentage><!--Max TargetPercentage,Refer to the risk management in EMV specification-->
+            <TerminalDefaultTDOL>0F9F02065F2A029A039C0195059F3704</TerminalDefaultTDOL><!--Default Transaction Certificate Data Object List-->
+            <TerminalDefaultDDOL>039F3704</TerminalDefaultDDOL><!--Default Dynamic Data Authentication Data Object List-->
+            <TerminalRiskManagementData></TerminalRiskManagementData><!--tag:9F1D, Terminal Risk Management Data, It needn't be set unless issuer requires.-->
+            <TerminalType>22</TerminalType> <!--tag:9F35, Terminal Type-->
+            <CardDataInputCapability>E0</CardDataInputCapability><!--tag:9F33 Byte 1, Card Data Input Capability-->
+            <CVMCapability>F8</CVMCapability><!--tag:9F33 Byte 2, CVM Capability-->
+            <SecurityCapability>C8</SecurityCapability><!--tag:9F33 Byte 3, Security Capability-->
+            <AdditionalTerminalCapabilities>FF80F0A001</AdditionalTerminalCapabilities><!--tag:9F40, Additional Terminal Capability-->
+            <GetDataForPINTryCounter>1</GetDataForPINTryCounter><!--Whether support get the PIN retry counter before let cardholder enter offline PIN. 0: NOT supported, 1:supported-->
+            <BypassPINEntry>1</BypassPINEntry><!--Whether support Bypass PIN entry. 0:NOT supported, 1:supported-->
+            <SubsequentBypassPINEntry>0</SubsequentBypassPINEntry><!--Whether support Bypass all other PIN when one PIN has been Bypassed. 0: NOT supported, 1:supported-->
+            <ForcedOnlineCapability>0</ForcedOnlineCapability><!--Merchant force online Flag. 1: means always require online transaction, 0:Whether require online is decided by terminal and card-->
+
+        </AID>
+
+        <AID>
+            <PartialAIDSelection>0</PartialAIDSelection><!--Partial AID Selection Flag, 0:Partial Match, 1: Full Match-->
+            <ApplicationID>A0000000046001</ApplicationID><!--tag:4F, Application ID-->
+            <LocalAIDName></LocalAIDName><!--Local Application Name-->
+            <TerminalAIDVersion>0002</TerminalAIDVersion> <!--tag:9F09, Application Version Number-->
+            <TACDenial>0000000000</TACDenial><!--Terminal Action Code – Denial-->
+            <TACOnline>F850ACF800</TACOnline><!--Terminal Action Code – Online-->
+            <TACDefault>FC50ACA000</TACDefault><!-- Terminal Action Code - Default-->
+            <FloorLimit>500000</FloorLimit><!-- tag:9F1B, Terminal Floor Limit-->
+            <Threshold>0</Threshold><!--Threshold,Notes: If Target Percentage is 99 and Threshold is 0xffffffff, all the transaction will be done online.-->
+            <TargetPercentage>0</TargetPercentage><!--Target Percentage,Refer to the risk management in EMV specification-->
+            <MaxTargetPercentage>0</MaxTargetPercentage><!--Max TargetPercentage,Refer to the risk management in EMV specification-->
+            <TerminalDefaultTDOL>0F9F02065F2A029A039C0195059F3704</TerminalDefaultTDOL><!--Default Transaction Certificate Data Object List-->
+            <TerminalDefaultDDOL>039F3704</TerminalDefaultDDOL><!--Default Dynamic Data Authentication Data Object List-->
+            <TerminalRiskManagementData></TerminalRiskManagementData><!--tag:9F1D, Terminal Risk Management Data, It needn't be set unless issuer requires.-->
+            <TerminalType>22</TerminalType> <!--tag:9F35, Terminal Type-->
+            <CardDataInputCapability>E0</CardDataInputCapability><!--tag:9F33 Byte 1, Card Data Input Capability-->
+            <CVMCapability>F8</CVMCapability><!--tag:9F33 Byte 2, CVM Capability-->
+            <SecurityCapability>C8</SecurityCapability><!--tag:9F33 Byte 3, Security Capability-->
+            <AdditionalTerminalCapabilities>FF80F0A001</AdditionalTerminalCapabilities><!--tag:9F40, Additional Terminal Capability-->
+            <GetDataForPINTryCounter>1</GetDataForPINTryCounter><!--Whether support get the PIN retry counter before let cardholder enter offline PIN. 0: NOT supported, 1:supported-->
+            <BypassPINEntry>1</BypassPINEntry><!--Whether support Bypass PIN entry. 0:NOT supported, 1:supported-->
+            <SubsequentBypassPINEntry>0</SubsequentBypassPINEntry><!--Whether support Bypass all other PIN when one PIN has been Bypassed. 0: NOT supported, 1:supported-->
+            <ForcedOnlineCapability>0</ForcedOnlineCapability><!--Merchant force online Flag. 1: means always require online transaction, 0:Whether require online is decided by terminal and card-->
+
+        </AID>
+
+        <AID>
+            <PartialAIDSelection>0</PartialAIDSelection><!--Partial AID Selection Flag, 0:Partial Match, 1: Full Match-->
+            <ApplicationID>A0000000046010</ApplicationID><!--tag:4F, Application ID-->
+            <LocalAIDName></LocalAIDName><!--Local Application Name-->
+            <TerminalAIDVersion>0002</TerminalAIDVersion> <!--tag:9F09, Application Version Number-->
+            <TACDenial>0000000000</TACDenial><!--Terminal Action Code – Denial-->
+            <TACOnline>F850ACF800</TACOnline><!--Terminal Action Code – Online-->
+            <TACDefault>FC50ACA000</TACDefault><!-- Terminal Action Code - Default-->
+            <FloorLimit>500000</FloorLimit><!-- tag:9F1B, Terminal Floor Limit-->
+            <Threshold>0</Threshold><!--Threshold,Notes: If Target Percentage is 99 and Threshold is 0xffffffff, all the transaction will be done online.-->
+            <TargetPercentage>0</TargetPercentage><!--Target Percentage,Refer to the risk management in EMV specification-->
+            <MaxTargetPercentage>0</MaxTargetPercentage><!--Max TargetPercentage,Refer to the risk management in EMV specification-->
+            <TerminalDefaultTDOL>0F9F02065F2A029A039C0195059F3704</TerminalDefaultTDOL><!--Default Transaction Certificate Data Object List-->
+            <TerminalDefaultDDOL>039F3704</TerminalDefaultDDOL><!--Default Dynamic Data Authentication Data Object List-->
+            <TerminalRiskManagementData></TerminalRiskManagementData><!--tag:9F1D, Terminal Risk Management Data, It needn't be set unless issuer requires.-->
+            <TerminalType>22</TerminalType> <!--tag:9F35, Terminal Type-->
+            <CardDataInputCapability>E0</CardDataInputCapability><!--tag:9F33 Byte 1, Card Data Input Capability-->
+            <CVMCapability>F8</CVMCapability><!--tag:9F33 Byte 2, CVM Capability-->
+            <SecurityCapability>C8</SecurityCapability><!--tag:9F33 Byte 3, Security Capability-->
+            <AdditionalTerminalCapabilities>FF80F0A001</AdditionalTerminalCapabilities><!--tag:9F40, Additional Terminal Capability-->
+            <GetDataForPINTryCounter>1</GetDataForPINTryCounter><!--Whether support get the PIN retry counter before let cardholder enter offline PIN. 0: NOT supported, 1:supported-->
+            <BypassPINEntry>1</BypassPINEntry><!--Whether support Bypass PIN entry. 0:NOT supported, 1:supported-->
+            <SubsequentBypassPINEntry>0</SubsequentBypassPINEntry><!--Whether support Bypass all other PIN when one PIN has been Bypassed. 0: NOT supported, 1:supported-->
+            <ForcedOnlineCapability>0</ForcedOnlineCapability><!--Merchant force online Flag. 1: means always require online transaction, 0:Whether require online is decided by terminal and card-->
+
+        </AID>
+
+        <AID>
+            <PartialAIDSelection>0</PartialAIDSelection><!--Partial AID Selection Flag, 0:Partial Match, 1: Full Match-->
+            <ApplicationID>A0000000050002</ApplicationID><!--tag:4F, Application ID-->
+            <LocalAIDName>Solo</LocalAIDName><!--Local Application Name-->
+            <TerminalAIDVersion>008c</TerminalAIDVersion> <!--tag:9F09, Application Version Number-->
+            <TACDenial>0000000000</TACDenial><!--Terminal Action Code – Denial-->
+            <TACOnline>D84004F800</TACOnline><!--Terminal Action Code – Online-->
+            <TACDefault>D84000A800</TACDefault><!-- Terminal Action Code - Default-->
+            <FloorLimit>500000</FloorLimit><!-- tag:9F1B, Terminal Floor Limit-->
+            <Threshold>0</Threshold><!--Threshold,Notes: If Target Percentage is 99 and Threshold is 0xffffffff, all the transaction will be done online.-->
+            <TargetPercentage>0</TargetPercentage><!--Target Percentage,Refer to the risk management in EMV specification-->
+            <MaxTargetPercentage>0</MaxTargetPercentage><!--Max TargetPercentage,Refer to the risk management in EMV specification-->
+            <TerminalDefaultTDOL>0F9F02065F2A029A039C0195059F3704</TerminalDefaultTDOL><!--Default Transaction Certificate Data Object List-->
+            <TerminalDefaultDDOL>039F3704</TerminalDefaultDDOL><!--Default Dynamic Data Authentication Data Object List-->
+            <TerminalRiskManagementData></TerminalRiskManagementData><!--tag:9F1D, Terminal Risk Management Data, It needn't be set unless issuer requires.-->
+            <TerminalType>22</TerminalType> <!--tag:9F35, Terminal Type-->
+            <CardDataInputCapability>E0</CardDataInputCapability><!--tag:9F33 Byte 1, Card Data Input Capability-->
+            <CVMCapability>F8</CVMCapability><!--tag:9F33 Byte 2, CVM Capability-->
+            <SecurityCapability>C8</SecurityCapability><!--tag:9F33 Byte 3, Security Capability-->
+            <AdditionalTerminalCapabilities>FF80F0A001</AdditionalTerminalCapabilities><!--tag:9F40, Additional Terminal Capability-->
+            <GetDataForPINTryCounter>1</GetDataForPINTryCounter><!--Whether support get the PIN retry counter before let cardholder enter offline PIN. 0: NOT supported, 1:supported-->
+            <BypassPINEntry>1</BypassPINEntry><!--Whether support Bypass PIN entry. 0:NOT supported, 1:supported-->
+            <SubsequentBypassPINEntry>0</SubsequentBypassPINEntry><!--Whether support Bypass all other PIN when one PIN has been Bypassed. 0: NOT supported, 1:supported-->
+            <ForcedOnlineCapability>0</ForcedOnlineCapability><!--Merchant force online Flag. 1: means always require online transaction, 0:Whether require online is decided by terminal and card-->
+
+        </AID>
+
+        <AID>
+            <PartialAIDSelection>0</PartialAIDSelection><!--Partial AID Selection Flag, 0:Partial Match, 1: Full Match-->
+            <ApplicationID>A0000000050001</ApplicationID><!--tag:4F, Application ID-->
+            <LocalAIDName>Maestro UK</LocalAIDName><!--Local Application Name-->
+            <TerminalAIDVersion>008c</TerminalAIDVersion> <!--tag:9F09, Application Version Number-->
+            <TACDenial>0000000000</TACDenial><!--Terminal Action Code – Denial-->
+            <TACOnline>D84004F800</TACOnline><!--Terminal Action Code – Online-->
+            <TACDefault>D84000A800</TACDefault><!-- Terminal Action Code - Default-->
+            <FloorLimit>500000</FloorLimit><!-- tag:9F1B, Terminal Floor Limit-->
+            <Threshold>0</Threshold><!--Threshold,Notes: If Target Percentage is 99 and Threshold is 0xffffffff, all the transaction will be done online.-->
+            <TargetPercentage>0</TargetPercentage><!--Target Percentage,Refer to the risk management in EMV specification-->
+            <MaxTargetPercentage>0</MaxTargetPercentage><!--Max TargetPercentage,Refer to the risk management in EMV specification-->
+            <TerminalDefaultTDOL>0F9F02065F2A029A039C0195059F3704</TerminalDefaultTDOL><!--Default Transaction Certificate Data Object List-->
+            <TerminalDefaultDDOL>039F3704</TerminalDefaultDDOL><!--Default Dynamic Data Authentication Data Object List-->
+            <TerminalRiskManagementData></TerminalRiskManagementData><!--tag:9F1D, Terminal Risk Management Data, It needn't be set unless issuer requires.-->
+            <TerminalType>22</TerminalType> <!--tag:9F35, Terminal Type-->
+            <CardDataInputCapability>E0</CardDataInputCapability><!--tag:9F33 Byte 1, Card Data Input Capability-->
+            <CVMCapability>F8</CVMCapability><!--tag:9F33 Byte 2, CVM Capability-->
+            <SecurityCapability>C8</SecurityCapability><!--tag:9F33 Byte 3, Security Capability-->
+            <AdditionalTerminalCapabilities>FF80F0A001</AdditionalTerminalCapabilities><!--tag:9F40, Additional Terminal Capability-->
+            <GetDataForPINTryCounter>1</GetDataForPINTryCounter><!--Whether support get the PIN retry counter before let cardholder enter offline PIN. 0: NOT supported, 1:supported-->
+            <BypassPINEntry>1</BypassPINEntry><!--Whether support Bypass PIN entry. 0:NOT supported, 1:supported-->
+            <SubsequentBypassPINEntry>0</SubsequentBypassPINEntry><!--Whether support Bypass all other PIN when one PIN has been Bypassed. 0: NOT supported, 1:supported-->
+            <ForcedOnlineCapability>0</ForcedOnlineCapability><!--Merchant force online Flag. 1: means always require online transaction, 0:Whether require online is decided by terminal and card-->
+
+        </AID>
+
+        <AID>
+            <PartialAIDSelection>0</PartialAIDSelection><!--Partial AID Selection Flag, 0:Partial Match, 1: Full Match-->
+            <ApplicationID>A00000002501</ApplicationID><!--tag:4F, Application ID-->
+            <LocalAIDName>American Express</LocalAIDName><!--Local Application Name-->
+            <TerminalAIDVersion>0001</TerminalAIDVersion> <!--tag:9F09, Application Version Number-->
+            <TACDenial>0010000000</TACDenial><!--Terminal Action Code – Denial-->
+            <TACOnline>DE00FC9800</TACOnline><!--Terminal Action Code – Online-->
+            <TACDefault>DC50FC9800</TACDefault><!-- Terminal Action Code - Default-->
+            <FloorLimit>001000</FloorLimit><!-- tag:9F1B, Terminal Floor Limit-->
+            <Threshold>0</Threshold><!--Threshold,Notes: If Target Percentage is 99 and Threshold is 0xffffffff, all the transaction will be done online.-->
+            <TargetPercentage>0</TargetPercentage><!--Target Percentage,Refer to the risk management in EMV specification-->
+            <MaxTargetPercentage>0</MaxTargetPercentage><!--Max TargetPercentage,Refer to the risk management in EMV specification-->
+            <TerminalDefaultTDOL></TerminalDefaultTDOL><!--Default Transaction Certificate Data Object List-->
+            <TerminalDefaultDDOL>039F3704</TerminalDefaultDDOL><!--Default Dynamic Data Authentication Data Object List-->
+            <TerminalRiskManagementData></TerminalRiskManagementData><!--tag:9F1D, Terminal Risk Management Data, It needn't be set unless issuer requires.-->
+            <TerminalType>22</TerminalType> <!--tag:9F35, Terminal Type-->
+            <CardDataInputCapability>E0</CardDataInputCapability><!--tag:9F33 Byte 1, Card Data Input Capability-->
+            <CVMCapability>F8</CVMCapability><!--tag:9F33 Byte 2, CVM Capability-->
+            <SecurityCapability>C8</SecurityCapability><!--tag:9F33 Byte 3, Security Capability-->
+            <AdditionalTerminalCapabilities>FF80F0A001</AdditionalTerminalCapabilities><!--tag:9F40, Additional Terminal Capability-->
+            <GetDataForPINTryCounter>1</GetDataForPINTryCounter><!--Whether support get the PIN retry counter before let cardholder enter offline PIN. 0: NOT supported, 1:supported-->
+            <BypassPINEntry>1</BypassPINEntry><!--Whether support Bypass PIN entry. 0:NOT supported, 1:supported-->
+            <SubsequentBypassPINEntry>0</SubsequentBypassPINEntry><!--Whether support Bypass all other PIN when one PIN has been Bypassed. 0: NOT supported, 1:supported-->
+            <ForcedOnlineCapability>0</ForcedOnlineCapability><!--Merchant force online Flag. 1: means always require online transaction, 0:Whether require online is decided by terminal and card-->
+
+        </AID>
+
+        <AID>
+            <PartialAIDSelection>0</PartialAIDSelection><!--Partial AID Selection Flag, 0:Partial Match, 1: Full Match-->
+            <ApplicationID>A0000001523010</ApplicationID><!--tag:4F, Application ID-->
+            <LocalAIDName>Discover</LocalAIDName><!--Local Application Name-->
+            <TerminalAIDVersion>008c</TerminalAIDVersion> <!--tag:9F09, Application Version Number-->
+            <TACDenial>0000000000</TACDenial><!--Terminal Action Code – Denial-->
+            <TACOnline>0000000000</TACOnline><!--Terminal Action Code – Online-->
+            <TACDefault>0000000000</TACDefault><!-- Terminal Action Code - Default-->
+            <FloorLimit>500000</FloorLimit><!-- tag:9F1B, Terminal Floor Limit-->
+            <Threshold>0</Threshold><!--Threshold,Notes: If Target Percentage is 99 and Threshold is 0xffffffff, all the transaction will be done online.-->
+            <TargetPercentage>0</TargetPercentage><!--Target Percentage,Refer to the risk management in EMV specification-->
+            <MaxTargetPercentage>0</MaxTargetPercentage><!--Max TargetPercentage,Refer to the risk management in EMV specification-->
+            <TerminalDefaultTDOL>0F9F02065F2A029A039C0195059F3704</TerminalDefaultTDOL><!--Default Transaction Certificate Data Object List-->
+            <TerminalDefaultDDOL>039F3704</TerminalDefaultDDOL><!--Default Dynamic Data Authentication Data Object List-->
+            <TerminalRiskManagementData></TerminalRiskManagementData><!--tag:9F1D, Terminal Risk Management Data, It needn't be set unless issuer requires.-->
+            <TerminalType>22</TerminalType> <!--tag:9F35, Terminal Type-->
+            <CardDataInputCapability>E0</CardDataInputCapability><!--tag:9F33 Byte 1, Card Data Input Capability-->
+            <CVMCapability>F8</CVMCapability><!--tag:9F33 Byte 2, CVM Capability-->
+            <SecurityCapability>C8</SecurityCapability><!--tag:9F33 Byte 3, Security Capability-->
+            <AdditionalTerminalCapabilities>FF80F0A001</AdditionalTerminalCapabilities><!--tag:9F40, Additional Terminal Capability-->
+            <GetDataForPINTryCounter>1</GetDataForPINTryCounter><!--Whether support get the PIN retry counter before let cardholder enter offline PIN. 0: NOT supported, 1:supported-->
+            <BypassPINEntry>1</BypassPINEntry><!--Whether support Bypass PIN entry. 0:NOT supported, 1:supported-->
+            <SubsequentBypassPINEntry>0</SubsequentBypassPINEntry><!--Whether support Bypass all other PIN when one PIN has been Bypassed. 0: NOT supported, 1:supported-->
+            <ForcedOnlineCapability>0</ForcedOnlineCapability><!--Merchant force online Flag. 1: means always require online transaction, 0:Whether require online is decided by terminal and card-->
+
+        </AID>
+
+        <AID>
+            <PartialAIDSelection>0</PartialAIDSelection><!--Partial AID Selection Flag, 0:Partial Match, 1: Full Match-->
+            <ApplicationID>A0000000999090</ApplicationID><!--tag:4F, Application ID-->
+            <LocalAIDName></LocalAIDName><!--Local Application Name-->
+            <TerminalAIDVersion>008c</TerminalAIDVersion> <!--tag:9F09, Application Version Number-->
+            <TACDenial>0010000000</TACDenial><!--Terminal Action Code – Denial-->
+            <TACOnline>D84004F800</TACOnline><!--Terminal Action Code – Online-->
+            <TACDefault>D84000A800</TACDefault><!-- Terminal Action Code - Default-->
+            <FloorLimit>500000</FloorLimit><!-- tag:9F1B, Terminal Floor Limit-->
+            <Threshold>0</Threshold><!--Threshold,Notes: If Target Percentage is 99 and Threshold is 0xffffffff, all the transaction will be done online.-->
+            <TargetPercentage>0</TargetPercentage><!--Target Percentage,Refer to the risk management in EMV specification-->
+            <MaxTargetPercentage>0</MaxTargetPercentage><!--Max TargetPercentage,Refer to the risk management in EMV specification-->
+            <TerminalDefaultTDOL>0F9F02065F2A029A039C0195059F3704</TerminalDefaultTDOL><!--Default Transaction Certificate Data Object List-->
+            <TerminalDefaultDDOL>039F3704</TerminalDefaultDDOL><!--Default Dynamic Data Authentication Data Object List-->
+            <TerminalRiskManagementData></TerminalRiskManagementData><!--tag:9F1D, Terminal Risk Management Data, It needn't be set unless issuer requires.-->
+            <TerminalType>22</TerminalType> <!--tag:9F35, Terminal Type-->
+            <CardDataInputCapability>E0</CardDataInputCapability><!--tag:9F33 Byte 1, Card Data Input Capability-->
+            <CVMCapability>F8</CVMCapability><!--tag:9F33 Byte 2, CVM Capability-->
+            <SecurityCapability>C8</SecurityCapability><!--tag:9F33 Byte 3, Security Capability-->
+            <AdditionalTerminalCapabilities>FF80F0A001</AdditionalTerminalCapabilities><!--tag:9F40, Additional Terminal Capability-->
+            <GetDataForPINTryCounter>1</GetDataForPINTryCounter><!--Whether support get the PIN retry counter before let cardholder enter offline PIN. 0: NOT supported, 1:supported-->
+            <BypassPINEntry>1</BypassPINEntry><!--Whether support Bypass PIN entry. 0:NOT supported, 1:supported-->
+            <SubsequentBypassPINEntry>0</SubsequentBypassPINEntry><!--Whether support Bypass all other PIN when one PIN has been Bypassed. 0: NOT supported, 1:supported-->
+            <ForcedOnlineCapability>0</ForcedOnlineCapability><!--Merchant force online Flag. 1: means always require online transaction, 0:Whether require online is decided by terminal and card-->
+
+        </AID>
+
+        <AID>
+            <PartialAIDSelection>0</PartialAIDSelection><!--Partial AID Selection Flag, 0:Partial Match, 1: Full Match-->
+            <ApplicationID>A0000000651010</ApplicationID><!--tag:4F, Application ID-->
+            <LocalAIDName>JCB Credit</LocalAIDName><!--Local Application Name-->
+            <TerminalAIDVersion>008c</TerminalAIDVersion> <!--tag:9F09, Application Version Number-->
+            <TACDenial>0010000000</TACDenial><!--Terminal Action Code – Denial-->
+            <TACOnline>FC60ACF800</TACOnline><!--Terminal Action Code – Online-->
+            <TACDefault>FC6024A800</TACDefault><!-- Terminal Action Code - Default-->
+            <FloorLimit>500000</FloorLimit><!-- tag:9F1B, Terminal Floor Limit-->
+            <Threshold>0</Threshold><!--Threshold,Notes: If Target Percentage is 99 and Threshold is 0xffffffff, all the transaction will be done online.-->
+            <TargetPercentage>0</TargetPercentage><!--Target Percentage,Refer to the risk management in EMV specification-->
+            <MaxTargetPercentage>0</MaxTargetPercentage><!--Max TargetPercentage,Refer to the risk management in EMV specification-->
+            <TerminalDefaultTDOL>0F9F02065F2A029A039C0195059F3704</TerminalDefaultTDOL><!--Default Transaction Certificate Data Object List-->
+            <TerminalDefaultDDOL>039F3704</TerminalDefaultDDOL><!--Default Dynamic Data Authentication Data Object List-->
+            <TerminalRiskManagementData></TerminalRiskManagementData><!--tag:9F1D, Terminal Risk Management Data, It needn't be set unless issuer requires.-->
+            <TerminalType>22</TerminalType> <!--tag:9F35, Terminal Type-->
+            <CardDataInputCapability>E0</CardDataInputCapability><!--tag:9F33 Byte 1, Card Data Input Capability-->
+            <CVMCapability>F8</CVMCapability><!--tag:9F33 Byte 2, CVM Capability-->
+            <SecurityCapability>C8</SecurityCapability><!--tag:9F33 Byte 3, Security Capability-->
+            <AdditionalTerminalCapabilities>FF80F0A001</AdditionalTerminalCapabilities><!--tag:9F40, Additional Terminal Capability-->
+            <GetDataForPINTryCounter>1</GetDataForPINTryCounter><!--Whether support get the PIN retry counter before let cardholder enter offline PIN. 0: NOT supported, 1:supported-->
+            <BypassPINEntry>1</BypassPINEntry><!--Whether support Bypass PIN entry. 0:NOT supported, 1:supported-->
+            <SubsequentBypassPINEntry>0</SubsequentBypassPINEntry><!--Whether support Bypass all other PIN when one PIN has been Bypassed. 0: NOT supported, 1:supported-->
+            <ForcedOnlineCapability>0</ForcedOnlineCapability><!--Merchant force online Flag. 1: means always require online transaction, 0:Whether require online is decided by terminal and card-->
+
+        </AID>
+
+        <AID>
+            <PartialAIDSelection>0</PartialAIDSelection><!--Partial AID Selection Flag, 0:Partial Match, 1: Full Match-->
+            <ApplicationID>A0000006200620</ApplicationID><!--tag:4F, Application ID-->
+            <LocalAIDName>DNA</LocalAIDName><!--Local Application Name-->
+            <TerminalAIDVersion>008c</TerminalAIDVersion> <!--tag:9F09, Application Version Number-->
+            <TACDenial>0000000000</TACDenial><!--Terminal Action Code – Denial-->
+            <TACOnline>FC50BCF800</TACOnline><!--Terminal Action Code – Online-->
+            <TACDefault>FC50ACA000</TACDefault><!-- Terminal Action Code - Default-->
+            <FloorLimit>500000</FloorLimit><!-- tag:9F1B, Terminal Floor Limit-->
+            <Threshold>0</Threshold><!--Threshold,Notes: If Target Percentage is 99 and Threshold is 0xffffffff, all the transaction will be done online.-->
+            <TargetPercentage>0</TargetPercentage><!--Target Percentage,Refer to the risk management in EMV specification-->
+            <MaxTargetPercentage>0</MaxTargetPercentage><!--Max TargetPercentage,Refer to the risk management in EMV specification-->
+            <TerminalDefaultTDOL>0F9F02065F2A029A039C0195059F3704</TerminalDefaultTDOL><!--Default Transaction Certificate Data Object List-->
+            <TerminalDefaultDDOL>039F3704</TerminalDefaultDDOL><!--Default Dynamic Data Authentication Data Object List-->
+            <TerminalRiskManagementData></TerminalRiskManagementData><!--tag:9F1D, Terminal Risk Management Data, It needn't be set unless issuer requires.-->
+            <TerminalType>22</TerminalType> <!--tag:9F35, Terminal Type-->
+            <CardDataInputCapability>E0</CardDataInputCapability><!--tag:9F33 Byte 1, Card Data Input Capability-->
+            <CVMCapability>F8</CVMCapability><!--tag:9F33 Byte 2, CVM Capability-->
+            <SecurityCapability>C8</SecurityCapability><!--tag:9F33 Byte 3, Security Capability-->
+            <AdditionalTerminalCapabilities>FF80F0A001</AdditionalTerminalCapabilities><!--tag:9F40, Additional Terminal Capability-->
+            <GetDataForPINTryCounter>1</GetDataForPINTryCounter><!--Whether support get the PIN retry counter before let cardholder enter offline PIN. 0: NOT supported, 1:supported-->
+            <BypassPINEntry>1</BypassPINEntry><!--Whether support Bypass PIN entry. 0:NOT supported, 1:supported-->
+            <SubsequentBypassPINEntry>0</SubsequentBypassPINEntry><!--Whether support Bypass all other PIN when one PIN has been Bypassed. 0: NOT supported, 1:supported-->
+            <ForcedOnlineCapability>0</ForcedOnlineCapability><!--Merchant force online Flag. 1: means always require online transaction, 0:Whether require online is decided by terminal and card-->
+
+        </AID>
+
+        <AID>
+            <PartialAIDSelection>0</PartialAIDSelection><!--Partial AID Selection Flag, 0:Partial Match, 1: Full Match-->
+            <ApplicationID>A0000001524010</ApplicationID><!--tag:4F, Application ID-->
+            <LocalAIDName>Discover</LocalAIDName><!--Local Application Name-->
+            <TerminalAIDVersion>008c</TerminalAIDVersion> <!--tag:9F09, Application Version Number-->
+            <TACDenial>0000000000</TACDenial><!--Terminal Action Code – Denial-->
+            <TACOnline>0000000000</TACOnline><!--Terminal Action Code – Online-->
+            <TACDefault>0000000000</TACDefault><!-- Terminal Action Code - Default-->
+            <FloorLimit>500000</FloorLimit><!-- tag:9F1B, Terminal Floor Limit-->
+            <Threshold>0</Threshold><!--Threshold,Notes: If Target Percentage is 99 and Threshold is 0xffffffff, all the transaction will be done online.-->
+            <TargetPercentage>0</TargetPercentage><!--Target Percentage,Refer to the risk management in EMV specification-->
+            <MaxTargetPercentage>0</MaxTargetPercentage><!--Max TargetPercentage,Refer to the risk management in EMV specification-->
+            <TerminalDefaultTDOL>0F9F02065F2A029A039C0195059F3704</TerminalDefaultTDOL><!--Default Transaction Certificate Data Object List-->
+            <TerminalDefaultDDOL>039F3704</TerminalDefaultDDOL><!--Default Dynamic Data Authentication Data Object List-->
+            <TerminalRiskManagementData></TerminalRiskManagementData><!--tag:9F1D, Terminal Risk Management Data, It needn't be set unless issuer requires.-->
+            <TerminalType>22</TerminalType> <!--tag:9F35, Terminal Type-->
+            <CardDataInputCapability>E0</CardDataInputCapability><!--tag:9F33 Byte 1, Card Data Input Capability-->
+            <CVMCapability>F8</CVMCapability><!--tag:9F33 Byte 2, CVM Capability-->
+            <SecurityCapability>C8</SecurityCapability><!--tag:9F33 Byte 3, Security Capability-->
+            <AdditionalTerminalCapabilities>FF80F0A001</AdditionalTerminalCapabilities><!--tag:9F40, Additional Terminal Capability-->
+            <GetDataForPINTryCounter>1</GetDataForPINTryCounter><!--Whether support get the PIN retry counter before let cardholder enter offline PIN. 0: NOT supported, 1:supported-->
+            <BypassPINEntry>1</BypassPINEntry><!--Whether support Bypass PIN entry. 0:NOT supported, 1:supported-->
+            <SubsequentBypassPINEntry>0</SubsequentBypassPINEntry><!--Whether support Bypass all other PIN when one PIN has been Bypassed. 0: NOT supported, 1:supported-->
+            <ForcedOnlineCapability>0</ForcedOnlineCapability><!--Merchant force online Flag. 1: means always require online transaction, 0:Whether require online is decided by terminal and card-->
+
+        </AID>
+
+        <AID>
+            <PartialAIDSelection>0</PartialAIDSelection><!--Partial AID Selection Flag, 0:Partial Match, 1: Full Match-->
+            <ApplicationID>A0000000042203</ApplicationID><!--tag:4F, Application ID-->
+            <LocalAIDName>MasterCard Specific</LocalAIDName><!--Local Application Name-->
+            <TerminalAIDVersion>008c</TerminalAIDVersion> <!--tag:9F09, Application Version Number-->
+            <TACDenial>0000000000</TACDenial><!--Terminal Action Code – Denial-->
+            <TACOnline>F850ACF800</TACOnline><!--Terminal Action Code – Online-->
+            <TACDefault>FC50ACA000</TACDefault><!-- Terminal Action Code - Default-->
+            <FloorLimit>500000</FloorLimit><!-- tag:9F1B, Terminal Floor Limit-->
+            <Threshold>0</Threshold><!--Threshold,Notes: If Target Percentage is 99 and Threshold is 0xffffffff, all the transaction will be done online.-->
+            <TargetPercentage>0</TargetPercentage><!--Target Percentage,Refer to the risk management in EMV specification-->
+            <MaxTargetPercentage>0</MaxTargetPercentage><!--Max TargetPercentage,Refer to the risk management in EMV specification-->
+            <TerminalDefaultTDOL>0F9F02065F2A029A039C0195059F3704</TerminalDefaultTDOL><!--Default Transaction Certificate Data Object List-->
+            <TerminalDefaultDDOL>039F3704</TerminalDefaultDDOL><!--Default Dynamic Data Authentication Data Object List-->
+            <TerminalRiskManagementData></TerminalRiskManagementData><!--tag:9F1D, Terminal Risk Management Data, It needn't be set unless issuer requires.-->
+            <TerminalType>22</TerminalType> <!--tag:9F35, Terminal Type-->
+            <CardDataInputCapability>E0</CardDataInputCapability><!--tag:9F33 Byte 1, Card Data Input Capability-->
+            <CVMCapability>F8</CVMCapability><!--tag:9F33 Byte 2, CVM Capability-->
+            <SecurityCapability>C8</SecurityCapability><!--tag:9F33 Byte 3, Security Capability-->
+            <AdditionalTerminalCapabilities>FF80F0A001</AdditionalTerminalCapabilities><!--tag:9F40, Additional Terminal Capability-->
+            <GetDataForPINTryCounter>1</GetDataForPINTryCounter><!--Whether support get the PIN retry counter before let cardholder enter offline PIN. 0: NOT supported, 1:supported-->
+            <BypassPINEntry>1</BypassPINEntry><!--Whether support Bypass PIN entry. 0:NOT supported, 1:supported-->
+            <SubsequentBypassPINEntry>0</SubsequentBypassPINEntry><!--Whether support Bypass all other PIN when one PIN has been Bypassed. 0: NOT supported, 1:supported-->
+            <ForcedOnlineCapability>0</ForcedOnlineCapability><!--Merchant force online Flag. 1: means always require online transaction, 0:Whether require online is decided by terminal and card-->
+
+        </AID>
+
+        <AID>
+            <PartialAIDSelection>0</PartialAIDSelection><!--Partial AID Selection Flag, 0:Partial Match, 1: Full Match-->
+            <ApplicationID>A0000000980840</ApplicationID><!--tag:4F, Application ID-->
+            <LocalAIDName>Visa Common Debit</LocalAIDName><!--Local Application Name-->
+            <TerminalAIDVersion>008c</TerminalAIDVersion> <!--tag:9F09, Application Version Number-->
+            <TACDenial>0010000000</TACDenial><!--Terminal Action Code – Denial-->
+            <TACOnline>D84004F800</TACOnline><!--Terminal Action Code – Online-->
+            <TACDefault>D84000A800</TACDefault><!-- Terminal Action Code - Default-->
+            <FloorLimit>500000</FloorLimit><!-- tag:9F1B, Terminal Floor Limit-->
+            <Threshold>0</Threshold><!--Threshold,Notes: If Target Percentage is 99 and Threshold is 0xffffffff, all the transaction will be done online.-->
+            <TargetPercentage>0</TargetPercentage><!--Target Percentage,Refer to the risk management in EMV specification-->
+            <MaxTargetPercentage>0</MaxTargetPercentage><!--Max TargetPercentage,Refer to the risk management in EMV specification-->
+            <TerminalDefaultTDOL>0F9F02065F2A029A039C0195059F3704</TerminalDefaultTDOL><!--Default Transaction Certificate Data Object List-->
+            <TerminalDefaultDDOL>039F3704</TerminalDefaultDDOL><!--Default Dynamic Data Authentication Data Object List-->
+            <TerminalRiskManagementData></TerminalRiskManagementData><!--tag:9F1D, Terminal Risk Management Data, It needn't be set unless issuer requires.-->
+            <TerminalType>22</TerminalType> <!--tag:9F35, Terminal Type-->
+            <CardDataInputCapability>E0</CardDataInputCapability><!--tag:9F33 Byte 1, Card Data Input Capability-->
+            <CVMCapability>F8</CVMCapability><!--tag:9F33 Byte 2, CVM Capability-->
+            <SecurityCapability>C8</SecurityCapability><!--tag:9F33 Byte 3, Security Capability-->
+            <AdditionalTerminalCapabilities>FF80F0A001</AdditionalTerminalCapabilities><!--tag:9F40, Additional Terminal Capability-->
+            <GetDataForPINTryCounter>1</GetDataForPINTryCounter><!--Whether support get the PIN retry counter before let cardholder enter offline PIN. 0: NOT supported, 1:supported-->
+            <BypassPINEntry>1</BypassPINEntry><!--Whether support Bypass PIN entry. 0:NOT supported, 1:supported-->
+            <SubsequentBypassPINEntry>0</SubsequentBypassPINEntry><!--Whether support Bypass all other PIN when one PIN has been Bypassed. 0: NOT supported, 1:supported-->
+            <ForcedOnlineCapability>0</ForcedOnlineCapability><!--Merchant force online Flag. 1: means always require online transaction, 0:Whether require online is decided by terminal and card-->
+
+        </AID>
+
+        <AID>
+            <PartialAIDSelection>0</PartialAIDSelection><!--Partial AID Selection Flag, 0:Partial Match, 1: Full Match-->
+            <ApplicationID>A000000333010101</ApplicationID><!--tag:4F, Application ID-->
+            <LocalAIDName>UnionPay Debit</LocalAIDName><!--Local Application Name-->
+            <TerminalAIDVersion>0020</TerminalAIDVersion> <!--tag:9F09, Application Version Number-->
+            <TACDenial>0010000000</TACDenial><!--Terminal Action Code – Denial-->
+            <TACOnline>FC78FCF8F0</TACOnline><!--Terminal Action Code – Online-->
+            <TACDefault>FC78FCF8F0</TACDefault><!-- Terminal Action Code - Default-->
+            <FloorLimit>500000</FloorLimit><!-- tag:9F1B, Terminal Floor Limit-->
+            <Threshold>40</Threshold><!--Threshold,Notes: If Target Percentage is 99 and Threshold is 0xffffffff, all the transaction will be done online.-->
+            <TargetPercentage>0</TargetPercentage><!--Target Percentage,Refer to the risk management in EMV specification-->
+            <MaxTargetPercentage>0</MaxTargetPercentage><!--Max TargetPercentage,Refer to the risk management in EMV specification-->
+            <TerminalDefaultTDOL>039F3704</TerminalDefaultTDOL><!--Default Transaction Certificate Data Object List-->
+            <TerminalDefaultDDOL>039F3704</TerminalDefaultDDOL><!--Default Dynamic Data Authentication Data Object List-->
+            <TerminalRiskManagementData></TerminalRiskManagementData><!--tag:9F1D, Terminal Risk Management Data, It needn't be set unless issuer requires.-->
+            <TerminalType>22</TerminalType> <!--tag:9F35, Terminal Type-->
+            <CardDataInputCapability>E0</CardDataInputCapability><!--tag:9F33 Byte 1, Card Data Input Capability-->
+            <CVMCapability>F8</CVMCapability><!--tag:9F33 Byte 2, CVM Capability-->
+            <SecurityCapability>C8</SecurityCapability><!--tag:9F33 Byte 3, Security Capability-->
+            <AdditionalTerminalCapabilities>FF80F0A001</AdditionalTerminalCapabilities><!--tag:9F40, Additional Terminal Capability-->
+            <GetDataForPINTryCounter>1</GetDataForPINTryCounter><!--Whether support get the PIN retry counter before let cardholder enter offline PIN. 0: NOT supported, 1:supported-->
+            <BypassPINEntry>1</BypassPINEntry><!--Whether support Bypass PIN entry. 0:NOT supported, 1:supported-->
+            <SubsequentBypassPINEntry>0</SubsequentBypassPINEntry><!--Whether support Bypass all other PIN when one PIN has been Bypassed. 0: NOT supported, 1:supported-->
+            <ForcedOnlineCapability>0</ForcedOnlineCapability><!--Merchant force online Flag. 1: means always require online transaction, 0:Whether require online is decided by terminal and card-->
+
+        </AID>
+
+        <AID>
+            <PartialAIDSelection>0</PartialAIDSelection><!--Partial AID Selection Flag, 0:Partial Match, 1: Full Match-->
+            <ApplicationID>A000000333010102</ApplicationID><!--tag:4F, Application ID-->
+            <LocalAIDName>UnionPay Credit</LocalAIDName><!--Local Application Name-->
+            <TerminalAIDVersion>0020</TerminalAIDVersion> <!--tag:9F09, Application Version Number-->
+            <TACDenial>0010000000</TACDenial><!--Terminal Action Code – Denial-->
+            <TACOnline>FC78FCF8F0</TACOnline><!--Terminal Action Code – Online-->
+            <TACDefault>FC78FCF8F0</TACDefault><!-- Terminal Action Code - Default-->
+            <FloorLimit>500000</FloorLimit><!-- tag:9F1B, Terminal Floor Limit-->
+            <Threshold>40</Threshold><!--Threshold,Notes: If Target Percentage is 99 and Threshold is 0xffffffff, all the transaction will be done online.-->
+            <TargetPercentage>0</TargetPercentage><!--Target Percentage,Refer to the risk management in EMV specification-->
+            <MaxTargetPercentage>0</MaxTargetPercentage><!--Max TargetPercentage,Refer to the risk management in EMV specification-->
+            <TerminalDefaultTDOL>039F3704</TerminalDefaultTDOL><!--Default Transaction Certificate Data Object List-->
+            <TerminalDefaultDDOL>039F3704</TerminalDefaultDDOL><!--Default Dynamic Data Authentication Data Object List-->
+            <TerminalRiskManagementData></TerminalRiskManagementData><!--tag:9F1D, Terminal Risk Management Data, It needn't be set unless issuer requires.-->
+            <TerminalType>22</TerminalType> <!--tag:9F35, Terminal Type-->
+            <CardDataInputCapability>E0</CardDataInputCapability><!--tag:9F33 Byte 1, Card Data Input Capability-->
+            <CVMCapability>F8</CVMCapability><!--tag:9F33 Byte 2, CVM Capability-->
+            <SecurityCapability>C8</SecurityCapability><!--tag:9F33 Byte 3, Security Capability-->
+            <AdditionalTerminalCapabilities>FF80F0A001</AdditionalTerminalCapabilities><!--tag:9F40, Additional Terminal Capability-->
+            <GetDataForPINTryCounter>1</GetDataForPINTryCounter><!--Whether support get the PIN retry counter before let cardholder enter offline PIN. 0: NOT supported, 1:supported-->
+            <BypassPINEntry>1</BypassPINEntry><!--Whether support Bypass PIN entry. 0:NOT supported, 1:supported-->
+            <SubsequentBypassPINEntry>0</SubsequentBypassPINEntry><!--Whether support Bypass all other PIN when one PIN has been Bypassed. 0: NOT supported, 1:supported-->
+            <ForcedOnlineCapability>0</ForcedOnlineCapability><!--Merchant force online Flag. 1: means always require online transaction, 0:Whether require online is decided by terminal and card-->
+
+        </AID>
+
+        <AID>
+            <PartialAIDSelection>0</PartialAIDSelection><!--Partial AID Selection Flag, 0:Partial Match, 1: Full Match-->
+            <ApplicationID>A000000333010103</ApplicationID><!--tag:4F, Application ID-->
+            <LocalAIDName>ionPay Quasi Credit</LocalAIDName><!--Local Application Name-->
+            <TerminalAIDVersion>0020</TerminalAIDVersion> <!--tag:9F09, Application Version Number-->
+            <TACDenial>0010000000</TACDenial><!--Terminal Action Code – Denial-->
+            <TACOnline>FC78FCF8F0</TACOnline><!--Terminal Action Code – Online-->
+            <TACDefault>FC78FCF8F0</TACDefault><!-- Terminal Action Code - Default-->
+            <FloorLimit>500000</FloorLimit><!-- tag:9F1B, Terminal Floor Limit-->
+            <Threshold>40</Threshold><!--Threshold,Notes: If Target Percentage is 99 and Threshold is 0xffffffff, all the transaction will be done online.-->
+            <TargetPercentage>0</TargetPercentage><!--Target Percentage,Refer to the risk management in EMV specification-->
+            <MaxTargetPercentage>0</MaxTargetPercentage><!--Max TargetPercentage,Refer to the risk management in EMV specification-->
+            <TerminalDefaultTDOL>039F3704</TerminalDefaultTDOL><!--Default Transaction Certificate Data Object List-->
+            <TerminalDefaultDDOL>039F3704</TerminalDefaultDDOL><!--Default Dynamic Data Authentication Data Object List-->
+            <TerminalRiskManagementData></TerminalRiskManagementData><!--tag:9F1D, Terminal Risk Management Data, It needn't be set unless issuer requires.-->
+            <TerminalType>22</TerminalType> <!--tag:9F35, Terminal Type-->
+            <CardDataInputCapability>E0</CardDataInputCapability><!--tag:9F33 Byte 1, Card Data Input Capability-->
+            <CVMCapability>F8</CVMCapability><!--tag:9F33 Byte 2, CVM Capability-->
+            <SecurityCapability>C8</SecurityCapability><!--tag:9F33 Byte 3, Security Capability-->
+            <AdditionalTerminalCapabilities>FF80F0A001</AdditionalTerminalCapabilities><!--tag:9F40, Additional Terminal Capability-->
+            <GetDataForPINTryCounter>1</GetDataForPINTryCounter><!--Whether support get the PIN retry counter before let cardholder enter offline PIN. 0: NOT supported, 1:supported-->
+            <BypassPINEntry>1</BypassPINEntry><!--Whether support Bypass PIN entry. 0:NOT supported, 1:supported-->
+            <SubsequentBypassPINEntry>0</SubsequentBypassPINEntry><!--Whether support Bypass all other PIN when one PIN has been Bypassed. 0: NOT supported, 1:supported-->
+            <ForcedOnlineCapability>0</ForcedOnlineCapability><!--Merchant force online Flag. 1: means always require online transaction, 0:Whether require online is decided by terminal and card-->
+
+        </AID>
+
+        <AID>
+            <PartialAIDSelection>0</PartialAIDSelection><!--Partial AID Selection Flag, 0:Partial Match, 1: Full Match-->
+            <ApplicationID>A000000333010106</ApplicationID><!--tag:4F, Application ID-->
+            <LocalAIDName>UnionPay Electronic Cash</LocalAIDName><!--Local Application Name-->
+            <TerminalAIDVersion>0030</TerminalAIDVersion> <!--tag:9F09, Application Version Number-->
+            <TACDenial>0010000000</TACDenial><!--Terminal Action Code – Denial-->
+            <TACOnline>FC78FCF8F0</TACOnline><!--Terminal Action Code – Online-->
+            <TACDefault>FC78FCF8F0</TACDefault><!-- Terminal Action Code - Default-->
+            <FloorLimit>500000</FloorLimit><!-- tag:9F1B, Terminal Floor Limit-->
+            <Threshold>40</Threshold><!--Threshold,Notes: If Target Percentage is 99 and Threshold is 0xffffffff, all the transaction will be done online.-->
+            <TargetPercentage>0</TargetPercentage><!--Target Percentage,Refer to the risk management in EMV specification-->
+            <MaxTargetPercentage>0</MaxTargetPercentage><!--Max TargetPercentage,Refer to the risk management in EMV specification-->
+            <TerminalDefaultTDOL>039F3704</TerminalDefaultTDOL><!--Default Transaction Certificate Data Object List-->
+            <TerminalDefaultDDOL>039F3704</TerminalDefaultDDOL><!--Default Dynamic Data Authentication Data Object List-->
+            <TerminalRiskManagementData></TerminalRiskManagementData><!--tag:9F1D, Terminal Risk Management Data, It needn't be set unless issuer requires.-->
+            <TerminalType>22</TerminalType> <!--tag:9F35, Terminal Type-->
+            <CardDataInputCapability>E0</CardDataInputCapability><!--tag:9F33 Byte 1, Card Data Input Capability-->
+            <CVMCapability>F8</CVMCapability><!--tag:9F33 Byte 2, CVM Capability-->
+            <SecurityCapability>C8</SecurityCapability><!--tag:9F33 Byte 3, Security Capability-->
+            <AdditionalTerminalCapabilities>FF80F0A001</AdditionalTerminalCapabilities><!--tag:9F40, Additional Terminal Capability-->
+            <GetDataForPINTryCounter>1</GetDataForPINTryCounter><!--Whether support get the PIN retry counter before let cardholder enter offline PIN. 0: NOT supported, 1:supported-->
+            <BypassPINEntry>1</BypassPINEntry><!--Whether support Bypass PIN entry. 0:NOT supported, 1:supported-->
+            <SubsequentBypassPINEntry>0</SubsequentBypassPINEntry><!--Whether support Bypass all other PIN when one PIN has been Bypassed. 0: NOT supported, 1:supported-->
+            <ForcedOnlineCapability>0</ForcedOnlineCapability><!--Merchant force online Flag. 1: means always require online transaction, 0:Whether require online is decided by terminal and card-->
+
+        </AID>
+    </AIDLIST>
+
+</EMVPARAM>
+
+

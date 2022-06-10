@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "165028728821",
+    "project_id": "dev-posfacil",
+    "storage_bucket": "dev-posfacil.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165028728821:android:579d6448b3b3b74b855abc",
+        "android_client_info": {
+          "package_name": "com.paguelofacil.posfacil.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "165028728821-2j0at3difqeeppsng0phhflsuonkm5u4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOfRvAhkE6VxqKOmGFo3ldO_OJAZDxrGU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "165028728821-2j0at3difqeeppsng0phhflsuonkm5u4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

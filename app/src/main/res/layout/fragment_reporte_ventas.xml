@@ -86,7 +86,8 @@
                             android:layout_weight="50"
                             android:fontFamily="@font/encodesans_medium"
                             android:gravity="right"
-                            android:text="286"
+                            android:text="00"
+                            android:textStyle="bold"
                             android:textColor="@color/color_3D444F">
 
                         </TextView>
@@ -115,7 +116,8 @@
                             android:layout_weight="50"
                             android:fontFamily="@font/encodesans_medium"
                             android:gravity="right"
-                            android:text="$ 4452.26"
+                            android:text="$ 0.00"
+                            android:textStyle="bold"
                             android:textColor="@color/color_3D444F">
 
                         </TextView>
@@ -144,7 +146,8 @@
                             android:layout_weight="50"
                             android:fontFamily="@font/encodesans_medium"
                             android:gravity="right"
-                            android:text="$ 522.87"
+                            android:text="$ 0.00"
+                            android:textStyle="bold"
                             android:textColor="@color/color_3D444F">
 
                         </TextView>
@@ -173,7 +176,8 @@
                             android:layout_weight="50"
                             android:fontFamily="@font/encodesans_medium"
                             android:gravity="right"
-                            android:text="$ 102.17"
+                            android:text="$ 0.00"
+                            android:textStyle="bold"
                             android:textColor="@color/color_3D444F">
 
                         </TextView>
@@ -202,7 +206,8 @@
                             android:layout_weight="50"
                             android:fontFamily="@font/encodesans_medium"
                             android:gravity="right"
-                            android:text="$ 241.17"
+                            android:text="$ 0.00"
+                            android:textStyle="bold"
                             android:textColor="@color/color_3D444F">
 
                         </TextView>
@@ -231,7 +236,8 @@
                             android:layout_weight="50"
                             android:fontFamily="@font/encodesans_medium"
                             android:gravity="right"
-                            android:text="$ 4836.13"
+                            android:text="$ 0.00"
+                            android:textStyle="bold"
                             android:textColor="@color/color_3D444F">
 
                         </TextView>
@@ -260,7 +266,8 @@
                             android:layout_weight="50"
                             android:fontFamily="@font/encodesans_medium"
                             android:gravity="right"
-                            android:text="$ 2418.07"
+                            android:text="$ 0.00"
+                            android:textStyle="bold"
                             android:textColor="@color/color_3D444F">
 
                         </TextView>
@@ -290,7 +297,8 @@
                             android:layout_weight="50"
                             android:fontFamily="@font/encodesans_medium"
                             android:gravity="right"
-                            android:text="$ 2418.07"
+                            android:text="$ 0.00"
+                            android:textStyle="bold"
                             android:textColor="@color/color_3D444F">
 
                         </TextView>
@@ -303,6 +311,7 @@
             </androidx.cardview.widget.CardView>
 
             <TextView
+                android:id="@+id/detailsUserText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_30sdp"
@@ -352,7 +361,8 @@
                             android:layout_weight="50"
                             android:fontFamily="@font/encodesans_medium"
                             android:gravity="right"
-                            android:text="Michelle Marine"
+                            android:text=""
+                            android:textStyle="bold"
                             android:textColor="@color/color_3D444F">
 
                         </TextView>
@@ -382,7 +392,8 @@
                             android:layout_weight="50"
                             android:fontFamily="@font/encodesans_medium"
                             android:gravity="right"
-                            android:text="286"
+                            android:text="00"
+                            android:textStyle="bold"
                             android:textColor="@color/color_3D444F">
 
                         </TextView>
@@ -411,7 +422,8 @@
                             android:layout_weight="50"
                             android:fontFamily="@font/encodesans_medium"
                             android:gravity="right"
-                            android:text="$ 4452.26"
+                            android:text="$ 0.00"
+                            android:textStyle="bold"
                             android:textColor="@color/color_3D444F">
 
                         </TextView>
@@ -440,7 +452,8 @@
                             android:layout_weight="50"
                             android:fontFamily="@font/encodesans_medium"
                             android:gravity="right"
-                            android:text="$ 522.87"
+                            android:text="$ 0.00"
+                            android:textStyle="bold"
                             android:textColor="@color/color_3D444F">
 
                         </TextView>
@@ -469,7 +482,8 @@
                             android:layout_weight="50"
                             android:fontFamily="@font/encodesans_medium"
                             android:gravity="right"
-                            android:text="$ 102.17"
+                            android:text="$ 0.00"
+                            android:textStyle="bold"
                             android:textColor="@color/color_3D444F">
 
                         </TextView>
@@ -498,7 +512,8 @@
                             android:layout_weight="50"
                             android:fontFamily="@font/encodesans_medium"
                             android:gravity="right"
-                            android:text="$ 241.17"
+                            android:text="$ 0.00"
+                            android:textStyle="bold"
                             android:textColor="@color/color_3D444F">
 
                         </TextView>
@@ -527,7 +542,8 @@
                             android:layout_weight="50"
                             android:fontFamily="@font/encodesans_medium"
                             android:gravity="right"
-                            android:text="$ 4836.13"
+                            android:text="$ 0.00"
+                            android:textStyle="bold"
                             android:textColor="@color/color_3D444F">
 
                         </TextView>
@@ -556,7 +572,8 @@
                             android:layout_weight="50"
                             android:fontFamily="@font/encodesans_medium"
                             android:gravity="right"
-                            android:text="$ 2418.07"
+                            android:text="$ 0.00"
+                            android:textStyle="bold"
                             android:textColor="@color/color_3D444F">
 
                         </TextView>
@@ -586,7 +603,8 @@
                             android:layout_weight="50"
                             android:fontFamily="@font/encodesans_medium"
                             android:gravity="right"
-                            android:text="$ 2418.07"
+                            android:text="$ 0.00"
+                            android:textStyle="bold"
                             android:textColor="@color/color_3D444F">
 
                         </TextView>

@@ -45,7 +45,7 @@
         android:checkableBehavior="single">
         <item
             android:id="@+id/nav_support"
-            android:title="@string/menu_support" />
+            android:title="@string/menu_support"/>
     </group>
 
     <group

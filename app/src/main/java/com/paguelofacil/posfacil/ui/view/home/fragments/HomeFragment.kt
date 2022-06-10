@@ -1,74 +1,123 @@
 package com.paguelofacil.posfacil.ui.view.home.fragments
 
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.view.*
-import android.view.inputmethod.InputMethodManager
-import androidx.appcompat.widget.Toolbar
-import androidx.core.widget.doOnTextChanged
-import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
+import androidx.lifecycle.lifecycleScope
+import com.paguelofacil.posfacil.ApplicationClass
 import com.paguelofacil.posfacil.R
 import com.paguelofacil.posfacil.base.BaseFragment
-import com.paguelofacil.posfacil.data.network.api.ApiRequestCode
-import com.paguelofacil.posfacil.data.network.response.LoginApiResponse
-import com.paguelofacil.posfacil.data.network.response.PosStatusApiResponse
+import com.paguelofacil.posfacil.data.network.response.ReportZResponse
 import com.paguelofacil.posfacil.databinding.FragmentHomeBinding
-import com.paguelofacil.posfacil.repository.UserRepo
-import com.paguelofacil.posfacil.ui.view.account.viewmodel.LoginViewModel
-import com.paguelofacil.posfacil.ui.view.home.activities.IntroActivity
+import com.paguelofacil.posfacil.ui.view.custom_view.ReportBottomSheet
 import com.paguelofacil.posfacil.ui.view.home.viewmodel.HomeViewModel
-import com.paguelofacil.posfacil.ui.view.settings.activities.AjustesActivity
 import com.paguelofacil.posfacil.ui.view.transactions.payment.activities.CobroActivity
-import com.paguelofacil.posfacil.util.Constantes.ConstantesView
+import com.paguelofacil.posfacil.util.Constantes.AppConstants
 import com.paguelofacil.posfacil.util.KeyboardUtil
-import kotlinx.android.synthetic.main.app_bar_home.*
-import kotlinx.android.synthetic.main.fragment_home.*
+import com.pax.dal.entity.ETermInfoKey
+import kotlinx.coroutines.CoroutineExceptionHandler
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import timber.log.Timber
 
 
 class HomeFragment : BaseFragment() {
 
-    private var toolbar: Toolbar? =null
-
     private var tmpValue = ""
     private var isAdding = false
 
-    lateinit var binding:FragmentHomeBinding
+    private val error = CoroutineExceptionHandler { _, exception ->
+        Timber.e("Error ${exception.message.toString()}")
+    }
 
-    private lateinit var vm: HomeViewModel
+    lateinit var binding: FragmentHomeBinding
+    private val viewModel: HomeViewModel by activityViewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setHasOptionsMenu(true);
         super.onCreate(savedInstanceState)
+        setBaseViewModel(viewModel)
 
-        vm = ViewModelProvider(requireActivity())[HomeViewModel::class.java]
-
-        setBaseViewModel(vm)
-
-        vm.getResponseObserver()
-            .observe(this@HomeFragment, this)
+        initObservers()
     }
 
+    private fun changeTitle(){
+        /*val view = layoutInflater.inflate(R.layout.app_bar_home, null)
+        val title = view.findViewById<TextView>(R.id.titleApp)
+
+        title.text = "Ajustes"*/
+        val vm = ViewModelProvider(requireActivity()).get<HomeViewModel>(modelClass = HomeViewModel::class.java)
+
+        vm.setTitle(ApplicationClass.language.billing_panel, true)
+        Timber.e("VIEEE ${viewModel.x}")
+    }
+
+    private fun initObservers() {
+        viewModel.liveDataValidateReportZ.observe(this) {
+            processValidateResponse(it)
+        }
+
+        viewModel.liveDataGenerateReportZ.observe(this) {
+            if (it != null) generateReportZSuccess()
+        }
+
+        viewModel.liveDataException.observe(this) { proccessException(it) }
+
+        viewModel.mutableUpdateLanguage.observe(this) {
+            if (it) {
+                loadLanguage()
+            }
+        }
+    }
+
+    private fun generateReportZSuccess() {
+        val dialog = ReportBottomSheet(
+            getString(R.string.se_ha_enviado_el_reporte_z_exitosamente),
+            getString(R.string.aceptar),
+            callBackClose = { viewModel.generateReportZ() }
+        )
+        dialog.show(parentFragmentManager, "")
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding= FragmentHomeBinding.inflate(inflater,container,false)
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
         loadListeners()
+        loadLanguage()
+        changeTitle()
 
         return binding.root
     }
 
+    private fun loadLanguage() {
+        binding.textViewTitle.text = ApplicationClass.language.montoCobrar
+        binding.btnNext.text = ApplicationClass.language.cobrar
+    }
+
+    private fun processValidateResponse(reportZResponse: ReportZResponse?) {
+        if (reportZResponse?.status == "OPEN") {
+            goVerifyPayment()
+        } else {
+            val dialog = ReportBottomSheet(
+                getString(R.string.aun_no_genero_el_reporte_z),
+                getString(R.string.generar_reporte_z),
+                callBackClose = { viewModel.generateReportZ() }
+            )
+            dialog.show(parentFragmentManager, "")
+        }
+    }
 
     private fun loadListeners() {
-
         binding.etMontoCobrar.setOnFocusChangeListener { view, b ->
             if (b) {
                 KeyboardUtil.showKeyboard(activity)
@@ -81,15 +130,46 @@ class HomeFragment : BaseFragment() {
 
         binding.etMontoCobrar.addTextChangedListener(montoTextWatcher)
 
-        binding.btnNext.setOnClickListener{
-//            goVerifyPayment()
-            vm.checkZReport()
+        binding.btnNext.setOnClickListener {
+            try {
+                Sys?.termInfo?.let {
+                    lifecycleScope.launch(Dispatchers.IO + error) {
+                        try {
+                            if (importeMinimoSuccess()) {
+                                try {
+                                    KeyboardUtil.hideKeyboard(requireActivity())
+                                    viewModel.checkZReport(it[ETermInfoKey.SN] ?: "")
+                                }catch (e: NoClassDefFoundError){
+                                    Timber.e("ERRO EN CHECK Z")
+                                }
+                            } else {
+                                showSnack(ApplicationClass.language.theMinimumAllowedAmount)
+                            }
+                        }catch (e: NoClassDefFoundError){
+                            Timber.e("ERRO EN CHECK Z")
+                        }
+                    }
+                }
+            }catch (e: NoClassDefFoundError){
+                Timber.e("ERRO EN CHECK Z")
+            }
         }
+
+        binding.etMontoCobrar.imeOptions = EditorInfo.IME_ACTION_DONE
+        binding.etMontoCobrar.setOnEditorActionListener { textView, i, keyEvent ->
+            KeyboardUtil.hideKeyboard(requireActivity())
+            binding.etMontoCobrar.clearFocus()
+            true
+        }
+    }
+
+    private fun importeMinimoSuccess(): Boolean {//
+        return getImportString().replace(',', '.').toDouble() >= 1.0
     }
 
     private val montoTextWatcher: TextWatcher = object : TextWatcher {
         override fun beforeTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {
-            tmpValue = binding.etMontoCobrar.text.toString()
+            tmpValue = getImportString()
         }
 
         override fun onTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {
@@ -98,7 +178,7 @@ class HomeFragment : BaseFragment() {
 
         override fun afterTextChanged(editable: Editable) {
             binding.etMontoCobrar.removeTextChangedListener(this)
-            val montoStr = binding.etMontoCobrar.text.toString()
+            val montoStr = getImportString().replace(',', '.')
             val newValue = when {
                 montoStr.isEmpty() -> {
                     0f
@@ -110,7 +190,7 @@ class HomeFragment : BaseFragment() {
                     (preValue * 10) + (newChar / 100)
                 }
                 else -> {
-                    if(montoStr.length == 1)
+                    if (montoStr.length == 1)
                         montoStr.toFloat() / 100
                     else montoStr.toFloat() / 10
                 }
@@ -122,52 +202,26 @@ class HomeFragment : BaseFragment() {
     }
 
     override fun onResume() {
-        KeyboardUtil.showKeyboard(context, binding.etMontoCobrar)
+        //KeyboardUtil.showKeyboard(context, binding.etMontoCobrar)
         binding.etMontoCobrar.requestFocus()
+        changeTitle()
         super.onResume()
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater!!.inflate(R.menu.menu_profile_home, menu)
-        true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val id = item!!.itemId
-        if (id == R.id.item_menu_profile){
-            goViewAjustes(ConstantesView.PARAM_PROFILE)
-        }
-        return super.onOptionsItemSelected(item)
-    }
-
-    private fun goViewAjustes(value:String) {
-        val params = Bundle()
-        params.putString(ConstantesView.PARAM_FRAGMENT, value)
-        val intent= Intent(context, AjustesActivity::class.java)
-        intent.putExtras(params)
-        startActivityForResult(intent,200)
-    }
-
-    override fun onResponseSuccess(requestCode: Int, responseCode: Int, msg: String?, data: Any?) {
-        super.onResponseSuccess(requestCode, responseCode, msg, data)
-
-        when (requestCode) {
-            ApiRequestCode.SUCCESS -> {
-                val type = object : TypeToken<PosStatusApiResponse>() {}.type
-                val response = Gson().fromJson<PosStatusApiResponse>(Gson().toJson(data), type)
-                if(response.status == "OPEN") {
-                    goVerifyPayment()
-                }
-//                UserRepo.saveUserData(response, binding.etPassword.text.toString())
-//                vm.updateUserLocal()
-            }
-        }
-
+    private fun getImportString(): String {
+        return binding.etMontoCobrar.text.toString().replace(',', '.')
     }
 
     private fun goVerifyPayment() {
-        val intent= Intent(context, CobroActivity::class.java)
+        val intent = Intent(context, CobroActivity::class.java)
+        intent.putExtra(
+            AppConstants.IntentConstants.HomeFragment().IMPORT,
+            getImportString().replace(',', '.').toDouble()
+        )
+        intent.putExtra("monto", getImportString())
         startActivity(intent)
-        activity?.finish()
+        requireActivity().finish()
     }
+
+
 }

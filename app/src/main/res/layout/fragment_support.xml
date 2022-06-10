@@ -1,115 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app1="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_margin="@dimen/_20sdp"
+    android:orientation="vertical"
     tools:context=".ui.view.settings.fragments.SupportFragment">
 
 
     <TextView
+        android:id="@+id/textViewTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/title_support"
-        android:gravity="center"
-        android:textColor="@color/color_3D444F"
         android:fontFamily="@font/encodesans_semibold"
-        android:textStyle="bold"
+        android:gravity="center"
+        android:text="@string/title_support"
+        android:textColor="@color/color_3D444F"
         android:textSize="@dimen/_13sdp"
-        >
-
-    </TextView>
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
         android:layout_marginTop="@dimen/_20sdp"
-        >
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
         <ImageView
             android:layout_width="@dimen/_30sdp"
             android:layout_height="@dimen/_30sdp"
-            android:src="@drawable/ic_support_email"
-            >
-
-        </ImageView>
+            android:src="@drawable/ic_support_email" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:fontFamily="@font/encodesans_regular"
             android:text="@string/email_support"
-            android:fontFamily="@font/encodesans_regular"
             android:textColor="@color/color_3D444F"
-            android:layout_marginLeft="@dimen/_15sdp"
-            android:textSize="@dimen/_13sdp"
-            >
-
-        </TextView>
+            android:textSize="@dimen/_13sdp" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
         android:layout_marginTop="@dimen/_30sdp"
-        >
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
         <ImageView
             android:layout_width="@dimen/_30sdp"
             android:layout_height="@dimen/_30sdp"
-            android:src="@drawable/ic_support_phone"
-            >
-
-        </ImageView>
+            android:src="@drawable/ic_support_phone" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:fontFamily="@font/encodesans_regular"
             android:text="@string/phone_support"
-            android:fontFamily="@font/encodesans_regular"
             android:textColor="@color/color_3D444F"
-            android:layout_marginLeft="@dimen/_15sdp"
-            android:textSize="@dimen/_13sdp"
-            >
-
-        </TextView>
-
+            android:textSize="@dimen/_13sdp" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
         android:layout_marginTop="@dimen/_30sdp"
-        >
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
         <ImageView
             android:layout_width="@dimen/_30sdp"
             android:layout_height="@dimen/_30sdp"
-            android:src="@drawable/ic_support_web"
-            >
-
-        </ImageView>
+            android:src="@drawable/ic_support_web" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/web_support"
-            android:fontFamily="@font/encodesans_regular"
-            android:textColor="@color/color_3D444F"
             android:layout_marginLeft="@dimen/_15sdp"
-            android:textSize="@dimen/_13sdp"
-            >
-
-        </TextView>
+            android:fontFamily="@font/encodesans_regular"
+            android:text="@string/web_support"
+            android:textColor="@color/color_3D444F"
+            android:textSize="@dimen/_13sdp" />
 
     </LinearLayout>
 
@@ -117,34 +92,33 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardElevation="@dimen/_8sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
         android:layout_marginTop="@dimen/_35sdp"
         android:layout_marginRight="@dimen/_10sdp"
-        android:layout_marginLeft="@dimen/_10sdp"
         app:cardCornerRadius="@dimen/_10sdp"
+        app:cardElevation="@dimen/_8sdp">
 
-        >
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_margin="@dimen/_15sdp"
-            >
+            android:orientation="vertical">
 
             <LinearLayout
                 android:id="@+id/ll_about_app"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                >
+                android:orientation="horizontal">
 
                 <TextView
-                    android:layout_weight="20"
+                    android:id="@+id/textViewAcercaDe"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/about_support"
+                    android:layout_weight="20"
                     android:fontFamily="@font/encodesans_medium"
+                    android:text="@string/about_support"
                     android:textSize="@dimen/_12sdp"
+                    android:textStyle="bold"
                     android:textColor="@color/color_3D444F"
                     >
 
@@ -152,13 +126,10 @@
                 </TextView>
 
                 <ImageView
-                    android:layout_weight="80"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_right_arrow_blue"
-                    >
-
-                </ImageView>
+                    android:layout_weight="80"
+                    android:src="@drawable/ic_right_arrow_blue" />
 
             </LinearLayout>
 
@@ -166,41 +137,30 @@
                 android:id="@+id/ll_legal_app"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginTop="@dimen/_35sdp"
-                >
+                android:orientation="horizontal">
 
                 <TextView
-                    android:layout_weight="20"
+                    android:id="@+id/textViewLegal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/legal_support"
+                    android:layout_weight="20"
                     android:fontFamily="@font/encodesans_medium"
-                    android:textSize="@dimen/_12sdp"
+                    android:text="@string/legal_support"
+                    android:textStyle="bold"
                     android:textColor="@color/color_3D444F"
-                    >
-
-
-                </TextView>
+                    android:textSize="@dimen/_12sdp" />
 
                 <ImageView
-                    android:layout_weight="80"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_right_arrow_blue"
-                    >
-
-                </ImageView>
+                    android:layout_weight="80"
+                    android:src="@drawable/ic_right_arrow_blue" />
 
             </LinearLayout>
-
 
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
-
-
-
-
 
 </LinearLayout>

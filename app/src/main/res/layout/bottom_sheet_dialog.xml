@@ -17,17 +17,17 @@
         android:id="@+id/iv_alert_dialog"
         android:layout_width="87dp"
         android:layout_height="67dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_mensaje_dialog"
         app:srcCompat="@drawable/ic_card_succes_dialog" />
 
     <TextView
         android:id="@+id/tv_mensaje_dialog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="12dp"
         android:fontFamily="@font/encodesans_medium"
         android:text="@string/card_reconocida"
         android:textColor="@color/color_3D444F"
@@ -35,9 +35,31 @@
         android:textSize="@dimen/_12sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_alert_dialog"
+        app:layout_constraintTop_toTopOf="parent"
 
         />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:layout_weight="50"
+        android:id="@+id/cvv"
+        android:background="@drawable/selector_edittext"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:hint="@string/escriba_aquicvv"
+        android:imeOptions="actionSend"
+        android:lines="1"
+        android:singleLine="true"
+        android:layout_marginTop="12dp"
+        android:maxLines="1"
+        android:maxLength="3"
+        android:paddingTop="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_10sdp"
+        android:paddingHorizontal="24dp"
+        app:layout_constraintDimensionRatio="7.5:1"
+        app:layout_constraintTop_toBottomOf="@id/iv_alert_dialog"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_aceptar_dg"
@@ -49,7 +71,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_mensaje_dialog" />
+        app:layout_constraintTop_toBottomOf="@+id/cvv" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

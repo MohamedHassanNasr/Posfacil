@@ -5,6 +5,7 @@ import android.content.pm.PackageManager
 import android.hardware.usb.UsbDevice.getDeviceId
 import android.os.Environment
 import androidx.core.app.ActivityCompat
+import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.paguelofacil.posfacil.BuildConfig
 import com.google.gson.GsonBuilder
 import com.paguelofacil.posfacil.ApplicationClass
@@ -71,7 +72,9 @@ abstract class RemoteDataSource {
                 .connectTimeout(10000, TimeUnit.MILLISECONDS)
                 .addInterceptor(SupportInterceptor())
                 .addInterceptor(getLoggingInterceptor())
-
+            if (BuildConfig.DEBUG) {
+                httpClient.addInterceptor(ChuckerInterceptor(ApplicationClass.instance.applicationContext))
+            }
             val gson = GsonBuilder()
                 .setLenient()
                 .create()
@@ -131,7 +134,10 @@ abstract class RemoteDataSource {
                     addHeader(ApiParams.TIMEZONE, TimeZone.getDefault().id)
                     val user = UserRepo.getUser()
                     if (user.loggedIn && user.token != null) {
-                        addHeader(ApiParams.AUTHORIZATION, BuildConfig.AUTHORIZATION + "|" + user.token)
+                        addHeader(
+                            ApiParams.AUTHORIZATION,
+                            BuildConfig.AUTHORIZATION + "|" + user.token
+                        )
                     } else {
                         addHeader(ApiParams.AUTHORIZATION, BuildConfig.AUTHORIZATION)
                     }
@@ -141,7 +147,10 @@ abstract class RemoteDataSource {
                 GlobalScope.launch(Dispatchers.IO) {
                     val calender = Calendar.getInstance()
                     val params = StringBuilder()
-                    val dateTime = CalenderUtil.getFullDate(calender) + " " + CalenderUtil.getFullTimeWithSecAndMillis(calender)
+                    val dateTime =
+                        CalenderUtil.getFullDate(calender) + " " + CalenderUtil.getFullTimeWithSecAndMillis(
+                            calender
+                        )
                     params.append(dateTime)
                     params.append("\n")
                     params.append(oldRequest.method + " " + oldRequest.url.toString())
@@ -154,9 +163,16 @@ abstract class RemoteDataSource {
 
                     try {
                         /*if (BuildConfig.BUILD_TYPE == "production") {*/
-                        if (ActivityCompat.checkSelfPermission(ApplicationClass.instance, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+                        if (ActivityCompat.checkSelfPermission(
+                                ApplicationClass.instance,
+                                Manifest.permission.WRITE_EXTERNAL_STORAGE
+                            ) == PackageManager.PERMISSION_GRANTED
+                        ) {
                             val fileName = "PagueloFacil_log.txt"
-                            val f = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), fileName)
+                            val f = File(
+                                Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),
+                                fileName
+                            )
                             f.appendText(params.toString() + "\n")
                         }
                     } catch (e: Exception) {

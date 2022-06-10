@@ -2,56 +2,60 @@ package com.paguelofacil.posfacil.ui.view.account.fragments
 
 import android.content.Intent
 import android.graphics.drawable.Drawable
-import android.net.Uri
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
-import androidx.fragment.app.Fragment
+import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
-import androidx.core.content.ContextCompat
+import android.widget.Toast
 import androidx.core.content.res.ResourcesCompat
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.activityViewModels
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import com.paguelofacil.posfacil.ApplicationClass
 import com.paguelofacil.posfacil.R
 import com.paguelofacil.posfacil.base.BaseFragment
-import com.paguelofacil.posfacil.data.network.api.ApiError
 import com.paguelofacil.posfacil.data.network.api.ApiRequestCode
 import com.paguelofacil.posfacil.data.network.response.LoginApiResponse
 import com.paguelofacil.posfacil.databinding.FragmentLoginBinding
 import com.paguelofacil.posfacil.repository.UserRepo
 import com.paguelofacil.posfacil.ui.view.account.viewmodel.LoginViewModel
-import com.paguelofacil.posfacil.ui.view.home.activities.HomeActivity
 import com.paguelofacil.posfacil.ui.view.home.activities.IntroActivity
-import com.paguelofacil.posfacil.util.Constantes.CoreConstants
+import com.paguelofacil.posfacil.util.KeyboardUtil
 import com.paguelofacil.posfacil.util.isValidPassword
+import com.pax.dal.entity.ETermInfoKey
+import kotlinx.coroutines.CoroutineExceptionHandler
+import timber.log.Timber
 
 
-class LoginFragment : BaseFragment(), View.OnFocusChangeListener, View.OnClickListener{
+class LoginFragment : BaseFragment(), View.OnFocusChangeListener, View.OnClickListener {
 
 
     lateinit var binding: FragmentLoginBinding
 
-    private lateinit var vm: LoginViewModel
+    private val vm: LoginViewModel by activityViewModels()
+
+    private val error = CoroutineExceptionHandler { _, exception ->
+        Timber.e("Error ${exception.message.toString()}")
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        vm = ViewModelProvider(requireActivity())[LoginViewModel::class.java]
+        vm.getResponseObserver().observe(this@LoginFragment, this)
+    }
 
-        setBaseViewModel(vm)
-
-        vm.getResponseObserver()
-            .observe(this@LoginFragment, this)
-
-        /*  if (!user.fingerprintAuthenticatedEmail.isNullOrEmpty()) {
-            showFingerPrintPrompt()
-          }
-        */
+    private fun loadLanguage() {
+        binding.welcome.text = ApplicationClass.language.welcome
+        binding.iniciarSesion.text = ApplicationClass.language.logIn
+        binding.btnLogin.text = ApplicationClass.language.logIn
+        binding.tvEmailLabel.text = ApplicationClass.language.emailUsername
+        binding.tvPasswordLabel.text = ApplicationClass.language.password
+        binding.tvForgotPassword.text = ApplicationClass.language.didYouForgetYourPassword
     }
 
     override fun onStart() {
@@ -59,9 +63,7 @@ class LoginFragment : BaseFragment(), View.OnFocusChangeListener, View.OnClickLi
         binding.etEmail.onFocusChangeListener = this
         binding.etPassword.onFocusChangeListener = this
         binding.etPassword.addTextChangedListener(passwordTextWatcher)
-        //binding.tvRegister.setOnClickListener(this)
         binding.tvForgotPassword.setOnClickListener(this)
-        //binding.btnScan.setOnClickListener(this)
         binding.btnLogin.setOnClickListener(this)
         binding.ivClearPassword.setOnClickListener(this)
         binding.ivPasswordVisibility.setOnClickListener(this)
@@ -71,51 +73,33 @@ class LoginFragment : BaseFragment(), View.OnFocusChangeListener, View.OnClickLi
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-
-        binding=FragmentLoginBinding.inflate(inflater,container,false)
+        binding = FragmentLoginBinding.inflate(inflater, container, false)
         val user = UserRepo.getUser()
-
         user.fingerPrintAuthenticatedLogin = false
         user.introShown = true
         UserRepo.setOrUpdateUser(user, true)
-
-
-        if (!user.email.isNullOrEmpty()) {
-            binding.etEmail.setText(user.email.toString())
-            binding.etEmail.setSelection(binding.etEmail.text?.length ?: 0)
-        }
-
-        loadListeners()
+        setBaseViewModel(vm)
+        binding.etEmail.clearFocus()
+        binding.etPassword.clearFocus()
+        Timber.e("ANTES DE HIDE")
+        KeyboardUtil.hideKeyboard(requireActivity())
+        Timber.e("ANTES DE HIDE from view")
+        KeyboardUtil.hideKeyboard(requireActivity(), view)
+        loadLanguage()
 
         return binding.root
     }
 
     private fun goHome() {
         val intent= Intent(context, IntroActivity::class.java)
+        intent.putExtra("isMain", true)
         startActivity(intent)
-        activity?.finish()
-    }
-
-    private fun loadListeners() {
-
-        binding.tvForgotPassword.setOnClickListener {
-
-           // var fr = activity?.supportFragmentManager?.beginTransaction()
-            //fr?.replace(R.id.container_login_fragment, StepOneRecoveryPassFragment())
-            //fr?.commit()
-
-            //var fr = activity?.supportFragmentManager?.beginTransaction()
-           // fr?.replace(R.id.container_login_fragment, StepThreeRecoveryPassFragment())
-          //  fr?.commit()
-        }
-
+        requireActivity().finish()
     }
 
     private val passwordTextWatcher: TextWatcher = object : TextWatcher {
         override fun beforeTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {}
         override fun onTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {
-            /*updateTickMark(binding.etPassword, isValidPassword(binding.etPassword.text.toString()), false, ContextCompat.getDrawable(this@LoginActivity, R.drawable.ic_add_password))*/
             if (charSequence.toString().isNotEmpty()) {
                 binding.ivClearPassword.visibility = View.VISIBLE
                 binding.ivPasswordVisibility.visibility = View.VISIBLE
@@ -134,16 +118,17 @@ class LoginFragment : BaseFragment(), View.OnFocusChangeListener, View.OnClickLi
             binding.tvForgotPassword -> {
 
                 val user = UserRepo.getUser()
-                user.tempEmailLogin=binding.etEmail.text.toString()
-                UserRepo.setOrUpdateUser(user,true)
+                user.tempEmailLogin = binding.etEmail.text.toString()
+                UserRepo.setOrUpdateUser(user, true)
 
-                var fr = activity?.supportFragmentManager?.beginTransaction()
+                val fr = activity?.supportFragmentManager?.beginTransaction()
                 fr?.replace(R.id.container_login_fragment, StepOneRecoveryPassFragment())
-                fr?.commit()
+                fr?.addToBackStack(null)?.commit()
             }
+
             binding.btnLogin -> {
                 if (validated()) {
-                    vm.signIn(binding.etEmail.text.toString(), binding.etPassword.text.toString())
+                    vm.signIn(binding.etEmail.text.toString().trim(), binding.etPassword.text.toString().trim())
                 }
             }
 
@@ -159,7 +144,11 @@ class LoginFragment : BaseFragment(), View.OnFocusChangeListener, View.OnClickLi
                     }
                     binding.ivPasswordVisibility.setImageDrawable(
 
-                        ResourcesCompat.getDrawable(requireActivity().resources, R.drawable.ic_visibility_off, null)
+                        ResourcesCompat.getDrawable(
+                            requireActivity().resources,
+                            R.drawable.ic_visibility_off,
+                            null
+                        )
                     )
                 } else {
                     binding.etPassword.transformationMethod =
@@ -169,7 +158,11 @@ class LoginFragment : BaseFragment(), View.OnFocusChangeListener, View.OnClickLi
                     }
                     binding.ivPasswordVisibility.setImageDrawable(
 
-                        ResourcesCompat.getDrawable(requireActivity().resources, R.drawable.ic_visibility_on, null)
+                        ResourcesCompat.getDrawable(
+                            requireActivity().resources,
+                            R.drawable.ic_visibility_on,
+                            null
+                        )
                     )
                 }
             }
@@ -177,11 +170,11 @@ class LoginFragment : BaseFragment(), View.OnFocusChangeListener, View.OnClickLi
     }
 
     private fun isEmailValidated(): Boolean {
-        if (binding.etEmail.text.isNullOrBlank()) {
-            return false
+        return if (!binding.etEmail.text.isNullOrEmpty()) {
+            binding.etEmail.text!!.matches(Patterns.EMAIL_ADDRESS.toRegex())
+        }else{
+            false
         }
-
-        return true
     }
 
     override fun onFocusChange(v: View?, hasFocus: Boolean) {
@@ -192,7 +185,11 @@ class LoginFragment : BaseFragment(), View.OnFocusChangeListener, View.OnClickLi
                     isEmailValidated(),
                     hasFocus,
 
-                    ResourcesCompat.getDrawable(requireActivity().resources, R.drawable.ic_add_mail, null)
+                    ResourcesCompat.getDrawable(
+                        requireActivity().resources,
+                        R.drawable.ic_add_mail,
+                        null
+                    )
                 )
             }
             binding.etPassword -> {
@@ -216,11 +213,16 @@ class LoginFragment : BaseFragment(), View.OnFocusChangeListener, View.OnClickLi
                     isValidPassword(binding.etPassword.text.toString()),
                     hasFocus,
 
-                    ResourcesCompat.getDrawable(requireActivity().resources, R.drawable.ic_add_password, null)
+                    ResourcesCompat.getDrawable(
+                        requireActivity().resources,
+                        R.drawable.ic_add_password,
+                        null
+                    )
                 )
             }
         }
     }
+
     private fun updateTickMark(
         et: EditText,
         validated: Boolean,
@@ -232,7 +234,11 @@ class LoginFragment : BaseFragment(), View.OnFocusChangeListener, View.OnClickLi
                 leftDrawable,
                 null,
 
-                ResourcesCompat.getDrawable(requireActivity().resources, R.drawable.ic_check_green, null),
+                ResourcesCompat.getDrawable(
+                    requireActivity().resources,
+                    R.drawable.ic_check_green,
+                    null
+                ),
                 null
             )
         } else {
@@ -242,20 +248,21 @@ class LoginFragment : BaseFragment(), View.OnFocusChangeListener, View.OnClickLi
 
     private fun validated(): Boolean {
         if (binding.etEmail.text.toString().isEmpty()) {
-            showSnack(getString(R.string.Please_enter_your_email_or_Alias))
+            showSnack(ApplicationClass.language.pleaseEnterYourEmailOrAlias)
             return false
         }
 
         if (binding.etPassword.text.toString().isEmpty()) {
-            showSnack(getString(R.string.Please_enter_your_password))
+            showSnack(ApplicationClass.language.pleaseEnterYourPassword)
             return false
         }
         if (!isValidPassword(binding.etPassword.text.toString())) {
-            showSnack(getString(R.string.invalid_password_short))
+            showSnack(ApplicationClass.language.invalidPasswordShort)
             return false
         }
         return true
     }
+
     override fun onResponseSuccess(requestCode: Int, responseCode: Int, msg: String?, data: Any?) {
         super.onResponseSuccess(requestCode, responseCode, msg, data)
 
@@ -263,26 +270,11 @@ class LoginFragment : BaseFragment(), View.OnFocusChangeListener, View.OnClickLi
             ApiRequestCode.SIGN_IN -> {
                 val type = object : TypeToken<LoginApiResponse>() {}.type
                 val response = Gson().fromJson<LoginApiResponse>(Gson().toJson(data), type)
-
-
                 UserRepo.saveUserData(response, binding.etPassword.text.toString())
                 vm.updateUserLocal()
-
-
                 goHome()
             }
         }
-
-    }
-
-
-    override fun onExceptionData(requestCode: Int, exception: ApiError, data: Any?) {
-
-        val typeMap = object : TypeToken<Map<String, Object>>() {}.type
-        val jsonParse=Gson().toJson(data)
-        val  map=Gson().fromJson<Map<String, Object>>(jsonParse,typeMap)
-
-
 
     }
 }

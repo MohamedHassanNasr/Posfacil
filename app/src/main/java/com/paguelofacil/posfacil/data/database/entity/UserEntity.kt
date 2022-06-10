@@ -3,7 +3,9 @@ package com.paguelofacil.posfacil.data.database.entity
 import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.paguelofacil.posfacil.data.network.response.Contact
 import kotlinx.android.parcel.Parcelize
+import kotlinx.android.parcel.RawValue
 import java.util.*
 
 
@@ -48,7 +50,9 @@ data class UserEntity(
     var firstName: String? = null,
     var lastName: String? = null,
     var email: String? = null,
+    var merchantEmail: String? = null,
     var phone: String? = null,
+    var idMerchant: String? = null,
     var phoneVerified: Boolean = false,
     var profilePic: String? = null,
     var lastUpdatedOn: String? = null,
@@ -61,8 +65,10 @@ data class UserEntity(
     var idForChargeService: String? = null,
     var idForSendService: String? = null,
     var locale: String? = null,
-    var tempCodeAuth:String? = null,
-    var tempEmailLogin:String?=null
+    var tempCodeAuth: String? = null,
+    var tempEmailLogin: String? = null,
+    var merchantProfile: @RawValue Contact.MerchantProfile? = null,
+    var lang: String? = null
 ) : Parcelable {
 
     fun getFullName(): String {
@@ -77,5 +83,11 @@ data class UserEntity(
             stringBuilder.append(lastName)
         }
         return stringBuilder.toString().capitalize(Locale.getDefault())
+    }
+
+    fun getInitiales(): String {
+        val firstDigit = if (!firstName.isNullOrEmpty()) firstName?.first().toString() else ""
+        val secondDigit = if (!lastName.isNullOrEmpty()) lastName?.first().toString() else ""
+        return "${firstDigit.toUpperCase()}${secondDigit.toUpperCase()}"
     }
 }

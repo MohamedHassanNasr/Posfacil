@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.view.account.fragments.MyInformationFragment">
-
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar_layout"
@@ -21,9 +19,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingStart="@dimen/_8sdp"
-            android:paddingEnd="@dimen/_8sdp">
+            android:layout_height="match_parent">
 
             <ImageView
                 android:id="@+id/iv_back"
@@ -49,6 +45,7 @@
                 app:layout_constraintTop_toTopOf="@+id/iv_back" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </com.google.android.material.appbar.AppBarLayout>
 
 
@@ -71,16 +68,11 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:id="@+id/iv_profile_pic"
-                android:layout_width="@dimen/_65sdp"
-                android:layout_height="@dimen/_60sdp"
-                android:src="@drawable/ic_name_profile_default">
-
-            </ImageView>
-
-
-
+            <include
+                android:id="@+id/include_badge_user"
+                layout="@layout/include_badge_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/tv_user_full_name"
@@ -88,9 +80,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/encodesans_medium"
-                android:text="Michelle Marine"
                 android:textSize="@dimen/_13ssp"
-                 />
+                tools:text="Michelle Marine" />
 
             <TextView
                 android:id="@+id/tv_username"
@@ -98,7 +89,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_4sdp"
-                android:text="michellem"
                 android:textSize="@dimen/_10ssp"
                 tools:text="michellem" />
 
@@ -107,7 +97,6 @@
                 style="@style/regularAndWhite_7d889b_TextViewStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="michellem@gmail.com"
                 android:textSize="@dimen/_10ssp"
                 tools:text="michellem@gmail.com" />
 
@@ -149,13 +138,13 @@
                     android:inputType="textPersonName"
                     android:lines="1"
                     android:maxLength="30"
-                    android:text="Michelle Marine"
                     android:textSize="@dimen/_12ssp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_first_name_hint" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_first_name_hint"
+                    tools:text="Michelle Marine" />
 
 
                 <View
@@ -204,13 +193,13 @@
                     android:inputType="textPersonName"
                     android:lines="1"
                     android:maxLength="30"
-                    android:text="michellem"
                     android:textSize="@dimen/_12ssp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_user_name" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_user_name"
+                    tools:text="michellem" />
 
 
                 <View
@@ -290,14 +279,14 @@
                     android:layout_marginEnd="16dp"
                     android:ellipsize="end"
                     android:lines="1"
-                    android:text="@string/email"
                     android:textSize="@dimen/_10ssp"
                     app:layout_constraintBottom_toTopOf="@+id/tv_correo"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_chainStyle="packed" />
+                    app:layout_constraintVertical_chainStyle="packed"
+                    tools:text="@string/email" />
 
                 <TextView
                     android:id="@+id/tv_correo"
@@ -314,13 +303,13 @@
                     android:inputType="textPersonName"
                     android:lines="1"
                     android:maxLength="30"
-                    android:text="michellem@gmail.com"
                     android:textSize="@dimen/_12ssp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_correo_title" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_correo_title"
+                    tools:text="michellem@gmail.com" />
 
 
                 <View
