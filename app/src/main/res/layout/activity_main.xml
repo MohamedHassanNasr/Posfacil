@@ -29,36 +29,33 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintDimensionRatio="1:0.17"
             android:gravity="center">
-
-            <ImageView
+            
+            <ProgressBar
                 android:id="@+id/pointOne"
                 android:layout_width="wrap_content"
                 android:layout_height="4dp"
-                android:src="@drawable/ic_line"
+                android:max="100"
                 android:layout_marginHorizontal="4dp"
-                android:background="@color/greenLight"
-                android:visibility="visible"
-                app:tint="@color/transparent" />
+                android:progressDrawable="@drawable/custom_progress_main"
+                style="?android:attr/progressBarStyleHorizontal"/>
 
-            <ImageView
+            <ProgressBar
                 android:id="@+id/pointTwo"
                 android:layout_width="wrap_content"
                 android:layout_height="4dp"
-                android:src="@drawable/ic_line"
+                android:max="100"
                 android:layout_marginHorizontal="4dp"
-                android:background="@color/white"
-                android:visibility="visible"
-                app:tint="@color/transparent" />
+                android:progressDrawable="@drawable/custom_progress_main"
+                style="?android:attr/progressBarStyleHorizontal"/>
 
-            <ImageView
+            <ProgressBar
                 android:id="@+id/pointThird"
                 android:layout_width="wrap_content"
                 android:layout_height="4dp"
+                android:max="100"
                 android:layout_marginHorizontal="4dp"
-                android:src="@drawable/ic_line"
-                android:background="@color/white"
-                android:visibility="visible"
-                app:tint="@color/transparent"/>
+                android:progressDrawable="@drawable/custom_progress_main"
+                style="?android:attr/progressBarStyleHorizontal"/>
 
 
         </LinearLayout>

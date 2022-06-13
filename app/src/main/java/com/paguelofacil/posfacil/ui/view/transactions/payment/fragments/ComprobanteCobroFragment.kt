@@ -106,11 +106,12 @@ class ComprobanteCobroFragment : Fragment() {
                 val frg = CobroQrCodeFragment()
                 bundle.putString("EMAIL", binding.etEmail.text.toString())
                 bundle.putString("PHONE", binding.etPhone.text.toString())
+                Timber.e("MONTOOOOO UWU ${details?.amount}/${details?.taxes}")
                 bundle.putParcelable(
                     "data", QrSend(
-                        amount = details?.amount ?: "",
-                        taxes = details?.taxes ?: "",
-                        tip = details?.tip ?: ""
+                        amount = details?.amount ?: "0.00",
+                        taxes = details?.taxes ?: "0.00",
+                        tip = details?.tip ?: "0.00"
                     )
                 )
                 frg.setArguments(bundle)
@@ -172,9 +173,25 @@ class ComprobanteCobroFragment : Fragment() {
     }
 
     private fun goToDetectedCard(optionSelected: Int) {
-        val intent = Intent(requireContext(), DetectedCardActivity::class.java)
-        intent.putExtra(OPTION_CARD_SELECTED, optionSelected)
-        requireActivity().startActivityForResult(intent, 1000)
+        val details = arguments?.getParcelable<QrSend>("data")
+        if (binding.swInputDestinationReceipt.isChecked) {
+            val intent = Intent(requireContext(), DetectedCardActivity::class.java)
+            intent.putExtra(OPTION_CARD_SELECTED, optionSelected)
+            intent.putExtra("EMAIL", binding.etEmail.text.toString())
+            intent.putExtra("PHONE", binding.etPhone.text.toString())
+            intent.putExtra("AMOUNT", details?.amount?.replace(',','.'))
+            intent.putExtra("TAXES", details?.taxes?.replace(',','.'))
+            intent.putExtra("TIP", details?.tip?.replace(',','.'))
+            Timber.e("MONTOOOOO UWU ${details?.amount}/${details?.taxes}")
+            requireActivity().startActivityForResult(intent, 1000)
+        } else {
+            val intent = Intent(requireContext(), DetectedCardActivity::class.java)
+            intent.putExtra(OPTION_CARD_SELECTED, optionSelected)
+            intent.putExtra("AMOUNT", details?.amount?.replace(',','.'))
+            intent.putExtra("TAXES", details?.taxes?.replace(',','.'))
+            intent.putExtra("TIP", details?.tip?.replace(',','.'))
+            requireActivity().startActivityForResult(intent, 1000)
+        }
     }
 
     private fun dismissBottomSheetCancel() {

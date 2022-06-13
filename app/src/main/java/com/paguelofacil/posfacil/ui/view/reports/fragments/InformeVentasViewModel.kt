@@ -17,10 +17,10 @@ class InformeVentasViewModel: BaseViewModel() {
     private val mutableTransactionList = MutableLiveData<ReporteVentaResponse>()
     val liveDataTransactionList: LiveData<ReporteVentaResponse> = mutableTransactionList
 
-    suspend fun getReportesVentas(Sys: ISys? = null) {
+    suspend fun getReportesVentas(serial: String) {
         execute {
             viewModelScope.launch {
-                val response = ReportRepo.getReporte(Sys?.baseInfo?.sn ?: ApiEndpoints.ATIK_SERIAL)
+                val response = ReportRepo.getReporte(serial)
                 if (response.headerStatus.code.toString() == "200"){
                     mutableTransactionList.postValue(response)
                 }else{

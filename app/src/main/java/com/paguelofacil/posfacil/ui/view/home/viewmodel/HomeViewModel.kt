@@ -63,10 +63,10 @@ class HomeViewModel @Inject constructor(
         mutableDataUser.value = dataUser
     }
 
-    fun checkZReport(Sys: ISys?) {
+    suspend fun checkZReport(serial: String) {
         execute {
             viewModelScope.launch {
-                val response = reportRepository.checkReportZ(Sys?.baseInfo?.sn ?: ApiEndpoints.ATIK_SERIAL)
+                val response = reportRepository.checkReportZ(serial)
                 processResponseResultado(response) {
                     mutableValidateReportZ.postValue(it)
                 }

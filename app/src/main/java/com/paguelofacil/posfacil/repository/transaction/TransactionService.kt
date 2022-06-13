@@ -10,6 +10,6 @@ import retrofit2.http.Path
 interface TransactionService {
 
     @GET(ApiEndpoints.POS_TRANSACTION)
-    suspend fun getAllTransactions(@Path("serial") serial: String = "test-atik-dev-serial"): Resultado<BaseResponse<MutableList<TransactionApiResponse>>>
+    suspend fun getAllTransactions(@Path("serial") serial: String): Resultado<BaseResponse<MutableList<TransactionApiResponse>>>
 
 }

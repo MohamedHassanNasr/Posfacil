@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import com.paguelofacil.posfacil.ApplicationClass
 import com.paguelofacil.posfacil.R
 import com.paguelofacil.posfacil.base.BaseFragment
@@ -20,6 +21,10 @@ import com.paguelofacil.posfacil.ui.view.home.viewmodel.HomeViewModel
 import com.paguelofacil.posfacil.ui.view.transactions.payment.activities.CobroActivity
 import com.paguelofacil.posfacil.util.Constantes.AppConstants
 import com.paguelofacil.posfacil.util.KeyboardUtil
+import com.pax.dal.entity.ETermInfoKey
+import kotlinx.coroutines.CoroutineExceptionHandler
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import timber.log.Timber
 
 
@@ -27,6 +32,10 @@ class HomeFragment : BaseFragment() {
 
     private var tmpValue = ""
     private var isAdding = false
+
+    private val error = CoroutineExceptionHandler { _, exception ->
+        Timber.e("Error ${exception.message.toString()}")
+    }
 
     lateinit var binding: FragmentHomeBinding
     private val viewModel: HomeViewModel by activityViewModels()
@@ -122,11 +131,27 @@ class HomeFragment : BaseFragment() {
         binding.etMontoCobrar.addTextChangedListener(montoTextWatcher)
 
         binding.btnNext.setOnClickListener {
-            if (importeMinimoSuccess()) {
-                KeyboardUtil.hideKeyboard(requireActivity())
-                viewModel.checkZReport(Sys)
-            } else {
-                showSnack(ApplicationClass.language.theMinimumAllowedAmount)
+            try {
+                Sys?.termInfo?.let {
+                    lifecycleScope.launch(Dispatchers.IO + error) {
+                        try {
+                            if (importeMinimoSuccess()) {
+                                try {
+                                    KeyboardUtil.hideKeyboard(requireActivity())
+                                    viewModel.checkZReport(it[ETermInfoKey.SN] ?: "")
+                                }catch (e: NoClassDefFoundError){
+                                    Timber.e("ERRO EN CHECK Z")
+                                }
+                            } else {
+                                showSnack(ApplicationClass.language.theMinimumAllowedAmount)
+                            }
+                        }catch (e: NoClassDefFoundError){
+                            Timber.e("ERRO EN CHECK Z")
+                        }
+                    }
+                }
+            }catch (e: NoClassDefFoundError){
+                Timber.e("ERRO EN CHECK Z")
             }
         }
 

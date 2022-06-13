@@ -6,7 +6,7 @@ package com.paguelofacil.posfacil.data.network.api
  * @constructor Create empty Api endpoints
  */
 object ApiEndpoints {
-    const val ATIK_SERIAL = "test-atik-dev-serial"
+    const val ATIK_SERIAL = "1760010287"
     /**
      * Auth / Account
      */
@@ -62,4 +62,12 @@ object ApiEndpoints {
     const val COMPROBANTE = "PosPaymentReceipt"
 
     const val QR_ENDPOINT = "QrProcessInfo"
+
+    const val LOAD_UTILS_QR = "https://postman-echo.com/get"
+
+    const val SEARCH_ACTIVITY = "SearchActivity?conditional=code%3A%3A"
+
+    const val SEARCH_ACTIVITY_EP = "SearchActivity"
+
+    const val VERIFY_QR = "PaymentsCodes"
 }

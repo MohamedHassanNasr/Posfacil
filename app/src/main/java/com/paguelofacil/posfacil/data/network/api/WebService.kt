@@ -2,6 +2,8 @@ package com.paguelofacil.posfacil.data.network.api
 
 import com.paguelofacil.posfacil.data.network.response.RefundApiResponse
 import com.paguelofacil.posfacil.model.*
+import com.paguelofacil.posfacil.tools.TransaccionResponse
+import com.paguelofacil.posfacil.tools.TransactionRequest
 import com.paguelofacil.posfacil.util.Constantes.ApiParams
 import retrofit2.Response
 import retrofit2.http.*
@@ -126,5 +128,11 @@ interface WebService {
         @Path("url", encoded = true) url: String,
         @Body request: RequestQr
     ): QrResult
+
+    @POST("{url}")
+    suspend fun processTx(
+        @Path("url", encoded = true) url: String,
+        @Body request: TransactionRequest
+    ): TransaccionResponse
 
 }

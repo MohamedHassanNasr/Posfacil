@@ -22,9 +22,11 @@ import com.paguelofacil.posfacil.model.*
 import com.paguelofacil.posfacil.repository.UserRepo
 import com.paguelofacil.posfacil.ui.view.adapters.*
 import com.paguelofacil.posfacil.ui.view.home.fragments.HomeFragment
+import com.paguelofacil.posfacil.util.KeyboardUtil
 import com.paguelofacil.posfacil.util.dateFormattedByDate
 import com.paguelofacil.posfacil.util.dateFormattedByHour
 import com.paguelofacil.posfacil.util.networkErrorConverter
+import com.pax.dal.entity.ETermInfoKey
 import kotlinx.android.synthetic.main.bottom_sheet_dialog.view.*
 import kotlinx.coroutines.launch
 import timber.log.Timber
@@ -85,20 +87,22 @@ class ReporteXFragment : BaseFragment() {
     }
 
     private suspend fun getReporteXApi(){
-        viewModel.getReporteX(
-            sendEmail = false,
-            onSuccess ={
+        try {
+            Sys?.termInfo?.let {
+                viewModel.getReporteX(
+                    sendEmail = false,
+                    serial = it[ETermInfoKey.SN] ?: "",
+                    onFailure = {
 
-            },
-            onFailure = {
-                /*showWarningDialog(it){
-                    lifecycleScope.launch {
-                        getReporteXApi()
+                    },
+                    onSuccess = {
+
                     }
-                }*/
-            },
-            Sys = Sys
-        )
+                )
+            }
+        }catch (e: Exception){
+            Timber.e("ERROR SYS REPORT x")
+        }
     }
 
     private fun setUser(){
@@ -698,19 +702,19 @@ class ReporteXFragment : BaseFragment() {
 
     private fun getReporteXEvent(rbSendEmail: RadioButton, success:() -> Unit){
         lifecycleScope.launch {
-            viewModel.getReporteX(sendEmail = rbSendEmail.isChecked,onSuccess = {
-                showSuccesReportX(ApplicationClass.language.reporteXGenerado,false)
-                Timber.e("susccer reportx")
-                success()
-            }, Sys = Sys){
-                /*showWarningDialog(it, onFailure = {
-                    getReporteXEvent(
-                        rbSendEmail = rbSendEmail,
-                        success = {
-                            success()
-                        }
-                    )
-                })*/
+            Sys?.termInfo?.let {
+                viewModel.getReporteX(
+                    sendEmail = rbSendEmail.isChecked,
+                    onSuccess = {
+                        showSuccesReportX(ApplicationClass.language.reporteXGenerado, false)
+                        Timber.e("susccer reportx")
+                        success()
+                    },
+                    serial = it[ETermInfoKey.SN] ?: "",
+                    onFailure = {
+
+                    }
+                )
             }
         }
     }
@@ -808,27 +812,33 @@ class ReporteXFragment : BaseFragment() {
     }
 
     private suspend fun getReportez(rdCortez: RadioButton, success: () -> Unit) {
-        viewModel.getReportZ(
-            sendEmail = rdCortez.isChecked,
-            onSuccess = {
-                showBottomSheet(ApplicationClass.language.reporteZGenerado,false)
-                //showReportZ()
-                success()
-            },
-            onFailure = {
-                /*showWarningDialog(it){
-                    lifecycleScope.launch {
-                        getReportez(
-                            rdCortez = rdCortez,
-                            success = {
-                                success()
+        try {
+            Sys?.termInfo?.let {
+                viewModel.getReportZ(
+                    sendEmail = rdCortez.isChecked,
+                    onSuccess = {
+                        showBottomSheet(ApplicationClass.language.reporteZGenerado,false)
+                        //showReportZ()
+                        success()
+                    },
+                    onFailure = {
+                        /*showWarningDialog(it){
+                            lifecycleScope.launch {
+                                getReportez(
+                                    rdCortez = rdCortez,
+                                    success = {
+                                        success()
+                                    }
+                                )
                             }
-                        )
-                    }
-                }*/
-            },
-            system = Sys
-        )
+                        }*/
+                    },
+                    serial = it[ETermInfoKey.SN] ?: ""
+                )
+            }
+        }catch (e: NoClassDefFoundError){
+            Timber.e("ERROR REPORT Z BY SYS")
+        }
     }
 
 }

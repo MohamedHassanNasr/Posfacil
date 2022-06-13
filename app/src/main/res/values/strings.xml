@@ -391,5 +391,6 @@
     <string name="title_activity_main3">Main3Activity</string>
     <string name="noChrgeDay">No se encontraron cobros realizados</string>
     <string name="closeSession">¿Esta seguro que desea cerrar sesión?</string>
+    <string name="escriba_aquicvv">Ingrese su CVV (Codigo de verificacion)</string>
 
 </resources>

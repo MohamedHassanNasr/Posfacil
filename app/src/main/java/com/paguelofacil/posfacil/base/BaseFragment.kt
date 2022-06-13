@@ -76,6 +76,7 @@ abstract class BaseFragment : Fragment(), ApiResponseObserver<Any> {
     override fun onResume() {
         super.onResume()
         //add keyboard listener to know when when keyboard opens and close
+        initNeptune()
         getRootView()?.viewTreeObserver?.addOnGlobalLayoutListener(keyboardListener)
     }
 
@@ -84,7 +85,7 @@ abstract class BaseFragment : Fragment(), ApiResponseObserver<Any> {
         getRootView()?.viewTreeObserver?.removeOnGlobalLayoutListener(keyboardListener)
     }
 
-    private fun initNeptune() {
+    fun initNeptune() {
         try {
             Timber.e("INICIANDO NEPTUNE")
             dalProxyClient = NeptuneLiteUser.getInstance()
@@ -92,6 +93,7 @@ abstract class BaseFragment : Fragment(), ApiResponseObserver<Any> {
             Ped = Dal?.getPed(EPedType.INTERNAL)
             Mag = Dal?.getMag()
             Sys = Dal?.getSys()
+            Timber.e("SYSSSSSS ${Ped.sn}")
             ICC = Dal?.getIcc()
             Picc = Dal?.getPicc(EPiccType.INTERNAL)
             Scanner = Dal?.getScanner(EScannerType.REAR)

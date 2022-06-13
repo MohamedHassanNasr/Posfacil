@@ -18,7 +18,11 @@ import com.paguelofacil.posfacil.databinding.FragmentInformeVentasBinding
 import com.paguelofacil.posfacil.model.TransactionByUser
 import com.paguelofacil.posfacil.repository.UserRepo
 import com.paguelofacil.posfacil.ui.view.adapters.TransactionByUserListAdapter
+import com.paguelofacil.posfacil.util.KeyboardUtil
 import com.paguelofacil.posfacil.util.getRamdomColor
+import com.pax.dal.entity.ETermInfoKey
+import kotlinx.coroutines.CoroutineExceptionHandler
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import timber.log.Timber
 
@@ -33,6 +37,9 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class InformeVentasFragment : BaseFragment() {
+    private val error = CoroutineExceptionHandler { _, exception ->
+        Timber.e("Error ${exception.message.toString()}")
+    }
     private val viewModelTransaction: InformeVentasViewModel by activityViewModels()
     lateinit var binding: FragmentInformeVentasBinding
     // TODO: Rename and change types of parameters
@@ -50,8 +57,14 @@ class InformeVentasFragment : BaseFragment() {
             param2 = it.getString(ARG_PARAM2)
         }
         Timber.e("PARAM $param1 $param2")
-        lifecycleScope.launch {
-            viewModelTransaction.getReportesVentas(Sys)
+        lifecycleScope.launch(Dispatchers.IO + error) {
+            try {
+                Sys?.termInfo?.let {
+                    viewModelTransaction.getReportesVentas(it[ETermInfoKey.SN] ?: "")
+                }
+            }catch (e: Exception){
+                Timber.e("ERROR SYS REPOR")
+            }
         }
         initObservers()
         binding.titleResumen.text = ApplicationClass.language.resumenVentasHoy

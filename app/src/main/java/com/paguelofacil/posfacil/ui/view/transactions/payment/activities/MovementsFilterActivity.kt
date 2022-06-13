@@ -12,12 +12,15 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.setPadding
 import androidx.lifecycle.lifecycleScope
 import com.paguelofacil.posfacil.ApplicationClass
+import com.paguelofacil.posfacil.base.BaseActivity
+import com.paguelofacil.posfacil.data.network.api.ApiError
 import com.paguelofacil.posfacil.databinding.ActivityMovementsFilterBinding
 import com.paguelofacil.posfacil.ui.view.reports.fragments.InformeVentasViewModel
+import com.pax.dal.entity.ETermInfoKey
 import kotlinx.coroutines.launch
 import timber.log.Timber
 
-class MovementsFilterActivity : AppCompatActivity() {
+class MovementsFilterActivity : BaseActivity() {
 
     lateinit var binding:ActivityMovementsFilterBinding
     var parent = listOf<Int>(0, 0)
@@ -59,6 +62,10 @@ class MovementsFilterActivity : AppCompatActivity() {
         loadListeners()
 
         loadFilters()
+    }
+
+    override fun onExceptionData(requestCode: Int, exception: ApiError, data: Any?) {
+
     }
 
     private fun loadFilters() {
@@ -209,7 +216,9 @@ class MovementsFilterActivity : AppCompatActivity() {
 
     private fun getUsers(rdgUserParent: RadioGroup) {
         lifecycleScope.launch {
-            viewModel.getReportesVentas()
+            Sys?.termInfo?.let {
+                viewModel.getReportesVentas(it[ETermInfoKey.SN] ?: "")
+            }
         }
         val listCount = mutableListOf<Int>()
 

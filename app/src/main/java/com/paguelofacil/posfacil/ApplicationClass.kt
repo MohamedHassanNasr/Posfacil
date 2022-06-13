@@ -2,13 +2,7 @@ package com.paguelofacil.posfacil
 
 import android.app.Application
 import android.os.Handler
-import android.widget.Toast
 import com.paguelofacil.posfacil.model.LanguageFile
-import com.pax.dal.*
-import com.pax.dal.entity.EPedType
-import com.pax.dal.entity.EPiccType
-import com.pax.dal.entity.EScannerType
-import com.pax.neptunelite.api.NeptuneLiteUser
 import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
 import timber.log.Timber.DebugTree

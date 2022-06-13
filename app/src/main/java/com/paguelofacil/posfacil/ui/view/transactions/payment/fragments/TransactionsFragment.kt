@@ -23,6 +23,7 @@ import com.paguelofacil.posfacil.ui.view.home.viewmodel.HomeViewModel
 import com.paguelofacil.posfacil.ui.view.transactions.payment.activities.MovementsFilterActivity
 import com.paguelofacil.posfacil.ui.view.transactions.payment.viewmodel.TransactionsViewModel
 import com.paguelofacil.posfacil.util.KeyboardUtil
+import com.pax.dal.entity.ETermInfoKey
 import kotlinx.coroutines.launch
 import timber.log.Timber
 import java.util.*
@@ -71,7 +72,14 @@ class TransactionsFragment : BaseFragment() {
         }
 
         binding.swipe.setOnRefreshListener {
-            viewModel.getAllTransactions()
+            try {
+                Sys?.termInfo?.let {
+                    viewModel.getAllTransactions(it[ETermInfoKey.SN] ?: "")
+                }
+            }catch (e: Exception){
+                binding.swipe.isRefreshing = false
+                Timber.e("ERROR SYS")
+            }
         }
 
         changeTitle(boolean = false)
@@ -83,7 +91,14 @@ class TransactionsFragment : BaseFragment() {
 
         KeyboardUtil.hideKeyboard(context, binding.etSearch)
 
-        viewModel.getAllTransactions()
+
+        try {
+            Sys?.termInfo?.let {
+                viewModel.getAllTransactions(it[ETermInfoKey.SN] ?: "")
+            }
+        }catch (e: Exception){
+            Timber.e("ERROR EN SYS")
+        }
         initObservers()
         return binding.root
     }
@@ -149,6 +164,7 @@ class TransactionsFragment : BaseFragment() {
 
     private fun initObservers() {
         viewModel.liveDataTransactionList.observe(viewLifecycleOwner) {
+            binding.swipe.isRefreshing = false
             it?.let {
                 binding.swipe.isRefreshing = false
                 val parsedResponse = it.map { item -> Transaction.fromApiResponse(item) }
