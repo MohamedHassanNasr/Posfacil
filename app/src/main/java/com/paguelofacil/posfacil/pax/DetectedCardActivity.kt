@@ -54,6 +54,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import kotlinx.coroutines.CoroutineExceptionHandler
 import java.util.*
 import kotlin.collections.HashMap
 import timber.log.Timber
@@ -631,50 +632,7 @@ class DetectedCardActivity : BaseActivity() {
                 println("adsadasdasdas 1final ${hex(track1Final.data)}") //valor final de ascii a string
                 println("adsadasdasdas 2final  ${hex(track2Final.data)}") //valor final de ascii a string
 
-                //Trying to get all tags
-                val list = Arrays.asList(
-                    Pair.create("84", 0x84.toShort()),
-                    Pair.create("5F24", 0x5F24.toShort()),
-                    Pair.create("5F2A", 0x5F2A.toShort()),
-                    Pair.create("5F34", 0x5F34.toShort()),
-                    Pair.create("9F06", 0x9F06.toShort()),
-                    Pair.create("9F07", 0x9F07.toShort()),
-                    Pair.create("9F09", 0x9F09.toShort()),
-                    Pair.create("9F1A", 0x9F1A.toShort()),
-                    Pair.create("9F33", 0x9F33.toShort()),
-                    Pair.create("9F35", 0x9F35.toShort()),
-                    Pair.create("9F41", 0x9F41.toShort()),
-
-                    Pair.create("5A", 0x5A.toShort()),
-                    Pair.create("5F20", 0x5F20.toShort()),
-                    Pair.create("9F0B", 0x9F0B.toShort()),
-                    Pair.create("9F1F", 0x9F1F.toShort()),
-                    Pair.create("9F20", 0x9F20.toShort()),
-                    Pair.create("57", 0x57.toShort()),
-                )
-
-                var strEmvTrack = ""
-                for (pair in list) {
-                    val mySkipByte = '~'.toByte()
-                    val trackTmp = com.pax.jemv.clcommon.ByteArray()
-                    for (i in trackTmp.data.indices) {
-                        trackTmp.data[i] = mySkipByte
-                    }
-                    EMVCallback.EMVGetTLVData(pair.second, trackTmp)
-
-                    val bytesData = trackTmp.data.filter{b -> b != mySkipByte}
-
-                    if (bytesData.isNotEmpty()) {
-                        var size = ByteArray(1)
-                        size[0] = bytesData.size.toByte()
-                        val track = (pair.first + hex(size) + hex(bytesData.toByteArray())).toUpperCase()
-                        println("MYTRACK " + track) //valor final de ascii a string
-                        strEmvTrack += track
-                    }
-                }
-
-                println("EMV TACK TO SEND TO PF -> " + strEmvTrack)
-
+                buildAndGetTlvTrack()
 
                 val cardHolder = com.pax.jemv.clcommon.ByteArray()
                 ret = EMVCallback.EMVGetTLVData(0x5F20.toShort(), cardHolder)
@@ -719,6 +677,56 @@ class DetectedCardActivity : BaseActivity() {
         } catch (e: IccDevException) {
             e.printStackTrace()
         }
+    }
+
+    private fun buildAndGetTlvTrack() {
+        //Trying to get all tags
+        val list = Arrays.asList(
+            Pair.create("84", 0x84.toShort()),
+            Pair.create("5F24", 0x5F24.toShort()),
+            Pair.create("5F2A", 0x5F2A.toShort()),
+            Pair.create("5F34", 0x5F34.toShort()),
+            Pair.create("9F06", 0x9F06.toShort()),
+            Pair.create("9F07", 0x9F07.toShort()),
+            Pair.create("9F09", 0x9F09.toShort()),
+            Pair.create("9F1A", 0x9F1A.toShort()),
+            Pair.create("9F33", 0x9F33.toShort()),
+            Pair.create("9F35", 0x9F35.toShort()),
+            Pair.create("9F41", 0x9F41.toShort()),
+
+            Pair.create("5A", 0x5A.toShort()),
+            Pair.create("5F20", 0x5F20.toShort()),
+            Pair.create("9F0B", 0x9F0B.toShort()),
+            Pair.create("9F1F", 0x9F1F.toShort()),
+            Pair.create("9F20", 0x9F20.toShort()),
+            Pair.create("57", 0x57.toShort()),
+        )
+
+        var strEmvTrack = ""
+        for (pair in list) {
+            // Used to skip unfilled bytes
+            val mySkipByte = '~'.toByte()
+            val trackTmp = com.pax.jemv.clcommon.ByteArray()
+            for (i in trackTmp.data.indices) {
+                trackTmp.data[i] = mySkipByte
+            }
+            EMVCallback.EMVGetTLVData(pair.second, trackTmp)
+
+            // Get only the bytes filled by the device
+            val bytesData = trackTmp.data.filter{b -> b != mySkipByte}
+
+            if (bytesData.isNotEmpty()) {
+                var size = ByteArray(1)
+                size[0] = bytesData.size.toByte()
+                // Creating the EMV formart
+                val track = (pair.first + hex(size) + hex(bytesData.toByteArray())).toUpperCase()
+                println("MYTRACK " + track) //valor final de ascii a string
+                //Creating the valid EMV Tag format to Send in the processTx (I guess you need do the same in the contactless Method)
+                strEmvTrack += track
+            }
+        }
+
+        println("EMV TACK TO SEND TO PF -> " + strEmvTrack)
     }
 
     private fun generatePrintTracks() {
@@ -1141,6 +1149,9 @@ class DetectedCardActivity : BaseActivity() {
             Dals!!.sys.beep(EBeepMode.FREQUENCE_LEVEL_0, 100)
             val map = HashMap<String, Any?>()
             map["track2"] = hex(track2.data)
+
+            buildAndGetTlvTrack()
+
             viewModel.saveDataCardFirestore(map)
 
             var str = ""
