@@ -64,11 +64,12 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/_48sdp"
             android:drawableStart="@drawable/ic_add_mail"
+            android:focusedByDefault="false"
             android:imeOptions="actionNext"
             android:inputType="textEmailAddress"
-            android:focusedByDefault="false"
             android:paddingStart="@dimen/_24sdp"
-            android:paddingEnd="@dimen/_16sdp" />
+            android:paddingEnd="@dimen/_16sdp"
+            tools:text="pfpos@dev.com" />
 
         <TextView
             android:id="@+id/tv_password_label"
@@ -91,6 +92,7 @@
                 android:lines="1"
                 android:maxLength="30"
                 android:paddingStart="@dimen/_24sdp"
+                android:text="Panama2022."
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

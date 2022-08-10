@@ -79,8 +79,8 @@ class LoginFragment : BaseFragment(), View.OnFocusChangeListener, View.OnClickLi
         user.introShown = true
         UserRepo.setOrUpdateUser(user, true)
         setBaseViewModel(vm)
-        binding.etEmail.clearFocus()
-        binding.etPassword.clearFocus()
+//        binding.etEmail.clearFocus()
+//        binding.etPassword.clearFocus()
         Timber.e("ANTES DE HIDE")
         KeyboardUtil.hideKeyboard(requireActivity())
         Timber.e("ANTES DE HIDE from view")
